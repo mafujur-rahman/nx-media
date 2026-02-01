@@ -20,7 +20,7 @@ export default function Footer() {
                                 <a
                                     key={link}
                                     href="#"
-                                    className="flex items-center gap-1 text-xl font-bold hover:text-[#F3D371] transition-colors group"
+                                    className="flex items-center gap-1 text-xl font-bold hover:text-red-500 transition-colors group"
                                 >
                                     {link}
                                     <span className="group-hover:translate-x-1 transition-transform">
@@ -62,11 +62,11 @@ export default function Footer() {
                             <input
                                 type="email"
                                 placeholder="your@email address"
-                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-sm focus:outline-none focus:border-[#F3D371]/50 transition-all"
+                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-sm focus:outline-none focus:border-red-500/50 transition-all"
                             />
                         </div>
 
-                        <button className="flex items-center gap-2  text-black px-6 py-4 rounded-full font-bold bg-[#F3D371] transition-all whitespace-nowrap shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                        <button className="flex items-center gap-2  text-black px-6 py-4 rounded-full font-bold bg-red-500 transition-all whitespace-nowrap shadow-[0_0_20px_rgba(255,255,255,0.1)]">
                             Sign me up
                             <svg
                                 width="18"

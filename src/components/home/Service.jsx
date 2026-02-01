@@ -189,7 +189,7 @@ const Service = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#121212] text-white p-6 md:p-12 font-sans">
+        <div className="min-h-screen bg-black text-white p-6 md:p-12 font-sans">
             <div className="max-w-7xl mx-auto">
                 {services.map((service, index) => (
                     <div key={service.id} className="border-b border-zinc-800">
@@ -199,10 +199,10 @@ const Service = () => {
                             className="w-full flex justify-between items-center py-10 text-left"
                         >
                             <div>
-                                <p className="text-[10px] tracking-[0.2em] text-zinc-500 mb-2 uppercase">
+                                <p className="text-md  text-gray-400 mb-2 uppercase">
                                     {service.subtitle}
                                 </p>
-                                <h2 className="text-5xl md:text-7xl font-black tracking-tighter">
+                                <h2 className="title_text">
                                     {service.number} {service.title}
                                 </h2>
                             </div>
@@ -227,7 +227,7 @@ const Service = () => {
                                 <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-12">
                                     {service.content.map((col, idx) => (
                                         <div key={idx}>
-                                            <h4 className="text-[10px] text-zinc-400 font-bold tracking-widest mb-6 uppercase">
+                                            <h4 className="text-md text-gray-400 font-bold tracking-widest mb-6 uppercase">
                                                 {col.label}
                                             </h4>
                                             <ul className="space-y-2">
