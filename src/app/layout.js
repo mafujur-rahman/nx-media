@@ -1,9 +1,9 @@
-import { League_Spartan, Geist } from "next/font/google";
+import { Geist, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 
-export const leagueSpartan = League_Spartan({
+export const bricolageGrotesque  = Bricolage_Grotesque ({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800", "900"],
+  weight: ["400", "600", "700", "800"],
 });
 
 export const geistSans = Geist({

@@ -13,7 +13,7 @@ const Service = () => {
         {
             id: 0,
             number: "01",
-            title: "PERFORMANCE",
+            title: "BRANDING",
             subtitle: "UNLOCK YOUR FULL POTENTIAL THROUGH ADVANCED TRAINING PROTOCOLS",
             content: [
                 {
@@ -49,7 +49,7 @@ const Service = () => {
         {
             id: 1,
             number: "02",
-            title: "TESTING",
+            title: "WEB DEVELOPMENT",
             subtitle: "PRECISION DIAGNOSTICS FOR DATA-DRIVEN RESULTS",
             content: [
                 {
@@ -77,78 +77,6 @@ const Service = () => {
                         "TRACKING PROGRESS",
                         "TEST ANALYSIS",
                         "FEEDBACK SESSIONS"
-                    ]
-                }
-            ],
-            image: "/service.jpg"
-        },
-        {
-            id: 2,
-            number: "03",
-            title: "COACHING",
-            subtitle: "PERSONALIZED STRATEGIES TO ACHIEVE YOUR GOALS",
-            content: [
-                {
-                    label: "ONE-ON-ONE COACHING",
-                    items: [
-                        "CUSTOM TRAINING SESSIONS",
-                        "GOAL TRACKING",
-                        "MOTIVATION SUPPORT",
-                        "PERFORMANCE REVIEWS"
-                    ]
-                },
-                {
-                    label: "GROUP COACHING",
-                    items: [
-                        "TEAM SESSIONS",
-                        "STRATEGY WORKSHOPS",
-                        "COLLABORATIVE CHALLENGES",
-                        "FEEDBACK CIRCLES"
-                    ]
-                },
-                {
-                    label: "STRATEGY PLANNING",
-                    items: [
-                        "PERSONAL GOAL SETTING",
-                        "PROGRESS MONITORING",
-                        "ADJUSTMENT STRATEGIES",
-                        "SUCCESS METRICS"
-                    ]
-                }
-            ],
-            image: "/service.jpg"
-        },
-        {
-            id: 3,
-            number: "04",
-            title: "NUTRITION",
-            subtitle: "FUEL YOUR BODY FOR MAXIMUM PERFORMANCE",
-            content: [
-                {
-                    label: "DIET PLANS",
-                    items: [
-                        "MACRO TRACKING",
-                        "MICRO NUTRIENTS",
-                        "SUPPLEMENT GUIDANCE",
-                        "MEAL TIMING"
-                    ]
-                },
-                {
-                    label: "HEALTH OPTIMIZATION",
-                    items: [
-                        "METABOLIC SUPPORT",
-                        "DIGESTIVE HEALTH",
-                        "IMMUNE SYSTEM BOOST",
-                        "ENERGY MAINTENANCE"
-                    ]
-                },
-                {
-                    label: "MEAL STRATEGY",
-                    items: [
-                        "PRE/POST WORKOUT NUTRITION",
-                        "MEAL PREP TIPS",
-                        "HYDRATION PLANS",
-                        "NUTRITION EDUCATION"
                     ]
                 }
             ],
@@ -189,7 +117,7 @@ const Service = () => {
     }
 
     return (
-        <div className="min-h-screen bg-black text-white p-6 md:p-12 font-sans">
+        <div className=" bg-black text-white p-6 md:p-12">
             <div className="max-w-7xl mx-auto">
                 {services.map((service, index) => (
                     <div key={service.id} className="border-b border-zinc-800">

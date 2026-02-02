@@ -64,12 +64,12 @@ export default function Banner() {
             {/* ================= CONTENT ================= */}
             <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 text-center">
                 {/* BADGE */}
-                <span className="mb-8 px-6 py-2 rounded-full border border-dashed border-red-500/50 bg-black/50 text-xs md:text-sm font-medium">
+                <span className="mb-8 px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-xs md:text-sm font-medium">
                     Trusted By 400+ Clients
                 </span>
 
                 {/* HEADING */}
-                <h1 className="title_text max-w-5xl">
+                <h1 className="title_text max-w-6xl">
                     We Build <span className="text-red-500">High-Impact Websites</span> for
                     Startups and Established Businesses
                 </h1>
@@ -82,7 +82,7 @@ export default function Banner() {
 
                 {/* BUTTONS */}
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                    <button className="flex items-center gap-2 bg-red-500 text-black px-8 py-4 rounded-full font-bold hover:bg-red-600 transition-all">
+                    <button className="flex items-center gap-2 bg-red-500 text-white px-8 py-4 rounded-full font-bold hover:bg-red-600 transition-all">
                         Build My Website
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                             <path d="M5 12h14m-7-7 7 7-7 7" />

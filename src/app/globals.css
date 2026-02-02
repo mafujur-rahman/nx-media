@@ -8,7 +8,7 @@ body {
 }
 
 .title_text {
-  @apply font-[League_Spartan] text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 tracking-tight;
+  @apply font-[Bricolage_Grotesque] text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 tracking-tight;
 }
 
 .para_text {
