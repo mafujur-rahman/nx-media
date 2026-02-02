@@ -21,7 +21,7 @@ export default function WhyChooseUs() {
                 </h2>
 
                 {/* Table Header */}
-                <div className="grid grid-cols-[2.5fr_repeat(5,1fr)] text-sm text-gray-400 mb-4 px-6">
+                <div className="grid grid-cols-[2.5fr_repeat(5,1fr)] text-md font-bold text-gray-400 mb-4 px-6">
                     <div>Platform</div>
                     <div className="text-center">Speed</div>
                     <div className="text-center">Flexibility</div>
@@ -85,7 +85,7 @@ export default function WhyChooseUs() {
 
 function Platform({ icon, title, desc, active }) {
     return (
-        <div className="flex gap-4 items-start">
+        <div className="flex gap-4 items-center">
             <div
                 className={`px-8 py-8 flex items-center justify-center rounded-xl ${active
                         ? "bg-red-500 text-white"
@@ -95,8 +95,8 @@ function Platform({ icon, title, desc, active }) {
                 {icon}
             </div>
             <div>
-                <h4 className="font-semibold mb-1">{title}</h4>
-                <p className="text-sm text-gray-300 max-w-md">{desc}</p>
+                <h4 className="font-semibold mb-1 text-2xl">{title}</h4>
+                <p className="text-sm md:text-md text-gray-300 max-w-md">{desc}</p>
             </div>
         </div>
     );
@@ -109,9 +109,9 @@ function Row({ icon, title, desc, values }) {
             {values.map((v, i) => (
                 <div key={i} className="flex justify-center">
                     {v ? (
-                        <Check className="text-white w-5 h-5" />
+                        <Check className="text-white w-5 h-5 md:w-8 md:h-8" />
                     ) : (
-                        <X className="text-red-500 w-5 h-5" />
+                        <X className="text-red-500 w-5 h-5 md:w-8 md:h-8" />
                     )}
                 </div>
             ))}
@@ -122,7 +122,7 @@ function Row({ icon, title, desc, values }) {
 function CheckItem() {
     return (
         <div className="flex justify-center">
-            <Check className="text-white w-5 h-5" />
+            <Check className="text-white w-5 h-5 md:w-8 md:h-8" />
         </div>
     );
 }

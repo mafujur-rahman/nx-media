@@ -2,6 +2,7 @@ import Banner from "@/components/home/Banner";
 import Optimization from "@/components/home/Optimization";
 import Pricing from "@/components/home/Pricing";
 import Service from "@/components/home/Service";
+import VideoSection from "@/components/home/Video";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import WorkProcess from "@/components/home/WorkProcess";
 import Footer from "@/components/shared/Footer";
@@ -13,6 +14,7 @@ export default function Home() {
     <div>
       <Navbar />
       <Banner />
+      {/* <VideoSection /> */}
       <Optimization />
       <Service />
       <Pricing />
