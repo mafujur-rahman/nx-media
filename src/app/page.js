@@ -1,4 +1,6 @@
 import Banner from "@/components/home/Banner";
+import Contact from "@/components/home/Contact";
+import GlobalPresence from "@/components/home/GlobalPresence";
 import Optimization from "@/components/home/Optimization";
 import Pricing from "@/components/home/Pricing";
 import Service from "@/components/home/Service";
@@ -20,6 +22,8 @@ export default function Home() {
       <Pricing />
       <WorkProcess />
       <WhyChooseUs />
+      <Contact />
+      <GlobalPresence />
       <Footer />
     </div>
   );
