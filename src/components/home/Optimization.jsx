@@ -13,7 +13,7 @@ export default function Optimization() {
                         className="group relative w-full max-w-xl bg-[#eeeeee] text-gray-600 flex items-center justify-between px-8 py-5 rounded-full transition-all duration-500 hover:scale-[1.02] shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)]"
                     >
                         <span className="text-sm font-semibold uppercase tracking-wider">
-                            Book on Calendly
+                            Book a Service
                         </span>
 
                         <FiArrowRight

@@ -3,16 +3,18 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Check, Phone } from "lucide-react";
+import HoverSweepButton from "../utils/HoverSweepButton";
+import { HiArrowRight } from "react-icons/hi";
 
 export default function Contact() {
     const [activeBudget, setActiveBudget] = useState(null);
 
     const budgets = [
-        "Less than $5K",
-        "$5K - $10K",
-        "$10K - $20K",
-        "$20K - $50K",
-        "More than $50K",
+        "Less than $500",
+        "$1K - $2K",
+        "$2K - $5K",
+        "More than $5K",
+        "Other"
     ];
 
     return (
@@ -28,7 +30,7 @@ export default function Contact() {
                                 Claim a $799 Consultation, on Us!
                             </span>
 
-                            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                            <h2 className="text-4xl lg:text-5xl font-bold font-bricolage text-white leading-tight">
                                 Enhance Your Brand <br />
                                 Potential <span className="italic text-red-400">At No Cost!</span>
                             </h2>
@@ -160,13 +162,15 @@ export default function Contact() {
                                 />
                             </div>
 
-                            {/* BUTTON */}
-                            <button
+
+
+                            <HoverSweepButton
                                 type="submit"
-                                className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 transition text-white px-6 py-3 rounded-full font-medium"
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium bg-red-600 w-auto"
+                                icon={<HiArrowRight size={20} />}
                             >
-                                Let’s Connect →
-                            </button>
+                                Let’s Connect
+                            </HoverSweepButton>
                         </form>
                     </div>
 

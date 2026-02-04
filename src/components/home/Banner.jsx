@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { HiMenuAlt3 } from "react-icons/hi";
+import { HiArrowRight, HiMenuAlt3 } from "react-icons/hi";
+import HoverSweepButton from "../utils/HoverSweepButton";
 
 export default function Banner() {
     const [hovered, setHovered] = useState(false);
@@ -82,14 +83,11 @@ export default function Banner() {
 
                 {/* BUTTONS */}
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                    <button className="flex items-center gap-2 bg-red-500 text-white px-8 py-4 rounded-full font-bold hover:bg-red-600 transition-all">
+                    <HoverSweepButton className="bg-red-500 text-white cursor-pointer" icon={<HiArrowRight />}>
                         Build My Website
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                            <path d="M5 12h14m-7-7 7 7-7 7" />
-                        </svg>
-                    </button>
+                    </HoverSweepButton>
 
-                    <button className="flex items-center gap-2 border border-red-500 px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all">
+                    <button className="flex items-center gap-2 cursor-pointer border border-red-500 px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all">
                         View Our Portfolio
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                             <path d="M5 12h14m-7-7 7 7-7 7" />

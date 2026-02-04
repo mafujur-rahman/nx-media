@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import HoverSweepButton from "../utils/HoverSweepButton";
 
 const Pricing = () => {
     const cardsRef = useRef([]);
@@ -140,10 +141,12 @@ const Pricing = () => {
                                 </div>
                             </div>
 
-                            <button className="w-full py-4 px-6 rounded-full flex justify-between items-center font-bold mb-10 bg-red-600 text-white hover:bg-red-700 transition-transform active:scale-95 shadow-md">
+                            <HoverSweepButton
+                                className="w-full py-4 px-6 flex justify-between items-center rounded-full font-bold mb-10 bg-red-600 shadow-md cursor-pointer"
+                                icon={<ArrowRight size={18} />}
+                            >
                                 <span className="text-sm font-semibold">{plan.buttonText}</span>
-                                <ArrowRight size={18} />
-                            </button>
+                            </HoverSweepButton>
 
                             <ul className="space-y-3">
                                 {plan.features.map((feature, i) => (
