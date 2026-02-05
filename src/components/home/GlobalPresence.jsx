@@ -32,7 +32,7 @@ export default function GlobalPresence() {
             <div className="relative z-10 h-full flex flex-col items-center justify-end pb-24 px-6">
                 
                 {/* TITLE ABOVE GRID */}
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center">
+                <h2 className="text-3xl sm:text-4xl font-bold font-bricolage text-white mb-6 text-center">
                     Our Clients Across the Globe
                 </h2>
 

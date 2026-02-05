@@ -10,27 +10,6 @@ export default function LeaderSection() {
     const row2 = useRef(null);
     const row3 = useRef(null);
 
-    useEffect(() => {
-        const animateRow = (el, direction = "left") => {
-            const distance = el.scrollWidth / 2;
-
-            gsap.fromTo(
-                el,
-                { x: direction === "left" ? 0 : -distance },
-                {
-                    x: direction === "left" ? -distance : 0,
-                    duration: 25,
-                    ease: "none",
-                    repeat: -1,
-                }
-            );
-        };
-
-        animateRow(row1.current, "left");
-        animateRow(row2.current, "right");
-        animateRow(row3.current, "left");
-    }, []);
-
     const people = [
         {
             name: "Roland Gurney",
@@ -64,23 +43,60 @@ export default function LeaderSection() {
         },
     ];
 
+    useEffect(() => {
+        // Wait for all images in this section to load
+        const allImages = Array.from(document.querySelectorAll(".leader-img"));
+        let loadedCount = 0;
+
+        allImages.forEach((img) => {
+            if (img.complete) loadedCount++;
+            else img.onload = () => loadedCount++;
+        });
+
+        const startAnimation = () => {
+            const animateRow = (el, direction = "left") => {
+                const distance = el.scrollWidth / 2;
+                gsap.fromTo(
+                    el,
+                    { x: direction === "left" ? 0 : -distance },
+                    {
+                        x: direction === "left" ? -distance : 0,
+                        duration: 25,
+                        ease: "none",
+                        repeat: -1,
+                    }
+                );
+            };
+
+            animateRow(row1.current, "left");
+            animateRow(row2.current, "right");
+            animateRow(row3.current, "left");
+        };
+
+        if (loadedCount === allImages.length) startAnimation();
+        else window.addEventListener("load", startAnimation);
+
+        return () => window.removeEventListener("load", startAnimation);
+    }, []);
 
     const Row = ({ rowRef }) => (
         <div className="overflow-hidden">
-            <div
-                ref={rowRef}
-                className="flex gap-4 w-max"
-            >
+            <div ref={rowRef} className="flex gap-4 w-max">
                 {[...people, ...people].map((p, i) => (
                     <div
                         key={i}
                         className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-2 min-w-[260px]"
                     >
-                        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
-                            <img
+                        <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 relative bg-white/10">
+                            <Image
                                 src={p.img}
                                 alt={p.name}
-                                className="w-full h-full object-cover"
+                                fill
+                                className="object-cover"
+                                placeholder="blur"
+                                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2N89+7dfwAIbALCwQq7KwAAAABJRU5ErkJggg=="
+                                priority
+                                className="leader-img"
                             />
                         </div>
 
@@ -102,25 +118,25 @@ export default function LeaderSection() {
                     <p className="text-xs tracking-widest text-white/50 uppercase mb-4">
                         We don’t just deliver. We build like it’s our own.
                     </p>
-                    <h2 className="title_text text-white">
-                        Results you can feel.
-                    </h2>
+                    <h2 className="title_text text-white">Results you can feel.</h2>
                 </div>
 
                 {/* Cards */}
                 <div className="grid md:grid-cols-2 gap-10">
                     {/* Left Card */}
                     <div className="bg-white rounded-3xl overflow-hidden flex min-h-[420px]">
-                        {/* Left Image – 50% */}
-                        <div className="w-1/2 relative">
-                            <img
+                        <div className="w-1/2 relative min-h-[420px]">
+                            <Image
                                 src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
                                 alt="CEO"
-                                className="absolute inset-0 w-full h-full object-cover"
+                                fill
+                                className="object-cover leader-img"
+                                placeholder="blur"
+                                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2N89+7dfwAIbALCwQq7KwAAAABJRU5ErkJggg=="
+                                priority
                             />
                         </div>
 
-                        {/* Right Content – 50% */}
                         <div className="w-1/2 p-10 flex flex-col justify-center">
                             <p className="text-xs tracking-widest text-black/50 uppercase mb-4">
                                 Now
@@ -131,11 +147,10 @@ export default function LeaderSection() {
                             </h3>
 
                             <p className="text-sm text-black/70 leading-relaxed mb-8">
-                                We’ll talk through your goals, blockers, and what you actually need.
-                                No fluff. No 10-page briefs.
+                                We’ll talk through your goals, blockers, and what you actually need. No fluff. No 10-page briefs.
                             </p>
 
-                            <HoverSweepButton className="bg-black text-white text-sm py-4 px-6  border border-black cursor-pointer w-fit ">
+                            <HoverSweepButton className="bg-black text-white text-sm py-4 px-6 border border-black cursor-pointer w-fit">
                                 Book an intro call
                             </HoverSweepButton>
 
@@ -144,7 +159,6 @@ export default function LeaderSection() {
                             </p>
                         </div>
                     </div>
-
 
                     {/* Right Card */}
                     <div className="relative bg-white/5 border border-white/10 rounded-3xl p-8 space-y-6">
@@ -157,8 +171,7 @@ export default function LeaderSection() {
                         </h3>
 
                         <p className="text-white/60 text-sm max-w-md">
-                            Senior-only, zero bloat. Strategy, design, and
-                            development working as one unit.
+                            Senior-only, zero bloat. Strategy, design, and development working as one unit.
                         </p>
 
                         <div className="space-y-4 mt-6">

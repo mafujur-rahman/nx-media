@@ -1,5 +1,6 @@
 import Banner from "@/components/home/Banner";
 import Contact from "@/components/home/Contact";
+import FAQSection from "@/components/home/FAQ";
 import GlobalPresence from "@/components/home/GlobalPresence";
 import IndustriesWeWork from "@/components/home/IndustriesWeWork";
 import LeaderSection from "@/components/home/LeaderSection";
@@ -28,6 +29,7 @@ export default function Home() {
       <WhyChooseUs />
       <LeaderSection />
       <Testimonials />
+      <FAQSection />
       <Contact />
       <GlobalPresence />
       <Footer />
