@@ -89,7 +89,7 @@ function Platform({ icon, title, desc, active }) {
             <div
                 className={`px-8 py-8 flex items-center justify-center rounded-xl ${active
                         ? "bg-red-500 text-white"
-                        : "bg-white/5 text-red-400"
+                        : "bg-white/5 text-red-500"
                     }`}
             >
                 {icon}

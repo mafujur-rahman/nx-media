@@ -2,6 +2,7 @@ import Banner from "@/components/home/Banner";
 import Contact from "@/components/home/Contact";
 import GlobalPresence from "@/components/home/GlobalPresence";
 import IndustriesWeWork from "@/components/home/IndustriesWeWork";
+import LeaderSection from "@/components/home/LeaderSection";
 import Optimization from "@/components/home/Optimization";
 import Pricing from "@/components/home/Pricing";
 import Service from "@/components/home/Service";
@@ -25,6 +26,7 @@ export default function Home() {
       <WorkProcess />
       <IndustriesWeWork />
       <WhyChooseUs />
+      <LeaderSection />
       <Testimonials />
       <Contact />
       <GlobalPresence />

@@ -166,7 +166,7 @@ export default function Contact() {
 
                             <HoverSweepButton
                                 type="submit"
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium bg-red-600 w-auto"
+                                className="inline-flex items-center gap-2 px-6 py-3 text-white rounded-full font-medium bg-red-600 w-auto"
                                 icon={<HiArrowRight size={20} />}
                             >
                                 Let’s Connect
