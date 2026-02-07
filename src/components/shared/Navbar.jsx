@@ -8,11 +8,10 @@ const Navbar = () => {
   const hideTimeout = useRef(null);
 
   const services = [
+    { title: "Brand Identity", desc: "Complete visual identity systems" },
+    { title: "Graphics Solution", desc: "Engaging animations and micro-interactions" },
     { title: "UI/UX Design", desc: "Intuitive interfaces that users love" },
     { title: "Web Development", desc: "Fast, responsive, and modern websites" },
-    { title: "Mobile Apps", desc: "Native and cross-platform applications" },
-    { title: "Brand Identity", desc: "Complete visual identity systems" },
-    { title: "Motion Design", desc: "Engaging animations and micro-interactions" },
     { title: "Consulting", desc: "Strategic design and tech guidance" }
   ];
 

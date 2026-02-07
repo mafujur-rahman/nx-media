@@ -1,161 +1,164 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import HoverSweepButton from "../utils/HoverSweepButton";
 
 export default function LeaderSection() {
-    const row1 = useRef(null);
-    const row2 = useRef(null);
-    const row3 = useRef(null);
-
     const people = [
         {
             name: "Roland Gurney",
             role: "Brand / Positioning Strategist",
+            skills: "Brand strategy, positioning, campaigns",
+            bio: "Roland specializes in crafting brand narratives that resonate with audiences and drive engagement.",
             img: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe",
         },
         {
             name: "Emilia Nerysnysta",
             role: "Senior Brand + Web Designer",
+            skills: "UI/UX, Visual Design, Branding",
+            bio: "Emilia designs visually stunning experiences that balance creativity and usability.",
             img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
         },
         {
             name: "Julian Fella",
             role: "Lead Webflow Designer",
+            skills: "Webflow, Responsive Design, Prototyping",
+            bio: "Julian brings complex digital projects to life with seamless Webflow designs.",
             img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
         },
         {
             name: "Ahmed Al-Khedr",
             role: "Lead Webflow Developer",
+            skills: "Webflow Dev, Frontend, Animations",
+            bio: "Ahmed develops highly interactive and performant web experiences.",
             img: "https://images.unsplash.com/photo-1527980965255-d3b416303d12",
         },
         {
             name: "Razvan Segarceanu",
             role: "Senior Webflow Developer",
+            skills: "Webflow, CMS, API Integrations",
+            bio: "Razvan excels at building scalable web solutions and complex integrations.",
             img: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef",
         },
         {
             name: "Charlie Isslander",
-            role: "Senior Brand + Web",
+            role: "Senior Brand + Web Designer",
+            skills: "Branding, Visual Storytelling, UX Design",
+            bio: "Charlie ensures every project tells a compelling brand story.",
             img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde",
+        },
+        {
+            name: "Sophia Martinez",
+            role: "Creative Director",
+            skills: "Concept Development, Branding, Campaign Strategy",
+            bio: "Sophia leads creative vision and ensures cohesive brand messaging.",
+            img: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39",
+        },
+        {
+            name: "Liam O'Reilly",
+            role: "UX Researcher",
+            skills: "User Research, Testing, Experience Strategy",
+            bio: "Liam uncovers user insights to inform design and strategy decisions.",
+            img: "https://images.unsplash.com/photo-1502767089025-6572583495d0",
+        },
+        {
+            name: "Aisha Khan",
+            role: "Content Strategist",
+            skills: "Content Planning, Copywriting, SEO",
+            bio: "Aisha crafts content that connects and converts audiences effectively.",
+            img: "https://images.unsplash.com/photo-1552058544-f2b08422138a",
         },
     ];
 
+    const [activeIndex, setActiveIndex] = useState(0);
+    const sliderRef = useRef(null);
+
+    // Automatic rotation every 3 seconds
     useEffect(() => {
-        // Wait for all images in this section to load
-        const allImages = Array.from(document.querySelectorAll(".leader-img"));
-        let loadedCount = 0;
-
-        allImages.forEach((img) => {
-            if (img.complete) loadedCount++;
-            else img.onload = () => loadedCount++;
-        });
-
-        const startAnimation = () => {
-            const animateRow = (el, direction = "left") => {
-                const distance = el.scrollWidth / 2;
-                gsap.fromTo(
-                    el,
-                    { x: direction === "left" ? 0 : -distance },
-                    {
-                        x: direction === "left" ? -distance : 0,
-                        duration: 25,
-                        ease: "none",
-                        repeat: -1,
-                    }
-                );
-            };
-
-            animateRow(row1.current, "left");
-            animateRow(row2.current, "right");
-            animateRow(row3.current, "left");
-        };
-
-        if (loadedCount === allImages.length) startAnimation();
-        else window.addEventListener("load", startAnimation);
-
-        return () => window.removeEventListener("load", startAnimation);
+        const interval = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % people.length);
+        }, 3000);
+        return () => clearInterval(interval);
     }, []);
 
-    const Row = ({ rowRef }) => (
-        <div className="overflow-hidden">
-            <div ref={rowRef} className="flex gap-4 w-max">
-                {[...people, ...people].map((p, i) => (
-                    <div
-                        key={i}
-                        className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-2 min-w-[260px]"
-                    >
-                        <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 relative bg-white/10">
-                            <Image
-                                src={p.img}
-                                alt={p.name}
-                                fill
-                                className="object-cover"
-                                placeholder="blur"
-                                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2N89+7dfwAIbALCwQq7KwAAAABJRU5ErkJggg=="
-                                priority
-                                className="leader-img"
-                            />
-                        </div>
+    // Animate image fade instead of sliding
+    useEffect(() => {
+        if (!sliderRef.current) return;
 
-                        <div>
-                            <p className="text-sm font-medium text-white">{p.name}</p>
-                            <p className="text-xs text-white/60">{p.role}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+        const currentImg = sliderRef.current.querySelector(".active-img");
+        const nextImg = sliderRef.current.querySelector(".next-img");
+
+        // Fade in new image
+        gsap.fromTo(
+            nextImg,
+            { opacity: 0 },
+            { opacity: 1, duration: 0.8, ease: "power2.inOut" }
+        );
+
+        // After animation, make next image active
+        const timeout = setTimeout(() => {
+            currentImg.src = nextImg.src;
+            nextImg.style.opacity = 0;
+        }, 800);
+
+        return () => clearTimeout(timeout);
+    }, [activeIndex]);
+
 
     return (
         <section className="bg-black py-24">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Title */}
                 <div className="text-center mb-16">
-                    <p className="text-xs tracking-widest text-white/50 uppercase mb-4">
-                        We don’t just deliver. We build like it’s our own.
-                    </p>
+                    {/* Badge */}
+                    <div className="flex justify-center mb-6">
+                        <span className=" px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-white text-xs md:text-sm font-medium">
+                            We don’t just deliver. We build like it’s our own.
+                        </span>
+                    </div>
                     <h2 className="title_text text-white">Results you can feel.</h2>
                 </div>
-
-                {/* Cards */}
                 <div className="grid md:grid-cols-2 gap-10">
                     {/* Left Card */}
-                    <div className="bg-white rounded-3xl overflow-hidden flex min-h-[420px]">
-                        <div className="w-1/2 relative min-h-[420px]">
-                            <Image
-                                src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
-                                alt="CEO"
-                                fill
-                                className="object-cover leader-img"
-                                placeholder="blur"
-                                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2N89+7dfwAIbALCwQq7KwAAAABJRU5ErkJggg=="
-                                priority
-                            />
+                    <div className="bg-white rounded-3xl overflow-hidden flex min-h-[500px]">
+                        {/* Image Left */}
+                        <div className="w-1/2 relative overflow-hidden">
+                            <div ref={sliderRef} className="relative w-full h-full">
+                                <Image
+                                    src={people[activeIndex].img}
+                                    alt={people[activeIndex].name}
+                                    fill
+                                    className="object-cover active-img absolute top-0 left-0 w-full h-full"
+                                />
+                                <Image
+                                    src={people[activeIndex].img}
+                                    alt={people[activeIndex].name}
+                                    fill
+                                    className="object-cover next-img absolute top-0 left-0 w-full h-full opacity-0"
+                                />
+                            </div>
+
                         </div>
 
-                        <div className="w-1/2 p-10 flex flex-col justify-center">
-                            <p className="text-xs tracking-widest text-black/50 uppercase mb-4">
-                                Now
-                            </p>
+                        {/* Content Right */}
+                        <div className="w-1/2 bg-white p-10 flex flex-col justify-center">
+                            <div className="flex items-center gap-4">
 
-                            <h3 className="text-2xl font-medium text-black mb-4">
-                                Let’s have a chat
-                            </h3>
-
-                            <p className="text-sm text-black/70 leading-relaxed mb-8">
-                                We’ll talk through your goals, blockers, and what you actually need. No fluff. No 10-page briefs.
-                            </p>
-
-                            <HoverSweepButton className="bg-black text-white text-sm py-4 px-6 border border-black cursor-pointer w-fit">
-                                Book an intro call
-                            </HoverSweepButton>
-
-                            <p className="text-xs text-black/50 mt-4">
-                                Only 20–30min. Friendly chat, no pressure.
+                                <div>
+                                    <p className="text-xs tracking-widest text-black/50 uppercase mb-1">
+                                        {people[activeIndex].role}
+                                    </p>
+                                    <h3 className="text-2xl font-medium text-black mb-1">
+                                        {people[activeIndex].name}
+                                    </h3>
+                                    <p className="text-sm text-black/70">
+                                        <strong>Skills:</strong> {people[activeIndex].skills}
+                                    </p>
+                                </div>
+                            </div>
+                            <p className="text-sm text-black/70 leading-relaxed mt-4">
+                                {people[activeIndex].bio}
                             </p>
                         </div>
                     </div>
@@ -171,13 +174,33 @@ export default function LeaderSection() {
                         </h3>
 
                         <p className="text-white/60 text-sm max-w-md">
-                            Senior-only, zero bloat. Strategy, design, and development working as one unit.
+                            Senior-only, zero bloat. Strategy, design, and development working
+                            as one unit.
                         </p>
 
-                        <div className="space-y-4 mt-6">
-                            <Row rowRef={row1} />
-                            <Row rowRef={row2} />
-                            <Row rowRef={row3} />
+                        <div className="grid grid-cols-3 gap-4 mt-6">
+                            {people.map((p, i) => (
+                                <div
+                                    key={i}
+                                    onClick={() => setActiveIndex(i)}
+                                    className={`flex items-center gap-2 p-2 rounded-xl cursor-pointer transition-all duration-300 border ${activeIndex === i
+                                        ? "border-white text-white bg-white/10"
+                                        : "border-white/10 text-white/60"
+                                        }`}
+                                >
+                                    <div className="w-10 h-10 rounded-full overflow-hidden relative bg-white/10">
+                                        <Image
+                                            src={p.img}
+                                            alt={p.name}
+                                            fill
+                                            className="object-cover"
+                                            placeholder="blur"
+                                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2N89+7dfwAIbALCwQq7KwAAAABJRU5ErkJggg=="
+                                        />
+                                    </div>
+                                    <p className="text-xs text-center">{p.name}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -185,3 +208,6 @@ export default function LeaderSection() {
         </section>
     );
 }
+
+
+

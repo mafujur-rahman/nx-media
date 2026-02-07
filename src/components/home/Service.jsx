@@ -14,75 +14,76 @@ const Service = () => {
             id: 0,
             number: "01",
             title: "BRANDING",
-            subtitle: "UNLOCK YOUR FULL POTENTIAL THROUGH ADVANCED TRAINING PROTOCOLS",
+            subtitle: "UNLOCK YOUR BRAND'S FULL POTENTIAL WITH STRATEGIC DESIGN",
             content: [
                 {
-                    label: "ELITE TRAINING",
+                    label: "STRATEGY",
                     items: [
-                        "AI-OPTIMIZED TRAINING PLANS",
-                        "RECOVERY MONITORING",
-                        "RACE PREPARATION",
-                        "PEAK PERFORMANCE TIMING"
+                        "BRAND POSITIONING",
+                        "MARKET RESEARCH",
+                        "COMPETITOR ANALYSIS",
+                        "TARGET AUDIENCE INSIGHTS"
                     ]
                 },
                 {
-                    label: "METABOLIC HEALTH",
+                    label: "IDENTITY",
                     items: [
-                        "SUBSTRATE UTILIZATION",
-                        "ENERGY SYSTEM DEVELOPMENT",
-                        "METABOLIC FLEXIBILITY",
-                        "NUTRITION TIMING"
+                        "LOGO & VISUAL DESIGN",
+                        "COLOR & TYPOGRAPHY",
+                        "BRAND VOICE & TONE",
+                        "CONSISTENT BRAND GUIDELINES"
                     ]
                 },
                 {
-                    label: "RECOVERY",
+                    label: "ENGAGEMENT",
                     items: [
-                        "SLEEP OPTIMIZATION",
-                        "STRESS MANAGEMENT",
-                        "INJURY PREVENTION",
-                        "LONGEVITY PROTOCOLS"
+                        "SOCIAL MEDIA PRESENCE",
+                        "CONTENT STRATEGY",
+                        "CAMPAIGN PLANNING",
+                        "BRAND STORYTELLING"
                     ]
                 }
             ],
-            image: "/service.jpg"
+            image: "/images/branding-service.jpg"
         },
         {
             id: 1,
             number: "02",
             title: "WEB DEVELOPMENT",
-            subtitle: "PRECISION DIAGNOSTICS FOR DATA-DRIVEN RESULTS",
+            subtitle: "BUILD SCALABLE, HIGH-PERFORMANCE WEBSITES & APPS",
             content: [
                 {
-                    label: "LAB ANALYSIS",
+                    label: "FRONTEND",
                     items: [
-                        "VO2 MAX TESTING",
-                        "LACTATE THRESHOLD",
-                        "RESTING METABOLIC RATE",
-                        "INSCYD TESTING"
+                        "RESPONSIVE UI DESIGN",
+                        "INTERACTIVE USER EXPERIENCES",
+                        "REACT / NEXT.JS DEVELOPMENT",
+                        "PERFORMANCE OPTIMIZATION"
                     ]
                 },
                 {
-                    label: "BIOMETRICS",
+                    label: "BACKEND",
                     items: [
-                        "BLOOD MARKER ANALYSIS",
-                        "GENETIC PROFILING",
-                        "BODY COMPOSITION",
-                        "NEURO-TYPING"
+                        "API INTEGRATION",
+                        "DATABASE DESIGN",
+                        "SERVER-SIDE LOGIC",
+                        "SECURITY & AUTHENTICATION"
                     ]
                 },
                 {
-                    label: "PERFORMANCE METRICS",
+                    label: "MAINTENANCE",
                     items: [
-                        "ATHLETE BENCHMARKING",
-                        "TRACKING PROGRESS",
-                        "TEST ANALYSIS",
-                        "FEEDBACK SESSIONS"
+                        "BUG FIXES & UPDATES",
+                        "SEO & ANALYTICS",
+                        "SCALABILITY PLANNING",
+                        "TECHNICAL SUPPORT"
                     ]
                 }
             ],
-            image: "/service.jpg"
+            image: "/images/web-development-service.jpg"
         }
-    ]
+    ];
+
 
 
     /* Animate content */
@@ -101,20 +102,34 @@ const Service = () => {
         const prevOpen = openSection
         setOpenSection(openSection === index ? null : index)
 
+        // Animate previous open icon back to down
+        if (prevOpen !== null && prevOpen !== index) {
+            const prevIcon = iconRefs.current[prevOpen]
+            if (prevIcon) {
+                gsap.to(prevIcon.querySelector(".arrow-up"), { y: 20, opacity: 0, rotation: -180, duration: 0.4, ease: "power3.in" })
+                gsap.to(prevIcon.querySelector(".arrow-down"), { y: 0, opacity: 1, rotation: 0, duration: 0.4, ease: "power3.out" })
+            }
+        }
+
+        // Animate current icon
         const icon = iconRefs.current[index]
         if (!icon) return
 
-        // Animate icons smoothly
         if (prevOpen === index) {
-            // Closing: up arrow slides down, down arrow appears
+            // Closing the same section
             gsap.to(icon.querySelector(".arrow-up"), { y: 20, opacity: 0, rotation: -180, duration: 0.4, ease: "power3.in" })
-            gsap.fromTo(icon.querySelector(".arrow-down"), { y: -20, opacity: 0, rotation: 180 }, { y: 0, opacity: 1, rotation: 0, duration: 0.4, ease: "power3.out" })
+            gsap.to(icon.querySelector(".arrow-down"), { y: 0, opacity: 1, rotation: 0, duration: 0.4, ease: "power3.out" })
         } else {
-            // Opening: down arrow slides up, up arrow appears
+            // Opening a new section
             gsap.to(icon.querySelector(".arrow-down"), { y: -20, opacity: 0, rotation: 180, duration: 0.4, ease: "power3.in" })
-            gsap.fromTo(icon.querySelector(".arrow-up"), { y: -20, opacity: 0, rotation: -180 }, { y: 0, opacity: 1, rotation: 0, duration: 0.4, ease: "power3.out" })
+            gsap.fromTo(
+                icon.querySelector(".arrow-up"),
+                { y: -20, opacity: 0, rotation: -180 },
+                { y: 0, opacity: 1, rotation: 0, duration: 0.4, ease: "power3.out" }
+            )
         }
     }
+
 
     return (
         <div className=" bg-black text-white p-6 md:p-12">

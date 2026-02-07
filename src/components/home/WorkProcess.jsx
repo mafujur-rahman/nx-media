@@ -5,51 +5,60 @@ import gsap from "gsap";
 
 // Steps with 5 unique cards each
 const steps = [
+    // ==== BRANDINGS ====
     {
         id: "01",
-        label: "Complete Assessment",
+        label: "Logo Design",
         cards: [
-            { title: "Comprehensive Testing of Performance Markers and Biomarkers", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", light: true },
-            { title: "Extra Assessment Card", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop" },
-            { title: "Another Assessment Card", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", light: true },
-            { title: "Fourth Assessment Card", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" },
-            { title: "Fifth Assessment Card", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Minimalist Logo Concepts", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true },
+            { title: "Brandmark & Icon Design", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Logo Variations & Mockups", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", light: true },
+            { title: "Typography & Color Exploration", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop" },
         ],
     },
     {
         id: "02",
-        label: "Data Analysis",
+        label: "Brand Identity",
         cards: [
-            { title: "AI-Powered Analysis of Your Complete Health Profile", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop" },
-            { title: "Second Data Analysis Card", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", light: true },
-            { title: "Third Data Analysis Card", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" },
-            { title: "Fourth Data Analysis Card", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true },
-            { title: "Fifth Data Analysis Card", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Visual Guidelines & Style Sheets", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Color Palette & Typography", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true },
+            { title: "Brand Voice & Messaging", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Stationery & Collateral Design", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true },
         ],
     },
     {
         id: "03",
-        label: "Custom Protocol",
+        label: "Packaging Design",
         cards: [
-            { title: "Personalized Protocol Tailored to Your Needs", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", light: true },
-            { title: "Second Custom Protocol Card", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop" },
-            { title: "Third Custom Protocol Card", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true },
-            { title: "Fourth Custom Protocol Card", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop" },
-            { title: "Fifth Custom Protocol Card", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop", light: true },
+            { title: "Product Packaging Concepts", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Box & Label Design", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop", light: true },
+            { title: "Mockups & 3D Presentation", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Eco-friendly & Innovative Packaging", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true },
         ],
     },
     {
         id: "04",
-        label: "Ongoing Support",
+        label: "Social Media Branding",
         cards: [
-            { title: "Continuous Support to Maintain Peak Performance", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop" },
-            { title: "Second Ongoing Support Card", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop", light: true },
-            { title: "Third Ongoing Support Card", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop" },
-            { title: "Fourth Ongoing Support Card", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true },
-            { title: "Fifth Ongoing Support Card", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Instagram & Facebook Templates", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Story & Post Design", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", light: true },
+            { title: "Ad Creatives & Campaign Assets", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Brand Consistency Across Platforms", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true },
         ],
     },
+
+    // ==== DEVELOPMENTS ====
+    {
+        id: "05",
+        label: "Website Development",
+        cards: [
+            { title: "Custom Responsive Websites", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true },
+            { title: "E-commerce Platforms", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop" },
+        ],
+    },
+
 ];
+
 
 const WorkProcess = () => {
     const cardsRef = useRef(null);

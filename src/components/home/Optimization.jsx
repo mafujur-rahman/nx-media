@@ -14,14 +14,14 @@ export default function Optimization() {
     redTextRefs.current.forEach((el) => {
       gsap.fromTo(
         el,
-        { color: "#9ca3af" }, // gray-400 default color
+        { color: "#9ca3af" }, 
         {
-          color: "#fee2e2", // red-100 color
+          color: "#fee2e2", 
           scrollTrigger: {
             trigger: el,
             start: "top 80%",
             end: "top 50%",
-            scrub: 1, // smooth animation
+            scrub: 1, 
           },
         }
       );
@@ -34,7 +34,7 @@ export default function Optimization() {
         {/* LEFT SIDE: CALENDLY BUTTON */}
         <div className="w-full lg:w-1/3 flex justify-start">
           <button
-            className="group relative w-full max-w-xl bg-[#eeeeee] text-gray-600 flex items-center justify-between px-8 py-5 rounded-full transition-all duration-500 hover:scale-[1.02] shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)]"
+            className="group relative w-full max-w-xl bg-[#eeeeee] text-gray-600 flex items-center justify-between px-8 py-5 rounded-full transition-all duration-500  shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)]"
           >
             <span className="text-sm font-semibold uppercase tracking-wider">
               Book a Service
@@ -51,7 +51,7 @@ export default function Optimization() {
           <h2 className="title_text uppercase mb-8">
             <span className="block text-white">Beyond Generic</span>
             <span className="block text-white">
-              Training —{" "}
+              Training {" "}
               <span
                 ref={(el) => redTextRefs.current.push(el)}
               >

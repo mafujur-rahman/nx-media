@@ -68,18 +68,41 @@ const Testimonials = () => {
       <div className="max-w-7xl w-full bg-black rounded-[30px] p-12 flex flex-col lg:flex-row items-center gap-12 overflow-hidden border border-white/5">
 
         {/* Left Column */}
+        {/* Left Column */}
         <div className="w-full lg:w-1/2 flex flex-col justify-between h-full">
           <div>
             <span className="px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-xs md:text-sm font-medium text-white">
               Clients Speech
             </span>
-            <h1 className="text-4xl lg:text-5xl font-semibold text-white leading-tight mb-4 mt-6">
+
+            <h1 className="text-4xl lg:text-5xl font-semibold text-white leading-tight mb-4 mt-6 font-bricolage">
               What Our Users Say
             </h1>
+
+            {/* New Subtitle */}
+            <p className="text-gray-300 text-base md:text-lg mb-6">
+              See how NX Media helps professionals and creators elevate their brand, grow engagement, and maximize results. Real feedback from real clients.
+            </p>
+
+            {/* Key Stats */}
+            <div className="flex gap-6 mb-8">
+              <div className="flex flex-col items-center">
+                <span className="text-red-500 font-bold text-xl">500+</span>
+                <span className="text-gray-400 text-sm">Clients Served</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-red-500 font-bold text-xl">4.9/5</span>
+                <span className="text-gray-400 text-sm">Satisfaction Rating</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-red-500 font-bold text-xl">10+</span>
+                <span className="text-gray-400 text-sm">Years Experience</span>
+              </div>
+            </div>
           </div>
 
           {/* Horizontal carousel */}
-          <div className="overflow-hidden mt-8">
+          <div className="overflow-hidden mt-4">
             <div ref={carouselRef} className="flex gap-4 relative w-max">
               {reviewsData.map((item, idx) => (
                 <div
@@ -105,6 +128,7 @@ const Testimonials = () => {
             </button>
           </div>
         </div>
+
 
         {/* Right Column */}
         <div className="w-full lg:w-1/2 relative aspect-video lg:aspect-square rounded-3xl overflow-hidden shadow-2xl">

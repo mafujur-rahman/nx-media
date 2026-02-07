@@ -12,21 +12,21 @@ const Pricing = () => {
         {
             title: "BASIC BRANDING",
             desc: "Establish a strong visual identity for your business with foundational branding elements.",
-            price: "300",
+            price: "200",
             features: ["Logo Design", "Color Palette", "Typography Setup"],
             buttonText: "Get Started",
         },
         {
             title: "STANDARD BRANDING",
             desc: "Comprehensive branding package for consistent and professional visual communication.",
-            price: "600",
+            price: "500",
             features: ["Logo & Icon Set", "Brand Guidelines", "Stationery Design", "Social Media Kit"],
             buttonText: "Get Started",
         },
         {
             title: "PREMIUM BRANDING",
             desc: "End-to-end branding experience for businesses seeking maximum impact and identity strength.",
-            price: "1200",
+            price: "1000",
             features: [
                 "Full Brand Strategy",
                 "Logo & Iconography",
@@ -142,7 +142,7 @@ const Pricing = () => {
                             </div>
 
                             <HoverSweepButton
-                                className="w-full py-4 px-6 flex justify-between items-center rounded-full font-bold mb-10 bg-red-600 shadow-md cursor-pointer"
+                                className="w-full py-4 px-6 flex justify-between items-center rounded-full font-bold mb-10 bg-red-600 shadow-md cursor-pointer text-white"
                                 icon={<ArrowRight size={18} />}
                             >
                                 <span className="text-sm font-semibold">{plan.buttonText}</span>

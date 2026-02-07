@@ -18,3 +18,4 @@ body {
 .para_text {
   @apply text-gray-400 text-lg md:text-xl leading-relaxed;
 }
+

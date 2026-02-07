@@ -13,24 +13,6 @@ export default function IndustriesWeWork() {
 
   const data = [
     {
-      title: "UI/UX Design",
-      description:
-        "UI/UX Design, App Design, Website Design, Dashboard Design, Wireframing & Prototyping, Interaction Design, and Product Design.",
-      images: [
-        { src: "/industry-1.jpg", alt: "Dashboard UI", bg: "#b9e3ff", pos: "left-top" },
-        { src: "/industry-2.jpg", alt: "Mobile App UI", bg: "#cfff8f", pos: "right-bottom" },
-      ],
-    },
-    {
-      title: "Mobile App Development",
-      description:
-        "Custom mobile app solutions for iOS and Android, ensuring responsive and user-friendly experiences.",
-      images: [
-        { src: "/industry-2.jpg", alt: "Mobile App", bg: "#cfff8f", pos: "left-top" },
-        { src: "/industry-1.jpg", alt: "Dashboard UI", bg: "#b9e3ff", pos: "right-bottom" },
-      ],
-    },
-    {
       title: "Branding & Identity",
       description:
         "Logo design, brand guidelines, and visual identity creation to make your brand memorable.",
@@ -39,6 +21,27 @@ export default function IndustriesWeWork() {
         { src: "/industry-2.jpg", alt: "Branding Alt", bg: "#ffa5a5", pos: "right-bottom" },
       ],
     },
+    {
+      title: "Graphics Solution",
+      description:
+        "Creative graphic design solutions including illustrations, branding visuals, social media graphics, and marketing materials to make your brand stand out.",
+      images: [
+        { src: "/industry-2.jpg", alt: "Graphics Left", bg: "#cfff8f", pos: "left-top" },
+        { src: "/industry-1.jpg", alt: "Graphics Right", bg: "#b9e3ff", pos: "right-bottom" },
+      ],
+    },
+
+    {
+      title: "UI/UX Design",
+      description:
+        "UI/UX Design, App Design, Website Design, Dashboard Design, Wireframing & Prototyping, Interaction Design, and Product Design.",
+      images: [
+        { src: "/industry-1.jpg", alt: "Dashboard UI", bg: "#b9e3ff", pos: "left-top" },
+        { src: "/industry-2.jpg", alt: "Mobile App UI", bg: "#cfff8f", pos: "right-bottom" },
+      ],
+    },
+
+
     {
       title: "Web Development",
       description:
@@ -106,11 +109,11 @@ export default function IndustriesWeWork() {
           We Design <span className="italic">Brands</span> That Speak To Audiences
         </h2>
 
-        <div className="mt-20 flex flex-col lg:flex-row gap-16 relative">
+        <div className="mt-20 flex flex-col lg:flex-row gap-10 relative">
 
           {/* LEFT CONTENT (GSAP PINNED UNTIL LAST) */}
-          <div className="lg:w-1/2" ref={leftRef}>
-            <h3 className="text-3xl md:text-4xl font-semibold mb-4">
+          <div className="lg:w-1/3" ref={leftRef}>
+            <h3 className="text-3xl md:text-4xl font-semibold mb-4 font-bricolage">
               {data[0].title}
             </h3>
             <p className="text-white/70 max-w-lg leading-relaxed">
@@ -118,7 +121,7 @@ export default function IndustriesWeWork() {
             </p>
             <a
               href="#"
-              className="inline-flex items-center gap-2 mt-6 text-red-400 hover:text-red-300 transition"
+              className="inline-flex items-center gap-2 mt-6 text-red-500 hover:text-red-400 transition"
             >
               See More
               <span className="text-lg">→</span>
@@ -126,7 +129,7 @@ export default function IndustriesWeWork() {
           </div>
 
           {/* RIGHT VISUALS */}
-          <div className="lg:w-1/2 flex flex-col gap-32">
+          <div className="lg:w-2/3 flex flex-col gap-32 relative">
             {data.map((item, index) => (
               <div
                 key={index}
@@ -135,12 +138,14 @@ export default function IndustriesWeWork() {
                 {item.images.map((img, i) => (
                   <div
                     key={i}
-                    className={`absolute w-[280px] md:w-[320px] h-[420px] rounded-[32px] shadow-2xl overflow-hidden ${
-                      img.pos === "left-top"
-                        ? "left-0 top-0"
-                        : "right-0 bottom-0"
-                    }`}
-                    style={{ backgroundColor: img.bg }}
+                    className="absolute w-[280px] md:w-[320px] h-[420px] rounded-[30px] overflow-hidden"
+                    style={{
+                      backgroundColor: img.bg,
+                      top: img.pos === "left-top" ? 0 : "auto",
+                      left: img.pos === "left-top" ? "4.55rem" : "auto",
+                      bottom: img.pos === "right-bottom" ? 0 : "auto",
+                      right: img.pos === "right-bottom" ? "4.55rem" : "auto",
+                    }}
                   >
                     <Image
                       src={img.src}
@@ -153,6 +158,7 @@ export default function IndustriesWeWork() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
