@@ -5,22 +5,23 @@ import gsap from "gsap";
 
 const faqs = [
     {
-        q: "What makes your DAC different?",
-        a: "Our DAC system is built around modular scalability and low-energy regeneration, allowing it to integrate seamlessly into existing infrastructure."
+        q: "What services do you offer for branding and web development?",
+        a: "We provide complete branding solutions including logo design, brand identity, and marketing materials, along with custom web development for responsive, user-friendly websites."
     },
     {
-        q: "How much CO₂ does it recover?",
-        a: "Each unit can capture several thousand tons of CO₂ per year depending on configuration and operating conditions."
+        q: "How long does it take to complete a project?",
+        a: "Project timelines vary based on complexity, but most branding or website projects take between 4 to 8 weeks from initial concept to final delivery."
     },
     {
-        q: "How much energy does it use?",
-        a: "Energy consumption is minimized through optimized airflow design and next-generation sorbents."
+        q: "Do you provide ongoing support after the project?",
+        a: "Yes! We offer maintenance, updates, and brand consultation to ensure your website and brand stay current and effective."
     },
     {
-        q: "How large is your DAC technology?",
-        a: "The system is modular by design and can scale horizontally without increasing complexity."
+        q: "Can you help improve our existing brand or website?",
+        a: "Absolutely! We offer rebranding and website revamp services to enhance your brand image, improve usability, and boost engagement."
     }
 ];
+
 
 export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState(3);
