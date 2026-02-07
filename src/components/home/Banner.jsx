@@ -3,6 +3,7 @@ import { useState } from "react";
 import { HiArrowRight } from "react-icons/hi";
 import HoverSweepButton from "../utils/HoverSweepButton";
 import TopNavbar from "../shared/TopNavbar";
+import ClientSlider from "./ClientSlider";
 
 export default function Banner() {
     const [hovered, setHovered] = useState(false);
@@ -79,6 +80,11 @@ export default function Banner() {
                     100% Satisfaction Guarantee with Full Refund
                 </p>
             </div>
+            {/* ================= CLIENT SLIDER (BOTTOM) ================= */}
+            <div className="absolute bottom-25 left-0 w-full z-20">
+                <ClientSlider />
+            </div>
+
         </section>
     );
 }
