@@ -7,19 +7,31 @@ export default function ClientSlider() {
   const sliderRef = useRef(null);
 
   const logos = [
-    "https://via.placeholder.com/150x50?text=Logo+1",
-    "https://via.placeholder.com/150x50?text=Logo+2",
-    "https://via.placeholder.com/150x50?text=Logo+3",
-    "https://via.placeholder.com/150x50?text=Logo+4",
-    "https://via.placeholder.com/150x50?text=Logo+5",
-    "https://via.placeholder.com/150x50?text=Logo+6",
+    "/images/Client logo/1.png",
+    "/images/Client logo/2.png",
+    "/images/Client logo/3.png",
+    "/images/Client logo/4.png",
+    "/images/Client logo/5.png",
+    "/images/Client logo/6.png",
+    "/images/Client logo/7.png",
+    "/images/Client logo/8.png",
+    "/images/Client logo/9.png",
+    "/images/Client logo/10.png",
+    "/images/Client logo/11.png",
+    "/images/Client logo/12.png",
+    "/images/Client logo/13.png",
+    "/images/Client logo/14.png",
+    "/images/Client logo/15.png",
+    "/images/Client logo/16.png",
+    "/images/Client logo/17.png",
+    
   ];
 
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
 
-    const totalWidth = slider.scrollWidth / 2; // width of one set of logos
+    const totalWidth = slider.scrollWidth / 2; 
 
     const tween = gsap.to(slider, {
       x: `-${totalWidth}px`,
@@ -37,13 +49,13 @@ export default function ClientSlider() {
         {/* SLIDER TRACK */}
         <div
           ref={sliderRef}
-          className="flex gap-20 w-max items-center will-change-transform"
+          className="flex  w-max items-center will-change-transform"
         >
           {/* Duplicate logos for seamless loop */}
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={index}
-              className="relative w-32 h-10 opacity-70 hover:opacity-100 transition"
+              className="relative w-32 h-10 "
             >
               <Image
                 src={logo}

@@ -31,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed bottom-6 left-0 right-0 z-50 flex justify-center px-4">
+    <div className="fixed bottom-2 left-0 right-0 z-50 flex justify-center px-4">
       <nav className="flex items-center gap-8 bg-black/80 backdrop-blur-md px-8 py-3 rounded-full border border-white/10 shadow-2xl">
 
         <a href="#" className="text-white font-medium hover:text-red-500 transition-colors">Projects</a>
@@ -44,9 +44,9 @@ const Navbar = () => {
             onMouseEnter={() => { setHoverButton(true); setImgExpanded(false); handleMouseEnter(); }}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center overflow-hidden p-1.5">
+            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center overflow-hidden p-1.5">
               <img
-                src="logo.png"
+                src="/NX-media.png"
                 alt="NX Media"
                 className="w-full h-full object-contain"
               />
