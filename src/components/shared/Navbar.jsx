@@ -38,21 +38,34 @@ const Navbar = () => {
         <a href="#" className="text-white font-medium hover:text-red-500 transition-colors">Services</a>
 
         <div className="relative">
-          {/* Button */}
-          <button
-            className="flex items-center gap-3 bg-white/5 border border-red-500/50 px-5 py-2 rounded-full group hover:border-red-400 transition-all shadow-[0_0_15px_rgba(168,85,247,0.2)]"
-            onMouseEnter={() => { setHoverButton(true); setImgExpanded(false); handleMouseEnter(); }}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center overflow-hidden p-1.5">
-              <img
-                src="/NX-media.png"
-                alt="NX Media"
-                className="w-full h-full object-contain"
-              />
+          {/* Special Button with Animated Light Effect */}
+          <div className="relative">
+            {/* Animated Light Border */}
+            <div className="absolute -inset-[1px] rounded-full overflow-hidden">
+              <div className="absolute inset-0 animate-lightSpin">
+                <div className="w-full h-full bg-gradient-to-r from-transparent via-red-500/80 to-transparent opacity-70"></div>
+              </div>
             </div>
-            <span className="text-white font-bold tracking-tight">Start a Project</span>
-          </button>
+            
+            {/* Button */}
+            <button
+              className="relative flex items-center gap-3 bg-black/90 border border-red-500/50 px-5 py-2 rounded-full group hover:border-red-400 transition-all shadow-[0_0_15px_rgba(168,85,247,0.2)] backdrop-blur-sm"
+              onMouseEnter={() => { setHoverButton(true); setImgExpanded(false); handleMouseEnter(); }}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center overflow-hidden p-1.5">
+                <img
+                  src="/NX-media.png"
+                  alt="NX Media"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="text-white font-bold tracking-tight">Start a Project</span>
+              
+              {/* Inner Glow Effect on Hover */}
+              <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-red-500/10 via-red-400/20 to-red-500/10"></div>
+            </button>
+          </div>
 
           {/* Floating Modal */}
           <div
@@ -102,6 +115,26 @@ const Navbar = () => {
         <a href="#" className="text-white font-medium hover:text-red-500 transition-colors">More</a>
 
       </nav>
+      
+      {/* Add custom animation styles */}
+      <style jsx global>{`
+        @keyframes lightSpin {
+          0% {
+            transform: translateX(-100%) rotate(0deg);
+          }
+          100% {
+            transform: translateX(100%) rotate(360deg);
+          }
+        }
+        
+        .animate-lightSpin {
+          animation: lightSpin 3s linear infinite;
+        }
+        
+        .animate-lightSpin:hover {
+          animation-duration: 1.5s;
+        }
+      `}</style>
     </div>
   );
 };
