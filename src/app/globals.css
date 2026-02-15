@@ -19,3 +19,28 @@ body {
   @apply text-gray-400 text-lg md:text-xl leading-relaxed;
 }
 
+
+/* Hide scrollbar completely */
+.tabs-scroll {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
+
+.tabs-scroll::-webkit-scrollbar {
+  display: none;             
+}
+
+
+/* pricing spin */
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}

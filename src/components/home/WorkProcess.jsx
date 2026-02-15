@@ -46,10 +46,34 @@ const steps = [
             { title: "Brand Consistency Across Platforms", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true },
         ],
     },
+    {
+        id: "05",
+        label: "UI / UX Design",
+        cards: [
+            {
+                title: "Wireframing & Prototyping",
+                img: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1000&auto=format&fit=crop"
+            },
+            {
+                title: "Website & Web App UI Design",
+                img: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1000&auto=format&fit=crop",
+                light: true
+            },
+            {
+                title: "Mobile App Interface Design",
+                img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop"
+            },
+            {
+                title: "User Experience Research & Testing",
+                img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
+                light: true
+            },
+        ],
+    },
 
     // ==== DEVELOPMENTS ====
     {
-        id: "05",
+        id: "06",
         label: "Website Development",
         cards: [
             { title: "Custom Responsive Websites", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true },
@@ -65,6 +89,8 @@ const WorkProcess = () => {
 
     const [activeTab, setActiveTab] = useState("01");
     const [scrollIndex, setScrollIndex] = useState({}); // per-tab scroll
+    const tabsRef = useRef(null);
+
 
     const activeStep = steps.find((step) => step.id === activeTab);
     const activeCards = activeStep?.cards || [];
@@ -105,6 +131,53 @@ const WorkProcess = () => {
         });
     }, [activeTab, currentIndex]);
 
+    useEffect(() => {
+        const slider = tabsRef.current;
+        if (!slider) return;
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        const handleMouseDown = (e) => {
+            isDown = true;
+            slider.classList.add("cursor-grabbing");
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        };
+
+        const handleMouseLeave = () => {
+            isDown = false;
+            slider.classList.remove("cursor-grabbing");
+        };
+
+        const handleMouseUp = () => {
+            isDown = false;
+            slider.classList.remove("cursor-grabbing");
+        };
+
+        const handleMouseMove = (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            slider.scrollLeft = scrollLeft - walk;
+        };
+
+        slider.addEventListener("mousedown", handleMouseDown);
+        slider.addEventListener("mouseleave", handleMouseLeave);
+        slider.addEventListener("mouseup", handleMouseUp);
+        slider.addEventListener("mousemove", handleMouseMove);
+
+        return () => {
+            slider.removeEventListener("mousedown", handleMouseDown);
+            slider.removeEventListener("mouseleave", handleMouseLeave);
+            slider.removeEventListener("mouseup", handleMouseUp);
+            slider.removeEventListener("mousemove", handleMouseMove);
+        };
+    }, []);
+
+
     return (
         <section className="bg-black text-white pt-20 px-6 md:px-12 lg:px-24 overflow-hidden">
             <div className="max-w-7xl mx-auto">
@@ -115,22 +188,31 @@ const WorkProcess = () => {
 
                 {/* Navigation + Arrows */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-                    <div className="flex flex-wrap items-center bg-black/40 border border-white/10 rounded-full p-1.5 w-fit">
-                        {steps.map((step) => (
-                            <button
-                                key={step.id}
-                                data-tab={step.id}
-                                className="step-btn relative px-6 py-2.5 rounded-full text-md font-medium overflow-hidden"
-                                onClick={() => slideToTab(step.id)}
-                            >
-                                <div className="bg-anim absolute bottom-0 left-0 w-full h-0 bg-white z-0"></div>
-                                <span className="step-text relative z-10 flex items-center gap-2 opacity-60">
-                                    <span>{step.id}</span>
-                                    <span>{step.label}</span>
-                                </span>
-                            </button>
-                        ))}
+                    <div
+                        ref={tabsRef}
+                        className="tabs-scroll w-full overflow-x-auto cursor-grab select-none"
+                    >
+
+                        <div className="flex items-center bg-black/40 border border-white/10 rounded-full p-1.5 w-max whitespace-nowrap">
+                            {steps.map((step) => (
+                                <button
+                                    key={step.id}
+                                    data-tab={step.id}
+                                    className="step-btn relative px-6 py-2.5 rounded-full text-md font-medium flex-shrink-0 whitespace-nowrap"
+                                    onClick={() => slideToTab(step.id)}
+                                >
+                                    <div className="bg-anim absolute bottom-0 left-0 w-full h-0 rounded-full bg-white z-0"></div>
+
+                                    <span className="step-text relative z-10 flex items-center gap-2 opacity-60 whitespace-nowrap">
+                                        <span>{step.id}</span>
+                                        <span>{step.label}</span>
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
                     </div>
+
+
 
                     <div className="flex gap-4 mt-4 md:mt-0">
                         <button

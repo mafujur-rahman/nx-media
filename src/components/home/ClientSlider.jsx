@@ -20,9 +20,6 @@ export default function ClientSlider() {
     "/images/Client logo/11.png",
     "/images/Client logo/12.png",
     "/images/Client logo/13.png",
-    "/images/Client logo/14.png",
-    "/images/Client logo/15.png",
-    "/images/Client logo/16.png",
     "/images/Client logo/17.png",
     
   ];
@@ -35,7 +32,7 @@ export default function ClientSlider() {
 
     const tween = gsap.to(slider, {
       x: `-${totalWidth}px`,
-      duration: 28,
+      duration: 45,
       ease: "linear",
       repeat: -1,
     });

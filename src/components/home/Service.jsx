@@ -46,9 +46,47 @@ const Service = () => {
             ],
             image: "/images/branding-service.jpg"
         },
+
         {
             id: 1,
             number: "02",
+            title: "UI / UX DESIGN",
+            subtitle: "CRAFTING INTUITIVE, ENGAGING & USER-CENTERED DIGITAL EXPERIENCES",
+            content: [
+                {
+                    label: "USER RESEARCH",
+                    items: [
+                        "USER PERSONAS",
+                        "USER JOURNEY MAPPING",
+                        "WIREFRAMING",
+                        "PROTOTYPING"
+                    ]
+                },
+                {
+                    label: "INTERFACE DESIGN",
+                    items: [
+                        "MODERN UI DESIGN",
+                        "DESIGN SYSTEMS",
+                        "MOBILE APP DESIGN",
+                        "WEB APP DESIGN"
+                    ]
+                },
+                {
+                    label: "TESTING & OPTIMIZATION",
+                    items: [
+                        "USABILITY TESTING",
+                        "A/B TESTING",
+                        "UX AUDIT",
+                        "CONVERSION OPTIMIZATION"
+                    ]
+                }
+            ],
+            image: "/images/ui-ux-service.jpg"
+        },
+
+        {
+            id: 2,
+            number: "03",
             title: "WEB DEVELOPMENT",
             subtitle: "BUILD SCALABLE, HIGH-PERFORMANCE WEBSITES & APPS",
             content: [
@@ -83,6 +121,7 @@ const Service = () => {
             image: "/images/web-development-service.jpg"
         }
     ];
+
 
 
 

@@ -36,7 +36,7 @@ export default function Footer() {
                         <img
                             src="/logo.png"
                             alt="NX Media Logo"
-                            className="w-[260px] md:w-[360px] ml-auto opacity-90 select-none"
+                            className="w-[260px] md:w-[360px] ml-auto  select-none"
                         />
                     </div>
                 </div>

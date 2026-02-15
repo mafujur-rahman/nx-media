@@ -9,7 +9,6 @@ const Navbar = () => {
 
   const services = [
     { title: "Brand Identity", desc: "Complete visual identity systems" },
-    { title: "Graphics Solution", desc: "Engaging animations and micro-interactions" },
     { title: "UI/UX Design", desc: "Intuitive interfaces that users love" },
     { title: "Web Development", desc: "Fast, responsive, and modern websites" },
     { title: "Consulting", desc: "Strategic design and tech guidance" },

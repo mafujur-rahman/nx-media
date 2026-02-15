@@ -11,6 +11,8 @@ import Testimonials from "@/components/home/Testimonials";
 import VideoSection from "@/components/home/Video";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import WorkProcess from "@/components/home/WorkProcess";
+import ScrollToTop from "@/components/ScrollToTop";
+
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import Image from "next/image";
@@ -31,6 +33,7 @@ export default function Home() {
       <FAQSection />
       <Contact />
       <GlobalPresence />
+      <ScrollToTop />
       <Footer />
     </div>
   );

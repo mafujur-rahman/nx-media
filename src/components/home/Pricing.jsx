@@ -159,6 +159,90 @@ const Pricing = () => {
                         </div>
                     ))}
                 </div>
+
+                {/* ================= BONUS SECTION ================= */}
+                <div className="mt-20 relative rounded-[30px] p-[2px] overflow-hidden">
+
+                    {/* 🔴 Smooth Spinning Red Border */}
+                    <div className="absolute inset-0 rounded-[30px] animate-spin-slow
+      bg-[conic-gradient(from_0deg,transparent,rgba(255,0,0,0.9),transparent)] 
+      blur-[3px] opacity-80 pointer-events-none" />
+
+                    {/* Inner Container */}
+                    <div className="relative rounded-[28px] p-8 md:p-12 
+      bg-gradient-to-br from-zinc-900 via-black to-zinc-900 
+      border border-white/10">
+
+                        {/* Decorative Glow */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-[100px] -z-10" />
+
+                        {/* Heading */}
+                        <div className="text-center mb-12">
+                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 font-bricolage">
+                                Bonuses Worth Over <br />
+                                <span className="text-red-600">$2,500</span>—Yours Free!
+                            </h3>
+                        </div>
+
+                        {/* Bonus Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {[
+                                {
+                                    title: "Free Design Prototype",
+                                    desc: "Experience your design in action before development.",
+                                    icon: (
+                                        <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    )
+                                },
+                                {
+                                    title: "Developer Handoff",
+                                    desc: "We ensure what we design is exactly what gets built.",
+                                    icon: (
+                                        <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                        </svg>
+                                    )
+                                },
+                                {
+                                    title: "Project Management",
+                                    desc: "Stay on track with our expert project management.",
+                                    icon: (
+                                        <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                        </svg>
+                                    )
+                                },
+                                {
+                                    title: "Project Consultation",
+                                    desc: "Get professional advice to enhance your project.",
+                                    icon: (
+                                        <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                        </svg>
+                                    )
+                                }
+                            ].map((bonus, idx) => (
+                                <div
+                                    key={idx}
+                                    className="p-6 rounded-3xl border border-white/5 bg-white/5 
+                     hover:bg-white/10 transition-all duration-300"
+                                >
+                                    <div className="mb-4">{bonus.icon}</div>
+                                    <h4 className="text-white font-bold text-lg mb-2">{bonus.title}</h4>
+                                    <p className="text-zinc-400 text-sm leading-relaxed">{bonus.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </section>
     );
