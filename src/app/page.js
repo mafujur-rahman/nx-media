@@ -20,9 +20,8 @@ export default function Home() {
     <div>
       <Navbar />
       <Banner />
-      {/* <VideoSection /> */}
       <Optimization />
-      <Service />
+      {/* <Service />
       <Pricing />
       <WorkProcess />
       <IndustriesWeWork />
@@ -31,7 +30,7 @@ export default function Home() {
       <Testimonials />
       <FAQSection />
       <Contact />
-      <GlobalPresence />
+      <GlobalPresence /> */}
       <Footer />
     </div>
   );

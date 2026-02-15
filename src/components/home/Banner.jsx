@@ -10,7 +10,7 @@ export default function Banner() {
 
     return (
         <section
-            className="relative min-h-screen bg-black overflow-hidden text-white"
+            className="relative md:min-h-screen bg-black overflow-hidden text-white"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
@@ -39,7 +39,7 @@ export default function Banner() {
             {/* ================= CONTENT ================= */}
             <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 text-center">
 
-                <span className="mb-8 px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-xs md:text-sm font-medium">
+                <span className="mb-4 lg:mb-8 px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-xs md:text-sm font-medium">
                     Trusted By 400+ Clients
                 </span>
 
@@ -48,12 +48,12 @@ export default function Banner() {
                     Startups and Established Businesses
                 </h1>
 
-                <p className="para_text max-w-3xl mx-auto mt-4">
+                <p className="para_text max-w-3xl mx-auto lg:mt-4">
                     Turn Your Idea Into Reality. Professional Websites designed to impress,
                     convert, and grow with your business.
                 </p>
 
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                <div className="mt-5 lg:mt-10 flex flex-col sm:flex-row gap-4">
                     <HoverSweepButton
                         className="bg-red-500 text-white cursor-pointer"
                         icon={<HiArrowRight />}
@@ -81,7 +81,7 @@ export default function Banner() {
                 </p>
             </div>
             {/* ================= CLIENT SLIDER (BOTTOM) ================= */}
-            <div className="absolute bottom-25 left-0 w-full z-20">
+            <div className="absolute bottom-0 xl:bottom-5 2xl:bottom-25 left-0 w-full z-20">
                 <ClientSlider />
             </div>
 

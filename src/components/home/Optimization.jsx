@@ -48,7 +48,7 @@ export default function Optimization() {
 
         {/* RIGHT SIDE: TEXT CONTENT */}
         <div className="w-full lg:w-2/3">
-          <h2 className="title_text uppercase mb-8">
+          <h2 className="title_text uppercase mb-4 lg:mb-8">
             <span className="block text-white">Beyond Generic</span>
             <span className="block text-white">
               Training {" "}
@@ -59,13 +59,13 @@ export default function Optimization() {
               </span>
             </span>
             <span
-              className="block"
+
               ref={(el) => redTextRefs.current.push(el)}
             >
               Personal Path to
             </span>
             <span
-              className="block"
+
               ref={(el) => redTextRefs.current.push(el)}
             >
               Peak Optimization
