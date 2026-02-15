@@ -21,7 +21,7 @@ export default function Home() {
       <Navbar />
       <Banner />
       <Optimization />
-      {/* <Service />
+      <Service />
       <Pricing />
       <WorkProcess />
       <IndustriesWeWork />
@@ -30,7 +30,7 @@ export default function Home() {
       <Testimonials />
       <FAQSection />
       <Contact />
-      <GlobalPresence /> */}
+      <GlobalPresence />
       <Footer />
     </div>
   );
