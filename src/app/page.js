@@ -10,6 +10,7 @@ import Service from "@/components/home/Service";
 import Testimonials from "@/components/home/Testimonials";
 import VideoSection from "@/components/home/Video";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
+import WorkingProcess from "@/components/home/WorkingProcess";
 import WorkProcess from "@/components/home/WorkProcess";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -30,6 +31,7 @@ export default function Home() {
       <WhyChooseUs />
       <LeaderSection />
       <Testimonials />
+      <WorkingProcess />
       <FAQSection />
       <Contact />
       <GlobalPresence />
