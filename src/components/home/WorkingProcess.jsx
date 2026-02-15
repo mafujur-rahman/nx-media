@@ -16,7 +16,7 @@ const WorkingProcess = () => {
     return (
         <section className="bg-black py-24 px-6 text-white min-h-screen font-sans">
             {/* Header Section */}
-            <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="text-center max-w-6xl mx-auto mb-20">
                 {/* Badge */}
                 <div className="flex justify-center mb-6">
                     <span className=" px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-white text-xs md:text-sm font-medium">
@@ -24,10 +24,10 @@ const WorkingProcess = () => {
                     </span>
                 </div>
                 <h2 className="title_text mb-4">
-                    Smarter Design, <span className="italic">Supercharged By AI</span>
+                    We have a process. You’ll barely notice it—until you see the results.
                 </h2>
                 <p className="para_text">
-                    From wireframes to launch, we blend AI tools with strategy to deliver faster, sharper, and data-led design results.
+                    No complicated jargon. No unnecessary steps. Just a clear path from where you are to where you want to be.
                 </p>
             </div>
 
@@ -91,7 +91,7 @@ const WorkingProcess = () => {
 
                 {/* The 2x3 Grid of Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-40 relative z-10">
-                    {features.map((f, i) => (
+                    {processSteps.map((f, i) => (
                         <ProcessCard key={i} {...f} />
                     ))}
                 </div>
@@ -115,13 +115,31 @@ const ProcessCard = ({ title, desc }) => (
     </div>
 );
 
-const features = [
-    { title: "UX Copy That Clicks", desc: "We use AI to create effective copies like CTAs and microcopy that speaks." },
-    { title: "Visuals, Instantly On Point", desc: "We generate custom visuals using AI for faster concept directions, brand-ready." },
-    { title: "Data-Led Design Decisions", desc: "We predict user behavior before launch with AI-powered heatmaps that help us." },
-    { title: "Smarter & Faster Wireframes", desc: "We rapidly turn ideas into functional wireframes using AI tools, with less." },
-    { title: "Launch Quicker, Spend Less", desc: "AI reduces revisions and guesswork and makes your website ready to launch." },
-    { title: "No Blank Canvas Struggles", desc: "AI generates editable mockups from prompts so we can skip the slow start." },
+const processSteps = [
+    {
+        title: "We listen first. Like, really listen.",
+        desc: "No assumptions. No jumping to solutions. We start by understanding your business, your customers, and where you're actually headed."
+    },
+    {
+        title: "Strategy before pixels",
+        desc: "We figure out what will actually work before we design anything. Positioning, messaging, direction—all locked in before we open Figma."
+    },
+    {
+        title: "Design with intention",
+        desc: "Then we design. Explorations, refinements, decisions. You'll see the thinking, not just the pretty pictures."
+    },
+    {
+        title: "You stay in the loop",
+        desc: "No going dark for weeks. Regular check-ins, honest feedback, and zero surprises. You'll always know exactly where things stand."
+    },
+    {
+        title: "We build what we designed",
+        desc: "No handoffs to strangers. The same people who designed it build it—whether that's files for print or fully functional websites."
+    },
+    {
+        title: "Launch. Then we stick around.",
+        desc: "We don't disappear after launch. We make sure everything lands right, answer questions, and stay in your corner for what's next."
+    },
 ];
 
 export default WorkingProcess;

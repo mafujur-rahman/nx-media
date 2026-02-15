@@ -17,15 +17,6 @@ const Service = () => {
             subtitle: "UNLOCK YOUR BRAND'S FULL POTENTIAL WITH STRATEGIC DESIGN",
             content: [
                 {
-                    label: "STRATEGY",
-                    items: [
-                        "BRAND POSITIONING",
-                        "MARKET RESEARCH",
-                        "COMPETITOR ANALYSIS",
-                        "TARGET AUDIENCE INSIGHTS"
-                    ]
-                },
-                {
                     label: "IDENTITY",
                     items: [
                         "LOGO & VISUAL DESIGN",
@@ -35,12 +26,21 @@ const Service = () => {
                     ]
                 },
                 {
-                    label: "ENGAGEMENT",
+                    label: "PACKAGING DESIGN",
                     items: [
-                        "SOCIAL MEDIA PRESENCE",
-                        "CONTENT STRATEGY",
-                        "CAMPAIGN PLANNING",
-                        "BRAND STORYTELLING"
+                        "STRUCTURE & FORMAT SELECTION",
+                        "MATERIAL CONSULTATION",
+                        "GRAPHIC DESIGN & VISUALS",
+                        "DIELINE & PRINT PRODUCTION"
+                    ]
+                },
+                {
+                    label: "APPLICATION",
+                    items: [
+                        "STATIONERY & COLLATERAL",
+                        "BRAND TOUCHPOINTS",
+                        "ASSET LIBRARIES",
+                        "BRAND ROLLOUT"
                     ]
                 }
             ],
@@ -81,7 +81,7 @@ const Service = () => {
                     ]
                 }
             ],
-            image: "/images/ui-ux-service.jpg"
+            image: "/images/uiux-service.png"
         },
 
         {
@@ -118,7 +118,7 @@ const Service = () => {
                     ]
                 }
             ],
-            image: "/images/web-development-service.jpg"
+            image: "/images/development-service.png"
         }
     ];
 

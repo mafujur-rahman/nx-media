@@ -17,8 +17,8 @@ export default function IndustriesWeWork() {
       description:
         "Digital solutions for hospitals, clinics, telemedicine platforms, and healthcare startups including patient portals, appointment systems, and secure data management.",
       images: [
-        { src: "/industry-healthcare-1.jpg", alt: "Healthcare Technology", bg: "#d0f4ff", pos: "left-top" },
-        { src: "/industry-healthcare-2.jpg", alt: "Medical Dashboard", bg: "#caffbf", pos: "right-bottom" },
+        { src: "/images/industry-1.jpg", alt: "Healthcare Technology", bg: "#d0f4ff", pos: "left-top" },
+        { src: "/images/industry-2.jpg", alt: "Medical Dashboard", bg: "#caffbf", pos: "right-bottom" },
       ],
     },
     {
@@ -26,8 +26,8 @@ export default function IndustriesWeWork() {
       description:
         "Scalable e-commerce platforms with seamless user experience, secure payment integration, product management systems, and high-converting online storefronts.",
       images: [
-        { src: "/industry-ecommerce-1.jpg", alt: "Online Shopping", bg: "#ffd6a5", pos: "left-top" },
-        { src: "/industry-ecommerce-2.jpg", alt: "Ecommerce Dashboard", bg: "#bdb2ff", pos: "right-bottom" },
+        { src: "/images/industry-1.jpg", alt: "Online Shopping", bg: "#ffd6a5", pos: "left-top" },
+        { src: "/images/industry-2.jpg", alt: "Ecommerce Dashboard", bg: "#bdb2ff", pos: "right-bottom" },
       ],
     },
     {
@@ -35,8 +35,8 @@ export default function IndustriesWeWork() {
       description:
         "Smart booking systems, travel management platforms, itinerary builders, and visually engaging websites for travel agencies and tourism businesses.",
       images: [
-        { src: "/industry-travel-1.jpg", alt: "Travel Booking", bg: "#a0c4ff", pos: "left-top" },
-        { src: "/industry-travel-2.jpg", alt: "Tour Website", bg: "#ffc6ff", pos: "right-bottom" },
+        { src: "/images/industry-1.jpg", alt: "Travel Booking", bg: "#a0c4ff", pos: "left-top" },
+        { src: "/images/industry-2.jpg", alt: "Tour Website", bg: "#ffc6ff", pos: "right-bottom" },
       ],
     },
     {
@@ -44,8 +44,8 @@ export default function IndustriesWeWork() {
       description:
         "Fleet management systems, tracking dashboards, logistics automation, and transportation management solutions for modern mobility businesses.",
       images: [
-        { src: "/industry-transport-1.jpg", alt: "Transport Dashboard", bg: "#caffbf", pos: "left-top" },
-        { src: "/industry-transport-2.jpg", alt: "Logistics System", bg: "#ffd6a5", pos: "right-bottom" },
+        { src: "/images/industry-1.jpg", alt: "Transport Dashboard", bg: "#caffbf", pos: "left-top" },
+        { src: "/images/industry-2.jpg", alt: "Logistics System", bg: "#ffd6a5", pos: "right-bottom" },
       ],
     },
   ];
@@ -103,7 +103,7 @@ export default function IndustriesWeWork() {
 
         {/* Heading */}
         <h2 className="title_text max-w-5xl mt-6">
-          We Design <span className="italic">Brands</span> That Speak To Audiences
+          Some agencies have a type. We have a standard. There’s a difference.
         </h2>
 
         <div className="mt-20 flex flex-col lg:flex-row gap-10 relative">

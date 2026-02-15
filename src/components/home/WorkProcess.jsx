@@ -182,8 +182,8 @@ const WorkProcess = () => {
         <section className="bg-black text-white pt-20 px-6 md:px-12 lg:px-24 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <h2 className="title_text mb-12">
-                    <span className="text-red-100 block mb-2 uppercase">Your Journey To</span>
-                    PEAK PERFORMANCE
+                    <span className="text-red-500 block mb-2 uppercase">Before you hire us,</span>
+                    see what hiring us actually looks like.
                 </h2>
 
                 {/* Navigation + Arrows */}

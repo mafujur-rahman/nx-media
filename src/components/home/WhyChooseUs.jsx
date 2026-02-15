@@ -1,5 +1,5 @@
 "use client";
-import { Check, X, Users, PenTool, User, Briefcase } from "lucide-react";
+import { Check, X, Users, PenTool, User, Briefcase, Building, Star, Zap } from "lucide-react";
 
 export default function WhyChooseUs() {
     return (
@@ -14,14 +14,12 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Heading */}
-                <h2 className="title_text text-center mb-16">
-                    <span className="italic ">NX Media’s</span> Alternative?
-                    <br />
-                    <span className="font-bold">Think One More Time!</span>
+                <h2 className="title_text text-center mb-20">
+                    We don’t say yes to everyone. But we’re hoping you’re the exception.
                 </h2>
 
                 {/* Table Header */}
-                <div className="grid grid-cols-[2.5fr_repeat(5,1fr)] text-md font-bold text-gray-400 mb-4 px-6">
+                <div className="grid grid-cols-[2.5fr_repeat(5,1fr)] text-md font-bold text-gray-400 mb-4 px-6 mt-16">
                     <div>Platform</div>
                     <div className="text-center">Speed</div>
                     <div className="text-center">Flexibility</div>
@@ -45,19 +43,19 @@ export default function WhyChooseUs() {
                     <CheckItem />
                 </div>
 
-                {/* IN HOUSE */}
+                {/* IN HOUSE TEAM */}
                 <Row
                     icon={<Users />}
                     title="In House Team"
-                    desc="A full-time team may ensure consistency, but expertise is limited and cost remains fixed."
+                    desc="Full control and daily collaboration, but expensive overhead, limited perspective, and hard to scale."
                     values={[false, false, false, true, false]}
                 />
 
-                {/* AGENCIES */}
+                {/* TRADITIONAL AGENCIES */}
                 <Row
-                    icon={<PenTool />}
-                    title="Creative Agencies"
-                    desc="Structured workflows but often expensive, slow, and less flexible."
+                    icon={<Building />}
+                    title="Traditional Agencies"
+                    desc="Big name, big process, big bills. Often slow, bureaucratic, and you talk to account managers—not the people doing the work."
                     values={[false, false, true, true, false]}
                 />
 
@@ -65,16 +63,24 @@ export default function WhyChooseUs() {
                 <Row
                     icon={<User />}
                     title="Freelancers"
-                    desc="Budget-friendly but often lack reliability, consistency, and collaboration."
+                    desc="Affordable and flexible, but solo operators have blind spots, limited bandwidth, and can disappear when you need them most."
                     values={[false, true, false, false, true]}
                 />
 
-                {/* SELF SERVICE */}
+                {/* DIY TOOLS */}
                 <Row
-                    icon={<Briefcase />}
-                    title="Self-Service Tools"
-                    desc="DIY tools reduce cost, but lack strategic thinking and originality."
+                    icon={<Zap />}
+                    title="DIY Tools"
+                    desc="Cheap and fast, but you get what you pay for: templates everyone else uses, zero strategy, and no originality."
                     values={[false, false, true, true, false]}
+                />
+
+                {/* THENXMEDIA */}
+                <Row
+                    icon={<Star />}
+                    title="thenxmedia"
+                    desc="A global creative partner with the agility of a small team and the experience of a big one. You work directly with us. No middlemen. No ego. Just work that works."
+                    values={[true, true, true, true, true]}
                 />
             </div>
         </section>
@@ -88,8 +94,8 @@ function Platform({ icon, title, desc, active }) {
         <div className="flex gap-4 items-center">
             <div
                 className={`px-8 py-8 flex items-center justify-center rounded-xl ${active
-                        ? "bg-red-500 text-white"
-                        : "bg-white/5 text-red-500"
+                    ? "bg-red-500 text-white"
+                    : "bg-white/5 text-red-500"
                     }`}
             >
                 {icon}

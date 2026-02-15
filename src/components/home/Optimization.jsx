@@ -14,14 +14,14 @@ export default function Optimization() {
     redTextRefs.current.forEach((el) => {
       gsap.fromTo(
         el,
-        { color: "#9ca3af" }, 
+        { color: "#9ca3af" },
         {
-          color: "#fee2e2", 
+          color: "#EF4444",
           scrollTrigger: {
             trigger: el,
             start: "top 80%",
             end: "top 50%",
-            scrub: 1, 
+            scrub: 1,
           },
         }
       );
@@ -49,33 +49,19 @@ export default function Optimization() {
         {/* RIGHT SIDE: TEXT CONTENT */}
         <div className="w-full lg:w-2/3">
           <h2 className="title_text uppercase mb-4 lg:mb-8">
-            <span className="block text-white">Beyond Generic</span>
-            <span className="block text-white">
-              Training {" "}
+            <span className="block text-white">Services built</span>
+            <span className=" text-white">
+              for companies {" "}
               <span
                 ref={(el) => redTextRefs.current.push(el)}
               >
-                Your
+                that plan on sticking around
               </span>
-            </span>
-            <span
-
-              ref={(el) => redTextRefs.current.push(el)}
-            >
-              Personal Path to
-            </span>
-            <span
-
-              ref={(el) => redTextRefs.current.push(el)}
-            >
-              Peak Optimization
             </span>
           </h2>
 
           <p className="para_text max-w-xl">
-            Whether you're chasing your first sub-3 marathon or aiming to
-            shatter power records, we've built the ultimate performance
-            optimization system for endurance athletes.
+            We don’t build brands for businesses that might disappear next year. We build them for founders with real ambitions. Identity systems that scale. Packaging that travels. Websites that convert. If you’re here to build something lasting, you’re in the right place.
           </p>
         </div>
       </div>

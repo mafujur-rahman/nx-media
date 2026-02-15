@@ -112,12 +112,12 @@ export default function LeaderSection() {
                 {/* Title */}
                 <div className="text-center mb-16">
                     {/* Badge */}
-                    <div className="flex justify-center mb-6">
+                    <div className="flex justify-center  mb-6">
                         <span className=" px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-white text-xs md:text-sm font-medium">
                             We don’t just deliver. We build like it’s our own.
                         </span>
                     </div>
-                    <h2 className="title_text text-white">Results you can feel.</h2>
+                    <h2 className="title_text text-white max-w-6xl mx-auto">You’re not getting a faceless agency. You’re getting us.</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-10">
                     {/* Left Card */}

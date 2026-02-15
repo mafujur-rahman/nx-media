@@ -5,26 +5,42 @@ import gsap from "gsap";
 
 const faqs = [
     {
-        q: "What services do you offer for branding and web development?",
-        a: "We provide complete branding solutions including logo design, brand identity, and marketing materials, along with custom web development for responsive, user-friendly websites."
+        q: "What exactly do you do? Like, what services?",
+        a: "Brand identity, packaging design, graphic design, and web development. We build visual foundations for brands that want to stop blending in."
     },
     {
-        q: "How long does it take to complete a project?",
-        a: "Project timelines vary based on complexity, but most branding or website projects take between 4 to 8 weeks from initial concept to final delivery."
+        q: "How much does a project typically cost?",
+        a: "It depends on what you need. Brand identities start around $4,500, websites around $6,500. We'll give you a clear estimate after we understand your project."
     },
     {
-        q: "Do you provide ongoing support after the project?",
-        a: "Yes! We offer maintenance, updates, and brand consultation to ensure your website and brand stay current and effective."
+        q: "How long does it take to build a brand or website?",
+        a: "Most projects take 6-10 weeks from kickoff to launch. Brand identities are usually on the shorter side; custom websites can take a bit longer. We'll give you a timeline you can count on."
     },
     {
-        q: "Can you help improve our existing brand or website?",
-        a: "Absolutely! We offer rebranding and website revamp services to enhance your brand image, improve usability, and boost engagement."
+        q: "Do you work with clients outside your country?",
+        a: "Absolutely. Most of our clients are in the US, UK, Europe, and Middle East. We're built for global collaboration—time zones aren't an issue."
+    },
+    {
+        q: "Will I actually talk to the people doing the work?",
+        a: "Yes. No account managers. No middlemen. You'll work directly with the designers and developers building your brand."
+    },
+    {
+        q: "What if I already have a brand or website? Can you improve it?",
+        a: "Definitely. We do rebrands, website refreshes, and everything in between. Sometimes you just need a polish, not a full rebuild."
+    },
+    {
+        q: "Do you offer ongoing support after launch?",
+        a: "We do. Whether it's website maintenance, brand updates, or just a friendly voice when you need guidance—we're here after launch day."
+    },
+    {
+        q: "How do we start? What's the first step?",
+        a: "You hit 'Start the conversation' below. We hop on a call, listen to what you're building, and go from there. No pressure. Just a real conversation."
     }
 ];
 
 
 export default function FAQSection() {
-    const [openIndex, setOpenIndex] = useState(3);
+    const [openIndex, setOpenIndex] = useState(null);
     const contentRefs = useRef([]);
     const vertRefs = useRef([]);
 
@@ -82,11 +98,11 @@ export default function FAQSection() {
                     </span>
 
                     <h2 className="title_text text-white mb-8 mt-6">
-                        In case you were wondering
+                        We figured you might be wondering
                     </h2>
 
-                    <p className="text-sm text-white/60 max-w-lg mx-auto">
-                        Some of the most common things people ask us about our technology.
+                    <p className="text-lg text-white/60 max-w-lg mx-auto">
+                        Still deciding? Here’s what other people wanted to know first.
                     </p>
                 </div>
 

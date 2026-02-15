@@ -8,59 +8,97 @@ const Pricing = () => {
     const cardsRef = useRef([]);
     const [activeTab, setActiveTab] = useState("branding");
 
-    const brandingPlans = [
-        {
-            title: "BASIC BRANDING",
-            desc: "Establish a strong visual identity for your business with foundational branding elements.",
-            price: "200",
-            features: ["Logo Design", "Color Palette", "Typography Setup"],
-            buttonText: "Get Started",
-        },
-        {
-            title: "STANDARD BRANDING",
-            desc: "Comprehensive branding package for consistent and professional visual communication.",
-            price: "500",
-            features: ["Logo & Icon Set", "Brand Guidelines", "Stationery Design", "Social Media Kit"],
-            buttonText: "Get Started",
-        },
-        {
-            title: "PREMIUM BRANDING",
-            desc: "End-to-end branding experience for businesses seeking maximum impact and identity strength.",
-            price: "1000",
-            features: [
-                "Full Brand Strategy",
-                "Logo & Iconography",
-                "Stationery + Packaging Design",
-                "Social Media Kit",
-                "Brand Guidelines Document",
-            ],
-            buttonText: "Contact Us",
-        },
-    ];
+const brandingPlans = [
+    {
+        title: "ESSENTIAL IDENTITY",
+        desc: "A focused brand foundation that gives you everything needed to show up professionally. Perfect for startups and early-stage companies who want to get it right from day one.",
+        price: "200",
+        features: [
+            "Logo Design & Variations", 
+            "Color Palette Selection", 
+            "Typography System", 
+            "Basic Brand Guidelines"
+        ],
+        buttonText: "Get Started",
+    },
+    {
+        title: "COMPREHENSIVE BRAND",
+        desc: "A complete visual identity system that ensures consistency across every touchpoint. Built for growing brands ready to scale without losing their look.",
+        price: "500",
+        features: [
+            "Complete Logo System & Icons", 
+            "Full Color & Typography Palette", 
+            "Brand Guidelines Document", 
+            "Stationery Suite", 
+            "Social Media Kit", 
+            "Brand Touchpoint Templates"
+        ],
+        buttonText: "Get Started",
+    },
+    {
+        title: "PREMIUM BRAND + PACKAGING",
+        desc: "An end-to-end brand experience that includes both identity and packaging. Built for e-commerce businesses and product-led brands ready for shelf or doorstep.",
+        price: "1,000",
+        features: [
+            "Full Brand Strategy Workshop",
+            "Complete Visual Identity System",
+            "Detailed Brand Guidelines",
+            "Packaging Structure & Format Selection",
+            "Graphic Design for Packaging",
+            "Dieline Development & Print Files",
+            "Vendor Coordination Support",
+            "Brand Rollout Assets"
+        ],
+        buttonText: "Contact Us",
+    },
+];
 
-    const webPlans = [
-        {
-            title: "BASIC WEBSITE",
-            desc: "A simple, responsive website to establish your online presence quickly and efficiently.",
-            price: "500",
-            features: ["3 Pages", "Responsive Design", "Basic SEO Setup"],
-            buttonText: "Get Started",
-        },
-        {
-            title: "STANDARD WEBSITE",
-            desc: "A complete website with modern features and SEO to grow your business online.",
-            price: "1000",
-            features: ["5 Pages", "Responsive Design", "SEO Optimized", "CMS Integration", "Basic Analytics"],
-            buttonText: "Get Started",
-        },
-        {
-            title: "PREMIUM WEBSITE",
-            desc: "Custom web development solution with advanced functionality and scalable architecture.",
-            price: "2500",
-            features: ["10+ Pages", "Custom Features", "CMS Integration", "SEO & Analytics", "E-commerce Ready"],
-            buttonText: "Contact Us",
-        },
-    ];
+const webPlans = [
+    {
+        title: "ESSENTIAL WEBSITE",
+        desc: "A clean, responsive website that tells your story and converts visitors. Perfect for service businesses, startups, and companies needing a professional home base.",
+        price: "200",
+        features: [
+            "Up to 5 Custom Pages", 
+            "Mobile Responsive Design", 
+            "Basic SEO Setup", 
+            "Contact Forms", 
+            "Analytics Integration"
+        ],
+        buttonText: "Get Started",
+    },
+    {
+        title: "COMPREHENSIVE WEBSITE",
+        desc: "A feature-rich website built to scale. Includes CMS integration so you stay in control, plus optimization for search and performance.",
+        price: "500",
+        features: [
+            "Up to 10 Custom Pages", 
+            "CMS Implementation", 
+            "Advanced SEO Foundations", 
+            "Performance Optimization", 
+            "Custom Functionality", 
+            "E-commerce Readiness", 
+            "Analytics & Tracking Setup"
+        ],
+        buttonText: "Get Started",
+    },
+    {
+        title: "PREMIUM WEB EXPERIENCE",
+        desc: "A completely custom web solution designed and built for your specific needs. Complex functionality, scalability, and long-term partnership included.",
+        price: "1,000",
+        features: [
+            "Unlimited Custom Pages",
+            "Advanced Custom Features",
+            "E-commerce or Membership Functionality",
+            "Custom Integrations (CRM, ERP, etc.)",
+            "Enterprise-Grade Security",
+            "Load Balancing & Scalability Planning",
+            "Ongoing Technical Support",
+            "Performance Monitoring"
+        ],
+        buttonText: "Contact Us",
+    },
+];
 
     const plans = activeTab === "branding" ? brandingPlans : webPlans;
 

@@ -44,13 +44,11 @@ export default function Banner() {
                 </span>
 
                 <h1 className="title_text max-w-6xl">
-                    We Build <span className="text-red-500">High-Impact Websites</span> for
-                    Startups and Established Businesses
+                    You didn’t <span className="text-red-500">build a business</span> to blend in. Let’s make sure your brand doesn’t either.
                 </h1>
 
                 <p className="para_text max-w-3xl mx-auto lg:mt-4">
-                    Turn Your Idea Into Reality. Professional Websites designed to impress,
-                    convert, and grow with your business.
+                    Brand identity, packaging, and web development for companies that refuse to disappear into the background.
                 </p>
 
                 <div className="mt-5 lg:mt-10 flex flex-col sm:flex-row gap-4">
