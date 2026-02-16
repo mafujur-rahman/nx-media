@@ -108,7 +108,7 @@ export default function LeaderSection() {
 
     return (
         <section className="bg-black py-24">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto">
                 {/* Title */}
                 <div className="text-center mb-16">
                     {/* Badge */}
