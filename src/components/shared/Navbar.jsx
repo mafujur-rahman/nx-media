@@ -31,23 +31,25 @@ const Navbar = () => {
     <>
       {/* ===================== DESKTOP / TABLET ===================== */}
       <div className="hidden sm:flex fixed bottom-4 left-0 right-0 z-50 justify-center px-4">
-        <nav className="flex items-center gap-6 bg-black/80 backdrop-blur-md px-8 py-3 rounded-full border border-white/10 shadow-2xl">
+        <div className="animated-border rounded-full ">
 
-          <a className="text-white font-medium hover:text-red-500 cursor-pointer">Projects</a>
-          <a className="text-white font-medium hover:text-red-500 cursor-pointer">Services</a>
+          <nav className="flex items-center gap-6 px-8 py-3 rounded-full bg-black/90 backdrop-blur-md shadow-2xl border border-white/10">
 
-          {/* CENTER BUTTON */}
-          <div className="relative">
-            <button
-              onMouseEnter={() => { setHoverButton(true); handleMouseEnter(); }}
-              onMouseLeave={handleMouseLeave}
-              className="relative flex items-center gap-3 bg-black border border-red-500/50 px-5 py-2 rounded-full hover:border-red-400 transition shadow-[0_0_15px_rgba(239,68,68,0.3)]"
-            >
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                <img src="/NX-media.png" className="w-6 h-6 object-contain" alt="NX Media" />
-              </div>
-              <span className="text-white font-bold">Start a Project</span>
-            </button>
+            <a className="text-white font-medium hover:text-red-500 cursor-pointer">Projects</a>
+            <a className="text-white font-medium hover:text-red-500 cursor-pointer">Services</a>
+
+            <div className="relative">
+              <button
+                onMouseEnter={() => { setHoverButton(true); handleMouseEnter(); }}
+                onMouseLeave={handleMouseLeave}
+                className="relative flex items-center gap-3 bg-black border border-red-500/50 px-5 py-2 rounded-full "
+              >
+                <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                  <img src="/NX-media.png" className="w-6 h-6 object-contain" alt="NX Media" />
+                </div>
+                <span className="text-white font-bold">Start a Project</span>
+              </button>
+            </div>
 
             {/* Floating Modal */}
             <div
@@ -91,13 +93,18 @@ const Navbar = () => {
               {/* Bottom Pointer */}
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45" />
             </div>
-          </div>
 
-          <a href="#" className="text-white font-medium hover:text-red-500 transition-colors">Pricing</a>
-          <a href="#" className="text-white font-medium hover:text-red-500 transition-colors">More</a>
+            <a href="#" className="text-white font-medium hover:text-red-500 transition-colors">Pricing</a>
+            <a href="#" className="text-white font-medium hover:text-red-500 transition-colors">More</a>
 
-        </nav>
+          </nav>
+
+        </div>
       </div>
+
+
+
+
 
       {/* ===================== MOBILE NAVBAR ===================== */}
       <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50">

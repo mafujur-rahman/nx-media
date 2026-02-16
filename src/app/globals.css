@@ -44,3 +44,31 @@ body {
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
+
+/* navbar */
+.animated-border {
+  position: relative;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+
+  background:
+    linear-gradient(black, black) padding-box,
+    linear-gradient(
+      90deg,
+      transparent 40%,   /* start of red */
+      #ef4444 50%,       /* red in the middle */
+      transparent 60%    /* end of red */
+    ) border-box;
+
+  background-size: 100% 100%, 200% 100%;
+  animation: moveBorder 3s linear infinite;
+}
+
+@keyframes moveBorder {
+  0% {
+    background-position: 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 0%, 200% 0%;
+  }
+}
