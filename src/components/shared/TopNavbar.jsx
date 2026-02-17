@@ -76,12 +76,12 @@ export default function TopNavbar() {
     return (
         <>
             {/* ================= NAVBAR ================= */}
-            <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full px-4 pointer-events-none">
+            <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full px-4 md:px-10 lg:px-16 xl:px-0 xl:max-w-7xl xl:mx-auto pointer-events-none">
                 <div
                     ref={navRef}
                     className="pointer-events-auto mx-auto flex items-center justify-between
                     px-6 py-2 rounded-full bg-black/80 backdrop-blur-md
-                    border border-white/10 shadow-2xl w-full max-w-7xl"
+                    border border-white/10 shadow-2xl w-full xl:"
                 >
                     <div className="w-28 h-10 relative">
                         <Image src="/logo.png" alt="NX MEDIA" fill className="object-contain" />

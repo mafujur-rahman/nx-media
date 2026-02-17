@@ -12,7 +12,7 @@ export default function GlobalPresence() {
     ];
 
     return (
-        <section className="relative h-[90vh] w-full overflow-hidden">
+        <section className="relative h-full md:h-[90vh]  pt-36 md:pt-28 w-full overflow-hidden">
 
             {/* VIDEO BACKGROUND */}
             <video
@@ -29,7 +29,7 @@ export default function GlobalPresence() {
             <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
 
             {/* CONTENT */}
-            <div className="relative z-10 h-full flex flex-col items-center justify-end pb-24 px-6">
+            <div className="relative z-10 h-full flex flex-col items-center justify-end pb-8 lg:pb-24 px-6 md:px-10 lg:px-16 xl:px-0">
                 
                 {/* TITLE ABOVE GRID */}
                 <h2 className="text-3xl sm:text-4xl font-bold font-bricolage text-white mb-6 text-center">

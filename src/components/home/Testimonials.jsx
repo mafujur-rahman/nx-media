@@ -99,7 +99,7 @@ const Testimonial = () => {
   const t = testimonials[index];
 
   return (
-    <div className="bg-black py-24 flex items-center justify-center">
+    <div className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 flex items-center justify-center">
 
       <div className="max-w-7xl mx-auto">
         {/* Title */}

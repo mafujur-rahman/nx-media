@@ -114,7 +114,7 @@ const webPlans = [
     }, [activeTab]);
 
     return (
-        <section className="bg-black py-20 px-4 min-h-screen flex justify-center items-center">
+        <section className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 min-h-screen flex justify-center items-center">
             <div className="w-full max-w-7xl">
 
                 {/* Header */}
@@ -162,7 +162,7 @@ const webPlans = [
                         <div
                             key={index}
                             ref={(el) => (cardsRef.current[index] = el)}
-                            className="rounded-[30px] p-8 flex flex-col border border-dashed border-red-500/90 bg-gradient-to-br from-black via-red-900/20 to-black shadow-lg"
+                            className="rounded-[30px] p-5 lg:p-8  flex flex-col border border-dashed border-red-500/90 bg-gradient-to-br from-black via-red-900/20 to-black shadow-lg"
                         >
                             <h3 className="text-md font-bold tracking-widest mb-4 uppercase text-red-500">
                                 {plan.title}
@@ -183,7 +183,7 @@ const webPlans = [
                                 className="w-full py-4 px-6 flex justify-between items-center rounded-full font-bold mb-10 bg-red-600 shadow-md cursor-pointer text-white"
                                 icon={<ArrowRight size={18} />}
                             >
-                                <span className="text-sm font-semibold">{plan.buttonText}</span>
+                                <span className="text-sm md:text-[12px] lg:text-sm font-semibold">{plan.buttonText}</span>
                             </HoverSweepButton>
 
                             <ul className="space-y-3">
@@ -199,7 +199,7 @@ const webPlans = [
                 </div>
 
                 {/* ================= BONUS SECTION ================= */}
-                <div className="mt-20 relative rounded-[30px] p-[2px] overflow-hidden">
+                <div className="mt-10 lg:mt-20 relative rounded-[30px] p-[2px] overflow-hidden">
 
                     {/* 🔴 Smooth Spinning Red Border */}
                     <div className="absolute inset-0 rounded-[30px] animate-spin-slow
@@ -268,7 +268,7 @@ const webPlans = [
                             ].map((bonus, idx) => (
                                 <div
                                     key={idx}
-                                    className="p-6 rounded-3xl border border-white/5 bg-white/5 
+                                    className="p-5  rounded-3xl border border-white/5 bg-white/5 
                      hover:bg-white/10 transition-all duration-300"
                                 >
                                     <div className="mb-4">{bonus.icon}</div>

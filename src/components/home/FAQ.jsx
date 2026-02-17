@@ -88,11 +88,11 @@ export default function FAQSection() {
     };
 
     return (
-        <section className="bg-black py-40">
+        <section className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0">
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-8 lg:mb-12 xl:mb-16">
                     <span className="px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-xs md:text-sm font-medium text-white">
                         FAQ
                     </span>

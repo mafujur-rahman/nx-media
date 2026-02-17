@@ -171,14 +171,14 @@ const Service = () => {
 
 
     return (
-        <div className=" bg-black text-white p-6 md:p-12">
+        <div className=" bg-black text-white px-6 md:px-10 lg:px-16 xl:px-0 pt-8 lg:pt-16 ">
             <div className="max-w-7xl mx-auto">
                 {services.map((service, index) => (
                     <div key={service.id} className="border-b border-zinc-800">
                         {/* HEADER */}
                         <button
                             onClick={() => handleToggle(index)}
-                            className="w-full flex justify-between items-center py-10 text-left"
+                            className="w-full flex justify-between items-center py-8 lg:py-10 text-left"
                         >
                             <div>
                                 <p className="text-md  text-gray-400 mb-2 uppercase">
@@ -204,7 +204,7 @@ const Service = () => {
                             ref={(el) => (contentRefs.current[index] = el)}
                             className="overflow-hidden h-0 opacity-0"
                         >
-                            <div className="bg-white text-black rounded-[40px] p-8 md:p-16 mb-12 flex flex-col lg:flex-row gap-12">
+                            <div className="bg-white text-black rounded-[30px] px-4 py-6 md:px-8 md:py-12 mb-12 flex flex-col lg:flex-row gap-6 lg:gap-12">
                                 {/* TEXT */}
                                 <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-12">
                                     {service.content.map((col, idx) => (
