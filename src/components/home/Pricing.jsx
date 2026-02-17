@@ -8,97 +8,97 @@ const Pricing = () => {
     const cardsRef = useRef([]);
     const [activeTab, setActiveTab] = useState("branding");
 
-const brandingPlans = [
-    {
-        title: "ESSENTIAL IDENTITY",
-        desc: "A focused brand foundation that gives you everything needed to show up professionally. Perfect for startups and early-stage companies who want to get it right from day one.",
-        price: "200",
-        features: [
-            "Logo Design & Variations", 
-            "Color Palette Selection", 
-            "Typography System", 
-            "Basic Brand Guidelines"
-        ],
-        buttonText: "Get Started",
-    },
-    {
-        title: "COMPREHENSIVE BRAND",
-        desc: "A complete visual identity system that ensures consistency across every touchpoint. Built for growing brands ready to scale without losing their look.",
-        price: "500",
-        features: [
-            "Complete Logo System & Icons", 
-            "Full Color & Typography Palette", 
-            "Brand Guidelines Document", 
-            "Stationery Suite", 
-            "Social Media Kit", 
-            "Brand Touchpoint Templates"
-        ],
-        buttonText: "Get Started",
-    },
-    {
-        title: "PREMIUM BRAND + PACKAGING",
-        desc: "An end-to-end brand experience that includes both identity and packaging. Built for e-commerce businesses and product-led brands ready for shelf or doorstep.",
-        price: "1,000",
-        features: [
-            "Full Brand Strategy Workshop",
-            "Complete Visual Identity System",
-            "Detailed Brand Guidelines",
-            "Packaging Structure & Format Selection",
-            "Graphic Design for Packaging",
-            "Dieline Development & Print Files",
-            "Vendor Coordination Support",
-            "Brand Rollout Assets"
-        ],
-        buttonText: "Contact Us",
-    },
-];
+    const brandingPlans = [
+        {
+            title: "ESSENTIAL IDENTITY",
+            desc: "A focused brand foundation that gives you everything needed to show up professionally. Perfect for startups and early-stage companies who want to get it right from day one.",
+            price: "200",
+            features: [
+                "Logo Design & Variations",
+                "Color Palette Selection",
+                "Typography System",
+                "Basic Brand Guidelines"
+            ],
+            buttonText: "Get Started",
+        },
+        {
+            title: "COMPREHENSIVE BRAND",
+            desc: "A complete visual identity system that ensures consistency across every touchpoint. Built for growing brands ready to scale without losing their look.",
+            price: "400",
+            features: [
+                "Complete Logo System & Icons",
+                "Full Color & Typography Palette",
+                "Brand Guidelines Document",
+                "Stationery Suite",
+                "Social Media Kit",
+                "Brand Touchpoint Templates"
+            ],
+            buttonText: "Get Started",
+        },
+        {
+            title: "PREMIUM BRAND + PACKAGING",
+            desc: "An end-to-end brand experience that includes both identity and packaging. Built for e-commerce businesses and product-led brands ready for shelf or doorstep.",
+            price: "800",
+            features: [
+                "Full Brand Strategy Workshop",
+                "Complete Visual Identity System",
+                "Detailed Brand Guidelines",
+                "Packaging Structure & Format Selection",
+                "Graphic Design for Packaging",
+                "Dieline Development & Print Files",
+                "Vendor Coordination Support",
+                "Brand Rollout Assets"
+            ],
+            buttonText: "Get Started",
+        },
+    ];
 
-const webPlans = [
-    {
-        title: "ESSENTIAL WEBSITE",
-        desc: "A clean, responsive website that tells your story and converts visitors. Perfect for service businesses, startups, and companies needing a professional home base.",
-        price: "200",
-        features: [
-            "Up to 5 Custom Pages", 
-            "Mobile Responsive Design", 
-            "Basic SEO Setup", 
-            "Contact Forms", 
-            "Analytics Integration"
-        ],
-        buttonText: "Get Started",
-    },
-    {
-        title: "COMPREHENSIVE WEBSITE",
-        desc: "A feature-rich website built to scale. Includes CMS integration so you stay in control, plus optimization for search and performance.",
-        price: "500",
-        features: [
-            "Up to 10 Custom Pages", 
-            "CMS Implementation", 
-            "Advanced SEO Foundations", 
-            "Performance Optimization", 
-            "Custom Functionality", 
-            "E-commerce Readiness", 
-            "Analytics & Tracking Setup"
-        ],
-        buttonText: "Get Started",
-    },
-    {
-        title: "PREMIUM WEB EXPERIENCE",
-        desc: "A completely custom web solution designed and built for your specific needs. Complex functionality, scalability, and long-term partnership included.",
-        price: "1,000",
-        features: [
-            "Unlimited Custom Pages",
-            "Advanced Custom Features",
-            "E-commerce or Membership Functionality",
-            "Custom Integrations (CRM, ERP, etc.)",
-            "Enterprise-Grade Security",
-            "Load Balancing & Scalability Planning",
-            "Ongoing Technical Support",
-            "Performance Monitoring"
-        ],
-        buttonText: "Contact Us",
-    },
-];
+    const webPlans = [
+        {
+            title: "ESSENTIAL WEBSITE",
+            desc: "A clean, responsive website that tells your story and converts visitors. Perfect for service businesses, startups, and companies needing a professional home base.",
+            price: "100",
+            features: [
+                "Landing Page",
+                "Mobile Responsive Design",
+                "Basic SEO Setup",
+                "Contact Forms",
+                "Analytics Integration"
+            ],
+            buttonText: "Get Started",
+        },
+        {
+            title: "COMPREHENSIVE WEBSITE",
+            desc: "A feature-rich website built to scale. Includes CMS integration so you stay in control, plus optimization for search and performance.",
+            price: "500",
+            features: [
+                "5 to 10 Custom Pages",
+                "CMS Implementation",
+                "Advanced SEO Foundations",
+                "Performance Optimization",
+                "Custom Functionality",
+                "E-commerce Readiness",
+                "Analytics & Tracking Setup"
+            ],
+            buttonText: "Get Started",
+        },
+        {
+            title: "PREMIUM WEB EXPERIENCE",
+            desc: "A completely custom web solution designed and built for your specific needs. Complex functionality, scalability, and long-term partnership included.",
+            price: "1,000",
+            features: [
+                "Unlimited Custom Pages",
+                "Advanced Custom Features",
+                "E-commerce or Membership Functionality",
+                "Custom Integrations (CRM, ERP, etc.)",
+                "Enterprise-Grade Security",
+                "Load Balancing & Scalability Planning",
+                "Ongoing Technical Support",
+                "Performance Monitoring"
+            ],
+            buttonText: "Get Started",
+        },
+    ];
 
     const plans = activeTab === "branding" ? brandingPlans : webPlans;
 
@@ -157,20 +157,23 @@ const webPlans = [
                 </div>
 
                 {/* Pricing Grid */}
-                <div className="grid md:grid-cols-3 gap-8 items-start">
+                <div className="grid md:grid-cols-3 gap-8 items-stretch">
                     {plans.map((plan, index) => (
                         <div
                             key={index}
                             ref={(el) => (cardsRef.current[index] = el)}
-                            className="rounded-[30px] p-5 lg:p-8  flex flex-col border border-dashed border-red-500/90 bg-gradient-to-br from-black via-red-900/20 to-black shadow-lg"
+                            className="rounded-[30px] p-5 lg:p-8 flex flex-col border border-dashed border-red-500/90 bg-gradient-to-br from-black via-red-900/20 to-black shadow-lg h-full"
                         >
                             <h3 className="text-md font-bold tracking-widest mb-4 uppercase text-red-500">
                                 {plan.title}
                             </h3>
 
-                            <p className="text-sm text-white mb-8 leading-snug">
-                                {plan.desc}
-                            </p>
+                            {/* Fixed height description - adjust h-24 based on your needs */}
+                            <div className="mb-8 h-24">
+                                <p className="text-sm text-white leading-snug line-clamp-4">
+                                    {plan.desc}
+                                </p>
+                            </div>
 
                             <div className="mb-8">
                                 <div className="flex items-baseline">
@@ -189,7 +192,7 @@ const webPlans = [
                             <ul className="space-y-3">
                                 {plan.features.map((feature, i) => (
                                     <li key={i} className="flex items-start gap-3 text-sm text-white font-medium">
-                                        <Check size={16} className="text-red-500 mt-0.5" />
+                                        <Check size={16} className="text-red-500 mt-0.5 shrink-0" />
                                         {feature}
                                     </li>
                                 ))}

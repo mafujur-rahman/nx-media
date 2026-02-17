@@ -70,12 +70,7 @@ export default function WhyChooseUs() {
                         desc="Cheap and fast, but you get what you pay for: templates everyone else uses, zero strategy, and no originality."
                         values={[false, false, true, true, false]}
                     />
-                    <Row
-                        icon={<Star />}
-                        title="thenxmedia"
-                        desc="A global creative partner with the agility of a small team and the experience of a big one. You work directly with us. No middlemen. No ego. Just work that works."
-                        values={[true, true, true, true, true]}
-                    />
+                    
                 </div>
             </div>
         </section>

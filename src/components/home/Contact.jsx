@@ -62,7 +62,7 @@ export default function Contact() {
                                 {/* Avatar */}
                                 <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl overflow-hidden flex-shrink-0">
                                     <Image
-                                        src="/person.jpg"
+                                        src="/images/team/nazmul.jpeg"
                                         alt="Profile"
                                         width={300}
                                         height={300}
@@ -76,26 +76,23 @@ export default function Contact() {
                                     {/* Info */}
                                     <div className="space-y-1">
                                         <p className="text-white font-semibold text-lg sm:text-xl leading-tight">
-                                            Abdullah Al Noman
+                                            Nazmul Islam
                                         </p>
                                         <p className="text-white/60 text-sm sm:text-base">
-                                            CEO &amp; Co-Founder
+                                            Founder &amp; CEO
                                         </p>
-                                    </div>
-
-                                    {/* Phone */}
-                                    <div className="flex items-center gap-2 text-red-500 text-sm sm:text-base">
-                                        <Phone size={14} />
-                                        <span className="tracking-wide">+1 (716) 503-6335</span>
                                     </div>
 
                                     {/* CTA */}
                                     <a
-                                        href="#"
+                                        href="https://wa.me/8801710636221"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="inline-flex items-center justify-center rounded-full border border-red-500/40 px-4 py-2 text-sm sm:text-base text-red-500 hover:bg-red-500/10 transition w-fit"
                                     >
                                         Book a Call Directly
                                     </a>
+
 
                                 </div>
                             </div>
@@ -168,13 +165,16 @@ export default function Contact() {
 
                             {/* DETAILS */}
                             <div>
-                                <label className="block text-white text-sm sm:text-base mb-1 sm:mb-2">Project Details</label>
+                                <label className="block text-white text-sm sm:text-base mb-1 sm:mb-2">
+                                    Project Details
+                                </label>
                                 <textarea
                                     rows={4}
                                     placeholder="I want to redesign my website..."
-                                    className="w-full bg-black border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 text-sm sm:text-base"
+                                    className="w-full bg-black border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 text-sm sm:text-base resize-none"
                                 />
                             </div>
+
 
                             <HoverSweepButton
                                 type="submit"

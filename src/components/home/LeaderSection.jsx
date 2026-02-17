@@ -6,15 +6,15 @@ import gsap from "gsap";
 
 export default function LeaderSection() {
   const people = [
-    { name: "Nazmul Islam", role: "Founder & CEO", skills: "Brand strategy, Creative direction, Business growth", bio: "Nazmul leads the vision and ensures every project meets the standard—strategically sound and beautifully executed.", img: "/images/team/nazmul.png" },
-    { name: "Saima Sultana", role: "Co-Founder & Creative Director", skills: "Visual identity, Art direction, Brand storytelling", bio: "Saima shapes how brands look and feel, bringing clarity and intention to every visual decision.", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2" },
+    { name: "Nazmul Islam", role: "Founder & CEO", skills: "Brand strategy, Creative direction, Business growth", bio: "Nazmul leads the vision and ensures every project meets the standard—strategically sound and beautifully executed.", img: "/images/team/nazmul.jpeg" },
+    { name: "Saima Sultana", role: "Co-Founder & Creative Director", skills: "Visual identity, Art direction, Brand storytelling", bio: "Saima shapes how brands look and feel, bringing clarity and intention to every visual decision.", img: "/images/team/co-founder.png" },
     { name: "MD. Shakil", role: "Lead Software Engineer", skills: "Architecture, Performance optimization, Scalable systems", bio: "Shakil builds the technical backbone—ensuring websites are fast, secure, and built to handle whatever comes next.", img: "/images/team/MD. Shakil.jpg" },
     { name: "Tahmid Tishad", role: "Lead WordPress Developer", skills: "Custom themes, Plugin development, CMS architecture", bio: "Tahmid turns designs into functional WordPress sites that clients can actually manage themselves.", img: "/images/team/tahamid.jpg" },
     { name: "MD. Nafis", role: "Lead Backend Developer", skills: "API integration, Database design, Server management", bio: "Nafis handles the logic behind the scenes—making sure everything connects, communicates, and runs smoothly.", img: "/images/team/Nafijur.jpg" },
     { name: "MD. Mahfuz", role: "Lead Frontend Developer", skills: "Interactive experiences, Animation, Responsive development", bio: "Mahfuz brings designs to life in the browser—building interfaces that feel as good as they look.", img: "/images/team/Mafuzur.jpg" },
-    { name: "Mouradul Islam", role: "Lead Graphic Designer", skills: "Print design, Typography, Visual systems", bio: "Mourad crafts the tangible stuff—collateral, packaging, guidelines—with precision and purpose.", img: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39" },
-    { name: "Mahmuda Tahsin", role: "Lead UI/UX Designer", skills: "User research, Wireframing, Interface design", bio: "Mahmuda designs experiences that make sense—mapping user journeys and crafting interfaces people actually enjoy using.", img: "https://images.unsplash.com/photo-1502767089025-6572583495d0" },
-    { name: "Kazi Maruf", role: "Lead Digital Marketer", skills: "Content strategy, SEO, Growth planning", bio: "Maruf makes sure the work gets seen—connecting brand strategy with real-world visibility and results.", img: "https://images.unsplash.com/photo-1552058544-f2b08422138a" },
+    { name: "Mouradul Ahmed", role: "Lead Graphic Designer", skills: "Print design, Typography, Visual systems", bio: "Mourad crafts the tangible stuff—collateral, packaging, guidelines—with precision and purpose.", img: "/images/team/mouradul.jpeg" },
+    { name: "Mahmuda Tahsin", role: "Lead UI/UX Designer", skills: "User research, Wireframing, Interface design", bio: "Mahmuda designs experiences that make sense—mapping user journeys and crafting interfaces people actually enjoy using.", img: "/images/team/mahmuda.jpeg" },
+    { name: "Kazi Maruf", role: "Lead Digital Marketer", skills: "Content strategy, SEO, Growth planning", bio: "Maruf makes sure the work gets seen—connecting brand strategy with real-world visibility and results.", img: "/images/team/maruf.png" },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);

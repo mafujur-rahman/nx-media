@@ -40,7 +40,7 @@ export default function Banner() {
             <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 md:px-10 lg:px-16 xl:px-0 text-center">
 
                 <span className="mb-4 lg:mb-8 px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-xs md:text-sm font-medium">
-                    Trusted By 400+ Clients
+                    Trusted By 300+ Clients
                 </span>
 
                 <h1 className="title_text max-w-6xl">
@@ -56,7 +56,7 @@ export default function Banner() {
                         className="bg-red-500 text-white cursor-pointer"
                         icon={<HiArrowRight />}
                     >
-                        Build My Website
+                        Build My Brand
                     </HoverSweepButton>
 
                     <button className="flex items-center gap-2 cursor-pointer border border-red-500 px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all">

@@ -95,7 +95,7 @@ const Navbar = () => {
             </div>
 
             <a href="#" className="text-white font-medium hover:text-red-500 transition-colors">Pricing</a>
-            <a href="#" className="text-white font-medium hover:text-red-500 transition-colors">More</a>
+            <a href="#" className="text-white font-medium hover:text-red-500 transition-colors">Faq</a>
 
           </nav>
 
@@ -148,7 +148,7 @@ const Navbar = () => {
           {/* Column 5 */}
           <div className="flex flex-col items-center text-white cursor-pointer">
             <HiOutlineMenu className="text-xl mb-0.5" />
-            <span className="text-[10px] font-medium">More</span>
+            <span className="text-[10px] font-medium">Faq</span>
           </div>
 
         </div>

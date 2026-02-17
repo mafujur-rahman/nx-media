@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const WorkingProcess = () => {
     const paths = [
@@ -51,7 +52,7 @@ const WorkingProcess = () => {
                             <path
                                 d={path.d}
                                 stroke="#ff0000"
-                                strokeWidth="1.5"
+                                strokeWidth="1.8"
                                 fill="none"
                                 opacity="0.2"
                             />
@@ -76,15 +77,20 @@ const WorkingProcess = () => {
                 </svg>
 
                 {/* Central Hub Icon - Hidden on mobile/tablet */}
-                <div className="hidden lg:flex absolute top-[400px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                <div className="hidden lg:flex absolute top-[420px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                     <div className="relative">
                         <div className="absolute inset-0 bg-red-500/30 blur-2xl rounded-full scale-150 animate-pulse" />
                         <div className="w-20 h-20 bg-gradient-to-b from-red-400 to-red-700 rounded-full flex items-center justify-center border border-white/20 shadow-2xl relative z-10">
-                            <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                                <div className="w-6 h-4 bg-red-600 rounded-full relative">
-                                    <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-white rounded-full" />
-                                </div>
+                            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center overflow-hidden">
+                                <Image
+                                    src="/NX-media.png"  
+                                    alt="Company Logo"
+                                    width={32}
+                                    height={32}
+                                    className="object-contain"
+                                />
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -94,17 +100,22 @@ const WorkingProcess = () => {
                     <div className="relative">
                         <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full scale-150 animate-pulse" />
                         <div className="w-16 h-16 bg-gradient-to-b from-red-400 to-red-700 rounded-full flex items-center justify-center border border-white/20 shadow-2xl relative z-10">
-                            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                                <div className="w-4 h-3 bg-red-600 rounded-full relative">
-                                    <div className="absolute top-0.5 left-0.5 w-1 h-1 bg-white rounded-full" />
-                                </div>
+                            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+                                <Image
+                                    src="/NX-media.png"
+                                    alt="Company Logo"
+                                    width={24}
+                                    height={24}
+                                    className="object-contain"
+                                />
                             </div>
+
                         </div>
                     </div>
                 </div>
 
                 {/* The 2x3 Grid of Cards - Responsive grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-x-10 lg:gap-y-40 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-x-10 lg:gap-y-48 relative z-10">
                     {processSteps.map((f, i) => (
                         <ProcessCard key={i} {...f} index={i} />
                     ))}
@@ -124,7 +135,7 @@ const ProcessCard = ({ title, desc, index }) => (
     >
         <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">
             {title.split(" ").slice(0, -1).join(" ")}{" "}
-            <span className="italic font-serif font-light">{title.split(" ").pop()}</span>
+            <span className="italic font-bricolage font-light">{title.split(" ").pop()}</span>
         </h3>
         <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">{desc}</p>
 
