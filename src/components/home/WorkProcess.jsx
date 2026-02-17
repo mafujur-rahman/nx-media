@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useRef, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import gsap from "gsap";
@@ -50,27 +51,12 @@ const steps = [
         id: "05",
         label: "UI / UX Design",
         cards: [
-            {
-                title: "Wireframing & Prototyping",
-                img: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1000&auto=format&fit=crop"
-            },
-            {
-                title: "Website & Web App UI Design",
-                img: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1000&auto=format&fit=crop",
-                light: true
-            },
-            {
-                title: "Mobile App Interface Design",
-                img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop"
-            },
-            {
-                title: "User Experience Research & Testing",
-                img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop",
-                light: true
-            },
+            { title: "Wireframing & Prototyping", img: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1000&auto=format&fit=crop" },
+            { title: "Website & Web App UI Design", img: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1000&auto=format&fit=crop", light: true },
+            { title: "Mobile App Interface Design", img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop" },
+            { title: "User Experience Research & Testing", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop", light: true },
         ],
     },
-
     // ==== DEVELOPMENTS ====
     {
         id: "06",
@@ -84,31 +70,34 @@ const steps = [
 
 const WorkProcess = () => {
     const cardsRef = useRef(null);
+    const tabsRef = useRef(null);
     const [activeTab, setActiveTab] = useState("01");
     const [scrollIndex, setScrollIndex] = useState({});
-    const tabsRef = useRef(null);
-    const [cardsPerView, setCardsPerView] = useState(2); // Default for desktop
+    const [windowWidth, setWindowWidth] = useState(0);
+    const [cardsPerView, setCardsPerView] = useState(2);
 
     const activeStep = steps.find((step) => step.id === activeTab);
     const activeCards = activeStep?.cards || [];
     const currentIndex = scrollIndex[activeTab] || 0;
 
-    // Update cards per view based on screen size
+    // Update window width and cards per view
     useEffect(() => {
-        const updateCardsPerView = () => {
-            if (window.innerWidth < 640) {
-                setCardsPerView(1); // Mobile: 1 card
-            } else if (window.innerWidth < 1024) {
-                setCardsPerView(1.5); // Tablet: 1.5 cards (shows peek of next card)
-            } else {
-                setCardsPerView(2); // Desktop: 2 cards
-            }
-        };
-
-        updateCardsPerView();
-        window.addEventListener('resize', updateCardsPerView);
-        return () => window.removeEventListener('resize', updateCardsPerView);
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        handleResize(); // Set initial width
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
+
+    // Update cards per view based on window width
+    useEffect(() => {
+        if (windowWidth < 640) {
+            setCardsPerView(1);
+        } else if (windowWidth < 1024) {
+            setCardsPerView(1.5);
+        } else {
+            setCardsPerView(2);
+        }
+    }, [windowWidth]);
 
     const canSlideLeft = currentIndex > 0;
     const canSlideRight = currentIndex < activeCards.length - cardsPerView;
@@ -123,18 +112,18 @@ const WorkProcess = () => {
         setScrollIndex((prev) => ({ ...prev, [activeTab]: newIndex }));
     };
 
+    // GSAP animation for sliding cards and active button
     useEffect(() => {
         const container = cardsRef.current;
         if (!container || !container.children.length) return;
 
-        const cardWidth = container.children[0].offsetWidth + 24; // card width + gap
+        const cardWidth = container.children[0].offsetWidth + 24;
         gsap.to(container, {
             x: -currentIndex * cardWidth,
             duration: 0.8,
-            ease: "power3.out"
+            ease: "power3.out",
         });
 
-        // Animate active button
         const buttons = document.querySelectorAll(".step-btn");
         buttons.forEach((btn) => {
             const bg = btn.querySelector(".bg-anim");
@@ -149,7 +138,7 @@ const WorkProcess = () => {
         });
     }, [activeTab, currentIndex]);
 
-    // Touch and drag functionality for tabs
+    // Touch and drag for tabs
     useEffect(() => {
         const slider = tabsRef.current;
         if (!slider) return;
@@ -164,23 +153,13 @@ const WorkProcess = () => {
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
         };
-
-        const handleMouseLeave = () => {
-            isDown = false;
-            slider.classList.remove("cursor-grabbing");
-        };
-
-        const handleMouseUp = () => {
-            isDown = false;
-            slider.classList.remove("cursor-grabbing");
-        };
-
+        const handleMouseLeave = () => { isDown = false; slider.classList.remove("cursor-grabbing"); };
+        const handleMouseUp = () => { isDown = false; slider.classList.remove("cursor-grabbing"); };
         const handleMouseMove = (e) => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 1.5;
-            slider.scrollLeft = scrollLeft - walk;
+            slider.scrollLeft = scrollLeft - (x - startX) * 1.5;
         };
 
         slider.addEventListener("mousedown", handleMouseDown);
@@ -196,12 +175,15 @@ const WorkProcess = () => {
         };
     }, []);
 
+    const arrowSize = windowWidth < 640 ? 20 : windowWidth < 1024 ? 28 : 36;
+
     return (
         <section className="bg-black text-white pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                {/* Title */}
                 <div className="text-left mb-8 lg:mb-10 xl:mb-16">
-                    <h2 className="title_text text-white max-w-6xl ">Before you hire us, see what hiring us actually looks like.</h2>
+                    <h2 className="title_text text-white max-w-6xl">
+                        Before you hire us, see what hiring us actually looks like.
+                    </h2>
                 </div>
 
                 {/* Navigation + Arrows */}
@@ -209,7 +191,6 @@ const WorkProcess = () => {
                     <div
                         ref={tabsRef}
                         className="tabs-scroll w-full overflow-x-auto cursor-grab select-none scrollbar-hide"
-                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
                         <div className="flex items-center bg-black/40 border border-white/10 rounded-full p-1 w-max whitespace-nowrap">
                             {steps.map((step) => (
@@ -222,7 +203,7 @@ const WorkProcess = () => {
                                     <div className="bg-anim absolute bottom-0 left-0 w-full h-0 rounded-full bg-white z-0"></div>
                                     <span className="step-text relative z-10 flex items-center gap-1 sm:gap-2 opacity-60 whitespace-nowrap">
                                         <span>{step.id}</span>
-                                        <span className="">{step.label}</span>
+                                        <span>{step.label}</span>
                                     </span>
                                 </button>
                             ))}
@@ -238,7 +219,7 @@ const WorkProcess = () => {
                             onClick={() => canSlideLeft && slideCards("left")}
                             disabled={!canSlideLeft}
                         >
-                            <FaArrowLeft size={window.innerWidth < 640 ? 20 : window.innerWidth < 1024 ? 28 : 36} />
+                            <FaArrowLeft size={arrowSize} />
                         </button>
                         <button
                             className={`p-2 sm:p-3 lg:p-4 rounded-full transition-colors ${canSlideRight
@@ -248,7 +229,7 @@ const WorkProcess = () => {
                             onClick={() => canSlideRight && slideCards("right")}
                             disabled={!canSlideRight}
                         >
-                            <FaArrowRight size={window.innerWidth < 640 ? 20 : window.innerWidth < 1024 ? 28 : 36} />
+                            <FaArrowRight size={arrowSize} />
                         </button>
                     </div>
                 </div>
@@ -269,30 +250,22 @@ const WorkProcess = () => {
                 </div>
             </div>
 
-            {/* Hide scrollbar for tabs */}
             <style jsx>{`
-                .scrollbar-hide::-webkit-scrollbar {
-                    display: none;
-                }
-                @media (max-width: 480px) {
-                    .xs\\:inline {
-                        display: inline;
-                    }
-                }
-            `}</style>
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
         </section>
     );
 };
 
-// Card Component - Responsive
 const Card = ({ id, title, img, light }) => (
     <div
         className={`${light ? "bg-white text-black" : "bg-[#222222] text-white border border-white/5"
             } rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] flex-shrink-0 flex flex-col sm:flex-row w-[300px] sm:w-[450px] md:w-[550px] lg:w-[620px] h-[400px] sm:h-[350px] md:h-[380px] lg:h-[400px] overflow-hidden`}
     >
         <div className="w-full sm:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-center order-2 sm:order-1">
-            <span className={`${light ? "text-gray-400" : "text-gray-500"
-                } text-xs font-bold uppercase mb-3 sm:mb-4 tracking-widest`}>
+            <span className={`${light ? "text-gray-400" : "text-gray-500"} text-xs font-bold uppercase mb-3 sm:mb-4 tracking-widest`}>
                 {id}
             </span>
             <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold leading-tight uppercase">
@@ -303,8 +276,7 @@ const Card = ({ id, title, img, light }) => (
             <img
                 src={img}
                 alt={title}
-                className={`absolute inset-0 w-full h-full object-cover p-2 rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] ${light ? "" : "opacity-80"
-                    }`}
+                className={`absolute inset-0 w-full h-full object-cover p-2 rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] ${light ? "" : "opacity-80"}`}
                 loading="lazy"
             />
         </div>
