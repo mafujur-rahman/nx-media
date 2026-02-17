@@ -80,13 +80,13 @@ const WorkingProcess = () => {
                 <div className="hidden lg:flex absolute top-[420px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                     <div className="relative">
                         <div className="absolute inset-0 bg-red-500/30 blur-2xl rounded-full scale-150 animate-pulse" />
-                        <div className="w-20 h-20 bg-gradient-to-b from-red-400 to-red-700 rounded-full flex items-center justify-center border border-white/20 shadow-2xl relative z-10">
-                            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center overflow-hidden">
+                        <div className="w-29 h-29 bg-gradient-to-b from-red-400 to-red-700 rounded-[30px] flex items-center justify-center border border-white/20 shadow-2xl relative z-10">
+                            <div className="w-18 h-18 bg-white rounded-[20px] flex items-center justify-center overflow-hidden">
                                 <Image
                                     src="/NX-media.png"  
                                     alt="Company Logo"
-                                    width={32}
-                                    height={32}
+                                    width={52}
+                                    height={52}
                                     className="object-contain"
                                 />
                             </div>
