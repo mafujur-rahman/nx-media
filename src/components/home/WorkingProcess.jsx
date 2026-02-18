@@ -125,7 +125,10 @@ const WorkingProcess = () => {
     );
 };
 
-const ProcessCard = ({ title, desc, index }) => (
+const ProcessCard = ({ title, desc, index }) => {
+  const dates = ["W1", "W2", "W3", "W4", "W5", "W6"];
+  
+  return (
     <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -139,12 +142,49 @@ const ProcessCard = ({ title, desc, index }) => (
         </h3>
         <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">{desc}</p>
 
-        {/* Inner Card Visual */}
-        <div className="mt-4 sm:mt-auto bg-black/80 rounded-xl sm:rounded-2xl border border-white/5 h-24 sm:h-32 w-full overflow-hidden p-3 sm:p-4 group-hover:border-red-500/20 transition-colors duration-500">
-            <div className="w-full h-full opacity-20 bg-gradient-to-br from-red-500/20 to-transparent rounded-lg border border-dashed border-white/20 group-hover:opacity-30 transition-opacity duration-500" />
+        {/* Inner Card Visual - Timeline Slider */}
+        <div className="mt-4 sm:mt-auto bg-black/80 rounded-xl sm:rounded-2xl border border-white/5 h-24 sm:h-32 w-full overflow-hidden p-4 group-hover:border-red-500/20 transition-colors duration-500">
+            <div className="w-full h-full flex flex-col justify-center relative">
+                {/* Timeline track */}
+                <div className="relative h-6">
+                    {/* Background line */}
+                    <div className="absolute top-1/2 left-0 right-0 h-px bg-white/20 -translate-y-1/2" />
+                    
+                    {/* Active dots */}
+                    <div className="absolute top-1/2 left-0 right-0 flex justify-between -translate-y-1/2">
+                        {dates.map((date, i) => (
+                            <div key={i} className="relative">
+                                <motion.div
+                                    className={`w-2 h-2 rounded-full ${
+                                        i <= index ? 'bg-red-500' : 'bg-white/30'
+                                    }`}
+                                    animate={i === index ? { 
+                                        boxShadow: ['0 0 0px rgba(255,0,0,0)', '0 0 10px rgba(255,0,0,0.5)', '0 0 0px rgba(255,0,0,0)']
+                                    } : {}}
+                                    transition={{ duration: 2, repeat: Infinity }}
+                                />
+                                <span className="absolute top-4 left-1/2 -translate-x-1/2 text-[8px] text-white/40">
+                                    {date}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                    
+                    {/* Active range indicator */}
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${(index + 1) * 16.6}%` }}
+                        transition={{ duration: 1 }}
+                        viewport={{ once: true }}
+                        className="absolute top-1/2 left-0 h-px bg-gradient-to-r from-red-500 to-red-400 -translate-y-1/2"
+                        style={{ width: `${(index + 1) * 16.6}%` }}
+                    />
+                </div>
+            </div>
         </div>
     </motion.div>
-);
+  );
+};
 
 const processSteps = [
     {
