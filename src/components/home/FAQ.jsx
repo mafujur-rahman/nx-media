@@ -88,7 +88,7 @@ export default function FAQSection() {
     };
 
     return (
-        <section className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0">
+        <section id="faq" className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0">
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}

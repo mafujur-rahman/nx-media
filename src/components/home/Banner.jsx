@@ -10,6 +10,7 @@ export default function Banner() {
 
     return (
         <section
+        id="home"
             className="relative md:min-h-screen bg-black overflow-hidden text-white"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -44,7 +45,7 @@ export default function Banner() {
                 </span>
 
                 <h1 className="title_text max-w-6xl">
-                    You didn’t <span className="text-red-500">build a business</span> to blend in. Let’s make sure your brand doesn’t either.
+                    You didn’t <span className="text-red-600">build a business</span> to blend in. Let’s make sure your brand doesn’t either.
                 </h1>
 
                 <p className="para_text max-w-3xl mx-auto lg:mt-4">
@@ -53,7 +54,7 @@ export default function Banner() {
 
                 <div className="mt-5 lg:mt-10 flex flex-col sm:flex-row gap-4">
                     <HoverSweepButton
-                        className="bg-red-500 text-white cursor-pointer"
+                        className="bg-red-600 text-white cursor-pointer"
                         icon={<HiArrowRight />}
                     >
                         Build My Brand

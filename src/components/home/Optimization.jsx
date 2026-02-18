@@ -29,7 +29,7 @@ export default function Optimization() {
   }, []);
 
   return (
-    <section className="relative bg-black text-white pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 overflow-hidden">
+    <section id="about" className="relative bg-black text-white pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 overflow-hidden">
       <div className="relative z-10 xl:max-w-7xl xl:mx-auto flex flex-col lg:flex-row items-start gap-16">
         {/* LEFT SIDE: CALENDLY BUTTON */}
         <div className="w-full lg:w-1/3 flex justify-start">

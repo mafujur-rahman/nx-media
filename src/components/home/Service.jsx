@@ -171,7 +171,7 @@ const Service = () => {
 
 
     return (
-        <div className=" bg-black text-white px-6 md:px-10 lg:px-16 xl:px-0 pt-8 lg:pt-16 ">
+        <div id="services" className=" bg-black text-white px-6 md:px-10 lg:px-16 xl:px-0 pt-8 lg:pt-16 ">
             <div className="max-w-7xl mx-auto">
                 {services.map((service, index) => (
                     <div key={service.id} className="border-b border-zinc-800">

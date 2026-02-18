@@ -45,18 +45,26 @@ export default function TopNavbar() {
             .fromTo(
                 menuBg.current,
                 { clipPath: "inset(100% 0% 0% 0%)" },
-                { clipPath: "inset(0% 0% 0% 0%)", duration: 0.9 }
+                { clipPath: "inset(0% 0% 0% 0%)", duration: 1.2, ease: "expo.inOut" }
+            )
+            .fromTo(
+                menuBg.current,
+                { backgroundColor: "rgb(0,0,0)" },
+                { backgroundColor: "rgb(20,20,20)", duration: 1, ease: "sine.inOut" },
+                "-=1"
             )
             .fromTo(
                 menuItems.current,
-                { y: 20, opacity: 0 },
+                { y: 30, opacity: 0, filter: "blur(10px)" },
                 {
                     y: 0,
                     opacity: 1,
-                    stagger: 0.06,
-                    duration: 0.6,
+                    filter: "blur(0px)",
+                    stagger: 0.08,
+                    duration: 0.8,
+                    ease: "expo.out",
                 },
-                "-=0.4"
+                "-=0.6"
             );
 
         menuTl.current.eventCallback("onReverseComplete", () => {
@@ -73,6 +81,16 @@ export default function TopNavbar() {
         }
     }, [open]);
 
+    const handleLinkClick = (id) => {
+        setOpen(false);
+        setTimeout(() => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 800);
+    };
+
     return (
         <>
             {/* ================= NAVBAR ================= */}
@@ -81,7 +99,7 @@ export default function TopNavbar() {
                     ref={navRef}
                     className="pointer-events-auto mx-auto flex items-center justify-between
                     px-6 py-2 rounded-full bg-black/80 backdrop-blur-md
-                    border border-white/10 shadow-2xl w-full xl:"
+                    border border-white/10 shadow-2xl w-full"
                 >
                     <div className="w-28 h-10 relative">
                         <Image src="/logo.png" alt="NX MEDIA" fill className="object-contain" />
@@ -90,7 +108,7 @@ export default function TopNavbar() {
                     <button
                         onClick={() => setOpen(true)}
                         className="w-10 h-10 flex items-center justify-center rounded-full
-                        bg-black/40 border border-white/10 hover:bg-red-500 transition-colors"
+                        bg-black/40 border border-white/10 hover:bg-red-500 transition-all duration-500 ease-in-out hover:scale-110"
                     >
                         <HiMenuAlt3 size={22} />
                     </button>
@@ -112,7 +130,7 @@ export default function TopNavbar() {
                         <button
                             onClick={() => setOpen(false)}
                             className="w-12 h-12 rounded-full bg-white/10
-                            hover:bg-red-500 flex items-center justify-center transition-colors"
+                            hover:bg-red-500 hover:rotate-90 transition-all duration-500 ease-out hover:scale-110 flex items-center justify-center"
                         >
                             <HiX size={26} />
                         </button>
@@ -121,21 +139,26 @@ export default function TopNavbar() {
                     {/* LINKS */}
                     <div className="flex-1 flex items-center justify-center">
                         <ul className="space-y-10 text-4xl md:text-6xl font-bold text-center">
-                            {["Home", "Services", "Portfolio", "About", "Contact"].map(
-                                (item, i) => (
-                                    <li
-                                        key={i}
-                                        ref={(el) => (menuItems.current[i] = el)}
-                                        className="cursor-pointer text-white hover:text-red-500 transition-colors"
-                                    >
-                                        {item}
-                                    </li>
-                                )
-                            )}
+                            {[
+                                { name: "Home", id: "home" },
+                                { name: "Services", id: "services" },
+                                { name: "Projects", id: "projects" },
+                                { name: "About", id: "about" },
+                                { name: "Contact", id: "contact" }
+                            ].map((item, i) => (
+                                <li
+                                    key={i}
+                                    ref={(el) => (menuItems.current[i] = el)}
+                                    onClick={() => handleLinkClick(item.id)}
+                                    className="cursor-pointer text-white hover:text-red-500 transition-all duration-500 ease-out hover:scale-110 hover:tracking-wider"
+                                >
+                                    {item.name}
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    <p className="pb-10 text-center text-sm text-gray-400">
+                    <p className="pb-10 text-center text-sm text-gray-400 hover:text-gray-300 transition-colors duration-500">
                         © 2026 NX MEDIA
                     </p>
                 </div>

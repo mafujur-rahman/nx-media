@@ -11,12 +11,13 @@ import Testimonials from "@/components/home/Testimonials";
 import VideoSection from "@/components/home/Video";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import WorkingProcess from "@/components/home/WorkingProcess";
-import WorkProcess from "@/components/home/WorkProcess";
+import WorkProcess from "@/components/home/Projects";
 import ScrollToTop from "@/components/ScrollToTop";
 
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import Image from "next/image";
+import Projects from "@/components/home/Projects";
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
       <Optimization />
       <Service />
       <Pricing />
-      <WorkProcess />
+      <Projects />
       <IndustriesWeWork />
       <WhyChooseUs />
       <LeaderSection />

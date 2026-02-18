@@ -68,7 +68,7 @@ const steps = [
     },
 ];
 
-const WorkProcess = () => {
+const Projects = () => {
     const cardsRef = useRef(null);
     const tabsRef = useRef(null);
     const [activeTab, setActiveTab] = useState("01");
@@ -178,7 +178,7 @@ const WorkProcess = () => {
     const arrowSize = windowWidth < 640 ? 20 : windowWidth < 1024 ? 28 : 36;
 
     return (
-        <section className="bg-black text-white pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 overflow-hidden">
+        <section id="projects" className="bg-black text-white pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="text-left mb-8 lg:mb-10 xl:mb-16">
                     <h2 className="title_text text-white max-w-6xl">
@@ -283,4 +283,4 @@ const Card = ({ id, title, img, light }) => (
     </div>
 );
 
-export default WorkProcess;
+export default Projects;
