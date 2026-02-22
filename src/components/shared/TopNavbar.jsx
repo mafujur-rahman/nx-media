@@ -108,7 +108,7 @@ export default function TopNavbar() {
                     <button
                         onClick={() => setOpen(true)}
                         className="w-10 h-10 flex items-center justify-center rounded-full
-                        bg-black/40 border border-white/10 hover:bg-red-500 transition-all duration-500 ease-in-out hover:scale-110"
+                        bg-black/40 border text-white border-white/10 hover:bg-red-500 transition-all duration-500 ease-in-out hover:scale-110"
                     >
                         <HiMenuAlt3 size={22} />
                     </button>

@@ -31,7 +31,7 @@ export default function Banner() {
 
                         {/* Left - Brand */}
                         <div className="flex items-center gap-3 text-white/90">
-                            <div className="w-8 h-8 rounded-full border border-white/40 flex items-end justify-center">
+                            <div className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center">
                                 <span className="text-sm">⟲</span>
                             </div>
                             <span className="text-lg font-medium tracking-wide">

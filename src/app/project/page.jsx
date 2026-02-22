@@ -5,6 +5,7 @@ import MissionObjective from '@/components/Projects/MissionObjective';
 import ProjectOverview from '@/components/Projects/ProjectOverview';
 import ProjectsMarquee from '@/components/Projects/ProjectsMarquee';
 import TopImage from '@/components/Projects/TopImage';
+import WorkingProcessSection from '@/components/Projects/WorkingProcess';
 import Footer from '@/components/shared/Footer';
 import Navbar from '@/components/shared/Navbar';
 import TopNavbar from '@/components/shared/TopNavbar';
@@ -19,6 +20,7 @@ const ProjectsPage = () => {
       <ProjectOverview />
       <TopImage />
       <HowWeBegan />
+      {/* <WorkingProcessSection /> */}
       <MissionObjective />
       <ProjectsMarquee />
       <GlobalPresence />
