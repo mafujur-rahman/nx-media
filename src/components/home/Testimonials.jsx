@@ -4,49 +4,101 @@ import React, { useState, useRef } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import gsap from "gsap";
 
+// Brand logos 
+const brandLogos = {
+  "schonert": "/images/review/schonert.jpeg",
+  "advertee": "/images/review/advert.jpeg",
+  "Searle Interiors": "/images/review/searle.jpeg",
+  "La Ebanista": "/images/review/la.png", 
+  "Academic Hero": null,
+  "Anytask": "/images/review/Anytask.png",
+  "elektryk.pro": "/images/review/elyktro.jpeg",
+  "Lead the way": null, 
+  
+};
+
 const testimonials = [
   {
+    quote: "The NX Media was great! They worked with me on making changes to the logo and got exactly what I was looking for! Great service! ",
+    name: "Josh Smith",
+    role: "Founder at Schonert Marketing",
+    image:
+      "/images/review/josh.jpeg",
+    brand: "schonert",
+  },
+  {
+    quote: "This guy is the winner of a huge logo. I was satisfied with his work.",
+    name: "Petr Kucera",
+    role: "Founder at Advertee",
+    image:
+      "/images/review/petr.jpeg",
+    brand: "advertee",
+  },
+  {
+    quote: "The NX Media was helpful and kind. He understood what we wanted and tweaked the design when asked. He went above and beyond to give us many altered designs until we were happy. Highly recommend! ",
+    name: "Suzi Searle",
+    role: "Founder at Searle Interiors",
+    image:
+      "/images/review/suzi.jpeg",
+    brand: "Searle Interiors",
+  },
+  {
     quote:
-      "Merchandising with Depict takes 75% less time compared to our previous tool.",
-    name: "Benjamin Östgårdh",
-    role: "Head of Ecomm at Stiga",
+      "Working with NX Media over the past four years has been seamless, reliable, and consistently impressive.",
+    name: "Zenzele Silla",
+    role: "Founder & CEO",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
-    brand: "STIGA",
+      "/images/review/male.png",
+    brand: "La Ebanista",
   },
   {
-    quote: "The workflow efficiency improved drastically after switching platforms.",
-    name: "Sarah Johnson",
-    role: "Marketing Director",
+    quote: "Thank you again, The NX Media. I've worked with you on so many projects and look forward to many more. Thanks for always bringing my vision to reality.",
+    name: "Jim",
+    role: "Founder",
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop",
-    brand: "NIKE",
+      "/images/review/male.png",
+    brand: "Academic Hero",
   },
   {
-    quote: "Our design and product team collaboration has never been smoother.",
-    name: "Michael Chen",
-    role: "Product Lead",
+    quote: "Very professional freelancer with great design skills and delivered work very promptly,and accepted revisions when needed. Great experience.",
+    name: "Anytask Stef",
+    role: "Staff",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop",
-    brand: "ADOBE",
+      "/images/review/male.png",
+    brand: "Anytask",
   },
   {
-    quote: "We reduced launch time significantly while maintaining quality.",
-    name: "Emma Williams",
-    role: "Brand Manager",
+    quote: "Wow! Good skills, very fast wiek, good response time, I recommend 10/10.",
+    name: "Olsenskce",
+    role: "Founder",
     image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1000&auto=format&fit=crop",
-    brand: "ZARA",
+      "/images/review/male.png",
+    brand: "elektryk.pro",
   },
   {
-    quote: "The most intuitive merchandising platform we have ever used.",
-    name: "Daniel Carter",
-    role: "Ecommerce Strategist",
+    quote: "Above and beyond! The NX Media did a fantastic job with the latest batch of work I sent them. He went above and beyond the job spec and delivered additional files with ease. Thank you, The NX Media!",
+    name: "Anytask Jonathan",
+    role: "Staff",
     image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop",
-    brand: "PUMA",
+      "/images/review/male.png",
+    brand: "Anytask",
   },
+  {
+    quote: "Good work. Happy with the work produced in the end. The only reason why there is one less star is that I sent an example of a logo I liked, and the seller sent it back to me, but changed the colour. Other than that, I am happy.",
+    name: "Emma Gori",
+    role: "Founder",
+    image:
+      "/images/review/female.png",
+    brand: "Lead the way",
+  },
+  
 ];
+
+// Helper function to truncate text
+const truncateText = (text, maxLength = 120) => {
+  if (text.length <= maxLength) return text;
+  return text.substr(0, maxLength) + "...";
+};
 
 const Testimonial = () => {
   const [index, setIndex] = useState(0);
@@ -97,16 +149,19 @@ const Testimonial = () => {
   };
 
   const t = testimonials[index];
+  const hasBrandLogo = brandLogos[t.brand] !== null;
+
+  // Get truncated quote for display
+  const truncatedQuote = truncateText(t.quote, 150);
 
   return (
     <div className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 flex items-center justify-center">
-
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Title */}
         <div className="text-center mb-16">
           {/* Badge */}
-          <div className="flex justify-center  mb-6">
-            <span className=" px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-white text-xs md:text-sm font-medium">
+          <div className="flex justify-center mb-6">
+            <span className="px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-white text-xs md:text-sm font-medium">
               Real clients. Real feedback.
             </span>
           </div>
@@ -114,15 +169,13 @@ const Testimonial = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-
           {/* LEFT CARD */}
-          <div className="bg-white/5 border border-white/10 rounded-[30px] p-12 md:p-16 flex flex-col justify-center relative overflow-hidden h-[500px]">
-
+          <div className="bg-white/5 border border-white/10 rounded-[30px] p-8 md:p-12 flex flex-col justify-center relative overflow-hidden min-h-[400px] md:min-h-[500px]">
             {/* Centered Opposite Quote */}
-            <div className="absolute top-10 left-1/2 -translate-x-1/2 opacity-10">
+            <div className="absolute top-6 left-1/2 -translate-x-1/2 opacity-10">
               <svg
-                width="120"
-                height="80"
+                width="80"
+                height="60"
                 viewBox="0 0 75 54"
                 fill="white"
                 className="rotate-180"
@@ -132,60 +185,68 @@ const Testimonial = () => {
             </div>
 
             {/* Animated Content Wrapper */}
-            <div ref={contentRef} className="relative z-10">
-              <h2 className="text-white text-[28px] md:text-[38px] font-bold leading-[1.2] tracking-tight text-center">
-                {t.quote}
+            <div ref={contentRef} className="relative z-10 overflow-y-auto max-h-[300px] md:max-h-[350px] px-2">
+              <h2 className="text-white text-xl md:text-2xl lg:text-[28px] font-bold leading-relaxed tracking-tight text-center">
+                {truncatedQuote}
               </h2>
             </div>
 
             {/* Arrows */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-6">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-4">
               <button
                 onClick={() => changeSlide("prev")}
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition"
+                aria-label="Previous testimonial"
               >
-                <FaArrowLeft />
+                <FaArrowLeft size={16} />
               </button>
 
               <button
                 onClick={() => changeSlide("next")}
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition"
+                aria-label="Next testimonial"
               >
-                <FaArrowRight />
+                <FaArrowRight size={16} />
               </button>
             </div>
           </div>
 
           {/* RIGHT SIDE */}
           <div className="grid grid-cols-2 gap-4">
-
-            {/* Top Left: Image */}
-            <div className="h-[280px] md:h-[320px] rounded-[30px] overflow-hidden">
+            {/* Top Left: Profile Image */}
+            <div className="h-[240px] md:h-[280px] lg:h-[320px] rounded-[30px] overflow-hidden bg-white">
               <img
                 src={t.image}
                 alt={t.name}
-                className="w-full h-full object-cover grayscale brightness-90"
+                className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-500"
               />
             </div>
 
-            {/* Top Right: Brand */}
-            <div className="h-[280px] md:h-[320px] bg-white rounded-[30px] flex items-center justify-center p-10">
-              <span className="text-black font-black italic text-5xl tracking-tighter">
-                {t.brand}
-              </span>
+            {/* Top Right: Brand (Logo or Text) */}
+            <div className="h-[240px] md:h-[280px] lg:h-[320px] bg-white rounded-[30px] flex items-center justify-center p-6 overflow-hidden">
+              {hasBrandLogo ? (
+                <img 
+                  src={brandLogos[t.brand]} 
+                  alt={`${t.brand} logo`}
+                  className="max-w-full max-h-full object-contain"
+                />
+              ) : (
+                <span className="text-black font-black italic text-3xl md:text-4xl lg:text-5xl tracking-tighter text-center break-words">
+                  {t.brand}
+                </span>
+              )}
             </div>
 
-
-            <div className="col-span-2 bg-white/5 rounded-[30px] py-12 flex flex-col items-center justify-center border border-white/10">
-              <h3 className="text-white text-2xl font-bold tracking-tight">
+            {/* Bottom: Name and Role */}
+            <div className="col-span-2 bg-white/5 rounded-[30px] py-8 md:py-10 lg:py-12 px-4 flex flex-col items-center justify-center border border-white/10">
+              <h3 className="text-white text-xl md:text-2xl font-bold tracking-tight text-center">
                 {t.name}
               </h3>
-              <p className="text-gray-400 text-[12px] font-bold uppercase tracking-[0.1em] mt-2">
+              <p className="text-gray-400 text-[10px] md:text-[12px] font-bold uppercase tracking-[0.1em] mt-2 text-center">
                 {t.role}
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
