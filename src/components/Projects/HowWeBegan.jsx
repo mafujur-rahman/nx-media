@@ -1,10 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import React from "react";
 
 const steps = [
   "Discovery",
@@ -15,47 +11,6 @@ const steps = [
 ];
 
 export default function HowWeBegan() {
-  const processWrapperRef = useRef(null);
-  const progressRef = useRef(null);
-  const stepsRef = useRef([]);
-
-  useEffect(() => {
-  const ctx = gsap.context(() => {
-
-    const totalSteps = steps.length;
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: processWrapperRef.current,
-        start: "top top",
-        end: "+=" + totalSteps * 400, // 👈 proportional scroll
-        scrub: 1, // 👈 smoother scrubbing
-        pin: true,
-        anticipatePin: 1,
-      },
-    });
-
-    // Animate progress line evenly
-    tl.to(progressRef.current, {
-      scaleX: 1,
-      transformOrigin: "left center",
-      ease: "none",
-      duration: totalSteps,
-    }, 0);
-
-    // Activate each step exactly in sync
-    stepsRef.current.forEach((step, i) => {
-      tl.to(step, {
-        color: "#ffffff",
-        duration: 0.3,
-      }, i);
-    });
-
-  }, processWrapperRef);
-
-  return () => ctx.revert();
-}, []);
-
   return (
     <section className="bg-black text-white py-24 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
@@ -82,28 +37,20 @@ export default function HowWeBegan() {
         </div>
 
         {/* ===== WORKING PROCESS ===== */}
-        <div ref={processWrapperRef} className="relative mt-24">
-          <div className="relative py-24">
+        <div className="relative mt-16">
+          <div className="relative">
 
-            {/* Base Gray Line */}
+            {/* Static Gray Line */}
             <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 border-t border-dotted border-white/20" />
-
-            {/* Red Animated Line */}
-            <div
-              ref={progressRef}
-              className="absolute top-1/2 left-0 w-full -translate-y-1/2 border-t-2 border-dotted border-red-500"
-              style={{ transform: "scaleX(0)", transformOrigin: "left center" }}
-            />
 
             {/* Steps */}
             <div className="relative flex flex-col lg:flex-row items-center justify-between gap-12">
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  ref={(el) => (stepsRef.current[index] = el)}
                   className="px-12 py-5 rounded-full
                              bg-white/[0.03]
-                             text-gray-500
+                             text-white
                              text-lg font-medium tracking-wide
                              backdrop-blur-md"
                 >
