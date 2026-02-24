@@ -48,7 +48,7 @@ const testimonials = [
     name: "Zenzele Silla",
     role: "Founder & CEO",
     image:
-      "/images/review/male.png",
+      "/images/review/zenzele.jpeg",
     brand: "La Ebanista",
   },
   {
@@ -88,7 +88,7 @@ const testimonials = [
     name: "Emma Gori",
     role: "Founder",
     image:
-      "/images/review/female.png",
+      "/images/review/female-icon.png",
     brand: "Lead the way",
   },
   

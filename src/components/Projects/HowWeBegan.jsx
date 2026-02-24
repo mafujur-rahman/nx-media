@@ -48,12 +48,7 @@ export default function HowWeBegan() {
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className="px-12 py-5 rounded-full
-                             bg-white/[0.03]
-                             text-white
-                             text-lg font-medium tracking-wide
-                             backdrop-blur-md"
-                >
+                  className="px-12 py-5 rounded-full bg-white/5 text-white text-lg font-medium tracking-wide backdrop-blur-md">
                   {step}
                 </div>
               ))}
