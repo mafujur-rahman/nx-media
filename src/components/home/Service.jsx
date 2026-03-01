@@ -17,30 +17,44 @@ const Service = () => {
             subtitle: "UNLOCK YOUR BRAND'S FULL POTENTIAL WITH STRATEGIC DESIGN",
             content: [
                 {
-                    label: "LOGO DESIGN",
+                    label: "LOGO & BRAND IDENTITY",
                     items: [
-                        "LOGO & VISUAL DESIGN",
-                        "COLOR & TYPOGRAPHY",
-                        "BRAND VOICE & TONE",
-                        "CONSISTENT BRAND GUIDELINES"
+                        "LOGO DESIGN",
+                        "BRAND STYLE GUIDES",
+                        "BUSINESS CARDS & STATIONERY",
+                        "FONTS & TYPOGRAPHY"
                     ]
                 },
                 {
-                    label: "PACKAGING DESIGN",
+                    label: "PRINT DESIGN",
                     items: [
-                        "STRUCTURE & FORMAT SELECTION",
-                        "MATERIAL CONSULTATION",
-                        "GRAPHIC DESIGN & VISUALS",
-                        "DIELINE & PRINT PRODUCTION"
+                        "BROCHURE DESIGN",
+                        "FLYER DESIGN",
+                        "PACKAGING & LABEL DESIGN",
+                        "POSTER DESIGN",
+                        "CATALOG DESIGN",
+                        "MENU DESIGN",
+                        "CALENDER DESIGN",
                     ]
                 },
                 {
-                    label: "STATIONARY DESIGN",
+                    label: "MARKETING DESIGN",
                     items: [
-                        "STATIONERY & COLLATERAL",
-                        "BRAND TOUCHPOINTS",
-                        "ASSET LIBRARIES",
-                        "BRAND ROLLOUT"
+                        "SOCIAL MEDIA DESIGN",
+                        "EMAIL DESIGN",
+                        "WEB BANNERS",
+                        "SIGNAGE DESIGN"
+                    ]
+                },
+                {
+                    label: "OTHER VISUAL DESIGN",
+                    items: [
+                        "COMPANY PROFILE DESIGN",
+                        "RESUME DESIGN",
+                        "PRESENTATION DESIGN",
+                        "VECTOR TRACING",
+                        "BOOK DESIGN",
+                        "BOOK COVER DESIGN",
                     ]
                 }
             ],
