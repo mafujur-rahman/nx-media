@@ -17,7 +17,7 @@ const Service = () => {
             subtitle: "UNLOCK YOUR BRAND'S FULL POTENTIAL WITH STRATEGIC DESIGN",
             content: [
                 {
-                    label: "IDENTITY",
+                    label: "LOGO DESIGN",
                     items: [
                         "LOGO & VISUAL DESIGN",
                         "COLOR & TYPOGRAPHY",
@@ -35,7 +35,7 @@ const Service = () => {
                     ]
                 },
                 {
-                    label: "APPLICATION",
+                    label: "STATIONARY DESIGN",
                     items: [
                         "STATIONERY & COLLATERAL",
                         "BRAND TOUCHPOINTS",

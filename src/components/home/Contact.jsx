@@ -62,7 +62,7 @@ export default function Contact() {
                                 {/* Avatar */}
                                 <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl overflow-hidden flex-shrink-0">
                                     <Image
-                                        src="/images/team/nazmul.jpeg"
+                                        src="/images/team/nazmul-islam.png"
                                         alt="Profile"
                                         width={300}
                                         height={300}

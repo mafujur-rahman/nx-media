@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 export default function LeaderSection() {
   const people = [
-    { name: "Nazmul Islam", role: "Founder & CEO", skills: "Brand strategy, Creative direction, Business growth", bio: "Nazmul leads the vision and ensures every project meets the standard—strategically sound and beautifully executed.", img: "/images/team/nazmul.jpeg" },
+    { name: "Nazmul Islam", role: "Founder & CEO", skills: "Brand strategy, Creative direction, Business growth", bio: "Nazmul leads the vision and ensures every project meets the standard—strategically sound and beautifully executed.", img: "/images/team/nazmul-islam.png" },
     { name: "Saima Sultana", role: "Co-Founder & Creative Director", skills: "Visual identity, Art direction, Brand storytelling", bio: "Saima shapes how brands look and feel, bringing clarity and intention to every visual decision.", img: "/images/team/co-founder.png" },
     { name: "MD. Shakil", role: "Lead Software Engineer", skills: "Architecture, Performance optimization, Scalable systems", bio: "Shakil builds the technical backbone—ensuring websites are fast, secure, and built to handle whatever comes next.", img: "/images/team/MD. Shakil.jpg" },
     { name: "Tahmid Tishad", role: "Lead WordPress Developer", skills: "Custom themes, Plugin development, CMS architecture", bio: "Tahmid turns designs into functional WordPress sites that clients can actually manage themselves.", img: "/images/team/tahamid.jpg" },

@@ -181,7 +181,7 @@ const Navbar = () => {
               </div>
               <div className="mt-auto bg-slate-200 relative overflow-hidden transition-all duration-500 h-60">
                 <img
-                  src="/images/team/nazmul.jpeg"
+                  src="/images/team/nazmul-islam.png"
                   alt="Featured"
                   className="object-cover w-full h-full"
                 />

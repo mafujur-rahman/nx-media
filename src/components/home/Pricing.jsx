@@ -12,7 +12,7 @@ const Pricing = () => {
         {
             title: "ESSENTIAL IDENTITY",
             desc: "A focused brand foundation that gives you everything needed to show up professionally. Perfect for startups and early-stage companies who want to get it right from day one.",
-            price: "200",
+            price: "100",
             features: [
                 "Logo Design & Variations",
                 "Color Palette Selection",
