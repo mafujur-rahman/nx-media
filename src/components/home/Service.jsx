@@ -82,7 +82,9 @@ const Service = () => {
                         "MODERN UI DESIGN",
                         "DESIGN SYSTEMS",
                         "MOBILE APP DESIGN",
-                        "WEB APP DESIGN"
+                        "WEB APP DESIGN",
+                        "LANDING PAGE DESIGN",
+                        "ICON DESIGN",
                     ]
                 },
                 {
@@ -107,6 +109,9 @@ const Service = () => {
                 {
                     label: "WEBSITE DEVELOPMENT",
                     items: [
+                        "FULL STACK WEB APPS",
+                        "APIS & INTEGRATIONS",
+                        "DATABASE",
                         "BUSINESS WEBSITES",
                         "E-COMMERCE DEVELOPMENT",
                         "CUSTOM WEBSITES",
