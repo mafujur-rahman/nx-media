@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { HiOutlineCurrencyDollar, HiOutlineFolder, HiOutlineMenu, HiOutlinePuzzle, HiX } from "react-icons/hi";
 import { createPortal } from "react-dom";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [hoverButton, setHoverButton] = useState(false);
@@ -12,6 +13,8 @@ const Navbar = () => {
   const buttonRef = useRef(null);
   const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
   const hideTimeout = useRef(null);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const services = [
     { id: "brand-identity", title: "Brand Identity", desc: "Complete visual identity systems" },
@@ -32,7 +35,7 @@ const Navbar = () => {
       // Position the modal ABOVE the button (subtract modal height + spacing)
       // Since navbar is at bottom, we need to go UP from the button
       setModalPosition({
-        top: rect.top - 400, 
+        top: rect.top - 400,
         left: rect.left + rect.width / 2,
       });
     }
@@ -62,12 +65,18 @@ const Navbar = () => {
   };
 
   const scrollToSection = (sectionId) => {
+    // If not on homepage → go there with hash
+    if (pathname !== "/") {
+      router.push(`/#${sectionId}`);
+      return;
+    }
+
+    // If already on homepage → smooth scroll
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
   // Calculate modal position whenever button position might change
   useEffect(() => {
     const handleScroll = () => {
@@ -112,7 +121,7 @@ const Navbar = () => {
             </a>
 
             {/* Start a Project Button */}
-            <div 
+            <div
               ref={buttonRef}
               onMouseEnter={() => { setHoverButton(true); handleMouseEnter(); }}
               onMouseLeave={handleMouseLeave}

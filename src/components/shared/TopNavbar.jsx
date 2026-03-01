@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import gsap from "gsap";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function TopNavbar() {
     const navRef = useRef(null);
@@ -14,6 +15,8 @@ export default function TopNavbar() {
 
     const [open, setOpen] = useState(false);
     const scrolled = useRef(false);
+    const router = useRouter();
+    const pathname = usePathname();
 
     /* ================= NAVBAR SHRINK ================= */
     useEffect(() => {
@@ -83,6 +86,14 @@ export default function TopNavbar() {
 
     const handleLinkClick = (id) => {
         setOpen(false);
+
+        // If NOT on homepage → go to homepage first
+        if (pathname !== "/") {
+            router.push(`/#${id}`);
+            return;
+        }
+
+        // If already on homepage → smooth scroll
         setTimeout(() => {
             const element = document.getElementById(id);
             if (element) {

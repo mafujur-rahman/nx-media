@@ -1,3 +1,4 @@
+"use client"
 import Banner from "@/components/home/Banner";
 import Contact from "@/components/home/Contact";
 import FAQSection from "@/components/home/FAQ";
@@ -18,8 +19,23 @@ import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import Image from "next/image";
 import Projects from "@/components/home/Projects";
+import { useEffect } from "react";
 
 export default function Home() {
+
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      const el = document.getElementById(hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    }
+  }, []);
+
+  
   return (
     <div>
       <Navbar />
