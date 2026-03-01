@@ -90,11 +90,13 @@ const Pricing = () => {
                 "Unlimited Custom Pages",
                 "Advanced Custom Features",
                 "E-commerce or Membership Functionality",
+                "WordPress Development",
+                "API Integrations",
                 "Custom Integrations (CRM, ERP, etc.)",
-                "Enterprise-Grade Security",
                 "Load Balancing & Scalability Planning",
                 "Ongoing Technical Support",
-                "Performance Monitoring"
+                "Performance Monitoring",
+                "Hosting & Domain Setup",
             ],
             buttonText: "Get Started",
         },
@@ -182,12 +184,15 @@ const Pricing = () => {
                                 </div>
                             </div>
 
-                            <HoverSweepButton
-                                className="w-full py-4 px-6 flex justify-between items-center rounded-full font-bold mb-10 bg-red-600 shadow-md cursor-pointer text-white"
-                                icon={<ArrowRight size={18} />}
-                            >
-                                <span className="text-sm md:text-[12px] lg:text-sm font-semibold">{plan.buttonText}</span>
-                            </HoverSweepButton>
+                            {/* Fixed button wrapper - removed mb-10 that was pushing buttons unevenly */}
+                            <div className="w-full mb-10">
+                                <HoverSweepButton
+                                    className="w-full py-4 px-6 flex justify-between items-center rounded-full font-bold bg-red-600 shadow-md cursor-pointer text-white"
+                                    icon={<ArrowRight size={18} />}
+                                >
+                                    <span className="text-sm md:text-[12px] lg:text-sm font-semibold">{plan.buttonText}</span>
+                                </HoverSweepButton>
+                            </div>
 
                             <ul className="space-y-3">
                                 {plan.features.map((feature, i) => (
@@ -203,11 +208,11 @@ const Pricing = () => {
 
                 {/* ================= MONTHLY RETAINER SECTION ================= */}
                 <div className="mt-14 lg:mt-24 relative rounded-[30px] p-[2px] overflow-hidden">
-
-                    {/* 🔴 Animated Border */}
-                    <div className="absolute inset-0 rounded-[30px] animate-spin-slow bg-[conic-gradient(from_0deg,transparent,rgba(255,0,0,0.9),transparent)]  blur-[3px] opacity-80 pointer-events-none" />
+                    {/* 🔴 Animated Border - Longer, more visible line that doesn't fade in corners */}
+                    <div className="absolute inset-0 rounded-[30px] animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0deg,transparent_270deg,#ff0000_280deg,#ff0000_350deg,transparent_360deg)] blur-[1px] opacity-100 pointer-events-none" />
+                    
                     {/* Inner Container */}
-                    <div className="relative rounded-[28px] px-6 md:px-12 py-12  bg-gradient-to-br from-zinc-900 via-black to-zinc-900  border border-white/10">
+                    <div className="relative rounded-[28px] px-6 md:px-12 py-12 bg-gradient-to-br from-zinc-900 via-black to-zinc-900 border border-white/10">
                         {/* Glow */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-[120px] -z-10" />
 
@@ -227,7 +232,7 @@ const Pricing = () => {
                         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
 
                             {/* LEFT — Pricing Card */}
-                            <div className="relative bg-white/[0.04] backdrop-blur-xl   border border-white/10 rounded-3xl   p-6 sm:p-8 lg:p-10   flex flex-col justify-between">
+                            <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
 
                                 <div>
                                     <h4 className="text-white text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
@@ -252,10 +257,9 @@ const Pricing = () => {
                                 </div>
 
                                 <div className="mt-8 sm:mt-10">
-
                                     <HoverSweepButton
                                         onClick={() => window.open("https://wa.me/8801710636221", "_blank")}
-                                        className="w-full py-3 sm:py-4 px-5 sm:px-6  flex justify-between items-center cursor-pointer rounded-full font-semibold  bg-red-600 shadow-lg  hover:shadow-red-600/30  transition-all duration-300 text-white"
+                                        className="w-full py-3 sm:py-4 px-5 sm:px-6 flex justify-between items-center cursor-pointer rounded-full font-semibold bg-red-600 shadow-lg hover:shadow-red-600/30 transition-all duration-300 text-white"
                                         icon={<ArrowRight size={18} />}
                                     >
                                         <span className="text-xs sm:text-sm font-semibold tracking-wide">
@@ -266,13 +270,11 @@ const Pricing = () => {
                                     <p className="text-center text-xs text-zinc-500 mt-3 sm:mt-4">
                                         Cancel anytime • No long-term contract
                                     </p>
-
                                 </div>
                             </div>
 
                             {/* RIGHT — Features */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-
                                 {[
                                     "Unlimited design requests",
                                     "Priority development support",
@@ -285,27 +287,20 @@ const Pricing = () => {
                                 ].map((feature, idx) => (
                                     <div
                                         key={idx}
-                                        className="flex items-center gap-3  p-4 rounded-2xl  border border-white/5  hover:border-red-500/40  transition"
+                                        className="flex items-center gap-3 p-4 rounded-2xl border border-white/5 hover:border-red-500/40 transition"
                                     >
-                                        <div className="w-5 h-5 rounded-full bg-red-500  flex items-center justify-center  text-white text-xs font-bold shrink-0">
+                                        <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
                                             ✓
                                         </div>
-
                                         <p className="text-zinc-300 text-sm leading-relaxed">
                                             {feature}
                                         </p>
                                     </div>
                                 ))}
-
                             </div>
-
                         </div>
-
                     </div>
                 </div>
-
-
-
             </div>
         </section>
     );
