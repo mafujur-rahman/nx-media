@@ -105,30 +105,32 @@ const Service = () => {
             subtitle: "BUILD SCALABLE, HIGH-PERFORMANCE WEBSITES & APPS",
             content: [
                 {
-                    label: "FRONTEND",
+                    label: "WEBSITE DEVELOPMENT",
                     items: [
-                        "RESPONSIVE UI DESIGN",
-                        "INTERACTIVE USER EXPERIENCES",
-                        "REACT / NEXT.JS DEVELOPMENT",
-                        "PERFORMANCE OPTIMIZATION"
+                        "BUSINESS WEBSITES",
+                        "E-COMMERCE DEVELOPMENT",
+                        "CUSTOM WEBSITES",
+                        "LANDING PAGES"
                     ]
                 },
                 {
-                    label: "BACKEND",
+                    label: "WEBSITE PLATFORMS",
                     items: [
-                        "API INTEGRATION",
-                        "DATABASE DESIGN",
-                        "SERVER-SIDE LOGIC",
-                        "SECURITY & AUTHENTICATION"
+                        "WORDPRESS",
+                        "WIX",
+                        "WEBFLOW",
+                        
                     ]
                 },
                 {
-                    label: "MAINTENANCE",
+                    label: "WEBSITE MAINTENANCE",
                     items: [
+                        "WEBSITE CUSTOMIZATION",
                         "BUG FIXES & UPDATES",
                         "SEO & ANALYTICS",
-                        "SCALABILITY PLANNING",
-                        "TECHNICAL SUPPORT"
+                        "BACKUP & MIGRATION",
+                        "SPEED OPTIMIZATION",
+                        "TECHNICAL SUPPORT",
                     ]
                 }
             ],
