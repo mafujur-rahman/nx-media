@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";

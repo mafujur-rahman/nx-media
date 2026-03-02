@@ -32,8 +32,6 @@ const Navbar = () => {
   useEffect(() => {
     if (isHovered && buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
-      // Position the modal ABOVE the button (subtract modal height + spacing)
-      // Since navbar is at bottom, we need to go UP from the button
       setModalPosition({
         top: rect.top - 400,
         left: rect.left + rect.width / 2,
@@ -65,19 +63,17 @@ const Navbar = () => {
   };
 
   const scrollToSection = (sectionId) => {
-    // If not on homepage → go there with hash
     if (pathname !== "/") {
       router.push(`/#${sectionId}`);
       return;
     }
 
-    // If already on homepage → smooth scroll
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-  // Calculate modal position whenever button position might change
+
   useEffect(() => {
     const handleScroll = () => {
       if (isHovered && buttonRef.current) {
@@ -101,9 +97,28 @@ const Navbar = () => {
   return (
     <>
       {/* ===================== DESKTOP / TABLET ===================== */}
+      <style jsx>{`
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+      `}</style>
+
       <div className="hidden sm:flex fixed bottom-4 left-0 right-0 z-50 justify-center px-4">
-        <div className="animated-border">
-          <nav className="flex items-center gap-6 px-8 py-3 rounded-full bg-black/90 backdrop-blur-md shadow-2xl border border-white/10">
+        <div className="relative rounded-full p-[2px] overflow-hidden">
+          {/* 🔴 Animated Border - Same as Pricing component */}
+          <div className="absolute inset-0 rounded-full animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0deg,transparent_270deg,#ff0000_280deg,#ff0000_350deg,transparent_360deg)] blur-[1px] opacity-100 pointer-events-none" />
+          
+          {/* Inner Container */}
+          <nav className="relative rounded-full flex items-center gap-6 px-8 py-3 bg-black shadow-2xl border border-white/10">
             {/* Projects Link */}
             <a
               onClick={() => scrollToSection("projects")}
