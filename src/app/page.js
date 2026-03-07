@@ -20,6 +20,7 @@ import Navbar from "@/components/shared/Navbar";
 import Image from "next/image";
 import Projects from "@/components/home/Projects";
 import { useEffect } from "react";
+import TechnologySection from "@/components/home/TechnologySection";
 
 export default function Home() {
 
@@ -49,6 +50,7 @@ export default function Home() {
       <LeaderSection />
       <Testimonials />
       <WorkingProcess />
+      <TechnologySection />
       <FAQSection />
       <Contact />
       <GlobalPresence />
