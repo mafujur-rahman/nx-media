@@ -47,7 +47,7 @@ export default function Home() {
       <Projects />
       <IndustriesWeWork />
       <WhyChooseUs />
-      <LeaderSection />
+      {/* <LeaderSection /> */}
       <Testimonials />
       <WorkingProcess />
       <TechnologySection />

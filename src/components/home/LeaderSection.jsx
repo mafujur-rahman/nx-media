@@ -23,7 +23,7 @@ export default function LeaderSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % people.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 

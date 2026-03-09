@@ -12,50 +12,50 @@ const steps = [
         id: "01",
         label: "Logo Design",
         cards: [
-            { title: "Minimalist Logo Concepts", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "minimalist-logo-concepts", link:"/project", }, 
-            { title: "Brandmark & Icon Design", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", slug: "brandmark-icon-design", link:"/project", },
-            { title: "Logo Variations & Mockups", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", light: true, slug: "logo-variations-mockups", link:"/project", },
-            { title: "Typography & Color Exploration", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", slug: "typography-color-exploration", link:"/project", },
+            { title: "Minimalist Logo Concepts", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "minimalist-logo-concepts", link: "/project", },
+            { title: "Brandmark & Icon Design", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", slug: "brandmark-icon-design", link: "/project", },
+            { title: "Logo Variations & Mockups", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", light: true, slug: "logo-variations-mockups", link: "/project", },
+            { title: "Typography & Color Exploration", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", slug: "typography-color-exploration", link: "/project", },
         ],
     },
     {
         id: "02",
         label: "Brand Identity",
         cards: [
-            { title: "Visual Guidelines & Style Sheets", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop", slug: "visual-guidelines-style-sheets", link:"/project", },
-            { title: "Color Palette & Typography", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "color-palette-typography", link:"/project", },
-            { title: "Brand Voice & Messaging", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", slug: "brand-voice-messaging", link:"/project", },
-            { title: "Stationery & Collateral Design", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "stationery-collateral-design", link:"/project", },
+            { title: "Visual Guidelines & Style Sheets", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop", slug: "visual-guidelines-style-sheets", link: "/project", },
+            { title: "Color Palette & Typography", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "color-palette-typography", link: "/project", },
+            { title: "Brand Voice & Messaging", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", slug: "brand-voice-messaging", link: "/project", },
+            { title: "Stationery & Collateral Design", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "stationery-collateral-design", link: "/project", },
         ],
     },
     {
         id: "03",
         label: "Packaging Design",
         cards: [
-            { title: "Product Packaging Concepts", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", slug: "product-packaging-concepts", link:"/project", },
-            { title: "Box & Label Design", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop", light: true, slug: "box-label-design", link:"/project", },
-            { title: "Mockups & 3D Presentation", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", slug: "mockups-3d-presentation", link:"/project", },
-            { title: "Eco-friendly & Innovative Packaging", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "eco-friendly-packaging", link:"/project", },
+            { title: "Product Packaging Concepts", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", slug: "product-packaging-concepts", link: "/project", },
+            { title: "Box & Label Design", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop", light: true, slug: "box-label-design", link: "/project", },
+            { title: "Mockups & 3D Presentation", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", slug: "mockups-3d-presentation", link: "/project", },
+            { title: "Eco-friendly & Innovative Packaging", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "eco-friendly-packaging", link: "/project", },
         ],
     },
     {
         id: "04",
         label: "Social Media Branding",
         cards: [
-            { title: "Instagram & Facebook Templates", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", slug: "instagram-facebook-templates", link:"/project", },
-            { title: "Story & Post Design", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", light: true, slug: "story-post-design", link:"/project", },
-            { title: "Ad Creatives & Campaign Assets", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", slug: "ad-creatives-campaign-assets", link:"/project", },
-            { title: "Brand Consistency Across Platforms", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "brand-consistency-platforms", link:"/project", },
+            { title: "Instagram & Facebook Templates", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", slug: "instagram-facebook-templates", link: "/project", },
+            { title: "Story & Post Design", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", light: true, slug: "story-post-design", link: "/project", },
+            { title: "Ad Creatives & Campaign Assets", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", slug: "ad-creatives-campaign-assets", link: "/project", },
+            { title: "Brand Consistency Across Platforms", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "brand-consistency-platforms", link: "/project", },
         ],
     },
     {
         id: "05",
         label: "UI / UX Design",
         cards: [
-            { title: "Wireframing & Prototyping", img: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1000&auto=format&fit=crop", slug: "wireframing-prototyping", link:"/project", },
-            { title: "Website & Web App UI Design", img: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1000&auto=format&fit=crop", light: true, slug: "website-webapp-ui", link:"/project", },
-            { title: "Mobile App Interface Design", img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop", slug: "mobile-app-interface" , link:"/project",},
-            { title: "User Experience Research & Testing", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop", light: true, slug: "ux-research-testing" , link:"/project",},
+            { title: "Wireframing & Prototyping", img: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1000&auto=format&fit=crop", slug: "wireframing-prototyping", link: "/project", },
+            { title: "Website & Web App UI Design", img: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1000&auto=format&fit=crop", light: true, slug: "website-webapp-ui", link: "/project", },
+            { title: "Mobile App Interface Design", img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop", slug: "mobile-app-interface", link: "/project", },
+            { title: "User Experience Research & Testing", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop", light: true, slug: "ux-research-testing", link: "/project", },
         ],
     },
     // ==== DEVELOPMENTS ====
@@ -63,8 +63,8 @@ const steps = [
         id: "06",
         label: "Website Development",
         cards: [
-            { title: "Custom Responsive Websites", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "custom-responsive-websites", link:"/project", },
-            { title: "E-commerce Platforms", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", slug: "ecommerce-platforms", link:"/project", },
+            { title: "Custom Responsive Websites", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "custom-responsive-websites", link: "/project", },
+            { title: "E-commerce Platforms", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", slug: "ecommerce-platforms", link: "/project", },
         ],
     },
 ];
@@ -141,9 +141,47 @@ const Projects = () => {
     const canSlideLeft = currentIndex > 0;
     const canSlideRight = currentIndex < activeCards.length - cardsPerView;
 
+    const scrollTabIntoView = (tabId) => {
+        if (tabsRef.current) {
+            const tabsContainer = tabsRef.current;
+            const activeButton = tabsContainer.querySelector(`[data-tab="${tabId}"]`);
+
+            if (activeButton) {
+                const containerRect = tabsContainer.getBoundingClientRect();
+                const buttonRect = activeButton.getBoundingClientRect();
+
+                // Check if button is partially or fully outside viewport
+                const isButtonLeftOutside = buttonRect.left < containerRect.left;
+                const isButtonRightOutside = buttonRect.right > containerRect.right;
+
+                if (isButtonLeftOutside || isButtonRightOutside) {
+                    // Calculate scroll position to bring button into view
+                    let scrollLeft;
+
+                    if (isButtonLeftOutside) {
+                        // Button is hidden on left side - scroll left to reveal it
+                        scrollLeft = tabsContainer.scrollLeft - (containerRect.left - buttonRect.left) - 20;
+                    } else {
+                        // Button is hidden on right side - scroll right to reveal it
+                        scrollLeft = tabsContainer.scrollLeft + (buttonRect.right - containerRect.right) + 20;
+                    }
+
+                    // Smooth scroll to calculated position
+                    tabsContainer.scrollTo({
+                        left: scrollLeft,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+    };
+
     const slideToTab = (tabId) => {
         setActiveTab(tabId);
         if (!scrollIndex[tabId]) setScrollIndex((prev) => ({ ...prev, [tabId]: 0 }));
+
+        // Scroll the clicked tab into view if it's partially hidden
+        setTimeout(() => scrollTabIntoView(tabId), 100);
     };
 
     const slideCards = (direction) => {
@@ -300,8 +338,6 @@ const Projects = () => {
                                 title={card.title}
                                 img={card.img}
                                 light={card.light}
-                                // slug={card.slug}
-
                                 onMouseEnter={() => setIsHoveringCard(true)}
                                 onMouseLeave={() => setIsHoveringCard(false)}
                                 onClick={() => handleCardClick(card.link)}
