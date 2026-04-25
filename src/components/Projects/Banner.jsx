@@ -9,8 +9,8 @@ export default function Banner({ project }) {
             {/* Background Image instead of Video */}
             <div className="fixed inset-0 w-full h-full -z-10">
                 <img
-                    src={project.bannerImage || project.images?.topImage || "/service.jpg"}
-                    alt={project.title}
+                    src={project?.bannerImage || project.images?.topImage || "/service.jpg"}
+                    alt={project?.title}
                     className="w-full h-full object-cover"
                 />
             </div>
