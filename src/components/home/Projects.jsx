@@ -16,8 +16,6 @@ const steps = [
         cards: [
             { title: "Berimbolo Beans", slug: "berimbolo-beans" },
             { title: "Bear Health", slug: "bear-health" },
-            // { title: "Logo Variations & Mockups", slug: "logo-variations-mockups" },
-            // { title: "Typography & Color Exploration", slug: "typography-color-exploration" },
         ],
     },
     {
@@ -26,45 +24,41 @@ const steps = [
         cards: [
             { title: "Influence Ireland Consulting", slug: "influence-ireland-consulting" },
             { title: "Silagri", slug: "silagri" },
-            // { title: "Brand Voice & Messaging", slug: "brand-voice-messaging" },
-            // { title: "Stationery & Collateral Design", slug: "stationery-collateral-design" },
         ],
     },
     {
         id: "03",
         label: "Packaging Design",
         cards: [
-            { title: "Product Packaging Concepts", slug: "product-packaging-concepts" },
-            { title: "Box & Label Design", slug: "box-label-design" },
-            { title: "Mockups & 3D Presentation", slug: "mockups-3d-presentation" },
-            { title: "Eco-friendly & Innovative Packaging", slug: "eco-friendly-packaging" },
+            { title: "Organic", slug: "organic" },
+            
         ],
     },
+    // {
+    //     id: "04",
+    //     label: "Social Media Branding",
+    //     cards: [
+    //         { title: "Instagram & Facebook Templates", slug: "instagram-facebook-templates" },
+    //         { title: "Story & Post Design", slug: "story-post-design" },
+    //         { title: "Ad Creatives & Campaign Assets", slug: "ad-creatives-campaign-assets" },
+    //         { title: "Brand Consistency Across Platforms", slug: "brand-consistency-platforms" },
+    //     ],
+    // },
     {
         id: "04",
-        label: "Social Media Branding",
-        cards: [
-            { title: "Instagram & Facebook Templates", slug: "instagram-facebook-templates" },
-            { title: "Story & Post Design", slug: "story-post-design" },
-            { title: "Ad Creatives & Campaign Assets", slug: "ad-creatives-campaign-assets" },
-            { title: "Brand Consistency Across Platforms", slug: "brand-consistency-platforms" },
-        ],
-    },
-    {
-        id: "05",
         label: "UI / UX Design",
         cards: [
-            { title: "Wireframing & Prototyping", slug: "wireframing-prototyping" },
+            { title: "Pethund", slug: "pethund" },
             { title: "Website & Web App UI Design", slug: "website-webapp-ui" },
             { title: "Mobile App Interface Design", slug: "mobile-app-interface" },
             { title: "User Experience Research & Testing", slug: "ux-research-testing" },
         ],
     },
     {
-        id: "06",
+        id: "05",
         label: "Website Development",
         cards: [
-            { title: "Custom Responsive Websites", slug: "custom-responsive-websites" },
+            { title: "WeBrand", slug: "we-brand" },
             { title: "E-commerce Platforms", slug: "ecommerce-platforms" },
         ],
     },
@@ -347,7 +341,7 @@ const Projects = () => {
 const Card = ({ id, title, img, light, onMouseEnter, onMouseLeave, onClick }) => (
     <div
         className={`${light ? "bg-white text-black" : "bg-[#222222] text-white border border-white/5"
-            } rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] flex-shrink-0 flex flex-col sm:flex-row w-[300px] sm:w-[450px] md:w-[550px] lg:w-[620px] h-[400px] sm:h-[350px] md:h-[380px] lg:h-[400px] overflow-hidden cursor-none transition-transform duration-300 `}
+            } rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] flex-shrink-0 flex flex-col sm:flex-row w-[280px] sm:w-[450px] md:w-[550px] lg:w-[620px] h-[400px] sm:h-[350px] md:h-[380px] lg:h-[400px] overflow-hidden cursor-none transition-transform duration-300 `}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onClick={onClick}

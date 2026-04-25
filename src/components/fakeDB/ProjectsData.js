@@ -108,7 +108,7 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/branding/Influence Ireland Consulting/1.png",
         images: {
-            topImage: "/images/projects/branding/Influence Ireland Consulting/5.png",
+            topImage: "/images/projects/branding/Influence Ireland Consulting/1.png",
             missionImage1: "/images/projects/branding/Influence Ireland Consulting/2.png",
             missionImage2: "/images/projects/branding/Influence Ireland Consulting/3.png",
             bottomImage: "/images/projects/branding/Influence Ireland Consulting/4.png"
@@ -146,7 +146,7 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/branding/Silagri/1.png",
         images: {
-            topImage: "/images/projects/branding/Silagri/5.png",
+            topImage: "/images/projects/branding/Silagri/1.png",
             missionImage1: "/images/projects/branding/Silagri/2.png",
             missionImage2: "/images/projects/branding/Silagri/3.png",
             bottomImage: "/images/projects/branding/Silagri/4.png"
@@ -154,10 +154,10 @@ export const projectsData = {
         videoUrl: "/service.mp4"
     },
 
-    "visual-guidelines-style-sheets": {
-        id: "visual-guidelines-style-sheets",
-        title: "Visual Guidelines & Style Sheets",
-        category: "Brand Identity",
+    "organic": {
+        id: "organic",
+        title: "Organic",
+        category: "Packaging Design",
         brand: "The NX Media",
         year: "2024",
         description: "Creating comprehensive brand guidelines and style sheets that ensure consistent brand application across all channels and teams.",
@@ -182,19 +182,20 @@ export const projectsData = {
             description: "We built a comprehensive system that documents every aspect of the brand, making it accessible and actionable for all stakeholders.",
             process: ["Audit", "Documentation", "Design", "Review", "Launch"]
         },
+        bannerImage: "/images/projects/packaging/organic/1.png",
         images: {
-            topImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
-            missionImage1: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop",
-            missionImage2: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop",
-            bottomImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop"
+            topImage: "/images/projects/packaging/organic/1.png",
+            missionImage1: "/images/projects/packaging/organic/2.png",
+            missionImage2: "/images/projects/packaging/organic/3.png",
+            bottomImage: "/images/projects/packaging/organic/4.png"
         },
         videoUrl: "/service.mp4"
     },
 
-    "color-palette-typography": {
-        id: "color-palette-typography",
-        title: "Color Palette & Typography",
-        category: "Brand Identity",
+    "pethund": {
+        id: "pethund",
+        title: "Pethund",
+        category: "UI/UX",
         brand: "The NX Media",
         year: "2024",
         description: "Developing distinctive color palettes and typographic systems that define brand personality and improve visual communication.",
@@ -219,19 +220,20 @@ export const projectsData = {
             description: "We combined color psychology with typographic principles to create a system that's both beautiful and functional.",
             process: ["Research", "Palette Creation", "Typography Selection", "Testing", "Implementation"]
         },
+        bannerImage: "/images/projects/ui-ux/Pethund/1.png",
         images: {
-            topImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
-            missionImage1: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop",
-            missionImage2: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
-            bottomImage: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop"
+            topImage: "/images/projects/ui-ux/Pethund/1.png",
+            missionImage1: "/images/projects/ui-ux/Pethund/2.png",
+            missionImage2: "/images/projects/ui-ux/Pethund/3.png",
+            bottomImage: "/images/projects/ui-ux/Pethund/4.png"
         },
         videoUrl: "/service.mp4"
     },
 
-    "brand-voice-messaging": {
-        id: "brand-voice-messaging",
-        title: "Brand Voice & Messaging",
-        category: "Brand Identity",
+    "we-brand": {
+        id: "we-brand",
+        title: "WeBrand",
+        category: "Website",
         brand: "The NX Media",
         year: "2024",
         description: "Defining authentic brand voice and strategic messaging frameworks that resonate with target audiences across all channels.",
@@ -256,11 +258,12 @@ export const projectsData = {
             description: "We conducted workshops and research to define a unique brand personality that resonates with the target audience.",
             process: ["Discovery", "Workshop", "Voice Definition", "Guidelines", "Training"]
         },
+        bannerImage: "/images/projects/Website/Webrand/1.png",
         images: {
-            topImage: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop",
-            missionImage1: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
-            missionImage2: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop",
-            bottomImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop"
+            topImage: "/images/projects/Website/Webrand/1.png",
+            missionImage1: "/images/projects/Website/Webrand/2.png",
+            missionImage2: "/images/projects/Website/Webrand/3.png",
+            bottomImage: "/images/projects/Website/Webrand/4.png"
         },
         videoUrl: "/service.mp4"
     },

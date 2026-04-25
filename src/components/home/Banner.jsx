@@ -38,7 +38,7 @@ export default function Banner() {
             </div>
 
             {/* ================= CONTENT ================= */}
-            <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 md:px-10 lg:px-16 xl:px-0 text-center">
+            <div className="relative z-10 min-h-screen flex flex-col items-center justify-center mt-10 md:mt-0 px-6 md:px-10 lg:px-16 xl:px-0 text-center">
 
                 <span className="mb-4 lg:mb-8 px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-xs md:text-sm font-medium">
                     Trusted By 300+ Clients

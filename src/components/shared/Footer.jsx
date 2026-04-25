@@ -18,7 +18,7 @@ export default function Footer() {
 
                     {/* Social Links - centered, single line, no wrap */}
                     <div className="flex justify-center mb-4">
-                        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 px-2">
+                        <div className="flex flex-wrap justify-center gap-x-1 gap-y-1 px-1">
                             {[
                                 { name: "INSTAGRAM", url: "https://www.instagram.com/thenxmedia/" },
                                 { name: "FACEBOOK", url: "https://www.facebook.com/thenxmedia" },
@@ -30,11 +30,11 @@ export default function Footer() {
                                     href={link.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-1 text-sm font-semibold hover:text-red-500 transition-all duration-300 group whitespace-nowrap"
+                                    className="flex items-center gap-1  text-[10px] font-semibold hover:text-red-500 transition-all duration-300 group whitespace-nowrap"
                                 >
                                     {link.name}
                                     {link.name !== "BEHANCE" && (
-                                        <span className="group-hover:translate-x-1 transition-transform duration-300 text-xs">
+                                        <span className="group-hover:translate-x-1 transition-transform duration-300 text-[10px]">
                                             →
                                         </span>
                                     )}
@@ -43,12 +43,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Copyright - at bottom */}
-                    <div className="text-center mb-4">
-                        <p className="text-xs text-gray-400 tracking-tight">
-                            © {new Date().getFullYear()} THE NX MEDIA.
-                        </p>
-                    </div>
+
                 </div>
 
                 {/* MD+ Layout (original): copyright+social left, logo right */}
@@ -95,12 +90,21 @@ export default function Footer() {
                 </div>
 
                 {/* DIVIDER */}
-                <div className="w-full h-[1px] bg-white/10 mb-6" />
+                <div className="w-full h-[1px] bg-white/10 mb-4" />
 
                 {/* EMAIL */}
                 <div className="text-center">
                     <p className="break-words text-2xl sm:text-3xl md:text-6xl lg:text-7xl xl:text-[8vw] 2xl:text-[6vw] font-bold tracking-tight leading-tight">
                         hello@thenxmedia.com
+                    </p>
+                </div>
+                {/* DIVIDER */}
+                <div className="w-full h-[1px] bg-white/10 mt-4" />
+
+                {/* Copyright - at bottom */}
+                <div className="text-center mt-3 block md:hidden">
+                    <p className="text-xs text-gray-400 tracking-tight">
+                        © {new Date().getFullYear()} THE NX MEDIA.
                     </p>
                 </div>
 

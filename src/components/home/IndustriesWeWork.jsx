@@ -18,8 +18,8 @@ export default function IndustriesWeWork() {
       description:
         "Digital solutions for hospitals, clinics, telemedicine platforms, and healthcare startups including patient portals, appointment systems, and secure data management.",
       images: [
-        { src: "/images/industry-1.jpg", alt: "Healthcare Technology", bg: "#d0f4ff", pos: "left-top" },
-        { src: "/images/industry-2.jpg", alt: "Medical Dashboard", bg: "#caffbf", pos: "right-bottom" },
+        { src: "/images/industry/healthcare-1.jpeg", alt: "Healthcare Technology", bg: "#d0f4ff", pos: "left-top" },
+        { src: "/images/industry/healthcare-2.jpg", alt: "Medical Dashboard", bg: "#caffbf", pos: "right-bottom" },
       ],
     },
     {

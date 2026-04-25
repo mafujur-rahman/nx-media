@@ -22,7 +22,7 @@ const ScrollToTop = () => {
   };
 
   return (
-    <div className="fixed bottom-5 right-0 flex justify-end max-w-7xl mx-auto z-50 px-4 pointer-events-none">
+    <div className="fixed bottom-16 md:bottom-5 right-0 flex justify-end max-w-7xl mx-auto z-50 px-4 pointer-events-none">
       {showButton && (
         <button
           onClick={scrollToTop}

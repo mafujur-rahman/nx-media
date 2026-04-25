@@ -20,7 +20,7 @@ export default function Contact() {
     return (
         <section id="contact" className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0">
             <div className="max-w-7xl mx-auto rounded-[30px] overflow-hidden bg-black border border-white/10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 p-6 sm:p-8 xl:p-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 p-4 sm:p-8 xl:p-16">
 
                     {/* LEFT CONTENT */}
                     <div className="flex flex-col justify-between items-start">  {/* Added items-start here */}
@@ -97,7 +97,7 @@ export default function Contact() {
                     </div>
 
                     {/* RIGHT FORM */}
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 lg:p-8">
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-8 lg:p-8">
                         <form className="space-y-4 sm:space-y-6">
 
                             {/* FULL NAME */}

@@ -45,7 +45,7 @@ export default function GlobalPresence() {
 
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => prevIndex + 1);
-        }, 2000);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [isMobile]);

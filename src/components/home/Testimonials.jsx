@@ -15,7 +15,9 @@ const brandLogos = {
   "Anytask": "/images/review/Anytask.png",
   "elektryk.pro": "/images/review/elyktro.jpeg",
   "Lead the way": null,
-  "Nutralign": "/images/review/nutralign.jpeg"
+  "Nutralign": "/images/review/nutralign.jpeg",
+  "Aquaterrabass": "/images/review/aqua.jpeg",
+  "Blackaboij": "/images/review/blackaboij.jpeg"
 };
 
 // Custom image positioning for each brand to control zoom/crop
@@ -28,6 +30,8 @@ const brandImageStyles = {
   "Anytask": { objectPosition: "center", objectFit: "contain" },
   "elektryk.pro": { objectPosition: "center", objectFit: "cover" },
   "Nutralign": { objectPosition: "center", objectFit: "cover" },
+  "Aquaterrabass": { objectPosition: "center", objectFit: "cover" },
+  "Blackaboij": { objectPosition: "center", objectFit: "cover" },
 };
 
 const testimonials = [
@@ -51,6 +55,20 @@ const testimonials = [
     role: "Founder at Searle Interiors",
     image: "/images/review/suzi.jpeg",
     brand: "Searle Interiors",
+  },
+  {
+    quote: `Excellent work on the AQUATERRABAS logo, the concepts were clean and well thought out. I’ll definitely be coming back for more design work. Highly recommended, creative and easy to work with.`,
+    name: "Giulliano Bayonne",
+    role: "Founder & CEO",
+    image: "/images/review/giulliano.jpeg",
+    brand: "Aquaterrabass",
+  },
+  {
+    quote: `Loved the direction of the Blackaboij logo, it really captured the brand feel. I’ll be reaching out again for future projects. Highly recommended, sharp work and a smooth process.`,
+    name: "Giulliano Bayonne",
+    role: "Founder & CEO",
+    image: "/images/review/giulliano.jpeg",
+    brand: "Blackaboij",
   },
   {
     quote: `Working with "NX Media" over the past four years has been seamless, reliable, and consistently impressive.`,
