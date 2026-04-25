@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { HiOutlineCurrencyDollar, HiOutlineFolder, HiOutlineMenu, HiOutlinePuzzle, HiX } from "react-icons/hi";
 import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
+import gsap from 'gsap';
 
 const Navbar = () => {
   const [hoverButton, setHoverButton] = useState(false);
@@ -15,6 +16,8 @@ const Navbar = () => {
   const hideTimeout = useRef(null);
   const router = useRouter();
   const pathname = usePathname();
+  const rotatingBorderRef = useRef(null);
+  const containerRef = useRef(null);
 
   const services = [
     { id: "brand-identity", title: "Brand Identity", desc: "Complete visual identity systems" },
@@ -38,6 +41,98 @@ const Navbar = () => {
       });
     }
   }, [isHovered]);
+
+  // Initialize the rotating border animation
+  useEffect(() => {
+    if (!rotatingBorderRef.current || !containerRef.current) return;
+
+    // Function to update the SVG path dimensions
+    const updatePathDimensions = () => {
+      const container = containerRef.current;
+      if (!container) return;
+      
+      const rect = container.getBoundingClientRect();
+      const width = rect.width;
+      const height = rect.height;
+      const radius = 9999; // Large number for pill shape
+      
+      // Create a path for rounded rectangle
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      const actualRadius = Math.min(radius, height / 2, width / 2);
+      
+      // Path for rounded rectangle
+      const d = `
+        M ${actualRadius},0
+        L ${width - actualRadius},0
+        A ${actualRadius},${actualRadius} 0 0,1 ${width},${actualRadius}
+        L ${width},${height - actualRadius}
+        A ${actualRadius},${actualRadius} 0 0,1 ${width - actualRadius},${height}
+        L ${actualRadius},${height}
+        A ${actualRadius},${actualRadius} 0 0,1 0,${height - actualRadius}
+        L 0,${actualRadius}
+        A ${actualRadius},${actualRadius} 0 0,1 ${actualRadius},0
+        Z
+      `;
+      
+      rotatingBorderRef.current.setAttribute("d", d);
+      
+      // Get the total length of the path
+      const length = rotatingBorderRef.current.getTotalLength();
+      
+      // Fixed dash length - visible line segment
+      const dashLength = 100;
+      
+      // Set up dasharray with a fixed visible dash length
+      gsap.set(rotatingBorderRef.current, {
+        strokeDasharray: `${dashLength} ${length - dashLength}`,
+        strokeDashoffset: 0,
+      });
+      
+      // Kill any existing animation
+      if (rotatingBorderRef.current.animation) {
+        rotatingBorderRef.current.animation.kill();
+      }
+      
+      // Create smooth continuous rotation animation
+      const animation = gsap.to(rotatingBorderRef.current, {
+        strokeDashoffset: -length,
+        duration: 8,
+        repeat: -1,
+        ease: "none",
+      });
+      
+      // Store animation reference
+      rotatingBorderRef.current.animation = animation;
+      
+      // Add a subtle pulse to the gradient opacity
+      gsap.to(rotatingBorderRef.current, {
+        opacity: 0.6,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+    };
+    
+    // Initial update
+    updatePathDimensions();
+    
+    // Update on resize
+    const resizeObserver = new ResizeObserver(() => {
+      updatePathDimensions();
+    });
+    
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+    
+    return () => {
+      resizeObserver.disconnect();
+      if (rotatingBorderRef.current?.animation) {
+        rotatingBorderRef.current.animation.kill();
+      }
+    };
+  }, []);
 
   const handleMouseLeave = () => {
     hideTimeout.current = setTimeout(() => {
@@ -97,25 +192,46 @@ const Navbar = () => {
   return (
     <>
       {/* ===================== DESKTOP / TABLET ===================== */}
-      <style jsx>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        
-        .animate-spin-slow {
-          animation: spin-slow 8s linear infinite;
-        }
-      `}</style>
-
       <div className="hidden sm:flex fixed bottom-4 left-0 right-0 z-50 justify-center px-4">
-        <div className="relative rounded-full p-[2px] overflow-hidden">
-          {/* 🔴 Animated Border - Same as Pricing component */}
-          <div className="absolute inset-0 rounded-full animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0deg,transparent_270deg,#ff0000_280deg,#ff0000_350deg,transparent_360deg)] blur-[1px] opacity-100 pointer-events-none" />
+        <div ref={containerRef} className="relative rounded-full">
+          {/* Rotating Gradient Border - Red Theme */}
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            style={{ 
+              overflow: 'visible',
+              position: 'absolute',
+              top: '-2px',
+              left: '-2px',
+              width: 'calc(100% + 4px)',
+              height: 'calc(100% + 4px)'
+            }}
+          >
+            <defs>
+              <linearGradient id="rotatingGradientRed" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ff0000" stopOpacity="1" />
+                <stop offset="25%" stopColor="#ff4444" stopOpacity="1" />
+                <stop offset="50%" stopColor="#cc0000" stopOpacity="1" />
+                <stop offset="75%" stopColor="#ff3333" stopOpacity="1" />
+                <stop offset="100%" stopColor="#ff0000" stopOpacity="1" />
+              </linearGradient>
+              {/* Glow/blur layer */}
+              <filter id="glowRed" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path
+              ref={rotatingBorderRef}
+              fill="none"
+              stroke="url(#rotatingGradientRed)"
+              strokeWidth="3"
+              vectorEffect="non-scaling-stroke"
+              style={{ filter: 'url(#glowRed)' }}
+            />
+          </svg>
           
           {/* Inner Container */}
           <nav className="relative rounded-full flex items-center gap-6 px-8 py-3 bg-black shadow-2xl border border-white/10">
