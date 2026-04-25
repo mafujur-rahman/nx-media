@@ -23,9 +23,9 @@ export default function Contact() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 p-6 sm:p-8 xl:p-16">
 
                     {/* LEFT CONTENT */}
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col justify-between items-start">  {/* Added items-start here */}
 
-                        <div>
+                        <div className="w-full">  {/* Added w-full here */}
                             <span className="inline-block mb-4 px-4 py-1 sm:px-6 sm:py-2 rounded-full border border-dashed border-red-500/80 bg-black/50 text-xs sm:text-sm font-medium text-white">
                                 First conversation is on us
                             </span>
@@ -56,9 +56,8 @@ export default function Contact() {
                         </div>
 
                         {/* PROFILE CARD */}
-                        <div className="mt-8 sm:mt-12 max-w-full  lg:max-w-lg">
-                            <div className="flex flex-col lg:flex-col sm:flex-row  items-center lg:items-start gap-4 sm:gap-8 lg:gap-4">
-
+                        <div className="mt-8 sm:mt-12 w-full">
+                            <div className="flex flex-col items-start gap-4 sm:gap-8 lg:gap-4">
                                 {/* Avatar */}
                                 <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-xl overflow-hidden flex-shrink-0">
                                     <Image
@@ -71,8 +70,7 @@ export default function Contact() {
                                 </div>
 
                                 {/* Info + Phone + CTA */}
-                                <div className="flex-1 flex flex-col items-center sm:items-start lg:items-start text-center lg:text-left gap-2">
-
+                                <div className="flex-1 flex flex-col items-start text-left gap-2">
                                     {/* Info */}
                                     <div className="space-y-1">
                                         <p className="text-white font-semibold text-lg sm:text-xl leading-tight">
@@ -92,12 +90,9 @@ export default function Contact() {
                                     >
                                         Book a Call Directly
                                     </a>
-
-
                                 </div>
                             </div>
                         </div>
-
 
                     </div>
 
@@ -174,7 +169,6 @@ export default function Contact() {
                                     className="w-full bg-black border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 text-sm sm:text-base resize-none"
                                 />
                             </div>
-
 
                             <HoverSweepButton
                                 type="submit"

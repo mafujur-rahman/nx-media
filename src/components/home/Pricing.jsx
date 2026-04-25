@@ -15,7 +15,7 @@ const Pricing = () => {
         {
             title: "ESSENTIAL IDENTITY",
             desc: "A focused brand foundation that gives you everything needed to show up professionally. Perfect for startups and early-stage companies who want to get it right from day one.",
-            price: "100",
+            price: "99",
             features: [
                 "Logo Design & Variations",
                 "Color Palette Selection",
@@ -27,7 +27,7 @@ const Pricing = () => {
         {
             title: "COMPREHENSIVE BRAND",
             desc: "A complete visual identity system that ensures consistency across every touchpoint. Built for growing brands ready to scale without losing their look.",
-            price: "400",
+            price: "299",
             features: [
                 "Complete Logo System & Icons",
                 "Full Color & Typography Palette",
@@ -41,7 +41,7 @@ const Pricing = () => {
         {
             title: "PREMIUM BRAND + PACKAGING",
             desc: "An end-to-end brand experience that includes both identity and packaging. Built for e-commerce businesses and product-led brands ready for shelf or doorstep.",
-            price: "800",
+            price: "399",
             features: [
                 "Full Brand Strategy Workshop",
                 "Complete Visual Identity System",
@@ -50,7 +50,8 @@ const Pricing = () => {
                 "Graphic Design for Packaging",
                 "Dieline Development & Print Files",
                 "Vendor Coordination Support",
-                "Brand Rollout Assets"
+                "Brand Rollout Assets",
+                "Custom Design"
             ],
             buttonText: "Get Started",
         },
@@ -60,7 +61,7 @@ const Pricing = () => {
         {
             title: "ESSENTIAL WEBSITE",
             desc: "A clean, responsive website that tells your story and converts visitors. Perfect for service businesses, startups, and companies needing a professional home base.",
-            price: "100",
+            price: "99",
             features: [
                 "Landing Page",
                 "Mobile Responsive Design",
@@ -73,7 +74,7 @@ const Pricing = () => {
         {
             title: "COMPREHENSIVE WEBSITE",
             desc: "A feature-rich website built to scale. Includes CMS integration so you stay in control, plus optimization for search and performance.",
-            price: "500",
+            price: "299",
             features: [
                 "5 to 10 Custom Pages",
                 "CMS Implementation",
@@ -88,7 +89,7 @@ const Pricing = () => {
         {
             title: "PREMIUM WEB EXPERIENCE",
             desc: "A completely custom web solution designed and built for your specific needs. Complex functionality, scalability, and long-term partnership included.",
-            price: "1,000",
+            price: "499",
             features: [
                 "Unlimited Custom Pages",
                 "Advanced Custom Features",
@@ -115,16 +116,16 @@ const Pricing = () => {
         const updatePathDimensions = () => {
             const container = containerRef.current;
             if (!container) return;
-            
+
             const rect = container.getBoundingClientRect();
             const width = rect.width;
             const height = rect.height;
             const radius = 30; // Matching the rounded-[30px] class
-            
+
             // Create a path for rounded rectangle
             const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
             const actualRadius = Math.min(radius, height / 2, width / 2);
-            
+
             // Path for rounded rectangle
             const d = `
                 M ${actualRadius},0
@@ -138,26 +139,26 @@ const Pricing = () => {
                 A ${actualRadius},${actualRadius} 0 0,1 ${actualRadius},0
                 Z
             `;
-            
+
             rotatingBorderRef.current.setAttribute("d", d);
-            
+
             // Get the total length of the path
             const length = rotatingBorderRef.current.getTotalLength();
-            
+
             // Fixed dash length - visible line segment
             const dashLength = 120;
-            
+
             // Set up dasharray with a fixed visible dash length
             gsap.set(rotatingBorderRef.current, {
                 strokeDasharray: `${dashLength} ${length - dashLength}`,
                 strokeDashoffset: 0,
             });
-            
+
             // Kill any existing animation
             if (rotatingBorderRef.current.animation) {
                 rotatingBorderRef.current.animation.kill();
             }
-            
+
             // Create smooth continuous rotation animation
             const animation = gsap.to(rotatingBorderRef.current, {
                 strokeDashoffset: -length,
@@ -165,10 +166,10 @@ const Pricing = () => {
                 repeat: -1,
                 ease: "none",
             });
-            
+
             // Store animation reference
             rotatingBorderRef.current.animation = animation;
-            
+
             // Add a subtle pulse to the gradient opacity
             gsap.to(rotatingBorderRef.current, {
                 opacity: 0.6,
@@ -178,19 +179,19 @@ const Pricing = () => {
                 ease: "sine.inOut",
             });
         };
-        
+
         // Initial update
         updatePathDimensions();
-        
+
         // Update on resize
         const resizeObserver = new ResizeObserver(() => {
             updatePathDimensions();
         });
-        
+
         if (containerRef.current) {
             resizeObserver.observe(containerRef.current);
         }
-        
+
         return () => {
             resizeObserver.disconnect();
             if (rotatingBorderRef.current?.animation) {
@@ -307,7 +308,7 @@ const Pricing = () => {
                     <div ref={containerRef} className="relative rounded-[30px] p-[2px]">
                         <svg
                             className="absolute inset-0 w-full h-full pointer-events-none"
-                            style={{ 
+                            style={{
                                 overflow: 'visible',
                                 position: 'absolute',
                                 top: '-2px',
@@ -342,9 +343,9 @@ const Pricing = () => {
                                 style={{ filter: 'url(#glowRedRetainer)' }}
                             />
                         </svg>
-                        
+
                         {/* Inner Container */}
-                        <div className="relative rounded-[28px] px-6 md:px-12 py-12 bg-gradient-to-br from-zinc-900 via-black to-zinc-900 border border-white/10">
+                        <div className="relative rounded-[28px] px-2.5 md:px-12 py-12 bg-gradient-to-br from-zinc-900 via-black to-zinc-900 border border-white/10">
                             {/* Glow */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-[120px] -z-10" />
 
@@ -361,10 +362,10 @@ const Pricing = () => {
                             </div>
 
                             {/* Content */}
-                            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+                            <div className="grid lg:grid-cols-2 gap-5 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
 
                                 {/* LEFT — Pricing Card */}
-                                <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+                                <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-2.5 sm:p-8 lg:p-10 flex flex-col justify-between">
 
                                     <div>
                                         <h4 className="text-white text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
@@ -373,7 +374,7 @@ const Pricing = () => {
 
                                         <div className="flex items-end gap-2 sm:gap-3 mb-4 sm:mb-6">
                                             <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                                                $1,200
+                                                $599
                                             </span>
                                             <span className="text-zinc-400 mb-1 sm:mb-2 text-xs sm:text-sm">
                                                 / month
@@ -392,9 +393,9 @@ const Pricing = () => {
                                         <HoverSweepButton
                                             onClick={() => window.open("https://wa.me/8801710636221", "_blank")}
                                             className="w-full py-3 sm:py-4 px-5 sm:px-6 flex justify-between items-center cursor-pointer rounded-full font-semibold bg-red-600 shadow-lg hover:shadow-red-600/30 transition-all duration-300 text-white"
-                                            icon={<ArrowRight size={18} />}
+                                            icon={<ArrowRight size={18} className="hidden md:block" />}
                                         >
-                                            <span className="text-xs sm:text-sm font-semibold tracking-wide">
+                                            <span className="text-sm font-bold tracking-wide w-full text-center md:text-left">
                                                 Book Monthly Partnership
                                             </span>
                                         </HoverSweepButton>

@@ -59,7 +59,7 @@ export default function HoverSweepButton({ children, className = "", icon }) {
       ref={btnRef}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className={`relative overflow-hidden flex items-center gap-2 px-8 py-4 rounded-full font-bold ${className}`}
+      className={`relative overflow-hidden flex items-center gap-2 px-2 md:px-8 py-4 rounded-full font-bold ${className}`}
     >
       {/* Sweep background */}
       <span

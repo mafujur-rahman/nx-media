@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 
 export default function GlobalPresence() {
     const locations = [
@@ -11,9 +14,55 @@ export default function GlobalPresence() {
         { country: "England" },
     ];
 
-    return (
-        <section className="relative h-full md:h-[90vh]  pt-36 md:pt-28 w-full overflow-hidden">
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+    const [isTransitioning, setIsTransitioning] = useState(true);
 
+    // Create infinite array by duplicating the pairs
+    const locationPairs = [];
+    for (let i = 0; i < locations.length; i += 2) {
+        locationPairs.push(locations.slice(i, i + 2));
+    }
+    
+    // Create infinite loop array (add first 2 pairs at the end for seamless loop)
+    const infinitePairs = [...locationPairs, ...locationPairs.slice(0, 2)];
+
+    // Check for mobile screen size
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    // Auto-slide for mobile only
+    useEffect(() => {
+        if (!isMobile) return;
+
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => prevIndex + 1);
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, [isMobile]);
+
+    // Handle infinite loop reset
+    const handleTransitionEnd = () => {
+        if (currentIndex >= locationPairs.length) {
+            setIsTransitioning(false);
+            setCurrentIndex(0);
+            setTimeout(() => {
+                setIsTransitioning(true);
+            }, 50);
+        }
+    };
+
+    return (
+        <section className="relative h-full md:h-[90vh] pt-36 md:pt-28 w-full overflow-hidden">
             {/* VIDEO BACKGROUND */}
             <video
                 autoPlay
@@ -36,19 +85,68 @@ export default function GlobalPresence() {
                     Our Clients Across the Globe
                 </h2>
 
-                {/* LOCATIONS GRID */}
-                <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {locations.map((item, i) => (
-                        <div
-                            key={i}
-                            className="rounded-2xl border border-white/15 bg-black/10 backdrop-blur-md p-5 text-center shadow-[0_0_40px_rgba(255,255,255,0.05)]"
+                {/* LOCATIONS GRID - Desktop */}
+                {!isMobile && (
+                    <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {locations.map((item, i) => (
+                            <div
+                                key={i}
+                                className="rounded-2xl border border-white/15 bg-black/10 backdrop-blur-md p-5 text-center shadow-[0_0_40px_rgba(255,255,255,0.05)] transition-all duration-300 hover:border-white/30"
+                            >
+                                <h4 className="text-white font-semibold text-lg">
+                                    {item.country}
+                                </h4>                        
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {/* LOCATIONS CAROUSEL - Mobile (Infinite smooth sliding) */}
+                {isMobile && (
+                    <div className="w-full max-w-sm overflow-hidden">
+                        <div 
+                            className={`flex ${isTransitioning ? 'transition-transform duration-700 ease-out' : ''}`}
+                            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                            onTransitionEnd={handleTransitionEnd}
                         >
-                            <h4 className="text-white font-semibold text-lg">
-                                {item.country}
-                            </h4>                        
+                            {infinitePairs.map((pair, pageIndex) => (
+                                <div
+                                    key={pageIndex}
+                                    className="w-full flex-shrink-0 flex flex-col gap-4"
+                                >
+                                    {pair.map((item, i) => (
+                                        <div
+                                            key={i}
+                                            className="rounded-2xl border border-white/15 bg-black/10 backdrop-blur-md p-5 text-center shadow-[0_0_40px_rgba(255,255,255,0.05)]"
+                                        >
+                                            <h4 className="text-white font-semibold text-lg">
+                                                {item.country}
+                                            </h4>                        
+                                        </div>
+                                    ))}
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
+                        
+                        {/* Dot indicators for mobile */}
+                        <div className="flex justify-center gap-2 mt-6">
+                            {locationPairs.map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => {
+                                        setIsTransitioning(true);
+                                        setCurrentIndex(i);
+                                    }}
+                                    className={`h-2 rounded-full transition-all duration-300 ${
+                                        currentIndex % locationPairs.length === i 
+                                            ? "w-6 bg-white" 
+                                            : "w-2 bg-white/40"
+                                    }`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
 
             {/* TOP FADE (SPACE GLOW EFFECT) */}

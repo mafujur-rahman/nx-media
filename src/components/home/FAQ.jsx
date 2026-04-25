@@ -38,7 +38,6 @@ const faqs = [
     }
 ];
 
-
 export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState(null);
     const contentRefs = useRef([]);
@@ -112,20 +111,20 @@ export default function FAQSection() {
                         <div key={i} className="py-10">
                             <button
                                 onClick={() => toggle(i)}
-                                className="w-full flex items-center justify-between text-left"
+                                className="w-full flex items-center justify-between text-left gap-4"
                             >
-                                <span className="text-2xl md:text-3xl text-white font-light">
+                                <span className="text-xl sm:text-2xl md:text-3xl text-white font-light">
                                     {item.q}
                                 </span>
 
-                                {/* + / − Icon */}
-                                <span className="relative w-10 h-10 flex items-center justify-center rounded-full border border-white/30">
+                                {/* + / − Icon - Fixed rounded border on mobile */}
+                                <span className="relative w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center rounded-full border border-white/30">
                                     {/* horizontal */}
-                                    <span className="absolute w-4 h-px bg-white" />
+                                    <span className="absolute w-3 sm:w-4 h-px bg-white" />
                                     {/* vertical */}
                                     <span
                                         ref={(el) => (vertRefs.current[i] = el)}
-                                        className="absolute h-4 w-px bg-white origin-center"
+                                        className="absolute h-3 sm:h-4 w-px bg-white origin-center"
                                     />
                                 </span>
                             </button>
@@ -135,7 +134,7 @@ export default function FAQSection() {
                                 ref={(el) => (contentRefs.current[i] = el)}
                                 className="overflow-hidden"
                             >
-                                <p className="pt-6 text-base text-white/60 max-w-3xl">
+                                <p className="pt-6 text-sm sm:text-base text-white/60 max-w-3xl">
                                     {item.a}
                                 </p>
                             </div>

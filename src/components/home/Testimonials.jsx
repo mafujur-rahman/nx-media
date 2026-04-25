@@ -9,89 +9,112 @@ const brandLogos = {
   "schonert": "/images/review/schonert.jpeg",
   "advertee": "/images/review/advert.jpeg",
   "Searle Interiors": "/images/review/searle.jpeg",
-  "La Ebanista": "/images/review/la.png", 
+  "La Ebanista": "/images/review/la.png",
+  "Bear Health": "/images/review/bear-health.jpeg",
   "Academic Hero": null,
   "Anytask": "/images/review/Anytask.png",
   "elektryk.pro": "/images/review/elyktro.jpeg",
-  "Lead the way": null, 
-  
+  "Lead the way": null,
+  "Nutralign": "/images/review/nutralign.jpeg"
+};
+
+// Custom image positioning for each brand to control zoom/crop
+const brandImageStyles = {
+  "schonert": { objectPosition: "center", objectFit: "contain" },
+  "advertee": { objectPosition: "center", objectFit: "cover" },
+  "Searle Interiors": { objectPosition: "center", objectFit: "cover" },
+  "La Ebanista": { objectPosition: "center", objectFit: "contain" },
+  "Bear Health": { objectPosition: "center", objectFit: "cover" },
+  "Anytask": { objectPosition: "center", objectFit: "contain" },
+  "elektryk.pro": { objectPosition: "center", objectFit: "cover" },
+  "Nutralign": { objectPosition: "center", objectFit: "cover" },
 };
 
 const testimonials = [
   {
-    quote: "The NX Media was great! They worked with me on making changes to the logo and got exactly what I was looking for! Great service! ",
+    quote: `"The NX Media" was great! They worked with me on making changes to the logo and got exactly what I was looking for! Great service!`,
     name: "Josh Smith",
     role: "Founder at Schonert Marketing",
-    image:
-      "/images/review/josh.jpeg",
+    image: "/images/review/josh.jpeg",
     brand: "schonert",
   },
   {
     quote: "This guy is the winner of a huge logo. I was satisfied with his work.",
     name: "Petr Kucera",
     role: "Founder at Advertee",
-    image:
-      "/images/review/petr.jpeg",
+    image: "/images/review/petr.jpeg",
     brand: "advertee",
   },
   {
-    quote: "The NX Media was helpful and kind. He understood what we wanted and tweaked the design when asked. He went above and beyond to give us many altered designs until we were happy. Highly recommend! ",
+    quote: `"The NX Media" was helpful and kind. He understood what we wanted and tweaked the design when asked. He went above and beyond to give us many altered designs until we were happy. Highly recommend!`,
     name: "Suzi Searle",
     role: "Founder at Searle Interiors",
-    image:
-      "/images/review/suzi.jpeg",
+    image: "/images/review/suzi.jpeg",
     brand: "Searle Interiors",
   },
   {
-    quote:
-      "Working with NX Media over the past four years has been seamless, reliable, and consistently impressive.",
+    quote: `Working with "NX Media" over the past four years has been seamless, reliable, and consistently impressive.`,
     name: "Zenzele Silla",
     role: "Founder & CEO",
-    image:
-      "/images/review/zenzele.jpeg",
+    image: "/images/review/zenzele.jpeg",
     brand: "La Ebanista",
   },
   {
-    quote: "Thank you again, The NX Media. I've worked with you on so many projects and look forward to many more. Thanks for always bringing my vision to reality.",
+    quote: `Thank you again, "The NX Media". I've worked with you on so many projects and look forward to many more. Thanks for always bringing my vision to reality.`,
     name: "Jim",
     role: "Founder",
-    image:
-      "/images/review/male.png",
+    image: "/images/review/male.png",
     brand: "Academic Hero",
   },
   {
     quote: "Very professional freelancer with great design skills and delivered work very promptly,and accepted revisions when needed. Great experience.",
     name: "Anytask Stef",
     role: "Staff",
-    image:
-      "/images/review/male.png",
+    image: "/images/review/male.png",
     brand: "Anytask",
   },
   {
     quote: "Wow! Good skills, very fast wiek, good response time, I recommend 10/10.",
     name: "Olsenskce",
     role: "Founder",
-    image:
-      "/images/review/male.png",
+    image: "/images/review/male.png",
     brand: "elektryk.pro",
   },
   {
-    quote: "Above and beyond! The NX Media did a fantastic job with the latest batch of work I sent them. He went above and beyond the job spec and delivered additional files with ease. Thank you, The NX Media!",
+    quote: "Great work on the Bear Health logos, everything was delivered smoothly and on point. I'll be back soon for more design work. Highly recommended, easy to work with and very dependable.",
+    name: "Andrew Bear",
+    role: "Founder",
+    image: "/images/review/andrew.jpeg",
+    brand: "Bear Health",
+  },
+  {
+    quote: "Thank you for the logo, really appreciate the effort. I'll be moving forward with more design work for Bear Health soon and will reach out. Highly recommended, very professional and reliable.",
+    name: "Andrew Bear",
+    role: "Founder",
+    image: "/images/review/andrew.jpeg",
+    brand: "Nutralign",
+  },
+  {
+    quote: "Wow! Good skills, very fast wiek, good response time, I recommend 10/10.",
+    name: "Olsenskce",
+    role: "Founder",
+    image: "/images/review/male.png",
+    brand: "elektryk.pro",
+  },
+  {
+    quote: `Above and beyond! "The NX Media" did a fantastic job with the latest batch of work I sent them. He went above and beyond the job spec and delivered additional files with ease. Thank you, "The NX Media»!"`,
     name: "Anytask Jonathan",
     role: "Staff",
-    image:
-      "/images/review/male.png",
+    image: "/images/review/male.png",
     brand: "Anytask",
   },
   {
     quote: "Good work. Happy with the work produced in the end. The only reason why there is one less star is that I sent an example of a logo I liked, and the seller sent it back to me, but changed the colour. Other than that, I am happy.",
     name: "Emma Gori",
     role: "Founder",
-    image:
-      "/images/review/female-icon.png",
+    image: "/images/review/female-icon.png",
     brand: "Lead the way",
   },
-  
 ];
 
 // Helper function to truncate text
@@ -115,7 +138,6 @@ const Testimonial = () => {
       },
     });
 
-    // Slide out current
     tl.to(contentRef.current, {
       x: direction === "next" ? -100 : 100,
       opacity: 0,
@@ -123,7 +145,6 @@ const Testimonial = () => {
       ease: "power2.in",
     });
 
-    // Change content mid animation
     tl.add(() => {
       setIndex((prev) =>
         direction === "next"
@@ -134,12 +155,10 @@ const Testimonial = () => {
       );
     });
 
-    // Instantly move to opposite side
     tl.set(contentRef.current, {
       x: direction === "next" ? 100 : -100,
     });
 
-    // Slide in new
     tl.to(contentRef.current, {
       x: 0,
       opacity: 1,
@@ -150,8 +169,8 @@ const Testimonial = () => {
 
   const t = testimonials[index];
   const hasBrandLogo = brandLogos[t.brand] !== null;
+  const imageStyle = brandImageStyles[t.brand] || { objectPosition: "center", objectFit: "cover" };
 
-  // Get truncated quote for display
   const truncatedQuote = truncateText(t.quote, 150);
 
   return (
@@ -159,7 +178,6 @@ const Testimonial = () => {
       <div className="max-w-7xl mx-auto w-full">
         {/* Title */}
         <div className="text-center mb-16">
-          {/* Badge */}
           <div className="flex justify-center mb-6">
             <span className="px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-white text-xs md:text-sm font-medium">
               Real clients. Real feedback.
@@ -171,7 +189,6 @@ const Testimonial = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
           {/* LEFT CARD */}
           <div className="bg-white/5 border border-white/10 rounded-[30px] p-8 md:p-12 flex flex-col justify-center relative overflow-hidden min-h-[400px] md:min-h-[500px]">
-            {/* Centered Opposite Quote */}
             <div className="absolute top-6 left-1/2 -translate-x-1/2 opacity-10">
               <svg
                 width="80"
@@ -184,14 +201,12 @@ const Testimonial = () => {
               </svg>
             </div>
 
-            {/* Animated Content Wrapper */}
             <div ref={contentRef} className="relative z-10 overflow-y-auto max-h-[300px] md:max-h-[350px] px-2">
               <h2 className="text-white text-xl md:text-2xl lg:text-[28px] font-bold leading-relaxed tracking-tight text-center">
                 {truncatedQuote}
               </h2>
             </div>
 
-            {/* Arrows */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-4">
               <button
                 onClick={() => changeSlide("prev")}
@@ -218,20 +233,24 @@ const Testimonial = () => {
               <img
                 src={t.image}
                 alt={t.name}
-                className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-500"
+                className="w-full h-full object-cover "
               />
             </div>
 
             {/* Top Right: Brand (Logo or Text) */}
-            <div className="h-[240px] md:h-[280px] lg:h-[320px] bg-white rounded-[30px] flex items-center justify-center p-6 overflow-hidden">
+            <div className="h-[240px] md:h-[280px] lg:h-[320px] bg-white rounded-[30px] flex items-center justify-center overflow-hidden">
               {hasBrandLogo ? (
-                <img 
-                  src={brandLogos[t.brand]} 
+                <img
+                  src={brandLogos[t.brand]}
                   alt={`${t.brand} logo`}
-                  className="max-w-full max-h-full object-contain"
+                  className="w-full h-full"
+                  style={{
+                    objectFit: imageStyle.objectFit,
+                    objectPosition: imageStyle.objectPosition,
+                  }}
                 />
               ) : (
-                <span className="text-black font-black italic text-3xl md:text-4xl lg:text-5xl tracking-tighter text-center break-words">
+                <span className="text-black font-black italic text-3xl md:text-4xl lg:text-5xl tracking-tighter text-center break-words p-6">
                   {t.brand}
                 </span>
               )}

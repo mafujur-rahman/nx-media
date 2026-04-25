@@ -5,9 +5,54 @@ export default function Footer() {
         <footer className="relative bg-black text-white pt-12 pb-24 md:pb-28 lg:pb-[120px] lg:py-20 px-6 md:px-10 lg:px-16 overflow-hidden border-t border-white/5">
             <div className="relative z-10 max-w-7xl mx-auto">
 
-                {/* TOP SECTION */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-12 mb-12">
+                {/* Mobile Layout (default) */}
+                <div className="block md:hidden">
+                    {/* Logo - on top */}
+                    <div className="flex justify-center w-full mb-8">
+                        <img
+                            src="/logo.png"
+                            alt="NX Media Logo"
+                            className="w-[180px] sm:w-[200px] object-contain select-none"
+                        />
+                    </div>
 
+                    {/* Social Links - centered, single line, no wrap */}
+                    <div className="flex justify-center mb-4">
+                        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 px-2">
+                            {[
+                                { name: "INSTAGRAM", url: "https://www.instagram.com/thenxmedia/" },
+                                { name: "FACEBOOK", url: "https://www.facebook.com/thenxmedia" },
+                                { name: "LINKEDIN", url: "https://www.linkedin.com/company/111777060/admin/dashboard/" },
+                                { name: "BEHANCE", url: "https://www.behance.net/thenxmedia" },
+                            ].map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-1 text-sm font-semibold hover:text-red-500 transition-all duration-300 group whitespace-nowrap"
+                                >
+                                    {link.name}
+                                    {link.name !== "BEHANCE" && (
+                                        <span className="group-hover:translate-x-1 transition-transform duration-300 text-xs">
+                                            →
+                                        </span>
+                                    )}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Copyright - at bottom */}
+                    <div className="text-center mb-4">
+                        <p className="text-xs text-gray-400 tracking-tight">
+                            © {new Date().getFullYear()} THE NX MEDIA.
+                        </p>
+                    </div>
+                </div>
+
+                {/* MD+ Layout (original): copyright+social left, logo right */}
+                <div className="hidden md:flex md:flex-row md:items-center justify-between gap-12 mb-12">
                     {/* LEFT */}
                     <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6 w-full md:w-auto">
                         <p className="text-sm md:text-base text-gray-400 tracking-tight">
@@ -37,7 +82,6 @@ export default function Footer() {
                                 </a>
                             ))}
                         </div>
-
                     </div>
 
                     {/* RIGHT */}
@@ -51,7 +95,7 @@ export default function Footer() {
                 </div>
 
                 {/* DIVIDER */}
-                <div className="w-full h-[1px] bg-white/10 mb-4 " />
+                <div className="w-full h-[1px] bg-white/10 mb-6" />
 
                 {/* EMAIL */}
                 <div className="text-center">

@@ -1,4 +1,4 @@
- "use client";
+"use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
@@ -21,6 +21,22 @@ export default function TopNavbar() {
     /* ================= NAVBAR SHRINK ================= */
     useEffect(() => {
         const onScroll = () => {
+            // Only apply shrink effect on md and larger devices (768px and above)
+            const isLargeDevice = window.innerWidth >= 768;
+            
+            if (!isLargeDevice) {
+                // Reset to full width on mobile if scrolled
+                if (navRef.current) {
+                    gsap.to(navRef.current, {
+                        width: "100%",
+                        maxWidth: "1280px",
+                        duration: 0.8,
+                        ease: "expo.out",
+                    });
+                }
+                return;
+            }
+            
             const shrink = window.scrollY > window.innerHeight * 0.8;
             if (shrink !== scrolled.current) {
                 scrolled.current = shrink;
@@ -32,8 +48,19 @@ export default function TopNavbar() {
                 });
             }
         };
+        
         window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
+        // Trigger initial check
+        onScroll();
+        
+        // Add resize listener to handle orientation changes
+        const handleResize = () => onScroll();
+        window.addEventListener("resize", handleResize);
+        
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     /* ================= MENU TIMELINE ================= */
@@ -79,9 +106,17 @@ export default function TopNavbar() {
     useEffect(() => {
         if (open) {
             menuTl.current.play();
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = "hidden";
         } else {
             menuTl.current.reverse();
+            document.body.style.overflow = "unset";
         }
+        
+        // Cleanup on unmount
+        return () => {
+            document.body.style.overflow = "unset";
+        };
     }, [open]);
 
     const handleLinkClick = (id) => {
@@ -129,7 +164,7 @@ export default function TopNavbar() {
             {/* ================= MENU ================= */}
             <div
                 ref={menuWrap}
-                className="fixed inset-0 z-40 hidden bg-black"
+                className="fixed inset-0 z-[100] hidden bg-black"
             >
                 {/* BACKGROUND */}
                 <div ref={menuBg} className="absolute inset-0 bg-black" />
@@ -141,9 +176,9 @@ export default function TopNavbar() {
                         <button
                             onClick={() => setOpen(false)}
                             className="w-12 h-12 rounded-full bg-white/10
-                            hover:bg-red-500 hover:rotate-90 transition-all duration-500 ease-out hover:scale-110 flex items-center justify-center"
+                            hover:bg-red-500 hover:rotate-90 transition-all duration-500 ease-out hover:scale-110 flex items-center justify-center relative z-20"
                         >
-                            <HiX size={26} />
+                            <HiX size={26} className="relative z-20" />
                         </button>
                     </div>
 

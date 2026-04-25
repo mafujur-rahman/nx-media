@@ -1,6 +1,14 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { HiOutlineCurrencyDollar, HiOutlineFolder, HiOutlineMenu, HiOutlinePuzzle, HiX } from "react-icons/hi";
+import {
+  HiOutlineCurrencyDollar, HiCurrencyDollar,
+  HiOutlineFolder, HiFolder,
+  HiOutlinePuzzle, HiPuzzle,
+  HiOutlineUserCircle, HiUserCircle,
+  HiX,
+  HiBriefcase,
+  HiOutlineBriefcase
+} from "react-icons/hi";
 import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
 import gsap from 'gsap';
@@ -11,6 +19,7 @@ const Navbar = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [showFormModal, setShowFormModal] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [activeSection, setActiveSection] = useState("projects");
   const buttonRef = useRef(null);
   const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
   const hideTimeout = useRef(null);
@@ -46,53 +55,52 @@ const Navbar = () => {
   useEffect(() => {
     if (!rotatingBorderRef.current || !containerRef.current) return;
 
-    // Function to update the SVG path dimensions
     const updatePathDimensions = () => {
       const container = containerRef.current;
       if (!container) return;
-      
+
       const rect = container.getBoundingClientRect();
       const width = rect.width;
       const height = rect.height;
-      const radius = 9999; // Large number for pill shape
-      
-      // Create a path for rounded rectangle
-      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      const actualRadius = Math.min(radius, height / 2, width / 2);
-      
-      // Path for rounded rectangle
+
+      // Calculate border radius (matching rounded-full which is 9999px)
+      // For perfect pill shape, radius should be half the height
+      const radius = height / 2;
+
+      // Create path that perfectly matches the rounded rectangle
+      // Adding a small offset to ensure the border sits exactly on the edge
       const d = `
-        M ${actualRadius},0
-        L ${width - actualRadius},0
-        A ${actualRadius},${actualRadius} 0 0,1 ${width},${actualRadius}
-        L ${width},${height - actualRadius}
-        A ${actualRadius},${actualRadius} 0 0,1 ${width - actualRadius},${height}
-        L ${actualRadius},${height}
-        A ${actualRadius},${actualRadius} 0 0,1 0,${height - actualRadius}
-        L 0,${actualRadius}
-        A ${actualRadius},${actualRadius} 0 0,1 ${actualRadius},0
+        M ${radius},0
+        L ${width - radius},0
+        A ${radius},${radius} 0 0,1 ${width},${radius}
+        L ${width},${height - radius}
+        A ${radius},${radius} 0 0,1 ${width - radius},${height}
+        L ${radius},${height}
+        A ${radius},${radius} 0 0,1 0,${height - radius}
+        L 0,${radius}
+        A ${radius},${radius} 0 0,1 ${radius},0
         Z
       `;
-      
+
       rotatingBorderRef.current.setAttribute("d", d);
-      
+
       // Get the total length of the path
       const length = rotatingBorderRef.current.getTotalLength();
-      
-      // Fixed dash length - visible line segment
+
+      // Fixed dash length for consistent visible segment
       const dashLength = 100;
-      
-      // Set up dasharray with a fixed visible dash length
+
+      // Set up dasharray
       gsap.set(rotatingBorderRef.current, {
         strokeDasharray: `${dashLength} ${length - dashLength}`,
         strokeDashoffset: 0,
       });
-      
+
       // Kill any existing animation
       if (rotatingBorderRef.current.animation) {
         rotatingBorderRef.current.animation.kill();
       }
-      
+
       // Create smooth continuous rotation animation
       const animation = gsap.to(rotatingBorderRef.current, {
         strokeDashoffset: -length,
@@ -100,37 +108,58 @@ const Navbar = () => {
         repeat: -1,
         ease: "none",
       });
-      
-      // Store animation reference
+
       rotatingBorderRef.current.animation = animation;
-      
-      // Add a subtle pulse to the gradient opacity
-      gsap.to(rotatingBorderRef.current, {
-        opacity: 0.6,
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
     };
-    
+
     // Initial update
     updatePathDimensions();
-    
-    // Update on resize
+
     const resizeObserver = new ResizeObserver(() => {
       updatePathDimensions();
     });
-    
+
     if (containerRef.current) {
       resizeObserver.observe(containerRef.current);
     }
-    
+
     return () => {
       resizeObserver.disconnect();
       if (rotatingBorderRef.current?.animation) {
         rotatingBorderRef.current.animation.kill();
       }
+    };
+  }, []);
+
+  // Track active section based on scroll position
+  useEffect(() => {
+    const sections = ["projects", "services", "pricing", "about"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
     };
   }, []);
 
@@ -158,6 +187,8 @@ const Navbar = () => {
   };
 
   const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+
     if (pathname !== "/") {
       router.push(`/#${sectionId}`);
       return;
@@ -193,46 +224,31 @@ const Navbar = () => {
     <>
       {/* ===================== DESKTOP / TABLET ===================== */}
       <div className="hidden sm:flex fixed bottom-4 left-0 right-0 z-50 justify-center px-4">
-        <div ref={containerRef} className="relative rounded-full">
-          {/* Rotating Gradient Border - Red Theme */}
+        <div
+          ref={containerRef}
+          className="relative"
+        >
+          {/* Rotating Red Border SVG - Now perfectly wrapped */}
           <svg
-            className="absolute inset-0 w-full h-full pointer-events-none"
-            style={{ 
-              overflow: 'visible',
-              position: 'absolute',
+            className="absolute pointer-events-none"
+            style={{
               top: '-2px',
               left: '-2px',
               width: 'calc(100% + 4px)',
-              height: 'calc(100% + 4px)'
+              height: 'calc(100% + 4px)',
+              zIndex: 10,
             }}
           >
-            <defs>
-              <linearGradient id="rotatingGradientRed" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#ff0000" stopOpacity="1" />
-                <stop offset="25%" stopColor="#ff4444" stopOpacity="1" />
-                <stop offset="50%" stopColor="#cc0000" stopOpacity="1" />
-                <stop offset="75%" stopColor="#ff3333" stopOpacity="1" />
-                <stop offset="100%" stopColor="#ff0000" stopOpacity="1" />
-              </linearGradient>
-              {/* Glow/blur layer */}
-              <filter id="glowRed" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="4" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
             <path
               ref={rotatingBorderRef}
               fill="none"
-              stroke="url(#rotatingGradientRed)"
+              stroke="#ef4444"
               strokeWidth="3"
-              vectorEffect="non-scaling-stroke"
-              style={{ filter: 'url(#glowRed)' }}
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
-          
+
           {/* Inner Container */}
           <nav className="relative rounded-full flex items-center gap-6 px-8 py-3 bg-black shadow-2xl border border-white/10">
             {/* Projects Link */}
@@ -275,7 +291,7 @@ const Navbar = () => {
               Pricing
             </a>
 
-            {/* FAQ Link */}
+            {/* About Link */}
             <a
               onClick={() => scrollToSection("about")}
               className="text-white font-medium hover:text-red-500 cursor-pointer transition-colors"
@@ -316,8 +332,8 @@ const Navbar = () => {
             {/* Right Column: Featured Card */}
             <div className="w-[250px] ml-6 bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 flex flex-col">
               <div className="p-4">
-                <h3 className="font-bold text-lg mb-1">Level Up Like Player 456</h3>
-                <p className="text-sm text-slate-600">Our services help you win the design game.</p>
+                <h3 className="font-bold text-lg mb-1">From Pixels to Presence</h3>
+                <p className="text-sm text-slate-600">Your brand isn't what you say it is—it's what they remember. We make sure both align.</p>
               </div>
               <div className="mt-auto bg-slate-200 relative overflow-hidden transition-all duration-500 h-60">
                 <img
@@ -326,8 +342,8 @@ const Navbar = () => {
                   className="object-cover w-full h-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
-                  <span className="text-white font-bold text-lg">Squid Games</span>
-                  <span className="text-white/80 italic text-sm">UI/UX Design</span>
+                  <span className="text-white font-bold text-lg">Nazmul Islam</span>
+                  <span className="text-white/80 italic text-sm">Founder & CEO</span>
                 </div>
               </div>
             </div>
@@ -405,17 +421,6 @@ const Navbar = () => {
 
       {/* ===================== MOBILE NAVBAR ===================== */}
       <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50">
-        {/* FLOATING CENTER BUTTON */}
-        <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-50">
-          <button className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center border-2 border-red-500 shadow-2xl">
-            <img
-              src="/NX-media.png"
-              className="w-12 h-12 object-contain"
-              alt="NX Media"
-            />
-          </button>
-        </div>
-
         {/* NAVBAR */}
         <div className="bg-black/95 backdrop-blur-md py-2 border-t border-white/10 grid grid-cols-5 place-items-center">
           {/* Projects */}
@@ -423,8 +428,14 @@ const Navbar = () => {
             onClick={() => scrollToSection("projects")}
             className="flex flex-col items-center text-white cursor-pointer"
           >
-            <HiOutlineFolder className="text-xl mb-0.5" />
-            <span className="text-[10px] font-medium">Projects</span>
+            {activeSection === "projects" ? (
+              <HiFolder className="text-xl mb-0.5 text-red-500" />
+            ) : (
+              <HiOutlineFolder className="text-xl mb-0.5" />
+            )}
+            <span className={`text-[10px] font-medium ${activeSection === "projects" ? "text-red-500" : "text-white"}`}>
+              Projects
+            </span>
           </div>
 
           {/* Services */}
@@ -432,29 +443,58 @@ const Navbar = () => {
             onClick={() => scrollToSection("services")}
             className="flex flex-col items-center text-white cursor-pointer"
           >
-            <HiOutlinePuzzle className="text-xl mb-0.5" />
-            <span className="text-[10px] font-medium">Services</span>
+            {activeSection === "services" ? (
+              <HiBriefcase className="text-xl mb-0.5 text-red-500" />
+            ) : (
+              <HiOutlineBriefcase className="text-xl mb-0.5" />
+            )}
+            <span className={`text-[10px] font-medium ${activeSection === "services" ? "text-red-500" : "text-white"}`}>
+              Services
+            </span>
           </div>
 
-          {/* Empty for center button */}
-          <div></div>
+          {/* Center Logo - Inside navbar, same alignment */}
+          <div
+            onClick={() => scrollToSection("home")}
+            className="flex flex-col items-center text-white cursor-pointer  rounded-lg"
+          >
+            <div className="w-8 h-8 bg-white rounded-lg border border-red-500 flex items-center justify-center mb-0.5">
+              <img
+                src="/NX-media.png"
+                className="w-6 h-6 object-contain"
+                alt="NX Media"
+              />
+            </div>
+          </div>
 
           {/* Pricing */}
           <div
             onClick={() => scrollToSection("pricing")}
             className="flex flex-col items-center text-white cursor-pointer"
           >
-            <HiOutlineCurrencyDollar className="text-xl mb-0.5" />
-            <span className="text-[10px] font-medium">Pricing</span>
+            {activeSection === "pricing" ? (
+              <HiCurrencyDollar className="text-xl mb-0.5 text-red-500" />
+            ) : (
+              <HiOutlineCurrencyDollar className="text-xl mb-0.5" />
+            )}
+            <span className={`text-[10px] font-medium ${activeSection === "pricing" ? "text-red-500" : "text-white"}`}>
+              Pricing
+            </span>
           </div>
 
-          {/* About */}
+          {/* About - With appropriate user icon */}
           <div
             onClick={() => scrollToSection("about")}
             className="flex flex-col items-center text-white cursor-pointer"
           >
-            <HiOutlineMenu className="text-xl mb-0.5" />
-            <span className="text-[10px] font-medium">About</span>
+            {activeSection === "about" ? (
+              <HiUserCircle className="text-xl mb-0.5 text-red-500" />
+            ) : (
+              <HiOutlineUserCircle className="text-xl mb-0.5" />
+            )}
+            <span className={`text-[10px] font-medium ${activeSection === "about" ? "text-red-500" : "text-white"}`}>
+              About
+            </span>
           </div>
         </div>
       </div>

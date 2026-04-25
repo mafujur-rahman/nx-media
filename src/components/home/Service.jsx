@@ -206,7 +206,7 @@ const Service = () => {
                                     {service.subtitle}
                                 </p>
                                 <h2 className="title_text">
-                                    {service.number} {service.title}
+                                     {service.title}
                                 </h2>
                             </div>
 

@@ -10,7 +10,7 @@ export default function Banner() {
 
     return (
         <section
-        id="home"
+            id="home"
             className="relative md:min-h-screen bg-black overflow-hidden text-white"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -53,15 +53,32 @@ export default function Banner() {
                 </p>
 
                 <div className="mt-5 lg:mt-10 flex flex-col sm:flex-row gap-4">
-                    <HoverSweepButton
-                        className="bg-red-600 text-white cursor-pointer"
-                        icon={<HiArrowRight />}
+                    <div
+                        onClick={() => {
+                            const section = document.getElementById('contact');
+                            if (section) {
+                                section.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
                     >
-                        Build My Brand
-                    </HoverSweepButton>
+                        <HoverSweepButton
+                            className="bg-red-600 text-white cursor-pointer w-full sm:w-auto flex justify-center sm:justify-start"
+                            icon={<HiArrowRight />}
+                        >
+                            Build My Brand
+                        </HoverSweepButton>
+                    </div>
 
-                    <button className="flex items-center gap-2 cursor-pointer border border-red-500 px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all">
-                        View Our Portfolio
+                    <button
+                        onClick={() => {
+                            const section = document.getElementById('projects');
+                            if (section) {
+                                section.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
+                        className="flex items-center gap-2 cursor-pointer border border-red-500 px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all w-full sm:w-auto justify-center sm:justify-start"
+                    >
+                        View Our Projects
                         <svg
                             width="20"
                             height="20"
@@ -80,7 +97,7 @@ export default function Banner() {
                 </p>
             </div>
             {/* ================= CLIENT SLIDER (BOTTOM) ================= */}
-            <div className="absolute bottom-0 xl:bottom-5 2xl:bottom-25 left-0 w-full z-20">
+            <div className="absolute bottom-0 xl:bottom-5 2xl:bottom-25 left-0 w-full z-20 -mt-8 md:mt-0">
                 <ClientSlider />
             </div>
 
