@@ -2,13 +2,12 @@
 
 export const projectsData = {
     // ========== BRANDINGS ==========
-    "minimalist-logo-concepts": {
-        id: "Berimbolo Beans",
+    "berimbolo-beans": {
+        id: "berimbolo-beans",
         title: "Berimbolo Beans",
         category: "Logo Design",
         brand: "The NX Media",
         year: "2024",
-        bannerImage: "/images/projects/logo/1.png",
         description: "Creating clean, memorable logo concepts that focus on essential elements while maintaining brand identity and scalability across all platforms.",
         tags: ["LOGO DESIGN", "BRAND IDENTITY", "MINIMALISM"],
         overview: "We developed a series of minimalist logo concepts that strip away unnecessary elements, focusing on core brand messaging and visual impact. Each concept was tested across various applications to ensure versatility and recognition.",
@@ -31,18 +30,19 @@ export const projectsData = {
             description: "Our challenge was to distill complex brand values into simple, powerful visual symbols. We explored various geometric forms and negative space techniques to create logos that are both memorable and versatile.",
             process: ["Research", "Sketching", "Digital Design", "Refinement", "Delivery"]
         },
+        bannerImage: "/images/projects/logo/berimbolo/1.png",
         images: {
-            topImage: "/images/projects/logo/1.png",
-            missionImage1: "/images/projects/logo/2.png",
-            missionImage2: "/images/projects/logo/3.png",
-            bottomImage: "/images/projects/logo/4.png"
+            topImage: "/images/projects/logo/berimbolo/6.png",
+            missionImage1: "/images/projects/logo/berimbolo/2.png",
+            missionImage2: "/images/projects/logo/berimbolo/3.png",
+            bottomImage: "/images/projects/logo/berimbolo/4.png"
         },
         videoUrl: "/service.mp4"
     },
 
-    "brandmark-icon-design": {
-        id: "brandmark-icon-design",
-        title: "Brandmark & Icon Design",
+    "bear-health": {
+        id: "bear-health",
+        title: "Bear Health",
         category: "Logo Design",
         brand: "The NX Media",
         year: "2024",
@@ -68,19 +68,20 @@ export const projectsData = {
             description: "We started by understanding the brand's core values and visual language, then developed a modular icon system that could grow with the brand.",
             process: ["Discovery", "Concept Development", "Icon Grid", "System Creation", "Documentation"]
         },
+        bannerImage: "/images/projects/logo/bear-health/1.png",
         images: {
-            topImage: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop",
-            missionImage1: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
-            missionImage2: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop",
-            bottomImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop"
+            topImage: "/images/projects/logo/bear-health/5.png",
+            missionImage1: "/images/projects/logo/bear-health/2.png",
+            missionImage2: "/images/projects/logo/bear-health/3.png",
+            bottomImage: "/images/projects/logo/bear-health/4.png"
         },
         videoUrl: "/service.mp4"
     },
 
-    "logo-variations-mockups": {
-        id: "logo-variations-mockups",
-        title: "Logo Variations & Mockups",
-        category: "Logo Design",
+    "influence-ireland-consulting": {
+        id: "influence-ireland-consulting",
+        title: "Influence Ireland Consulting",
+        category: "Brand Identity",
         brand: "The NX Media",
         year: "2024",
         description: "Creating versatile logo variations and realistic mockups to demonstrate brand application across different mediums and contexts.",
@@ -105,19 +106,20 @@ export const projectsData = {
             description: "We focused on creating flexible logo variations while demonstrating their impact through strategic mockup presentations.",
             process: ["Analysis", "Variation Design", "Mockup Creation", "Presentation", "Final Delivery"]
         },
+        bannerImage: "/images/projects/branding/Influence Ireland Consulting/1.png",
         images: {
-            topImage: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop",
-            missionImage1: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop",
-            missionImage2: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
-            bottomImage: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop"
+            topImage: "/images/projects/branding/Influence Ireland Consulting/5.png",
+            missionImage1: "/images/projects/branding/Influence Ireland Consulting/2.png",
+            missionImage2: "/images/projects/branding/Influence Ireland Consulting/3.png",
+            bottomImage: "/images/projects/branding/Influence Ireland Consulting/4.png"
         },
         videoUrl: "/service.mp4"
     },
 
-    "typography-color-exploration": {
-        id: "typography-color-exploration",
-        title: "Typography & Color Exploration",
-        category: "Logo Design",
+    "silagri": {
+        id: "silagri",
+        title: "Silagri",
+        category: "Brand Identity",
         brand: "The NX Media",
         year: "2024",
         description: "Exploring typographic and color solutions that enhance brand personality and ensure visual consistency across all communications.",
@@ -142,11 +144,12 @@ export const projectsData = {
             description: "We explored color psychology and typographic hierarchies to create a system that communicates effectively across all brand touchpoints.",
             process: ["Research", "Color Study", "Typography Selection", "System Creation", "Guidelines"]
         },
+        bannerImage: "/images/projects/branding/Silagri/1.png",
         images: {
-            topImage: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop",
-            missionImage1: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
-            missionImage2: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
-            bottomImage: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop"
+            topImage: "/images/projects/branding/Silagri/5.png",
+            missionImage1: "/images/projects/branding/Silagri/2.png",
+            missionImage2: "/images/projects/branding/Silagri/3.png",
+            bottomImage: "/images/projects/branding/Silagri/4.png"
         },
         videoUrl: "/service.mp4"
     },

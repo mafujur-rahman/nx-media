@@ -14,20 +14,20 @@ const steps = [
         id: "01",
         label: "Logo Design",
         cards: [
-            { title: "Minimalist Logo Concepts", slug: "minimalist-logo-concepts" },
-            { title: "Brandmark & Icon Design", slug: "brandmark-icon-design" },
-            { title: "Logo Variations & Mockups", slug: "logo-variations-mockups" },
-            { title: "Typography & Color Exploration", slug: "typography-color-exploration" },
+            { title: "Berimbolo Beans", slug: "berimbolo-beans" },
+            { title: "Bear Health", slug: "bear-health" },
+            // { title: "Logo Variations & Mockups", slug: "logo-variations-mockups" },
+            // { title: "Typography & Color Exploration", slug: "typography-color-exploration" },
         ],
     },
     {
         id: "02",
         label: "Brand Identity",
         cards: [
-            { title: "Visual Guidelines & Style Sheets", slug: "visual-guidelines-style-sheets" },
-            { title: "Color Palette & Typography", slug: "color-palette-typography" },
-            { title: "Brand Voice & Messaging", slug: "brand-voice-messaging" },
-            { title: "Stationery & Collateral Design", slug: "stationery-collateral-design" },
+            { title: "Influence Ireland Consulting", slug: "influence-ireland-consulting" },
+            { title: "Silagri", slug: "silagri" },
+            // { title: "Brand Voice & Messaging", slug: "brand-voice-messaging" },
+            // { title: "Stationery & Collateral Design", slug: "stationery-collateral-design" },
         ],
     },
     {

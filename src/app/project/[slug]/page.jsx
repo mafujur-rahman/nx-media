@@ -37,7 +37,7 @@ export default async function ProjectPage({ params }) {
             <Navbar />
             <Banner project={project} />
             <ProjectOverview project={project} />
-            <TopImage project={project} />
+            {/* <TopImage project={project} /> */}
             <HowWeBegan project={project} />
             <MissionObjective project={project} />
             <ProjectsMarquee />
