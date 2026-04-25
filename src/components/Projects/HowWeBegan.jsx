@@ -29,7 +29,7 @@ export default function HowWeBegan({ project }) {
                         <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 border-t border-dotted border-white/20" />
 
                         <div className="relative flex flex-col lg:flex-row items-center justify-between gap-12">
-                            {project.howWeBegan.process.map((step, index) => (
+                            {project?.howWeBegan?.process?.map((step, index) => (
                                 <div
                                     key={index}
                                     className="px-12 py-5 rounded-full bg-white/5 text-white text-lg font-medium tracking-wide backdrop-blur-md"
