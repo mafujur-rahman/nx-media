@@ -1,70 +1,71 @@
+// components/Projects.js (updated)
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
+import { projectsData } from "../fakeDB/ProjectsData";
 
-// Steps with 5 unique cards each
+
+// Define your steps with real card data
 const steps = [
-    // ==== BRANDINGS ====
     {
         id: "01",
         label: "Logo Design",
         cards: [
-            { title: "Minimalist Logo Concepts", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "minimalist-logo-concepts", link: "/project", },
-            { title: "Brandmark & Icon Design", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", slug: "brandmark-icon-design", link: "/project", },
-            { title: "Logo Variations & Mockups", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", light: true, slug: "logo-variations-mockups", link: "/project", },
-            { title: "Typography & Color Exploration", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", slug: "typography-color-exploration", link: "/project", },
+            { title: "Minimalist Logo Concepts", slug: "minimalist-logo-concepts" },
+            { title: "Brandmark & Icon Design", slug: "brandmark-icon-design" },
+            { title: "Logo Variations & Mockups", slug: "logo-variations-mockups" },
+            { title: "Typography & Color Exploration", slug: "typography-color-exploration" },
         ],
     },
     {
         id: "02",
         label: "Brand Identity",
         cards: [
-            { title: "Visual Guidelines & Style Sheets", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop", slug: "visual-guidelines-style-sheets", link: "/project", },
-            { title: "Color Palette & Typography", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "color-palette-typography", link: "/project", },
-            { title: "Brand Voice & Messaging", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", slug: "brand-voice-messaging", link: "/project", },
-            { title: "Stationery & Collateral Design", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "stationery-collateral-design", link: "/project", },
+            { title: "Visual Guidelines & Style Sheets", slug: "visual-guidelines-style-sheets" },
+            { title: "Color Palette & Typography", slug: "color-palette-typography" },
+            { title: "Brand Voice & Messaging", slug: "brand-voice-messaging" },
+            { title: "Stationery & Collateral Design", slug: "stationery-collateral-design" },
         ],
     },
     {
         id: "03",
         label: "Packaging Design",
         cards: [
-            { title: "Product Packaging Concepts", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", slug: "product-packaging-concepts", link: "/project", },
-            { title: "Box & Label Design", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop", light: true, slug: "box-label-design", link: "/project", },
-            { title: "Mockups & 3D Presentation", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", slug: "mockups-3d-presentation", link: "/project", },
-            { title: "Eco-friendly & Innovative Packaging", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "eco-friendly-packaging", link: "/project", },
+            { title: "Product Packaging Concepts", slug: "product-packaging-concepts" },
+            { title: "Box & Label Design", slug: "box-label-design" },
+            { title: "Mockups & 3D Presentation", slug: "mockups-3d-presentation" },
+            { title: "Eco-friendly & Innovative Packaging", slug: "eco-friendly-packaging" },
         ],
     },
     {
         id: "04",
         label: "Social Media Branding",
         cards: [
-            { title: "Instagram & Facebook Templates", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", slug: "instagram-facebook-templates", link: "/project", },
-            { title: "Story & Post Design", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", light: true, slug: "story-post-design", link: "/project", },
-            { title: "Ad Creatives & Campaign Assets", img: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1000&auto=format&fit=crop", slug: "ad-creatives-campaign-assets", link: "/project", },
-            { title: "Brand Consistency Across Platforms", img: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "brand-consistency-platforms", link: "/project", },
+            { title: "Instagram & Facebook Templates", slug: "instagram-facebook-templates" },
+            { title: "Story & Post Design", slug: "story-post-design" },
+            { title: "Ad Creatives & Campaign Assets", slug: "ad-creatives-campaign-assets" },
+            { title: "Brand Consistency Across Platforms", slug: "brand-consistency-platforms" },
         ],
     },
     {
         id: "05",
         label: "UI / UX Design",
         cards: [
-            { title: "Wireframing & Prototyping", img: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1000&auto=format&fit=crop", slug: "wireframing-prototyping", link: "/project", },
-            { title: "Website & Web App UI Design", img: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1000&auto=format&fit=crop", light: true, slug: "website-webapp-ui", link: "/project", },
-            { title: "Mobile App Interface Design", img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop", slug: "mobile-app-interface", link: "/project", },
-            { title: "User Experience Research & Testing", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop", light: true, slug: "ux-research-testing", link: "/project", },
+            { title: "Wireframing & Prototyping", slug: "wireframing-prototyping" },
+            { title: "Website & Web App UI Design", slug: "website-webapp-ui" },
+            { title: "Mobile App Interface Design", slug: "mobile-app-interface" },
+            { title: "User Experience Research & Testing", slug: "ux-research-testing" },
         ],
     },
-    // ==== DEVELOPMENTS ====
     {
         id: "06",
         label: "Website Development",
         cards: [
-            { title: "Custom Responsive Websites", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop", light: true, slug: "custom-responsive-websites", link: "/project", },
-            { title: "E-commerce Platforms", img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop", slug: "ecommerce-platforms", link: "/project", },
+            { title: "Custom Responsive Websites", slug: "custom-responsive-websites" },
+            { title: "E-commerce Platforms", slug: "ecommerce-platforms" },
         ],
     },
 ];
@@ -78,7 +79,6 @@ const Projects = () => {
     const [windowWidth, setWindowWidth] = useState(0);
     const [cardsPerView, setCardsPerView] = useState(2);
 
-    // Custom cursor states
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
     const [isHoveringCard, setIsHoveringCard] = useState(false);
     const cursorRef = useRef(null);
@@ -87,15 +87,13 @@ const Projects = () => {
     const activeCards = activeStep?.cards || [];
     const currentIndex = scrollIndex[activeTab] || 0;
 
-    // Update window width and cards per view
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
-        handleResize(); // Set initial width
+        handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Update cards per view based on window width
     useEffect(() => {
         if (windowWidth < 640) {
             setCardsPerView(1);
@@ -106,7 +104,6 @@ const Projects = () => {
         }
     }, [windowWidth]);
 
-    // Custom cursor animation
     useEffect(() => {
         const handleMouseMove = (e) => {
             setCursorPos({ x: e.clientX, y: e.clientY });
@@ -150,23 +147,18 @@ const Projects = () => {
                 const containerRect = tabsContainer.getBoundingClientRect();
                 const buttonRect = activeButton.getBoundingClientRect();
 
-                // Check if button is partially or fully outside viewport
                 const isButtonLeftOutside = buttonRect.left < containerRect.left;
                 const isButtonRightOutside = buttonRect.right > containerRect.right;
 
                 if (isButtonLeftOutside || isButtonRightOutside) {
-                    // Calculate scroll position to bring button into view
                     let scrollLeft;
 
                     if (isButtonLeftOutside) {
-                        // Button is hidden on left side - scroll left to reveal it
                         scrollLeft = tabsContainer.scrollLeft - (containerRect.left - buttonRect.left) - 20;
                     } else {
-                        // Button is hidden on right side - scroll right to reveal it
                         scrollLeft = tabsContainer.scrollLeft + (buttonRect.right - containerRect.right) + 20;
                     }
 
-                    // Smooth scroll to calculated position
                     tabsContainer.scrollTo({
                         left: scrollLeft,
                         behavior: 'smooth'
@@ -179,8 +171,6 @@ const Projects = () => {
     const slideToTab = (tabId) => {
         setActiveTab(tabId);
         if (!scrollIndex[tabId]) setScrollIndex((prev) => ({ ...prev, [tabId]: 0 }));
-
-        // Scroll the clicked tab into view if it's partially hidden
         setTimeout(() => scrollTabIntoView(tabId), 100);
     };
 
@@ -189,7 +179,6 @@ const Projects = () => {
         setScrollIndex((prev) => ({ ...prev, [activeTab]: newIndex }));
     };
 
-    // GSAP animation for sliding cards and active button
     useEffect(() => {
         const container = cardsRef.current;
         if (!container || !container.children.length) return;
@@ -215,7 +204,6 @@ const Projects = () => {
         });
     }, [activeTab, currentIndex]);
 
-    // Touch and drag for tabs
     useEffect(() => {
         const slider = tabsRef.current;
         if (!slider) return;
@@ -252,15 +240,14 @@ const Projects = () => {
         };
     }, []);
 
-    const handleCardClick = (link) => {
-        router.push(`${link}`);
+    const handleCardClick = (slug) => {
+        router.push(`/project/${slug}`);
     };
 
     const arrowSize = windowWidth < 640 ? 20 : windowWidth < 1024 ? 28 : 36;
 
     return (
         <section id="projects" className="bg-black text-white pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 overflow-hidden">
-            {/* Custom Cursor */}
             <div
                 ref={cursorRef}
                 className="fixed top-0 left-0 pointer-events-none z-50 mix-blend-difference"
@@ -280,7 +267,6 @@ const Projects = () => {
                     </h2>
                 </div>
 
-                {/* Navigation + Arrows */}
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 lg:gap-6 mb-6 lg:mb-8">
                     <div
                         ref={tabsRef}
@@ -328,21 +314,23 @@ const Projects = () => {
                     </div>
                 </div>
 
-                {/* Cards */}
                 <div className="overflow-hidden -mx-4 sm:-mx-6 md:-mx-10 lg:mx-0">
                     <div ref={cardsRef} className="flex gap-4 sm:gap-6 w-max px-4 sm:px-6 md:px-10 lg:px-0">
-                        {activeCards.map((card, index) => (
-                            <Card
-                                key={index}
-                                id={`${index + 1}`}
-                                title={card.title}
-                                img={card.img}
-                                light={card.light}
-                                onMouseEnter={() => setIsHoveringCard(true)}
-                                onMouseLeave={() => setIsHoveringCard(false)}
-                                onClick={() => handleCardClick(card.link)}
-                            />
-                        ))}
+                        {activeCards.map((card, index) => {
+                            const projectData = projectsData[card.slug];
+                            return (
+                                <Card
+                                    key={index}
+                                    id={`${index + 1}`}
+                                    title={card.title}
+                                    img={projectData?.images?.topImage || "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop"}
+                                    light={index % 2 === 0}
+                                    onMouseEnter={() => setIsHoveringCard(true)}
+                                    onMouseLeave={() => setIsHoveringCard(false)}
+                                    onClick={() => handleCardClick(card.slug)}
+                                />
+                            );
+                        })}
                     </div>
                 </div>
             </div>
@@ -356,7 +344,7 @@ const Projects = () => {
     );
 };
 
-const Card = ({ id, title, img, light, slug, link, onMouseEnter, onMouseLeave, onClick }) => (
+const Card = ({ id, title, img, light, onMouseEnter, onMouseLeave, onClick }) => (
     <div
         className={`${light ? "bg-white text-black" : "bg-[#222222] text-white border border-white/5"
             } rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] flex-shrink-0 flex flex-col sm:flex-row w-[300px] sm:w-[450px] md:w-[550px] lg:w-[620px] h-[400px] sm:h-[350px] md:h-[380px] lg:h-[400px] overflow-hidden cursor-none transition-transform duration-300 `}
