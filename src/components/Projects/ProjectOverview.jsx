@@ -26,15 +26,15 @@ export default function ProjectOverview({ project }) {
                     </div>
                     <div className="md:col-span-9 grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
                         <div>
-                            <h4 className="text-5xl font-medium text-white/80">{project.duration?.discovery}</h4>
+                            <h4 className="text-5xl font-medium text-white/80">{project?.duration?.discovery}</h4>
                             <p className="mt-4 text-white/50">Accelerated Discovery</p>
                         </div>
                         <div>
-                            <h4 className="text-5xl font-medium text-white/80">{project.duration?.design}</h4>
+                            <h4 className="text-5xl font-medium text-white/80">{project?.duration?.design}</h4>
                             <p className="mt-4 text-white/50">Design Execution</p>
                         </div>
                         <div>
-                            <h4 className="text-5xl font-medium text-white/80">{project.duration?.support}</h4>
+                            <h4 className="text-5xl font-medium text-white/80">{project?.duration?.support}</h4>
                             <p className="mt-4 text-white/50">Development Support</p>
                         </div>
                     </div>
@@ -48,15 +48,15 @@ export default function ProjectOverview({ project }) {
                     </div>
                     <div className="md:col-span-9 grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
                         <div>
-                            <h4 className="text-5xl font-medium text-white/80">{project.success?.milestone1}</h4>
+                            <h4 className="text-5xl font-medium text-white/80">{project?.success?.milestone1}</h4>
                             <p className="mt-4 text-white/50">Validated Product Strategy</p>
                         </div>
                         <div>
-                            <h4 className="text-5xl font-medium text-white/80">{project.success?.milestone2}</h4>
+                            <h4 className="text-5xl font-medium text-white/80">{project?.success?.milestone2}</h4>
                             <p className="mt-4 text-white/50">Operational Rollout</p>
                         </div>
                         <div>
-                            <h4 className="text-5xl font-medium text-white/80">{project.success?.milestone3}</h4>
+                            <h4 className="text-5xl font-medium text-white/80">{project?.success?.milestone3}</h4>
                             <p className="mt-4 text-white/50">Enterprise Clients Secured</p>
                         </div>
                     </div>
@@ -70,10 +70,10 @@ export default function ProjectOverview({ project }) {
                     </div>
                     <div className="md:col-span-9">
                         <blockquote className="text-white/70 text-2xl leading-relaxed max-w-4xl">
-                            “{project.clientQuote?.text}”
+                            “{project?.clientQuote?.text}”
                         </blockquote>
                         <p className="mt-6 text-base text-white/40">
-                            — {project.clientQuote?.author}
+                            — {project?.clientQuote?.author}
                         </p>
                     </div>
                 </div>

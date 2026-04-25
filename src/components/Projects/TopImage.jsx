@@ -7,8 +7,8 @@ export default function TopImage({ project }) {
             <div className="w-full overflow-hidden">
                 <div className="w-full overflow-hidden">
                     <img
-                        src={project.images.topImage}
-                        alt={project.title}
+                        src={project?.images?.topImage}
+                        alt={project?.title}
                         className="w-full h-full object-cover"
                     />
                 </div>

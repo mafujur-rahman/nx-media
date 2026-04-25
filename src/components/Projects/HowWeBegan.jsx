@@ -12,14 +12,14 @@ export default function HowWeBegan({ project }) {
                         <h3 className="text-2xl text-white/50">
                             How We Began <br />
                             <span className="text-white">
-                                {project.howWeBegan.title}
+                                {project?.howWeBegan?.title}
                             </span>
                         </h3>
                     </div>
 
                     <div className="md:col-span-9">
                         <p className="text-white/60 text-2xl leading-relaxed max-w-4xl">
-                            {project.howWeBegan.description}
+                            {project?.howWeBegan?.description}
                         </p>
                     </div>
                 </div>
