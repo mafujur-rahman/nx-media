@@ -8,6 +8,7 @@ const Service = () => {
     const [openSection, setOpenSection] = useState(null)
     const contentRefs = useRef([])
     const iconRefs = useRef([])
+    const imageContainerRefs = useRef([])
 
     const services = [
         {
@@ -143,19 +144,49 @@ const Service = () => {
         }
     ];
 
-
-
+    // Function to sync image height with content height
+    const syncImageHeight = (index) => {
+        const textContainer = contentRefs.current[index]?.querySelector('.text-content-wrapper')
+        const imageContainer = imageContainerRefs.current[index]
+        
+        if (textContainer && imageContainer && openSection === index) {
+            const textHeight = textContainer.offsetHeight
+            imageContainer.style.height = `${textHeight}px`
+        }
+    }
 
     /* Animate content */
     useEffect(() => {
         contentRefs.current.forEach((el, index) => {
             if (!el) return
             if (openSection === index) {
-                gsap.to(el, { height: "auto", opacity: 1, duration: 0.6, ease: "power3.out" })
+                gsap.to(el, { 
+                    height: "auto", 
+                    opacity: 1, 
+                    duration: 0.6, 
+                    ease: "power3.out",
+                    onComplete: () => {
+                        setTimeout(() => {
+                            syncImageHeight(index)
+                        }, 50)
+                    }
+                })
             } else {
                 gsap.to(el, { height: 0, opacity: 0, duration: 0.45, ease: "power3.inOut" })
             }
         })
+    }, [openSection])
+
+    // Watch for window resize to re-sync heights
+    useEffect(() => {
+        const handleResize = () => {
+            if (openSection !== null) {
+                syncImageHeight(openSection)
+            }
+        }
+        
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
     }, [openSection])
 
     const handleToggle = (index) => {
@@ -189,7 +220,6 @@ const Service = () => {
             )
         }
     }
-
 
     return (
         <div id="services" className=" bg-black text-white px-6 md:px-10 lg:px-16 xl:px-0 pt-8 lg:pt-16 ">
@@ -225,38 +255,48 @@ const Service = () => {
                             ref={(el) => (contentRefs.current[index] = el)}
                             className="overflow-hidden h-0 opacity-0"
                         >
-                            <div className="bg-white text-black rounded-[30px] px-4 py-6 md:px-8 md:py-12 mb-12 flex flex-col lg:flex-row gap-6 lg:gap-12">
-                                {/* TEXT */}
-                                <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-12">
-                                    {service.content.map((col, idx) => (
-                                        <div key={idx}>
-                                            <h4 className="text-md text-gray-400 font-bold tracking-widest mb-6 uppercase">
-                                                {col.label}
-                                            </h4>
-                                            <ul className="space-y-2">
-                                                {col.items.map((item, i) => (
-                                                    <li
-                                                        key={i}
-                                                        className="text-xl md:text-2xl font-extrabold leading-tight uppercase"
-                                                    >
-                                                        {item}
-                                                    </li>
-                                                ))}
-                                            </ul>
+                            <div className="bg-white text-black rounded-[30px] px-4 py-6 md:px-8 md:py-12 mb-12">
+                                <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
+                                    {/* TEXT */}
+                                    <div className="text-content-wrapper flex-1">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                                            {service.content.map((col, idx) => (
+                                                <div key={idx} className="flex flex-col h-full">
+                                                    <h4 className="text-md text-gray-400 font-bold tracking-widest mb-4 uppercase">
+                                                        {col.label}
+                                                    </h4>
+                                                    <ul className="space-y-1.5 flex-grow">
+                                                        {col.items.map((item, i) => (
+                                                            <li
+                                                                key={i}
+                                                                className="text-lg md:text-xl font-extrabold leading-tight uppercase"
+                                                            >
+                                                                {item}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
+                                    </div>
 
-                                {/* IMAGE */}
-                                <div className="lg:w-1/3">
-                                    <div className="aspect-[4/5] overflow-hidden rounded-3xl relative">
-                                        <Image
-                                            src={service.image}
-                                            alt={service.title}
-                                            fill
-                                            className="object-cover rounded-3xl"
-                                            priority
-                                        />
+                                    {/* IMAGE */}
+                                    <div className="lg:w-1/2 xl:w-2/5">
+                                        <div 
+                                            ref={(el) => (imageContainerRefs.current[index] = el)}
+                                            className="relative overflow-hidden rounded-3xl w-full"
+                                            style={{ height: 'auto', transition: 'height 0.3s ease' }}
+                                        >
+                                            <Image
+                                                src={service.image}
+                                                alt={service.title}
+                                                width={500}
+                                                height={700}
+                                                className="w-full h-full object-cover rounded-3xl"
+                                                priority
+                                                sizes="(max-width: 1024px) 100vw, 40vw"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -137,6 +137,21 @@ export default function TopNavbar() {
         }, 800);
     };
 
+    const handleLogoClick = () => {
+        // If menu is open, close it first
+        if (open) {
+            setOpen(false);
+        }
+        
+        // If already on homepage, scroll to top
+        if (pathname === "/") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            // If on another page, navigate to homepage
+            router.push("/");
+        }
+    };
+
     return (
         <>
             {/* ================= NAVBAR ================= */}
@@ -147,9 +162,15 @@ export default function TopNavbar() {
                     px-6 py-2 rounded-full bg-black/80 backdrop-blur-md
                     border border-white/10 shadow-2xl w-full"
                 >
-                    <div className="w-28 h-10 relative">
-                        <Image src="/logo.png" alt="NX MEDIA" fill className="object-contain" />
-                    </div>
+                    <button 
+                        onClick={handleLogoClick}
+                        className="cursor-pointer"
+                        aria-label="Go to homepage"
+                    >
+                        <div className="w-28 h-10 relative">
+                            <Image src="/logo.png" alt="NX MEDIA" fill className="object-contain" />
+                        </div>
+                    </button>
 
                     <button
                         onClick={() => setOpen(true)}

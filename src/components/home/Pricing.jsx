@@ -60,7 +60,7 @@ const Pricing = () => {
     const webPlans = [
         {
             title: "ESSENTIAL WEBSITE",
-            desc: "A clean, responsive website that tells your story and converts visitors. Perfect for service businesses, startups, and companies needing a professional home base.",
+            desc: "A clean, responsive website that tells your story and converts visitors. Perfect for businesses, startups, and companies needing a professional base.",
             price: "99",
             features: [
                 "Landing Page",
@@ -200,14 +200,39 @@ const Pricing = () => {
         };
     }, []);
 
-    // Set all cards to the same height
+    // Set all cards to the same height and align buttons
     useEffect(() => {
         const cards = cardsRef.current;
         if (!cards.length) return;
 
+        // First, reset heights to auto to get natural heights
+        cards.forEach((card) => {
+            card.style.height = 'auto';
+        });
+
+        // Get the tallest card height
         const tallestHeight = Math.max(...cards.map((card) => card.offsetHeight));
+        
+        // Set all cards to the same height
         cards.forEach((card) => {
             card.style.height = `${tallestHeight}px`;
+        });
+
+        // Now align buttons within each card using flexbox
+        cards.forEach((card) => {
+            const buttonWrapper = card.querySelector('.button-wrapper');
+            if (buttonWrapper) {
+                // Ensure the card is using flex column layout
+                card.style.display = 'flex';
+                card.style.flexDirection = 'column';
+                
+                // Push button wrapper to bottom
+                if (buttonWrapper.nextElementSibling) {
+                    // Make the features list take remaining space
+                    const featuresList = buttonWrapper.nextElementSibling;
+                    featuresList.style.flex = '1';
+                }
+            }
         });
     }, [activeTab]);
 
@@ -255,20 +280,20 @@ const Pricing = () => {
                 </div>
 
                 {/* Pricing Grid */}
-                <div className="grid md:grid-cols-3 gap-8 items-stretch">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                     {plans.map((plan, index) => (
                         <div
                             key={index}
                             ref={(el) => (cardsRef.current[index] = el)}
-                            className="rounded-[30px] p-5 lg:p-8 flex flex-col border border-dashed border-red-500/90 bg-gradient-to-br from-black via-red-900/20 to-black shadow-lg h-full"
+                            className="rounded-[30px] p-5 lg:p-8 flex flex-col border border-dashed border-red-500/90 bg-gradient-to-br from-black via-red-900/20 to-black shadow-lg"
                         >
                             <h3 className="text-md font-bold tracking-widest mb-4 uppercase text-red-500">
                                 {plan.title}
                             </h3>
 
-                            {/* Fixed height description - adjust h-24 based on your needs */}
-                            <div className="mb-8 h-24">
-                                <p className="text-sm text-white leading-snug line-clamp-4">
+                            {/* Description with fixed minimum height but flexible */}
+                            <div className="mb-8">
+                                <p className="text-sm text-white leading-snug">
                                     {plan.desc}
                                 </p>
                             </div>
@@ -280,8 +305,8 @@ const Pricing = () => {
                                 </div>
                             </div>
 
-                            {/* Fixed button wrapper - removed mb-10 that was pushing buttons unevenly */}
-                            <div className="w-full mb-10">
+                            {/* Button wrapper with class for targeting */}
+                            <div className="button-wrapper w-full mb-10">
                                 <HoverSweepButton
                                     className="w-full py-4 px-6 flex justify-between items-center rounded-full font-bold bg-red-600 shadow-md cursor-pointer text-white"
                                     icon={<ArrowRight size={18} />}
@@ -290,7 +315,8 @@ const Pricing = () => {
                                 </HoverSweepButton>
                             </div>
 
-                            <ul className="space-y-3">
+                            {/* Features list - this will take remaining space */}
+                            <ul className="space-y-3 flex-1">
                                 {plan.features.map((feature, i) => (
                                     <li key={i} className="flex items-start gap-3 text-sm text-white font-medium">
                                         <Check size={16} className="text-red-500 mt-0.5 shrink-0" />

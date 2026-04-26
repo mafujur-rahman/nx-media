@@ -30,7 +30,7 @@ export const projectsData = {
             description: "Two passionate communities, very different aesthetics. We sketched until we found the overlap: clean lines, earthy tones, and a hidden 'B' that only reveals itself after a second look.",
             process: ["Research", "Sketching", "Digital Refinement", "Mockups", "Final Files"]
         },
-        bannerImage: "/images/projects/logo/berimbolo/1.png",
+        bannerImage: "/images/projects/logo/berimbolo/7.png",
         images: {
             topImage: "/images/projects/logo/berimbolo/6.png",
             missionImage1: "/images/projects/logo/berimbolo/2.png",

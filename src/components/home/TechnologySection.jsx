@@ -8,7 +8,7 @@ import {
   HiOutlineCode, 
   HiOutlinePencilAlt 
 } from "react-icons/hi"
-import { SiTailwindcss } from "react-icons/si"
+import { SiTailwindcss, SiWoocommerce } from "react-icons/si"
 import { BsTypescript } from "react-icons/bs"
 import { BiLogoAdobe } from "react-icons/bi"
 import { DiPhotoshop } from "react-icons/di"
@@ -66,7 +66,7 @@ export default function TechnologySection() {
     },
     {
       name: "WooCommerce",
-      icon: FaWordpress,
+      icon: SiWoocommerce,
       category: "CMS",
     },
     {

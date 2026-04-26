@@ -27,8 +27,8 @@ export default function IndustriesWeWork() {
       description:
         "Scalable e-commerce platforms with seamless user experience, secure payment integration, product management systems, and high-converting online storefronts.",
       images: [
-        { src: "/images/industry-1.jpg", alt: "Online Shopping", bg: "#ffd6a5", pos: "left-top" },
-        { src: "/images/industry-2.jpg", alt: "Ecommerce Dashboard", bg: "#bdb2ff", pos: "right-bottom" },
+        { src: "/images/industry/e-commerce-2.jpeg", alt: "Online Shopping", bg: "#ffd6a5", pos: "left-top" },
+        { src: "/images/industry/e-commerce-1.jpeg", alt: "Ecommerce Dashboard", bg: "#bdb2ff", pos: "right-bottom" },
       ],
     },
     {
@@ -36,8 +36,8 @@ export default function IndustriesWeWork() {
       description:
         "Smart booking systems, travel management platforms, itinerary builders, and visually engaging websites for travel agencies and tourism businesses.",
       images: [
-        { src: "/images/industry-1.jpg", alt: "Travel Booking", bg: "#a0c4ff", pos: "left-top" },
-        { src: "/images/industry-2.jpg", alt: "Tour Website", bg: "#ffc6ff", pos: "right-bottom" },
+        { src: "/images/industry/tour-1.jpeg", alt: "Travel Booking", bg: "#a0c4ff", pos: "left-top" },
+        { src: "/images/industry/tour-2.jpeg", alt: "Tour Website", bg: "#ffc6ff", pos: "right-bottom" },
       ],
     },
     {
@@ -45,8 +45,8 @@ export default function IndustriesWeWork() {
       description:
         "Fleet management systems, tracking dashboards, logistics automation, and transportation management solutions for modern mobility businesses.",
       images: [
-        { src: "/images/industry-1.jpg", alt: "Transport Dashboard", bg: "#caffbf", pos: "left-top" },
-        { src: "/images/industry-2.jpg", alt: "Logistics System", bg: "#ffd6a5", pos: "right-bottom" },
+        { src: "/images/industry/transport-1.jpeg", alt: "Transport Dashboard", bg: "#caffbf", pos: "left-top" },
+        { src: "/images/industry/transport-2.jpeg", alt: "Logistics System", bg: "#ffd6a5", pos: "right-bottom" },
       ],
     },
   ];
