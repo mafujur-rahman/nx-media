@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from "react"
 import { gsap } from "gsap"
-import { FaAngular, FaFigma, FaReact, FaSketch, FaVuejs, FaWordpress } from "react-icons/fa"
+import { FaAngular, FaElementor, FaFigma, FaInvision, FaReact, FaSketch, FaVuejs, FaWordpress } from "react-icons/fa"
 import { 
   HiOutlineCube, 
   HiOutlineCode, 
@@ -12,6 +12,8 @@ import { SiTailwindcss, SiWoocommerce } from "react-icons/si"
 import { BsTypescript } from "react-icons/bs"
 import { BiLogoAdobe } from "react-icons/bi"
 import { DiPhotoshop } from "react-icons/di"
+import { RiNextjsFill } from "react-icons/ri"
+import { GiZeppelin } from "react-icons/gi"
 
 export default function TechnologySection() {
   const sectionRef = useRef(null)
@@ -28,7 +30,7 @@ export default function TechnologySection() {
       category: "Design",
     },
     {
-      name: "Adobe XD",
+      name: "Adobe",
       icon: BiLogoAdobe,
       category: "Design",
     },
@@ -45,7 +47,7 @@ export default function TechnologySection() {
     },
     {
       name: "Next.js",
-      icon: HiOutlineCube,
+      icon: RiNextjsFill,
       category: "Web",
     },
     {
@@ -71,7 +73,7 @@ export default function TechnologySection() {
     },
     {
       name: "Elementor",
-      icon: HiOutlinePencilAlt,
+      icon: FaElementor,
       category: "CMS",
     },
     // UI/UX
@@ -82,12 +84,12 @@ export default function TechnologySection() {
     },
     {
       name: "InVision",
-      icon: HiOutlineCode,
+      icon: FaInvision,
       category: "UI/UX",
     },
     {
       name: "Zeplin",
-      icon: HiOutlinePencilAlt,
+      icon: GiZeppelin,
       category: "UI/UX",
     },
     // Additional Modern Technologies

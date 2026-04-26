@@ -658,7 +658,7 @@ export const projectsData = {
             topImage: "/images/projects/ui-ux/Cool Kids/4.png",
             missionImage1: "/images/projects/ui-ux/Cool Kids/2.png",
             missionImage2: "/images/projects/ui-ux/Cool Kids/3.png",
-            bottomImage: "/images/projects/ui-ux/Cool Kids/1.png"
+            bottomImage: "/images/projects/ui-ux/Cool Kids/5.png"
         },
         videoUrl: "/service.mp4",
         testimonial: {
@@ -727,7 +727,7 @@ export const projectsData = {
             topImage: "/images/projects/ui-ux/Cutivate/1.png",
             missionImage1: "/images/projects/ui-ux/Cutivate/2.png",
             missionImage2: "/images/projects/ui-ux/Cutivate/3.png",
-            bottomImage: "/images/projects/ui-ux/Cutivate/1.png"
+            bottomImage: "/images/projects/ui-ux/Cutivate/4.png"
         },
         videoUrl: "/service.mp4",
         testimonial: {
@@ -868,7 +868,7 @@ export const projectsData = {
             topImage: "/images/projects/Website/amity/2.png",
             missionImage1: "/images/projects/Website/amity/1.png",
             missionImage2: "/images/projects/Website/amity/3.png",
-            bottomImage: "/images/projects/Website/amity/4.png"
+            bottomImage: "/images/projects/Website/amity/5.png"
         },
         videoUrl: "/service.mp4",
         testimonial: {
