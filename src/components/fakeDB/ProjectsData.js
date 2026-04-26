@@ -311,9 +311,9 @@ export const projectsData = {
         bannerImage: "/images/projects/packaging/organic/1.png",
         images: {
             topImage: "/images/projects/packaging/organic/1.png",
-            missionImage1: "/images/projects/packaging/organic/2.png",
-            missionImage2: "/images/projects/packaging/organic/3.png",
-            bottomImage: "/images/projects/packaging/organic/4.png"
+            missionImage1: "/images/projects/packaging/organic/1.png",
+            missionImage2: "/images/projects/packaging/organic/1.png",
+            bottomImage: "/images/projects/packaging/organic/1.png"
         },
         videoUrl: "/service.mp4",
         testimonial: {
