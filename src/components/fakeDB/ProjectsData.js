@@ -348,11 +348,79 @@ export const projectsData = {
             }
         ]
     },
+    "brandco": {
+        id: "brandco",
+        title: "Brandco",
+        category: "Packaging Design",
+        brand: "thenxmedia",
+        year: "2024",
+        description: "A pantry-friendly packaging system for an organic food line. Clean, calm, and unmistakably premium.",
+        tags: ["PACKAGING", "CPG", "BAG DESIGN"],
+        overview: "Organic (the brand) sells grains, legumes, and spices. Their old packaging looked like every other bulk bin. We created a system using warm neutrals, clear hierarchies, and a modular layout that works across 30+ SKUs.",
+        duration: {
+            discovery: "2 Weeks",
+            design: "6 Weeks",
+            support: "2 Weeks"
+        },
+        success: {
+            milestone1: "Base Structure",
+            milestone2: "12 SKUs Mapped",
+            milestone3: "Print Ready"
+        },
+        clientQuote: {
+            text: "Our sell-through rate doubled on the first production run. People are buying because of the bag now.",
+            author: "Founder, Organic"
+        },
+        howWeBegan: {
+            title: "Stop Shouting. Start Living.",
+            description: "Most organic packaging screams 'organic' with leaves and burlap. We went the other way: quiet, considered, almost Japanese. The product name is the hero. The rest is breathing room.",
+            process: ["Audit", "Material Research", "Structural Mockups", "Color Testing", "Print Prep"]
+        },
+        bannerImage: "/images/projects/packaging/organic/1.png",
+        images: {
+            topImage: "/images/projects/packaging/brandco/image-3.png",
+            missionImage1: "/images/projects/packaging/brandco/image-1.png",
+            missionImage2: "/images/projects/packaging/brandco/image-2.png",
+            bottomImage: "/images/projects/packaging/brandco/4.png"
+        },
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "We've been approached by two major retailers since the redesign. They said the packaging did the talking.",
+            author: "Organic",
+            rating: 5,
+            role: "CEO"
+        },
+        challenges: [
+            "Standing out on a shelf full of 'earthy' designs",
+            "Keeping costs reasonable for small-batch runs",
+            "Making a single system work for lentils, spices, and grains"
+        ],
+        solutions: [
+            "Used a bold white background and simple typography",
+            "Chose standard bag sizes with one-color printing where possible",
+            "Created a color-coded system by category (green for grains, terracotta for spices)"
+        ],
+        results: [
+            "Shelf sales +112% in first 90 days",
+            "Featured in two industry trend reports",
+            "Retailers requested merchandising support within weeks"
+        ],
+        faq: [
+            {
+                question: "Are the materials sustainable?",
+                answer: "Yes—we specified compostable films and recycled paper where available."
+            },
+            {
+                question: "Do you work with our printer?",
+                answer: "We can, or we can recommend printers we trust. Either way, you get print-ready files and press checks."
+            }
+        ]
+    },
 
     // ========== UI/UX (2) ==========
-    "pethund": {
-        id: "pethund",
-        title: "Pethund",
+    "cool-kids": {
+        id: "cool-kids",
+        title: "Cool Kids",
         category: "UI/UX",
         brand: "thenxmedia",
         year: "2024",
@@ -380,10 +448,10 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/ui-ux/Pethund/1.png",
         images: {
-            topImage: "/images/projects/ui-ux/Pethund/1.png",
-            missionImage1: "/images/projects/ui-ux/Pethund/2.png",
-            missionImage2: "/images/projects/ui-ux/Pethund/3.png",
-            bottomImage: "/images/projects/ui-ux/Pethund/4.png"
+            topImage: "/images/projects/ui-ux/Cool Kids/4.png",
+            missionImage1: "/images/projects/ui-ux/Cool Kids/2.png",
+            missionImage2: "/images/projects/ui-ux/Cool Kids/3.png",
+            bottomImage: "/images/projects/ui-ux/Cool Kids/1.png"
         },
         videoUrl: "/service.mp4",
         testimonial: {
@@ -419,9 +487,9 @@ export const projectsData = {
         ]
     },
 
-    "amcare": {
-        id: "amcare",
-        title: "Amcare",
+    "cultivate": {
+        id: "cultivate",
+        title: "Cultivate",
         category: "UI/UX",
         brand: "thenxmedia",
         year: "2024",
@@ -449,10 +517,10 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/ui-ux/amcare/3.png",
         images: {
-            topImage: "/images/projects/ui-ux/amcare/3.png",
-            missionImage1: "/images/projects/ui-ux/amcare/2.png",
-            missionImage2: "/images/projects/ui-ux/amcare/1.png",
-            bottomImage: "/images/projects/ui-ux/amcare/4.png"
+            topImage: "/images/projects/ui-ux/Cutivate/1.png",
+            missionImage1: "/images/projects/ui-ux/Cutivate/2.png",
+            missionImage2: "/images/projects/ui-ux/Cutivate/3.png",
+            bottomImage: "/images/projects/ui-ux/Cutivate/1.png"
         },
         videoUrl: "/service.mp4",
         testimonial: {

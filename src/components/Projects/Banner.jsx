@@ -8,19 +8,7 @@ export default function Banner({ project }) {
     }
 
     return (
-        <section className="relative w-full h-screen flex flex-col justify-end">
-            {/* Background Image */}
-            <div className="fixed inset-0 w-full h-full -z-10">
-                <img
-                    src={project.bannerImage || project.images?.topImage || "/service.jpg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                />
-            </div>
-
-            {/* Overlay */}
-            <div className="fixed inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black -z-10"></div>
-
+        <section className="relative w-full mt-40  lg:mt-20 xl:mt-10  lg:h-[60vh] flex flex-col justify-center lg:justify-end bg-black">
             {/* Content */}
             <div className="relative z-10 w-full px-6 md:px-12 lg:px-20 pb-20">
                 <div className="max-w-7xl mx-auto">

@@ -31,6 +31,7 @@ const steps = [
         label: "Packaging Design",
         cards: [
             { title: "Organic", slug: "organic" },
+            { title: "Brandco", slug: "brandco" },
             
         ],
     },
@@ -48,8 +49,8 @@ const steps = [
         id: "04",
         label: "UI / UX Design",
         cards: [
-            { title: "Pethund", slug: "pethund" },
-            { title: "Amcare", slug: "amcare" },
+            { title: "Cool Kids", slug: "cool-kids" },
+            { title: "Cultivate", slug: "cultivate" },
         ],
     },
     {
