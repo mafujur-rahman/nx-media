@@ -14,10 +14,10 @@ export const projectsData = {
         duration: {
             discovery: "1 Day",
             design: "2 Days",
-            support: "1 Day"
+            support: "3 Days"
         },
         success: {
-            milestone1: "4+ Concepts",
+            milestone1: "3+ Concepts",
             milestone2: "3 Rounds",
             milestone3: "Launch Ready"
         },
@@ -83,7 +83,7 @@ export const projectsData = {
         duration: {
             discovery: "1 Day",
             design: "2 Days",
-            support: "1 Day"
+            support: "3 Days"
         },
         success: {
             milestone1: "5 Concepts",
@@ -151,9 +151,9 @@ export const projectsData = {
         tags: ["BRAND IDENTITY", "COLOR SYSTEM", "TYPOGRAPHY"],
         overview: "Influence Ireland needed to look like they've been in the room for decades—because they have. We built a restrained, authoritative system with a custom color palette and a serious-but-readable type hierarchy.",
         duration: {
-            discovery: "2 Weeks",
-            design: "4 Weeks",
-            support: "2 Weeks"
+            discovery: "1 Day",
+            design: "4 Days",
+            support: "3 Days"
         },
         success: {
             milestone1: "Identity System",
@@ -171,7 +171,7 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/branding/Influence Ireland Consulting/1.png",
         images: {
-            topImage: "/images/projects/branding/Influence Ireland Consulting/1.png",
+            topImage: "/images/projects/branding/Influence Ireland Consulting/7.png",
             missionImage1: "/images/projects/branding/Influence Ireland Consulting/2.png",
             missionImage2: "/images/projects/branding/Influence Ireland Consulting/6.png",
             bottomImage: "/images/projects/branding/Influence Ireland Consulting/4.png"
@@ -220,9 +220,9 @@ export const projectsData = {
         tags: ["BRAND IDENTITY", "AGRICULTURAL BRANDING", "MINIMALIST"],
         overview: "Silagri makes silage equipment. Their old brand looked like it was designed in 1998. We gave them a modern, industrial feel with a tight color palette and a no-nonsense typographic system.",
         duration: {
-            discovery: "2 Weeks",
-            design: "5 Weeks",
-            support: "1 Week"
+            discovery: "2 Day",
+            design: "3 Days",
+            support: "4 Days"
         },
         success: {
             milestone1: "Full Identity",
@@ -290,9 +290,9 @@ export const projectsData = {
         tags: ["PACKAGING", "CPG", "BAG DESIGN"],
         overview: "Organic (the brand) sells grains, legumes, and spices. Their old packaging looked like every other bulk bin. We created a system using warm neutrals, clear hierarchies, and a modular layout that works across 30+ SKUs.",
         duration: {
-            discovery: "2 Weeks",
-            design: "6 Weeks",
-            support: "2 Weeks"
+            discovery: "1 Day",
+            design: "2 Days",
+            support: "3 Days"
         },
         success: {
             milestone1: "Base Structure",
@@ -358,9 +358,9 @@ export const projectsData = {
         tags: ["PACKAGING", "B2B", "INDUSTRIAL DESIGN", "CHEMICAL"],
         overview: "Brandco sells bulk industrial chemicals. Their old packaging was generic white drums with tiny labels—easy to grab the wrong thing. We designed a color-coded, icon-driven system that reduces errors and speeds up warehouse picking.",
         duration: {
-            discovery: "2 Weeks",
-            design: "6 Weeks",
-            support: "2 Weeks"
+            discovery: "1 Day",
+            design: "3 Days",
+            support: "2 Days"
         },
         success: {
             milestone1: "Base Structure",
@@ -426,9 +426,9 @@ export const projectsData = {
         tags: ["PACKAGING", "OUTDOOR", "CAMPING GEAR", "SUSTAINABLE"],
         overview: "Mountain Top makes tents, sleeping bags, and climbing hardware. Their old packaging was plastic-heavy and looked like every other outdoor brand. We designed a system using 100% recycled kraft board, one-color printing, and a modular box structure that packs flat for retail shelves.",
         duration: {
-            discovery: "2 Weeks",
-            design: "6 Weeks",
-            support: "2 Weeks"
+            discovery: "1 Day",
+            design: "3 Days",
+            support: "2 Days"
         },
         success: {
             milestone1: "Base Structure",
@@ -446,7 +446,7 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/packaging/Mountain Top/1.png",
         images: {
-            topImage: "/images/projects/packaging/mountain-top/2.png",
+            topImage: "/images/projects/packaging/mountain-top/4.png",
             missionImage1: "/images/projects/packaging/mountain-top/1.png",
             missionImage2: "/images/projects/packaging/mountain-top/3.png",
             bottomImage: "/images/projects/packaging/mountain-top/2.png"
@@ -497,13 +497,13 @@ export const projectsData = {
         tags: ["SOCIAL MEDIA", "AD CREATIVES", "META ADS", "DTC"],
         overview: "This emerging fashion brand was burning ad spend on generic templates. We designed a library of 50+ static and motion assets tailored to their audience—carousels, reels, static stories, and catalog feeds. The result? Lower CPC and higher ROAS, not just 'likes.'",
         duration: {
-            discovery: "1 Week",
-            design: "3 Weeks",
-            support: "2 Weeks"
+            discovery: "1 Day",
+            design: "5 Days",
+            support: "1 Day"
         },
         success: {
-            milestone1: "50+ Assets",
-            milestone2: "3 Platforms",
+            milestone1: "15+ Assets",
+            milestone2: "2 Platforms",
             milestone3: "Ready to Scale"
         },
         clientQuote: {
@@ -517,7 +517,7 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/social-media/ad-creatives/1.png",
         images: {
-            topImage: "/images/projects/social-media/ad-creative/1.png",
+            topImage: "/images/projects/social-media/ad-creative/4.png",
             missionImage1: "/images/projects/social-media/ad-creative/3.png",
             missionImage2: "/images/projects/social-media/ad-creative/1.png",
             bottomImage: "/images/projects/social-media/ad-creative/2.png"
@@ -566,14 +566,14 @@ export const projectsData = {
         tags: ["SOCIAL MEDIA", "BRAND SYSTEM", "B2B", "TEMPLATES"],
         overview: "This SaaS brand had five people posting on LinkedIn, Twitter, and Instagram—each doing something different. We built a library of on-brand templates, a color-coded content grid, and a simple rulebook. Now every post looks like it came from the same company.",
         duration: {
-            discovery: "2 Weeks",
-            design: "4 Weeks",
-            support: "3 Weeks"
+            discovery: "1 Day",
+            design: "6 Days",
+            support: "2 Days"
         },
-        success: {
-            milestone1: "Template Library",
-            milestone2: "Platform Guide",
-            milestone3: "Team Trained"
+         success: {
+            milestone1: "20+ Assets",
+            milestone2: "2 Platforms",
+            milestone3: "Ready to Scale"
         },
         clientQuote: {
             text: "Our social presence went from chaotic to cohesive in two weeks. No more 'does this look right?' Slack messages.",
@@ -586,7 +586,7 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/social-media/brand-consistency/1.png",
         images: {
-            topImage: "/images/projects/social-media/brand-consistency/1.png",
+            topImage: "/images/projects/social-media/brand-consistency/4.png",
             missionImage1: "/images/projects/social-media/brand-consistency/2.png",
             missionImage2: "/images/projects/social-media/brand-consistency/1.png",
             bottomImage: "/images/projects/social-media/brand-consistency/3.png"
@@ -635,9 +635,9 @@ export const projectsData = {
         tags: ["UI/UX", "MOBILE APP", "GEN Z", "MENTAL WELLNESS"],
         overview: "Cool Kids isn't another meditation app. It's a space where young people track moods, share anonymous wins, and build real habits. We designed a playful, judgment-free interface that actually feels cool to use.",
         duration: {
-            discovery: "3 Weeks",
-            design: "6 Weeks",
-            support: "4 Weeks"
+            discovery: "3 Days",
+            design: "3 Weeks",
+            support: "1 Week"
         },
         success: {
             milestone1: "User Flow Map",
@@ -704,9 +704,9 @@ export const projectsData = {
         tags: ["UI/UX", "DASHBOARD", "AGRICULTURE", "FARM TECH"],
         overview: "Cultivate's users were tracking crop rotations, irrigation, and harvests across spreadsheets and sticky notes. We designed a simple, weather-resistant dashboard that works on a beat-up iPad in a field.",
         duration: {
-            discovery: "3 Weeks",
-            design: "5 Weeks",
-            support: "3 Weeks"
+            discovery: "5 Days",
+            design: "2 Weeks",
+            support: "5 Days"
         },
         success: {
             milestone1: "Task Analysis",
@@ -774,10 +774,10 @@ export const projectsData = {
         tags: ["WEB DEVELOPMENT", "NEXT.JS", "CUSTOM CODE"],
         overview: "WeBrand was embarrassed to send prospects to their old site. We built a new one from scratch: custom animations, a CMS they can actually use, and a backend that doesn't crash during traffic spikes.",
         duration: {
-            discovery: "2 Weeks",
-            design: "4 Weeks",
-            development: "6 Weeks",
-            support: "4 Weeks"
+            discovery: "1 Day",
+            design: "2 Weeks",
+            development: "4 Weeks",
+            support: "1 Weeks"
         },
         success: {
             milestone1: "Design Approved",
@@ -844,10 +844,10 @@ export const projectsData = {
         tags: ["WEB DEVELOPMENT", "FULL STACK", "COMMUNITY"],
         overview: "Amity needed a place where nonprofits could share resources, find volunteers, and post events. We built a custom web app with user profiles, event management, and a matching algorithm—all without bloated plugins.",
         duration: {
-            discovery: "4 Weeks",
-            design: "6 Weeks",
-            development: "10 Weeks",
-            support: "6 Weeks"
+            discovery: "2 Days",
+            design: "1 Weeks",
+            development: "2 Weeks",
+            support: "2 Weeks"
         },
         success: {
             milestone1: "MVP Launch",
@@ -913,10 +913,10 @@ export const projectsData = {
         tags: ["WEB DEVELOPMENT", "FULL STACK", "BOOKING SYSTEM", "SPORTS TECH"],
         overview: "Hoxizon Courts runs five indoor facilities. Their old booking system was a shared Google Calendar—double bookings, payment headaches, and angry customers. We built a custom platform with real-time availability, automated payments, and league scheduling tools.",
         duration: {
-            discovery: "4 Weeks",
-            design: "6 Weeks",
-            development: "10 Weeks",
-            support: "6 Weeks"
+            discovery: "1 Day",
+            design: "1 Week",
+            development: "3 Weeks",
+            support: "2 Weeks"
         },
         success: {
             milestone1: "MVP Launch",
