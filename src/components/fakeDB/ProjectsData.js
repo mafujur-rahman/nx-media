@@ -310,10 +310,10 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/packaging/organic/1.png",
         images: {
-            topImage: "/images/projects/packaging/organic/1.png",
-            missionImage1: "/images/projects/packaging/organic/1.png",
-            missionImage2: "/images/projects/packaging/organic/1.png",
-            bottomImage: "/images/projects/packaging/organic/1.png"
+            topImage: "/images/projects/packaging/organic-pkg/1.png",
+            missionImage1: "/images/projects/packaging/organic-pkg/2.png",
+            missionImage2: "/images/projects/packaging/organic-pkg/3.png",
+            bottomImage: "/images/projects/packaging/organic-pkg/4.png"
         },
         videoUrl: "/service.mp4",
         testimonial: {
