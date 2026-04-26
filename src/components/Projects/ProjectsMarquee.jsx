@@ -64,7 +64,7 @@ export default function ProjectsMarquee() {
     return (
         <section className="bg-black py-24 overflow-hidden">
             {/* TEXT AREA (Centered) */}
-            <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 mb-16">
+            <div className="max-w-7xl mx-auto mb-16">
                 <h2 className="text-white text-4xl lg:text-5xl font-bold">
                     Recent Work
                 </h2>

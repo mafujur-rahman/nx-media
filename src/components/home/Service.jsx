@@ -58,7 +58,7 @@ const Service = () => {
                     ]
                 }
             ],
-            image: "/images/branding-service.jpg"
+            image: "/images/branding-1.png"
         },
 
         {
@@ -97,7 +97,7 @@ const Service = () => {
                     ]
                 }
             ],
-            image: "/images/uiux-service.png"
+            image: "/images/ui-ux.png"
         },
 
         {
@@ -139,7 +139,7 @@ const Service = () => {
                     ]
                 }
             ],
-            image: "/images/development-service.png"
+            image: "/images/Web-Development.png"
         }
     ];
 

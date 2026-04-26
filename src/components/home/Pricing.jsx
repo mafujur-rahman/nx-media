@@ -98,10 +98,8 @@ const Pricing = () => {
                 "WordPress Development",
                 "API Integrations",
                 "Custom Integrations (CRM, ERP, etc.)",
-                "Chatbot Integrate",
-                "Load Balancing & Scalability Planning",
+                "Chatbot Integrations",
                 "Ongoing Technical Support",
-                "Performance Monitoring",
                 "Hosting & Domain Setup",
             ],
             buttonText: "Get Started",
@@ -214,8 +212,8 @@ const Pricing = () => {
     }, [activeTab]);
 
     return (
-        <section id="pricing" className="bg-black pt-28 lg:pt-40 px-4 md:px-6 lg:px-10 xl:px-0 min-h-screen flex justify-center items-center">
-            <div className="w-full max-w-7xl mx-auto">
+        <section id="pricing" className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 min-h-screen flex justify-center items-center">
+            <div className="w-full max-w-7xl">
 
                 {/* Header */}
                 <div className="flex flex-col justify-center items-center w-full mb-12">
@@ -227,7 +225,7 @@ const Pricing = () => {
                     </h2>
 
                     {/* Tabs */}
-                    <div className="flex flex-row justify-center gap-4 mt-2 w-full max-w-md">
+                    <div className="flex flex-col md:flex-row justify-center gap-4 mt-2 w-full max-w-md">
                         {["branding", "web"].map((tab) => (
                             <button
                                 key={tab}
@@ -257,33 +255,33 @@ const Pricing = () => {
                 </div>
 
                 {/* Pricing Grid */}
-                <div className="grid md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+                <div className="grid md:grid-cols-3 gap-8 items-stretch">
                     {plans.map((plan, index) => (
                         <div
                             key={index}
                             ref={(el) => (cardsRef.current[index] = el)}
-                            className="rounded-[30px] p-5 lg:p-8 flex flex-col border border-dashed border-red-500/90 bg-gradient-to-br from-black via-red-900/20 to-black shadow-lg h-full overflow-hidden"
+                            className="rounded-[30px] p-5 lg:p-8 flex flex-col border border-dashed border-red-500/90 bg-gradient-to-br from-black via-red-900/20 to-black shadow-lg h-full"
                         >
                             <h3 className="text-md font-bold tracking-widest mb-4 uppercase text-red-500">
                                 {plan.title}
                             </h3>
 
-                            {/* Fixed height description */}
-                            <div className="mb-6 h-24">
+                            {/* Fixed height description - adjust h-24 based on your needs */}
+                            <div className="mb-8 h-24">
                                 <p className="text-sm text-white leading-snug line-clamp-4">
                                     {plan.desc}
                                 </p>
                             </div>
 
-                            <div className="mb-6">
+                            <div className="mb-8">
                                 <div className="flex items-baseline">
                                     <span className="text-4xl font-bold text-white">${plan.price}</span>
                                     <span className="text-sm text-red-500 ml-2 italic">per project</span>
                                 </div>
                             </div>
 
-                            {/* Button wrapper */}
-                            <div className="w-full mb-6">
+                            {/* Fixed button wrapper - removed mb-10 that was pushing buttons unevenly */}
+                            <div className="w-full mb-10">
                                 <HoverSweepButton
                                     className="w-full py-4 px-6 flex justify-between items-center rounded-full font-bold bg-red-600 shadow-md cursor-pointer text-white"
                                     icon={<ArrowRight size={18} />}
@@ -292,11 +290,11 @@ const Pricing = () => {
                                 </HoverSweepButton>
                             </div>
 
-                            <ul className="space-y-3 flex-1">
+                            <ul className="space-y-3">
                                 {plan.features.map((feature, i) => (
                                     <li key={i} className="flex items-start gap-3 text-sm text-white font-medium">
                                         <Check size={16} className="text-red-500 mt-0.5 shrink-0" />
-                                        <span className="break-words">{feature}</span>
+                                        {feature}
                                     </li>
                                 ))}
                             </ul>
@@ -346,54 +344,55 @@ const Pricing = () => {
                             />
                         </svg>
 
-                        {/* Inner Container - Fixed overflow issues */}
-                        <div className="relative rounded-[28px] px-4 md:px-8 lg:px-12 py-8 md:py-12 bg-gradient-to-br from-zinc-900 via-black to-zinc-900 border border-white/10 overflow-hidden">
+                        {/* Inner Container */}
+                        <div className="relative rounded-[28px] px-2.5 md:px-12 py-12 bg-gradient-to-br from-zinc-900 via-black to-zinc-900 border border-white/10">
                             {/* Glow */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-[120px] -z-10" />
 
                             {/* Header */}
-                            <div className="text-center mb-10 md:mb-14">
-                                <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white font-bricolage leading-tight">
+                            <div className="text-center mb-14">
+                                <h3 className="text-3xl md:text-5xl font-bold text-white font-bricolage leading-tight">
                                     Monthly Partnership <br />
                                     <span className="text-red-600">For Long-Term Growth</span>
                                 </h3>
-                                <p className="text-zinc-400 mt-4 max-w-2xl mx-auto text-sm md:text-base px-4">
+                                <p className="text-zinc-400 mt-4 max-w-2xl mx-auto text-base">
                                     A dedicated design & development team working with you every month —
                                     predictable pricing, priority support, and consistent execution.
                                 </p>
                             </div>
 
-                            {/* Content - Responsive grid that doesn't overflow */}
-                            <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
+                            {/* Content */}
+                            <div className="grid lg:grid-cols-2 gap-5 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
 
                                 {/* LEFT — Pricing Card */}
-                                <div className="w-full lg:w-1/2 relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 lg:p-10 flex flex-col justify-between">
+                                <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-2.5 sm:p-8 lg:p-10 flex flex-col justify-between">
+
                                     <div>
-                                        <h4 className="text-white text-xl md:text-2xl font-semibold mb-4 md:mb-6">
+                                        <h4 className="text-white text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
                                             Growth Retainer Plan
                                         </h4>
 
-                                        <div className="flex items-end gap-2 md:gap-3 mb-4 md:mb-6">
-                                            <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+                                        <div className="flex items-end gap-2 sm:gap-3 mb-4 sm:mb-6">
+                                            <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                                                 $599
                                             </span>
-                                            <span className="text-zinc-400 mb-1 md:mb-2 text-xs md:text-sm">
+                                            <span className="text-zinc-400 mb-1 sm:mb-2 text-xs sm:text-sm">
                                                 / month
                                             </span>
                                         </div>
 
-                                        <div className="h-px w-full bg-white/10 my-4 md:my-6" />
+                                        <div className="h-px w-full bg-white/10 my-4 sm:my-6" />
 
-                                        <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+                                        <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
                                             Ideal for startups and scaling brands that require ongoing
                                             UI/UX design, website updates, and development improvements.
                                         </p>
                                     </div>
 
-                                    <div className="mt-8 md:mt-10">
+                                    <div className="mt-8 sm:mt-10">
                                         <HoverSweepButton
                                             onClick={() => window.open("https://wa.me/8801710636221", "_blank")}
-                                            className="w-full py-3 md:py-4 px-5 md:px-6 flex justify-between items-center cursor-pointer rounded-full font-semibold bg-red-600 shadow-lg hover:shadow-red-600/30 transition-all duration-300 text-white"
+                                            className="w-full py-3 sm:py-4 px-5 sm:px-6 flex justify-between items-center cursor-pointer rounded-full font-semibold bg-red-600 shadow-lg hover:shadow-red-600/30 transition-all duration-300 text-white"
                                             icon={<ArrowRight size={18} className="hidden md:block" />}
                                         >
                                             <span className="text-sm font-bold tracking-wide w-full text-center md:text-left">
@@ -401,38 +400,36 @@ const Pricing = () => {
                                             </span>
                                         </HoverSweepButton>
 
-                                        <p className="text-center text-xs text-zinc-500 mt-3 md:mt-4">
+                                        <p className="text-center text-xs text-zinc-500 mt-3 sm:mt-4">
                                             Cancel anytime • No long-term contract
                                         </p>
                                     </div>
                                 </div>
 
-                                {/* RIGHT — Features Grid - Fixed to stay inside card */}
-                                <div className="w-full lg:w-1/2">
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                                        {[
-                                            "Unlimited design requests",
-                                            "Priority development support",
-                                            "Dedicated project manager",
-                                            "Weekly progress updates",
-                                            "48–72 hour turnaround",
-                                            "Strategy & consultation included",
-                                            "Direct WhatsApp communication",
-                                            "Performance & UX optimization"
-                                        ].map((feature, idx) => (
-                                            <div
-                                                key={idx}
-                                                className="flex items-center gap-3 p-3 md:p-4 rounded-2xl border border-white/5 hover:border-red-500/40 transition"
-                                            >
-                                                <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
-                                                    ✓
-                                                </div>
-                                                <p className="text-zinc-300 text-xs md:text-sm leading-relaxed break-words">
-                                                    {feature}
-                                                </p>
+                                {/* RIGHT — Features */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                                    {[
+                                        "Unlimited design requests",
+                                        "Priority development support",
+                                        "Dedicated project manager",
+                                        "Weekly progress updates",
+                                        "48–72 hour turnaround",
+                                        "Strategy & consultation included",
+                                        "Direct WhatsApp communication",
+                                        "Performance & UX optimization"
+                                    ].map((feature, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="flex items-center gap-3 p-4 rounded-2xl border border-white/5 hover:border-red-500/40 transition"
+                                        >
+                                            <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                                                ✓
                                             </div>
-                                        ))}
-                                    </div>
+                                            <p className="text-zinc-300 text-sm leading-relaxed">
+                                                {feature}
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>

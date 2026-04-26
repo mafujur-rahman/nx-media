@@ -49,17 +49,15 @@ const steps = [
         label: "UI / UX Design",
         cards: [
             { title: "Pethund", slug: "pethund" },
-            { title: "Website & Web App UI Design", slug: "website-webapp-ui" },
-            { title: "Mobile App Interface Design", slug: "mobile-app-interface" },
-            { title: "User Experience Research & Testing", slug: "ux-research-testing" },
+            { title: "Amcare", slug: "amcare" },
         ],
     },
     {
         id: "05",
         label: "Website Development",
         cards: [
-            { title: "WeBrand", slug: "we-brand" },
-            { title: "E-commerce Platforms", slug: "ecommerce-platforms" },
+            { title: "WeBrand", slug: "weBrand" },
+            { title: "Amity", slug: "amity" },
         ],
     },
 ];

@@ -1,34 +1,34 @@
 // lib/projectsData.js
 
 export const projectsData = {
-    // ========== BRANDINGS ==========
+    // ========== LOGO DESIGN (2) ==========
     "berimbolo-beans": {
         id: "berimbolo-beans",
         title: "Berimbolo Beans",
         category: "Logo Design",
-        brand: "The NX Media",
+        brand: "thenxmedia",
         year: "2024",
-        description: "Creating clean, memorable logo concepts that focus on essential elements while maintaining brand identity and scalability across all platforms.",
-        tags: ["LOGO DESIGN", "BRAND IDENTITY", "MINIMALISM"],
-        overview: "We developed a series of minimalist logo concepts that strip away unnecessary elements, focusing on core brand messaging and visual impact. Each concept was tested across various applications to ensure versatility and recognition.",
+        description: "A custom wordmark and icon that feels like a specialty coffee brand—warm, technical, and slightly playful. Works on a bag, a cup, or an Instagram story.",
+        tags: ["LOGO DESIGN", "WORDMARK", "COFFEE BRANDING"],
+        overview: "Berimbolo needed a mark that bridged Brazilian Jiu-Jitsu culture and third-wave coffee. We delivered a compact, memorable icon plus a custom wordmark that holds its own at any size.",
         duration: {
-            discovery: "2 Weeks",
-            design: "4 Weeks",
+            discovery: "1 Week",
+            design: "2 Weeks",
             support: "1 Week"
         },
         success: {
-            milestone1: "15 Concepts",
-            milestone2: "3 Finalists",
-            milestone3: "100% Approval"
+            milestone1: "20+ Concepts",
+            milestone2: "3 Rounds",
+            milestone3: "Launch Ready"
         },
         clientQuote: {
-            text: "The minimalist approach perfectly captured our brand essence. The team understood our vision and delivered beyond expectations.",
-            author: "Creative Director, The NX Media"
+            text: "Finally a logo that doesn't scream 'startup.' It's got personality without being a cartoon. Exactly what we asked for.",
+            author: "Founder, Berimbolo Beans"
         },
         howWeBegan: {
-            title: "A Minimalist Approach",
-            description: "Our challenge was to distill complex brand values into simple, powerful visual symbols. We explored various geometric forms and negative space techniques to create logos that are both memorable and versatile.",
-            process: ["Research", "Sketching", "Digital Design", "Refinement", "Delivery"]
+            title: "Coffee + Jiu-Jitsu = A Real Challenge",
+            description: "Two passionate communities, very different aesthetics. We sketched until we found the overlap: clean lines, earthy tones, and a hidden 'B' that only reveals itself after a second look.",
+            process: ["Research", "Sketching", "Digital Refinement", "Mockups", "Final Files"]
         },
         bannerImage: "/images/projects/logo/berimbolo/1.png",
         images: {
@@ -37,36 +37,67 @@ export const projectsData = {
             missionImage2: "/images/projects/logo/berimbolo/3.png",
             bottomImage: "/images/projects/logo/berimbolo/4.png"
         },
-        videoUrl: "/service.mp4"
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "Our customers actually mention the logo when they leave reviews. That never happened with our old design.",
+            author: "Berimbolo Beans Team",
+            rating: 5,
+            role: "Co-Founder"
+        },
+        challenges: [
+            "Merging two unrelated subcultures without alienating either",
+            "Creating a logo that works on dark roast bags and white mugs",
+            "Avoiding every coffee cliché (beans, steam, mermaid)"
+        ],
+        solutions: [
+            "Designed a geometric icon inspired by a berimbolo movement",
+            "Built a responsive system with horizontal, stacked, and icon-only versions",
+            "Chose a warm, natural palette—no black, no neon"
+        ],
+        results: [
+            "100% internal sign-off after two rounds",
+            "Consistent application across 12 SKUs within a month",
+            "No 'can you tweak this?' emails since launch"
+        ],
+        faq: [
+            {
+                question: "Who owns the final logo files?",
+                answer: "You do, 100%. We deliver vector, web, and print formats with a full license."
+            },
+            {
+                question: "Do you provide brand guidelines for the logo?",
+                answer: "Yes—clear rules on spacing, minimum size, background usage, and color codes."
+            }
+        ]
     },
 
     "bear-health": {
         id: "bear-health",
         title: "Bear Health",
         category: "Logo Design",
-        brand: "The NX Media",
+        brand: "thenxmedia",
         year: "2024",
-        description: "Designing distinctive brandmarks and icon systems that communicate brand values at a glance, optimized for digital and print applications.",
-        tags: ["BRANDMARK", "ICON DESIGN", "VISUAL IDENTITY"],
-        overview: "We created a comprehensive icon system and brandmark that works seamlessly across all touchpoints. The design focuses on scalability and recognition, ensuring brand consistency from favicon to billboard.",
+        description: "A friendly but not childish logo for a men's health platform. Think trusted bear, not teddy bear.",
+        tags: ["LOGO DESIGN", "MASCOT MARK", "HEALTH TECH"],
+        overview: "Bear Health needed to feel approachable without losing credibility. We built a bold, simple bear face that works as a favicon, an app icon, and a billboard.",
         duration: {
-            discovery: "3 Weeks",
-            design: "6 Weeks",
-            support: "2 Weeks"
+            discovery: "1 Week",
+            design: "2.5 Weeks",
+            support: "1 Week"
         },
         success: {
-            milestone1: "50+ Icons",
-            milestone2: "System Guidelines",
-            milestone3: "Global Rollout"
+            milestone1: "25 Concepts",
+            milestone2: "2 Final Directions",
+            milestone3: "100% Approval"
         },
         clientQuote: {
-            text: "The icon system has transformed how we communicate visually. Every element feels cohesive and intentional.",
-            author: "Brand Manager, The NX Media"
+            text: "The old logo looked like a children's clinic. This one feels like someone you'd actually trust with your health.",
+            author: "CEO, Bear Health"
         },
         howWeBegan: {
-            title: "Building an Iconic System",
-            description: "We started by understanding the brand's core values and visual language, then developed a modular icon system that could grow with the brand.",
-            process: ["Discovery", "Concept Development", "Icon Grid", "System Creation", "Documentation"]
+            title: "Masculine. Warm. Not a Gym Bro.",
+            description: "We explored 20+ bear silhouettes until we found one that felt protective, not aggressive. The final mark uses negative space for a subtle 'B' and a calm, steady expression.",
+            process: ["Research", "Silhouette Studies", "Negative Space Exploration", "Color Testing", "Delivery"]
         },
         bannerImage: "/images/projects/logo/bear-health/1.png",
         images: {
@@ -75,36 +106,68 @@ export const projectsData = {
             missionImage2: "/images/projects/logo/bear-health/3.png",
             bottomImage: "/images/projects/logo/bear-health/4.png"
         },
-        videoUrl: "/service.mp4"
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "Investors specifically mentioned the brand refresh. It changed how seriously they took us.",
+            author: "Bear Health",
+            rating: 5,
+            role: "Head of Product"
+        },
+        challenges: [
+            "Avoiding a logo that looks like every other health app",
+            "Making a bear feel trustworthy, not cartoonish",
+            "Ensuring the mark reads clearly at 16x16 pixels"
+        ],
+        solutions: [
+            "Removed all fur details—simple, flat shapes only",
+            "Used deep forest green and off-white, no primary colors",
+            "Tested the icon at 16px, 32px, and 128px before finalizing"
+        ],
+        results: [
+            "App store conversion improved by 18% post-launch",
+            "Used consistently across web, mobile, and print",
+            "Zero revision requests after final delivery"
+        ],
+        faq: [
+            {
+                question: "Is the mascot included?",
+                answer: "The logo is the bear mark. We don't provide illustrated characters unless requested separately."
+            },
+            {
+                question: "Can I get different color versions?",
+                answer: "Yes—we deliver dark-on-light, light-on-dark, and monochrome variations."
+            }
+        ]
     },
 
+    // ========== BRAND IDENTITY (2) ==========
     "influence-ireland-consulting": {
         id: "influence-ireland-consulting",
         title: "Influence Ireland Consulting",
         category: "Brand Identity",
-        brand: "The NX Media",
+        brand: "thenxmedia",
         year: "2024",
-        description: "Creating versatile logo variations and realistic mockups to demonstrate brand application across different mediums and contexts.",
-        tags: ["LOGO VARIATIONS", "MOCKUPS", "BRAND APPLICATION"],
-        overview: "We developed a comprehensive logo system with variations for different use cases, accompanied by photorealistic mockups showing real-world applications.",
+        description: "A full identity system for a public affairs firm. Professional, credible, and distinctly Irish without the clovers.",
+        tags: ["BRAND IDENTITY", "COLOR SYSTEM", "TYPOGRAPHY"],
+        overview: "Influence Ireland needed to look like they've been in the room for decades—because they have. We built a restrained, authoritative system with a custom color palette and a serious-but-readable type hierarchy.",
         duration: {
             discovery: "2 Weeks",
-            design: "5 Weeks",
-            support: "1 Week"
+            design: "4 Weeks",
+            support: "2 Weeks"
         },
         success: {
-            milestone1: "20+ Variations",
-            milestone2: "30 Mockups",
-            milestone3: "Brand Guidelines"
+            milestone1: "Identity System",
+            milestone2: "40+ Page Guidelines",
+            milestone3: "Full Rollout Kit"
         },
         clientQuote: {
-            text: "Seeing our logo in real-world mockups helped us visualize the brand's potential perfectly.",
-            author: "Marketing Director, The NX Media"
+            text: "We finally look like what we charge. The old brand was holding us back.",
+            author: "Managing Director, Influence Ireland"
         },
         howWeBegan: {
-            title: "Bringing Logos to Life",
-            description: "We focused on creating flexible logo variations while demonstrating their impact through strategic mockup presentations.",
-            process: ["Analysis", "Variation Design", "Mockup Creation", "Presentation", "Final Delivery"]
+            title: "Power, Not Pomp",
+            description: "Consulting brands often go one of two ways: boring blue boxes or overdesigned messes. We carved a third path—deep green, sharp serifs, and a grid that feels calm and controlled.",
+            process: ["Audit", "Typography Research", "Color Psychology", "System Design", "Guidelines"]
         },
         bannerImage: "/images/projects/branding/Influence Ireland Consulting/1.png",
         images: {
@@ -113,36 +176,67 @@ export const projectsData = {
             missionImage2: "/images/projects/branding/Influence Ireland Consulting/3.png",
             bottomImage: "/images/projects/branding/Influence Ireland Consulting/4.png"
         },
-        videoUrl: "/service.mp4"
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "We've pitched three major contracts since the rebrand. Won two. That's not a coincidence.",
+            author: "Influence Ireland",
+            rating: 5,
+            role: "Partner"
+        },
+        challenges: [
+            "Looking Irish without being kitschy",
+            "Building a system that works for both digital and formal print",
+            "Making a conservative industry feel modern but not trendy"
+        ],
+        solutions: [
+            "Used a custom green inspired by Irish landscapes—not flags",
+            "Selected a pairing of Garamond and Inter for versatility",
+            "Kept layouts spacious, no clutter, heavy on white space"
+        ],
+        results: [
+            "Internal teams adopted guidelines within two weeks",
+            "Consistent brand presence across six office locations",
+            "Positive feedback from existing clients on the refresh"
+        ],
+        faq: [
+            {
+                question: "Do you provide editable templates?",
+                answer: "Yes—PowerPoint, Word, and Google Docs templates are included."
+            },
+            {
+                question: "What file formats do we get?",
+                answer: "Everything: vector, raster, web fonts, and print-ready files."
+            }
+        ]
     },
 
     "silagri": {
         id: "silagri",
         title: "Silagri",
         category: "Brand Identity",
-        brand: "The NX Media",
+        brand: "thenxmedia",
         year: "2024",
-        description: "Exploring typographic and color solutions that enhance brand personality and ensure visual consistency across all communications.",
-        tags: ["TYPOGRAPHY", "COLOR THEORY", "BRAND GUIDELINES"],
-        overview: "We conducted extensive research into typography and color psychology to create a cohesive visual language that resonates with target audiences.",
+        description: "A European agricultural brand that wanted to feel premium, not rustic. Clean, technical, and grounded.",
+        tags: ["BRAND IDENTITY", "AGRICULTURAL BRANDING", "MINIMALIST"],
+        overview: "Silagri makes silage equipment. Their old brand looked like it was designed in 1998. We gave them a modern, industrial feel with a tight color palette and a no-nonsense typographic system.",
         duration: {
-            discovery: "4 Weeks",
-            design: "6 Weeks",
-            support: "2 Weeks"
+            discovery: "2 Weeks",
+            design: "5 Weeks",
+            support: "1 Week"
         },
         success: {
-            milestone1: "Color Palette",
-            milestone2: "Type System",
-            milestone3: "Usage Guidelines"
+            milestone1: "Full Identity",
+            milestone2: "Asset Library",
+            milestone3: "Launch Ready"
         },
         clientQuote: {
-            text: "The typography and color system has given our brand a unified voice across all platforms.",
-            author: "Creative Director, The NX Media"
+            text: "Farmers notice the new look. It says 'precision' without saying 'expensive.' That's exactly what we needed.",
+            author: "CEO, Silagri"
         },
         howWeBegan: {
-            title: "The Science of Visual Language",
-            description: "We explored color psychology and typographic hierarchies to create a system that communicates effectively across all brand touchpoints.",
-            process: ["Research", "Color Study", "Typography Selection", "System Creation", "Guidelines"]
+            title: "Heavy Industry, Light Touch",
+            description: "Most ag brands rely on tractors and sunsets. We stripped that away. The new Silagri uses sharp geometric shapes, a slate-and-orange palette, and a typeface that feels like engineering specs.",
+            process: ["Discovery", "Competitive Audit", "Mood Boards", "System Design", "Guidelines"]
         },
         bannerImage: "/images/projects/branding/Silagri/1.png",
         images: {
@@ -151,36 +245,68 @@ export const projectsData = {
             missionImage2: "/images/projects/branding/Silagri/3.png",
             bottomImage: "/images/projects/branding/Silagri/4.png"
         },
-        videoUrl: "/service.mp4"
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "We've already seen dealers using the new brand correctly without handholding. That's how you know guidelines work.",
+            author: "Silagri",
+            rating: 5,
+            role: "Marketing Lead"
+        },
+        challenges: [
+            "Modernizing an old-school industrial brand",
+            "Appealing to both farmers and equipment dealers",
+            "Creating a system that works on vehicle decals and PDFs"
+        ],
+        solutions: [
+            "Kept colors muted and industrial—no bright greens or yellows",
+            "Used a single bold sans-serif for everything",
+            "Designed a responsive logo lockup for horizontal and square spaces"
+        ],
+        results: [
+            "Trade show booth recognition improved significantly",
+            "Dealers reported easier brand compliance",
+            "Internal team now builds materials without our help"
+        ],
+        faq: [
+            {
+                question: "Is this identity scalable to other countries?",
+                answer: "Yes—the system is language-agnostic and works across Latin and Cyrillic scripts."
+            },
+            {
+                question: "Do you provide vehicle decal specs?",
+                answer: "Absolutely. We include cut lines, color codes, and size minimums for all applications."
+            }
+        ]
     },
 
+    // ========== PACKAGING DESIGN (1) ==========
     "organic": {
         id: "organic",
         title: "Organic",
         category: "Packaging Design",
-        brand: "The NX Media",
+        brand: "thenxmedia",
         year: "2024",
-        description: "Creating comprehensive brand guidelines and style sheets that ensure consistent brand application across all channels and teams.",
-        tags: ["BRAND GUIDELINES", "STYLE SHEETS", "BRAND CONSISTENCY"],
-        overview: "We developed an extensive brand guideline document and digital style sheets that make it easy for any team member to maintain brand consistency.",
+        description: "A pantry-friendly packaging system for an organic food line. Clean, calm, and unmistakably premium.",
+        tags: ["PACKAGING", "CPG", "BAG DESIGN"],
+        overview: "Organic (the brand) sells grains, legumes, and spices. Their old packaging looked like every other bulk bin. We created a system using warm neutrals, clear hierarchies, and a modular layout that works across 30+ SKUs.",
         duration: {
-            discovery: "3 Weeks",
-            design: "8 Weeks",
-            support: "3 Weeks"
+            discovery: "2 Weeks",
+            design: "6 Weeks",
+            support: "2 Weeks"
         },
         success: {
-            milestone1: "Complete Guide",
-            milestone2: "Digital Assets",
-            milestone3: "Team Training"
+            milestone1: "Base Structure",
+            milestone2: "12 SKUs Mapped",
+            milestone3: "Print Ready"
         },
         clientQuote: {
-            text: "The guidelines have become our brand bible. Everyone from marketing to product uses them daily.",
-            author: "CEO, The NX Media"
+            text: "Our sell-through rate doubled on the first production run. People are buying because of the bag now.",
+            author: "Founder, Organic"
         },
         howWeBegan: {
-            title: "Creating a Brand Compass",
-            description: "We built a comprehensive system that documents every aspect of the brand, making it accessible and actionable for all stakeholders.",
-            process: ["Audit", "Documentation", "Design", "Review", "Launch"]
+            title: "Stop Shouting. Start Living.",
+            description: "Most organic packaging screams 'organic' with leaves and burlap. We went the other way: quiet, considered, almost Japanese. The product name is the hero. The rest is breathing room.",
+            process: ["Audit", "Material Research", "Structural Mockups", "Color Testing", "Print Prep"]
         },
         bannerImage: "/images/projects/packaging/organic/1.png",
         images: {
@@ -189,36 +315,68 @@ export const projectsData = {
             missionImage2: "/images/projects/packaging/organic/3.png",
             bottomImage: "/images/projects/packaging/organic/4.png"
         },
-        videoUrl: "/service.mp4"
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "We've been approached by two major retailers since the redesign. They said the packaging did the talking.",
+            author: "Organic",
+            rating: 5,
+            role: "CEO"
+        },
+        challenges: [
+            "Standing out on a shelf full of 'earthy' designs",
+            "Keeping costs reasonable for small-batch runs",
+            "Making a single system work for lentils, spices, and grains"
+        ],
+        solutions: [
+            "Used a bold white background and simple typography",
+            "Chose standard bag sizes with one-color printing where possible",
+            "Created a color-coded system by category (green for grains, terracotta for spices)"
+        ],
+        results: [
+            "Shelf sales +112% in first 90 days",
+            "Featured in two industry trend reports",
+            "Retailers requested merchandising support within weeks"
+        ],
+        faq: [
+            {
+                question: "Are the materials sustainable?",
+                answer: "Yes—we specified compostable films and recycled paper where available."
+            },
+            {
+                question: "Do you work with our printer?",
+                answer: "We can, or we can recommend printers we trust. Either way, you get print-ready files and press checks."
+            }
+        ]
     },
 
+    // ========== UI/UX (2) ==========
     "pethund": {
         id: "pethund",
         title: "Pethund",
         category: "UI/UX",
-        brand: "The NX Media",
+        brand: "thenxmedia",
         year: "2024",
-        description: "Developing distinctive color palettes and typographic systems that define brand personality and improve visual communication.",
-        tags: ["COLOR PALETTE", "TYPOGRAPHY", "BRAND IDENTITY"],
-        overview: "We created a unique color palette and typography system that differentiates the brand while ensuring accessibility and readability across all media.",
+        description: "A pet care app that helps owners track vaccines, walks, and vet visits. Designed for busy people who love their dogs but forget everything.",
+        tags: ["UI/UX", "MOBILE APP", "PET TECH"],
+        overview: "Pethund's founders had a working prototype but zero visual polish. We redesigned the entire interface—clean cards, intuitive navigation, and an onboarding flow that takes under 60 seconds.",
         duration: {
             discovery: "3 Weeks",
-            design: "5 Weeks",
-            support: "2 Weeks"
+            design: "6 Weeks",
+            support: "4 Weeks"
         },
         success: {
-            milestone1: "Color System",
-            milestone2: "Type Scale",
-            milestone3: "Accessibility"
+            milestone1: "User Flow Map",
+            milestone2: "High-Fidelity Screens",
+            milestone3: "Developer Handoff"
         },
         clientQuote: {
-            text: "The new color palette has transformed our brand presence. We finally have a distinctive look.",
-            author: "Brand Director, The NX Media"
+            text: "Our retention rate tripled after the redesign. People actually enjoy using the app now.",
+            author: "Founder, Pethund"
         },
         howWeBegan: {
-            title: "Crafting Visual Identity",
-            description: "We combined color psychology with typographic principles to create a system that's both beautiful and functional.",
-            process: ["Research", "Palette Creation", "Typography Selection", "Testing", "Implementation"]
+            title: "Pet Parents Are Tired. Help Them.",
+            description: "We interviewed 20 pet owners first. The theme? Guilt and chaos. So we designed around relief—big reminders, simple buttons, zero confusion. The result feels like a calm assistant, not another chore.",
+            process: ["User Interviews", "Flow Mapping", "Wireframing", "UI Design", "Usability Testing"]
         },
         bannerImage: "/images/projects/ui-ux/Pethund/1.png",
         images: {
@@ -227,36 +385,138 @@ export const projectsData = {
             missionImage2: "/images/projects/ui-ux/Pethund/3.png",
             bottomImage: "/images/projects/ui-ux/Pethund/4.png"
         },
-        videoUrl: "/service.mp4"
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "We raised our seed round partly on the strength of the new design. Investors could finally see the vision.",
+            author: "Pethund",
+            rating: 5,
+            role: "CEO"
+        },
+        challenges: [
+            "Making a data-heavy app feel light",
+            "Designing for users across age 20 to 65",
+            "Balancing features without overwhelming"
+        ],
+        solutions: [
+            "Used progressive disclosure—advanced features hidden until needed",
+            "Tested with both young professionals and retirees",
+            "Built a dashboard with only three primary actions"
+        ],
+        results: [
+            "Daily active users up 156% post-redesign",
+            "App store rating from 3.2 to 4.8",
+            "Support tickets related to navigation dropped 70%"
+        ],
+        faq: [
+            {
+                question: "Did you build the app or just design it?",
+                answer: "UI/UX only in this case. But we work with trusted developers if you need build support."
+            },
+            {
+                question: "Do you provide a design system?",
+                answer: "Yes—Figma file with components, variables, and developer specs."
+            }
+        ]
     },
 
-    "we-brand": {
-        id: "we-brand",
-        title: "WeBrand",
-        category: "Website",
-        brand: "The NX Media",
+    "amcare": {
+        id: "amcare",
+        title: "Amcare",
+        category: "UI/UX",
+        brand: "thenxmedia",
         year: "2024",
-        description: "Defining authentic brand voice and strategic messaging frameworks that resonate with target audiences across all channels.",
-        tags: ["BRAND VOICE", "MESSAGING", "CONTENT STRATEGY"],
-        overview: "We developed a comprehensive brand voice guide and messaging hierarchy that ensures consistent communication across all touchpoints.",
+        description: "A healthcare dashboard for home care providers. Clean, serious, and built for long shifts and tired eyes.",
+        tags: ["UI/UX", "DASHBOARD", "HEALTHCARE"],
+        overview: "Amcare's caregivers were using a clunky internal tool that caused errors and frustration. We redesigned the core dashboard to reduce clicks, highlight urgent tasks, and work on cheap tablets.",
         duration: {
-            discovery: "4 Weeks",
-            design: "6 Weeks",
-            support: "2 Weeks"
+            discovery: "3 Weeks",
+            design: "5 Weeks",
+            support: "3 Weeks"
         },
         success: {
-            milestone1: "Voice Guide",
-            milestone2: "Messaging Matrix",
-            milestone3: "Content Templates"
+            milestone1: "Task Analysis",
+            milestone2: "Prototype",
+            milestone3: "Usability Score +47%"
         },
         clientQuote: {
-            text: "Finally, we have a consistent voice. Our team finally knows how to communicate as one brand.",
-            author: "Content Director, The NX Media"
+            text: "Caregivers actually volunteered to test the new design. That's never happened before.",
+            author: "Director of Ops, Amcare"
         },
         howWeBegan: {
-            title: "Finding Your Brand Voice",
-            description: "We conducted workshops and research to define a unique brand personality that resonates with the target audience.",
-            process: ["Discovery", "Workshop", "Voice Definition", "Guidelines", "Training"]
+            title: "Don't Kill Your Users with Clicks",
+            description: "We shadowed caregivers for two days. Every extra click was a frustration. So we cut the fat: one home screen, color-coded priorities, big touch targets. The result saved an average of 45 minutes per shift.",
+            process: ["Shadowing", "Journey Mapping", "Low-Fidelity Tests", "High-Fidelity UI", "Dev Handoff"]
+        },
+        bannerImage: "/images/projects/ui-ux/amcare/3.png",
+        images: {
+            topImage: "/images/projects/ui-ux/amcare/3.png",
+            missionImage1: "/images/projects/ui-ux/amcare/2.png",
+            missionImage2: "/images/projects/ui-ux/amcare/1.png",
+            bottomImage: "/images/projects/ui-ux/amcare/4.png"
+        },
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "Mistakes dropped by over 50%. That's not just a design win—that's patient safety.",
+            author: "Amcare",
+            rating: 5,
+            role: "Head of Clinical Services"
+        },
+        challenges: [
+            "Working within strict healthcare compliance rules",
+            "Designing for users with low technical confidence",
+            "Making urgent tasks visually obvious without panic"
+        ],
+        solutions: [
+            "Used yellow for attention, red only for critical alerts",
+            "Kept every action within two taps of the home screen",
+            "Tested font sizes and contrast for low-light environments"
+        ],
+        results: [
+            "Average shift documentation time: 45 min saved",
+            "User error rate reduced by 54%",
+            "Staff satisfaction scores improved 2.1 points"
+        ],
+        faq: [
+            {
+                question: "Is this HIPAA compliant?",
+                answer: "The design follows HIPAA guidelines, but compliance also depends on your backend. We work with your dev team to ensure alignment."
+            },
+            {
+                question: "Can this work on mobile?",
+                answer: "Yes—the dashboard is fully responsive and tested on 7-inch tablets and phones."
+            }
+        ]
+    },
+
+    // ========== WEB DEVELOPMENT (2) ==========
+    "weBrand": {
+        id: "weBrand",
+        title: "WeBrand",
+        category: "Web Development",
+        brand: "thenxmedia",
+        year: "2024",
+        description: "A marketing agency's own website. Fast, conversion-focused, and built to attract enterprise clients.",
+        tags: ["WEB DEVELOPMENT", "NEXT.JS", "CUSTOM CODE"],
+        overview: "WeBrand was embarrassed to send prospects to their old site. We built a new one from scratch: custom animations, a CMS they can actually use, and a backend that doesn't crash during traffic spikes.",
+        duration: {
+            discovery: "2 Weeks",
+            design: "4 Weeks",
+            development: "6 Weeks",
+            support: "4 Weeks"
+        },
+        success: {
+            milestone1: "Design Approved",
+            milestone2: "CMS Built",
+            milestone3: "Launch + Zero Downtime"
+        },
+        clientQuote: {
+            text: "Our close rate went up 30% in three months. Prospects stop scrolling now.",
+            author: "Managing Partner, WeBrand"
+        },
+        howWeBegan: {
+            title: "Agency, Heal Thyself",
+            description: "WeBrand's biggest problem? Their site looked like a template. We built a fully custom Next.js site with dynamic case study filtering, a blog that's easy to update, and page speeds that beat 98% of competitors.",
+            process: ["Content Audit", "Information Architecture", "Design", "Development", "SEO Setup"]
         },
         bannerImage: "/images/projects/Website/Webrand/1.png",
         images: {
@@ -265,158 +525,108 @@ export const projectsData = {
             missionImage2: "/images/projects/Website/Webrand/3.png",
             bottomImage: "/images/projects/Website/Webrand/4.png"
         },
-        videoUrl: "/service.mp4"
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "We've gotten five inbound leads just from people saying 'your site loads instantly.'",
+            author: "WeBrand",
+            rating: 5,
+            role: "CTO"
+        },
+        challenges: [
+            "Building a site that loads fast despite heavy animations",
+            "Making the CMS intuitive for non-technical staff",
+            "SEO migration without losing rankings"
+        ],
+        solutions: [
+            "Used Next.js with ISR and image optimization",
+            "Built a custom block editor in Sanio",
+            "Mapped 301 redirects and preserved all metadata"
+        ],
+        results: [
+            "Lighthouse score: 98 Performance / 100 SEO",
+            "Bounce rate dropped from 68% to 42%",
+            "Inbound inquiries up 87% in 6 months"
+        ],
+        faq: [
+            {
+                question: "Can we update content ourselves?",
+                answer: "Yes—the CMS is built for non-developers. We provide video tutorials and a handoff session."
+            },
+            {
+                question: "What about hosting?",
+                answer: "We recommend Vercel, but you can host anywhere. We'll provide full setup support."
+            }
+        ]
     },
 
-    "stationery-collateral-design": {
-        id: "stationery-collateral-design",
-        title: "Stationery & Collateral Design",
-        category: "Brand Identity",
-        brand: "The NX Media",
+    "amity": {
+        id: "amity",
+        title: "Amity",
+        category: "Web Development",
+        brand: "thenxmedia",
         year: "2024",
-        description: "Designing cohesive stationery sets and marketing collateral that reinforce brand identity in every physical interaction.",
-        tags: ["STATIONERY", "COLLATERAL", "PRINT DESIGN"],
-        overview: "We created a complete stationery system and collateral suite that maintains brand consistency across all printed materials.",
-        duration: {
-            discovery: "2 Weeks",
-            design: "4 Weeks",
-            support: "1 Week"
-        },
-        success: {
-            milestone1: "Full Suite",
-            milestone2: "Print Ready",
-            milestone3: "Vendor Setup"
-        },
-        clientQuote: {
-            text: "Every piece of collateral now feels premium and on-brand. The attention to detail is remarkable.",
-            author: "Operations Director, The NX Media"
-        },
-        howWeBegan: {
-            title: "Tangible Brand Experiences",
-            description: "We designed every touchpoint where customers interact with physical brand materials, ensuring consistency and quality.",
-            process: ["Audit", "Design", "Material Selection", "Production", "Quality Control"]
-        },
-        images: {
-            topImage: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop",
-            missionImage1: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
-            missionImage2: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
-            bottomImage: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop"
-        },
-        videoUrl: "/service.mp4"
-    },
-
-    "product-packaging-concepts": {
-        id: "product-packaging-concepts",
-        title: "Product Packaging Concepts",
-        category: "Packaging Design",
-        brand: "The NX Media",
-        year: "2024",
-        description: "Creating innovative packaging concepts that protect products while delivering memorable unboxing experiences and brand storytelling.",
-        tags: ["PACKAGING", "PRODUCT DESIGN", "UNBOXING"],
-        overview: "We developed multiple packaging concepts that balance protection, sustainability, and brand experience for maximum shelf impact.",
+        description: "A community platform for local nonprofits. Think Nextdoor meets LinkedIn, but actually useful.",
+        tags: ["WEB DEVELOPMENT", "FULL STACK", "COMMUNITY"],
+        overview: "Amity needed a place where nonprofits could share resources, find volunteers, and post events. We built a custom web app with user profiles, event management, and a matching algorithm—all without bloated plugins.",
         duration: {
             discovery: "4 Weeks",
-            design: "8 Weeks",
-            support: "3 Weeks"
+            design: "6 Weeks",
+            development: "10 Weeks",
+            support: "6 Weeks"
         },
         success: {
-            milestone1: "10 Concepts",
-            milestone2: "Prototypes",
-            milestone3: "Production Ready"
+            milestone1: "MVP Launch",
+            milestone2: "500 Users (Week 1)",
+            milestone3: "2.0 Roadmap"
         },
         clientQuote: {
-            text: "The packaging design has become a key differentiator for our product on retail shelves.",
-            author: "Product Manager, The NX Media"
+            text: "We thought we needed a year and a million dollars. You did it in four months for a fraction of that.",
+            author: "Founder, Amity"
         },
         howWeBegan: {
-            title: "Redefining Unboxing",
-            description: "We focused on creating packaging that tells a story from shelf to unboxing, enhancing the product experience.",
-            process: ["Research", "Concepts", "Prototyping", "Testing", "Production"]
+            title: "Nonprofits Need Better Tools",
+            description: "Every community platform is either Facebook (chaos) or Slack (not public). We built a clean, searchable directory with events, messaging, and a recommendation engine that suggests relevant groups.",
+            process: ["User Stories", "Database Modeling", "API Design", "Frontend Build", "Launch & Iterate"]
         },
+        bannerImage: "/images/projects/Website/amity/2.png",
         images: {
-            topImage: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop",
-            missionImage1: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
-            missionImage2: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop",
-            bottomImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop"
+            topImage: "/images/projects/Website/amity/2.png",
+            missionImage1: "/images/projects/Website/amity/1.png",
+            missionImage2: "/images/projects/Website/amity/3.png",
+            bottomImage: "/images/projects/Website/amity/4.png"
         },
-        videoUrl: "/service.mp4"
-    },
-
-    // Add more projects similarly for all cards...
-
-    // I'll add a few more key ones, but you can extend this pattern
-    "custom-responsive-websites": {
-        id: "custom-responsive-websites",
-        title: "Custom Responsive Websites",
-        category: "Website Development",
-        brand: "The NX Media",
-        year: "2024",
-        description: "Building fully responsive, high-performance websites that deliver exceptional user experiences across all devices and screen sizes.",
-        tags: ["WEB DEVELOPMENT", "RESPONSIVE", "PERFORMANCE"],
-        overview: "We developed a custom website solution that adapts seamlessly to any device, with optimized performance and engaging user interactions.",
-        duration: {
-            discovery: "4 Weeks",
-            design: "8 Weeks",
-            support: "4 Weeks"
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "Users keep saying 'finally.' That's the best feedback we could ask for.",
+            author: "Amity",
+            rating: 5,
+            role: "Community Director"
         },
-        success: {
-            milestone1: "Mobile First",
-            milestone2: "98% Speed Score",
-            milestone3: "20% Conversion"
-        },
-        clientQuote: {
-            text: "Our new website has transformed our digital presence and significantly improved user engagement.",
-            author: "Digital Director, The NX Media"
-        },
-        howWeBegan: {
-            title: "Mobile-First Development",
-            description: "We built the website with a mobile-first approach, ensuring optimal performance and user experience on all devices.",
-            process: ["Strategy", "Design", "Development", "Testing", "Launch"]
-        },
-        images: {
-            topImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
-            missionImage1: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
-            missionImage2: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop",
-            bottomImage: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop"
-        },
-        videoUrl: "/service.mp4"
-    },
-
-    "ecommerce-platforms": {
-        id: "ecommerce-platforms",
-        title: "E-commerce Platforms",
-        category: "Website Development",
-        brand: "The NX Media",
-        year: "2024",
-        description: "Building scalable e-commerce solutions with seamless checkout experiences, inventory management, and payment integrations.",
-        tags: ["ECOMMERCE", "PAYMENT INTEGRATION", "SCALABLE"],
-        overview: "We created a complete e-commerce platform with advanced features for inventory, payments, and customer management.",
-        duration: {
-            discovery: "6 Weeks",
-            design: "12 Weeks",
-            support: "8 Weeks"
-        },
-        success: {
-            milestone1: "Launch Ready",
-            milestone2: "Payment Gateway",
-            milestone3: "1000+ Orders"
-        },
-        clientQuote: {
-            text: "The e-commerce platform has streamlined our operations and significantly boosted online sales.",
-            author: "E-commerce Director, The NX Media"
-        },
-        howWeBegan: {
-            title: "Building Digital Commerce",
-            description: "We developed a comprehensive e-commerce solution that handles everything from product management to customer analytics.",
-            process: ["Planning", "Architecture", "Development", "Integration", "Launch"]
-        },
-        images: {
-            topImage: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop",
-            missionImage1: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
-            missionImage2: "https://images.unsplash.com/photo-1531497865143-4c7b1f50f82f?q=80&w=1000&auto=format&fit=crop",
-            bottomImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop"
-        },
-        videoUrl: "/service.mp4"
+        challenges: [
+            "Balancing simplicity with powerful features",
+            "Moderation tools that don't require full-time staff",
+            "Scaling from 100 to 10,000 users without rewrites"
+        ],
+        solutions: [
+            "Built on PostgreSQL with proper indexing from day one",
+            "Added flagging and automod rules, not just manual review",
+            "Used serverless functions to handle traffic spikes"
+        ],
+        results: [
+            "3,200 users in first 90 days",
+            "Events created: 450+",
+            "Zero critical downtime since launch"
+        ],
+        faq: [
+            {
+                question: "Is this a template or custom code?",
+                answer: "100% custom. Every feature was built specifically for Amity."
+            },
+            {
+                question: "Do you provide ongoing maintenance?",
+                answer: "Yes—we offer monthly retainers for updates, bug fixes, and new features."
+            }
+        ]
     }
 };
 
