@@ -12,12 +12,12 @@ export const projectsData = {
         tags: ["LOGO DESIGN", "WORDMARK", "COFFEE BRANDING"],
         overview: "Berimbolo needed a mark that bridged Brazilian Jiu-Jitsu culture and third-wave coffee. We delivered a compact, memorable icon plus a custom wordmark that holds its own at any size.",
         duration: {
-            discovery: "1 Week",
-            design: "2 Weeks",
-            support: "1 Week"
+            discovery: "1 Day",
+            design: "2 Days",
+            support: "1 Day"
         },
         success: {
-            milestone1: "20+ Concepts",
+            milestone1: "4+ Concepts",
             milestone2: "3 Rounds",
             milestone3: "Launch Ready"
         },
@@ -81,12 +81,12 @@ export const projectsData = {
         tags: ["LOGO DESIGN", "MASCOT MARK", "HEALTH TECH"],
         overview: "Bear Health needed to feel approachable without losing credibility. We built a bold, simple bear face that works as a favicon, an app icon, and a billboard.",
         duration: {
-            discovery: "1 Week",
-            design: "2.5 Weeks",
-            support: "1 Week"
+            discovery: "1 Day",
+            design: "2 Days",
+            support: "1 Day"
         },
         success: {
-            milestone1: "25 Concepts",
+            milestone1: "5 Concepts",
             milestone2: "2 Final Directions",
             milestone3: "100% Approval"
         },
@@ -173,7 +173,7 @@ export const projectsData = {
         images: {
             topImage: "/images/projects/branding/Influence Ireland Consulting/1.png",
             missionImage1: "/images/projects/branding/Influence Ireland Consulting/2.png",
-            missionImage2: "/images/projects/branding/Influence Ireland Consulting/3.png",
+            missionImage2: "/images/projects/branding/Influence Ireland Consulting/6.png",
             bottomImage: "/images/projects/branding/Influence Ireland Consulting/4.png"
         },
         videoUrl: "/service.mp4",
@@ -348,7 +348,7 @@ export const projectsData = {
             }
         ]
     },
-        "brandco": {
+    "brandco": {
         id: "brandco",
         title: "Brandco",
         category: "Packaging Design",
@@ -416,7 +416,7 @@ export const projectsData = {
             }
         ]
     },
-            "mountain-top": {
+    "mountain-top": {
         id: "mountain-top",
         title: "Mountain Top",
         category: "Packaging Design",
@@ -485,7 +485,146 @@ export const projectsData = {
         ]
     },
 
-        // ========== UI/UX (2) ==========
+
+    // ========== SOCIAL MEDIA DESIGN (2) ==========
+    "ad-creatives-campaign-assets": {
+        id: "ad-creatives-campaign-assets",
+        title: "Ad Creatives & Campaign Assets",
+        category: "Social Media",
+        brand: "thenxmedia",
+        year: "2024",
+        description: "High-performance ad creatives for a DTC fashion brand. Scrolling stoppers that actually convert.",
+        tags: ["SOCIAL MEDIA", "AD CREATIVES", "META ADS", "DTC"],
+        overview: "This emerging fashion brand was burning ad spend on generic templates. We designed a library of 50+ static and motion assets tailored to their audience—carousels, reels, static stories, and catalog feeds. The result? Lower CPC and higher ROAS, not just 'likes.'",
+        duration: {
+            discovery: "1 Week",
+            design: "3 Weeks",
+            support: "2 Weeks"
+        },
+        success: {
+            milestone1: "50+ Assets",
+            milestone2: "3 Platforms",
+            milestone3: "Ready to Scale"
+        },
+        clientQuote: {
+            text: "We cut our cost per acquisition in half without changing our targeting. That's the power of design that sells.",
+            author: "Performance Marketing Lead, DTC Brand"
+        },
+        howWeBegan: {
+            title: "Stop Designing for Likes. Design for Clicks.",
+            description: "Most agencies make pretty ads that don't sell. We started with their best-performing historical data, then created variations on winning formats. Bold typography, fast cuts for reels, and platform-specific sizing for everything.",
+            process: ["Audit", "Concepting", "Static Design", "Motion Assets", "Handoff"]
+        },
+        bannerImage: "/images/projects/social-media/ad-creatives/1.png",
+        images: {
+            topImage: "/images/projects/social-media/ad-creative/1.png",
+            missionImage1: "/images/projects/social-media/ad-creative/3.png",
+            missionImage2: "/images/projects/social-media/ad-creative/1.png",
+            bottomImage: "/images/projects/social-media/ad-creative/2.png"
+        },
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "We A/B tested their assets against ours. They won 7 out of 8 times. We switched the whole creative strategy overnight.",
+            author: "DTC Brand",
+            rating: 5,
+            role: "Head of Growth"
+        },
+        challenges: [
+            "Making ads that stop thumbs on Instagram and TikTok",
+            "Adapting one campaign idea across 3 platforms and 15 formats",
+            "Designing for dark mode, sound-off, and rapid scrolling"
+        ],
+        solutions: [
+            "Used bold color blocking and oversized text for thumb-stopping power",
+            "Built a modular asset system with safe zones for each platform",
+            "Tested every asset with sound off—captions and visual hierarchy did the work"
+        ],
+        results: [
+            "CTR improved by 42% within two weeks",
+            "Ad account ROAS went from 2.1x to 4.3x",
+            "Creative production time cut by 60% (client reuses templates now)"
+        ],
+        faq: [
+            {
+                question: "Do you provide video assets too?",
+                answer: "Yes—we deliver static + motion. Reels, TikTok, and stories all covered."
+            },
+            {
+                question: "What file formats do we get?",
+                answer: "PNG, JPG, MP4, and platform-specific specs (vertical, square, horizontal). Plus Figma source files if you want to edit later."
+            }
+        ]
+    },
+
+    "brand-consistency-platforms": {
+        id: "brand-consistency-platforms",
+        title: "Brand Consistency Across Platforms",
+        category: "Social Media",
+        brand: "thenxmedia",
+        year: "2024",
+        description: "A scalable social media system for a B2B SaaS company. Same brand. Any platform. Zero confusion.",
+        tags: ["SOCIAL MEDIA", "BRAND SYSTEM", "B2B", "TEMPLATES"],
+        overview: "This SaaS brand had five people posting on LinkedIn, Twitter, and Instagram—each doing something different. We built a library of on-brand templates, a color-coded content grid, and a simple rulebook. Now every post looks like it came from the same company.",
+        duration: {
+            discovery: "2 Weeks",
+            design: "4 Weeks",
+            support: "3 Weeks"
+        },
+        success: {
+            milestone1: "Template Library",
+            milestone2: "Platform Guide",
+            milestone3: "Team Trained"
+        },
+        clientQuote: {
+            text: "Our social presence went from chaotic to cohesive in two weeks. No more 'does this look right?' Slack messages.",
+            author: "Marketing Director, SaaS Company"
+        },
+        howWeBegan: {
+            title: "Consistency Isn't Boring. It's Trust.",
+            description: "We audited 6 months of their posts. Three different logos. Four color palettes. No grid system. We simplified everything: one logo lockup per platform, a strict color palette (5 colors max), and reusable templates for quotes, data cards, and announcements.",
+            process: ["Audit", "Logo Standardization", "Template Build", "Guidelines", "Handoff Session"]
+        },
+        bannerImage: "/images/projects/social-media/brand-consistency/1.png",
+        images: {
+            topImage: "/images/projects/social-media/brand-consistency/1.png",
+            missionImage1: "/images/projects/social-media/brand-consistency/2.png",
+            missionImage2: "/images/projects/social-media/brand-consistency/1.png",
+            bottomImage: "/images/projects/social-media/brand-consistency/3.png"
+        },
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "Our LinkedIn engagement went up 35% just from looking more professional. People trust what looks consistent.",
+            author: "SaaS Company",
+            rating: 5,
+            role: "VP of Marketing"
+        },
+        challenges: [
+            "Making LinkedIn and Instagram feel like the same brand",
+            "Building templates that non-designers can't break",
+            "Handling different aspect ratios (16:9, 1:1, 4:5, 9:16)"
+        ],
+        solutions: [
+            "Created platform-specific logo lockups (no weird cropping)",
+            "Built locked Figma templates with only editable text and image fields",
+            "Designed adaptable layouts that reframe gracefully across ratios"
+        ],
+        results: [
+            "100% template adoption within 3 weeks",
+            "Design review time reduced from 2 days to 20 minutes",
+            "Content output increased 3x with zero extra headcount"
+        ],
+        faq: [
+            {
+                question: "Can we use these templates forever?",
+                answer: "Yes—you own the templates. We just ask you don't resell them."
+            },
+            {
+                question: "What if we use Canva instead of Figma?",
+                answer: "We can deliver in Canva too. Just tell us your tool upfront."
+            }
+        ]
+    },
+    // ========== UI/UX (2) ==========
     "cool-kids": {
         id: "cool-kids",
         title: "Cool Kids",
@@ -763,7 +902,76 @@ export const projectsData = {
                 answer: "Yes—we offer monthly retainers for updates, bug fixes, and new features."
             }
         ]
-    }
+    },
+    "hoxizon-courts": {
+        id: "hoxizon-courts",
+        title: "Hoxizon Courts",
+        category: "Web Development",
+        brand: "thenxmedia",
+        year: "2024",
+        description: "A court booking and league management platform for indoor sports facilities. Think OpenTable for basketball, but smarter.",
+        tags: ["WEB DEVELOPMENT", "FULL STACK", "BOOKING SYSTEM", "SPORTS TECH"],
+        overview: "Hoxizon Courts runs five indoor facilities. Their old booking system was a shared Google Calendar—double bookings, payment headaches, and angry customers. We built a custom platform with real-time availability, automated payments, and league scheduling tools.",
+        duration: {
+            discovery: "4 Weeks",
+            design: "6 Weeks",
+            development: "10 Weeks",
+            support: "6 Weeks"
+        },
+        success: {
+            milestone1: "MVP Launch",
+            milestone2: "500 Bookings (Week 1)",
+            milestone3: "2.0 Roadmap"
+        },
+        clientQuote: {
+            text: "We went from 20 support emails a week to zero. The system just works.",
+            author: "Owner, Hoxizon Courts"
+        },
+        howWeBegan: {
+            title: "Stop Using Spreadsheets for Real Business",
+            description: "We shadowed their front desk for two days. The chaos was real: phone bookings, Venmo payments, and arguments over who had court time. We built a clean dashboard where players book, pay, and cancel without ever talking to staff.",
+            process: ["User Stories", "Availability Modeling", "Payment Integration", "Frontend Build", "Launch & Iterate"]
+        },
+        bannerImage: "/images/projects/Website/Hoxizon Courts/1.png",
+        images: {
+            topImage: "/images/projects/Website/hoxizon/1.png",
+            missionImage1: "/images/projects/Website/hoxizon/2.png",
+            missionImage2: "/images/projects/Website/hoxizon/3.png",
+            bottomImage: "/images/projects/Website/hoxizon/1.png"
+        },
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "Our utilization rate went from 68% to 91% in three months. Empty courts cost money.",
+            author: "Hoxizon Courts",
+            rating: 5,
+            role: "General Manager"
+        },
+        challenges: [
+            "Handling overlapping bookings for partial-hour slots",
+            "Preventing double-booking across multiple facilities",
+            "Building a league scheduler that doesn't require a math degree"
+        ],
+        solutions: [
+            "Built a custom time-slot engine with 15-minute granularity",
+            "Used row-level locking in PostgreSQL to prevent race conditions",
+            "Created a drag-and-drop league scheduler with automatic conflict detection"
+        ],
+        results: [
+            "No-shows dropped by 85% (automated reminders + prepayment)",
+            "Staff time on booking admin: 15+ hours/week → 0",
+            "Customer satisfaction score: 4.9/5 from 2,000+ bookings"
+        ],
+        faq: [
+            {
+                question: "Is this a template or custom code?",
+                answer: "100% custom. Every feature—from payment to court availability—was built specifically for Hoxizon."
+            },
+            {
+                question: "Do you provide ongoing maintenance?",
+                answer: "Yes—we offer monthly retainers for updates, bug fixes, and new features like recurring bookings."
+            }
+        ]
+    },
 };
 
 // Helper function to get project by slug

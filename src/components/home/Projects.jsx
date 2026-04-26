@@ -36,18 +36,16 @@ const steps = [
             
         ],
     },
-    // {
-    //     id: "04",
-    //     label: "Social Media Branding",
-    //     cards: [
-    //         { title: "Instagram & Facebook Templates", slug: "instagram-facebook-templates" },
-    //         { title: "Story & Post Design", slug: "story-post-design" },
-    //         { title: "Ad Creatives & Campaign Assets", slug: "ad-creatives-campaign-assets" },
-    //         { title: "Brand Consistency Across Platforms", slug: "brand-consistency-platforms" },
-    //     ],
-    // },
     {
         id: "04",
+        label: "Social Media Branding",
+        cards: [
+            { title: "Ad Creatives & Campaign Assets", slug: "ad-creatives-campaign-assets" },
+            { title: "Brand Consistency Across Platforms", slug: "brand-consistency-platforms" },
+        ],
+    },
+    {
+        id: "05",
         label: "UI / UX Design",
         cards: [
             { title: "Cool Kids", slug: "cool-kids" },
@@ -55,11 +53,12 @@ const steps = [
         ],
     },
     {
-        id: "05",
+        id: "06",
         label: "Website Development",
         cards: [
             { title: "WeBrand", slug: "weBrand" },
             { title: "Amity", slug: "amity" },
+            { title: "Hoxizone Courts", slug: "hoxizon-courts" },
         ],
     },
 ];
