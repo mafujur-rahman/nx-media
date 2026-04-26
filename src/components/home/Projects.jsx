@@ -32,6 +32,7 @@ const steps = [
         cards: [
             { title: "Organic", slug: "organic" },
             { title: "Brandco", slug: "brandco" },
+            { title: "Mountain Top", slug: "mountain-top" },
             
         ],
     },

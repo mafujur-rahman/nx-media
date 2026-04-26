@@ -416,6 +416,74 @@ export const projectsData = {
             }
         ]
     },
+            "mountain-top": {
+        id: "mountain-top",
+        title: "Mountain Top",
+        category: "Packaging Design",
+        brand: "thenxmedia",
+        year: "2024",
+        description: "Premium outdoor gear packaging for a brand that lives above the treeline. Tough, minimalist, and bear-proof enough for a backcountry campsite.",
+        tags: ["PACKAGING", "OUTDOOR", "CAMPING GEAR", "SUSTAINABLE"],
+        overview: "Mountain Top makes tents, sleeping bags, and climbing hardware. Their old packaging was plastic-heavy and looked like every other outdoor brand. We designed a system using 100% recycled kraft board, one-color printing, and a modular box structure that packs flat for retail shelves.",
+        duration: {
+            discovery: "2 Weeks",
+            design: "6 Weeks",
+            support: "2 Weeks"
+        },
+        success: {
+            milestone1: "Base Structure",
+            milestone2: "8 SKUs Mapped",
+            milestone3: "Print Ready"
+        },
+        clientQuote: {
+            text: "Our retail partners asked for the packaging to stay on shelf as a display piece. That's never happened before.",
+            author: "Product Director, Mountain Top"
+        },
+        howWeBegan: {
+            title: "Your Gear Shouldn't Arrive in a Trash Bag",
+            description: "Outdoor brands love to talk sustainability but ship in plastic. We went the other way: no shrink wrap, no styrofoam. Just folded kraft board with a topographic pattern and bold typography. The packaging is part of the product story now.",
+            process: ["Material Audit", "Structural Engineering", "Color Reduction", "Mockup Testing", "Print Prep"]
+        },
+        bannerImage: "/images/projects/packaging/Mountain Top/1.png",
+        images: {
+            topImage: "/images/projects/packaging/mountain-top/2.png",
+            missionImage1: "/images/projects/packaging/mountain-top/1.png",
+            missionImage2: "/images/projects/packaging/mountain-top/3.png",
+            bottomImage: "/images/projects/packaging/mountain-top/2.png"
+        },
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "Customers post unboxing videos now. That's free marketing we never had before.",
+            author: "Mountain Top",
+            rating: 5,
+            role: "Head of E-commerce"
+        },
+        challenges: [
+            "Making sustainable packaging that doesn't look like a cereal box",
+            "Protecting heavy gear without foam or plastic",
+            "Designing for both REI shelves and direct-to-consumer shipping"
+        ],
+        solutions: [
+            "Used custom die-cut kraft board with internal folding structures",
+            "Eliminated all plastic: paper tape, no poly bags, soy-based inks",
+            "Created a single box design that works for retail and mail-order"
+        ],
+        results: [
+            "Unboxing social mentions up 300% after launch",
+            "Packaging material cost reduced by 25% (less material, smarter design)",
+            "Retail sell-through rate improved by 35%"
+        ],
+        faq: [
+            {
+                question: "Is the packaging actually compostable?",
+                answer: "Yes—100% home-compostable kraft board with no laminates or coatings."
+            },
+            {
+                question: "Does it survive shipping?",
+                answer: "We drop-tested from 4 feet with 30 lbs of gear. Zero failures across 500 test units."
+            }
+        ]
+    },
 
         // ========== UI/UX (2) ==========
     "cool-kids": {
@@ -588,7 +656,7 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/Website/Webrand/1.png",
         images: {
-            topImage: "/images/projects/Website/Webrand/1.png",
+            topImage: "/images/projects/Website/Webrand/6.png",
             missionImage1: "/images/projects/Website/Webrand/2.png",
             missionImage2: "/images/projects/Website/Webrand/3.png",
             bottomImage: "/images/projects/Website/Webrand/4.png"

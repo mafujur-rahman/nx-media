@@ -22,20 +22,23 @@ export default function ProjectsMarquee() {
 
     useEffect(() => {
         const track = trackRef.current;
-        if (!track) return;
+        if (!track || projects.length === 0) return;
 
-        let totalWidth = track.scrollWidth / 2;
-
+        // Get the width of one set of items
+        const itemCount = projects.length;
+        const singleSetWidth = track.scrollWidth / 2; // Because we have 2 sets
+        const animationDuration = singleSetWidth / 120; // Adjust speed here (50px per second)
+        
+        // Create seamless infinite animation
         const animation = gsap.to(track, {
-            x: `-=${totalWidth}`,
-            duration: 30,
+            x: `-=${singleSetWidth}`,
+            duration: animationDuration,
             ease: "none",
             repeat: -1,
-            modifiers: {
-                x: gsap.utils.unitize((x) => {
-                    return parseFloat(x) % totalWidth;
-                }),
-            },
+            onRepeat: () => {
+                // Jump back to start instantly without animation
+                gsap.set(track, { x: 0 });
+            }
         });
 
         // Pause animation on hover
@@ -76,11 +79,11 @@ export default function ProjectsMarquee() {
                     ref={trackRef}
                     className="flex gap-8 w-max cursor-pointer"
                 >
-                    {/* Duplicate projects for seamless loop */}
+                    {/* Two sets of projects for seamless loop */}
                     {[...projects, ...projects].map((project, i) => (
                         <div
                             key={`${project?.slug}-${i}`}
-                            className="min-w-[300px] sm:min-w-[400px] lg:min-w-[500px] rounded-[30px] overflow-hidden group relative"
+                            className="w-[300px] sm:w-[400px] lg:w-[500px] rounded-[30px] overflow-hidden group relative flex-shrink-0"
                             onClick={() => handleProjectClick(project?.slug)}
                             role="button"
                             tabIndex={0}
