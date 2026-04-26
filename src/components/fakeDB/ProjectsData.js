@@ -934,7 +934,7 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/Website/Hoxizon Courts/1.png",
         images: {
-            topImage: "/images/projects/Website/hoxizon/1.png",
+            topImage: "/images/projects/Website/hoxizon/4.png",
             missionImage1: "/images/projects/Website/hoxizon/2.png",
             missionImage2: "/images/projects/Website/hoxizon/3.png",
             bottomImage: "/images/projects/Website/hoxizon/1.png"
