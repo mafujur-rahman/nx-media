@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { ArrowRight, Check, X } from "lucide-react";
 import HoverSweepButton from "../utils/HoverSweepButton";
 import gsap from 'gsap';
@@ -11,6 +12,7 @@ const Pricing = () => {
     const rotatingBorderRef = useRef(null);
     const containerRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -157,7 +159,6 @@ const Pricing = () => {
             const radius = 30; // Matching the rounded-[30px] class
 
             // Create a path for rounded rectangle
-            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
             const actualRadius = Math.min(radius, height / 2, width / 2);
 
             // Path for rounded rectangle
@@ -281,6 +282,12 @@ const Pricing = () => {
             document.body.style.overflow = 'unset';
         };
     }, [isModalOpen]);
+
+    // Set mounted state for client-side rendering
+    useEffect(() => {
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
 
     const openModal = () => {
         console.log("Opening modal");
@@ -518,21 +525,21 @@ const Pricing = () => {
                 </div>
             </section>
 
-            {/* Contact Modal */}
-            {isModalOpen && (
+            {/* Contact Modal - Rendered via Portal */}
+            {mounted && isModalOpen && createPortal(
                 <div 
-                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
+                    className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
                     onClick={(e) => {
                         if (e.target === e.currentTarget) {
                             setIsModalOpen(false);
                         }
                     }}
                 >
-                    <div className="relative w-full max-w-lg bg-gradient-to-br from-zinc-900 via-black to-zinc-900 rounded-2xl border border-red-500/30 shadow-2xl animate-in zoom-in-95 duration-300">
+                    <div className="relative w-full max-w-lg bg-gradient-to-br from-zinc-900 via-black to-zinc-900 rounded-2xl border border-red-500/30 shadow-2xl">
                         {/* Close button */}
                         <button
                             onClick={() => setIsModalOpen(false)}
-                            className="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors"
+                            className="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors z-10"
                         >
                             <X size={24} />
                         </button>
@@ -640,7 +647,8 @@ const Pricing = () => {
                             </p>
                         </form>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
         </>
     );

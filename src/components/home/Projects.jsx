@@ -340,7 +340,7 @@ const Projects = () => {
 const Card = ({ id, title, img, light, onMouseEnter, onMouseLeave, onClick }) => (
     <div
         className={`${light ? "bg-white text-black" : "bg-[#222222] text-white border border-white/5"
-            } rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] flex-shrink-0 flex flex-col sm:flex-row w-[280px] sm:w-[450px] md:w-[550px] lg:w-[620px] h-[400px] sm:h-[350px] md:h-[380px] lg:h-[400px] overflow-hidden cursor-none transition-transform duration-300 `}
+            } rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] flex-shrink-0 flex flex-col sm:flex-row w-[280px] sm:w-[450px] md:w-[550px] lg:w-[620px] h-[300px] sm:h-[350px] md:h-[380px] lg:h-[400px] overflow-hidden cursor-none transition-transform duration-300 `}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onClick={onClick}
@@ -360,7 +360,7 @@ const Card = ({ id, title, img, light, onMouseEnter, onMouseLeave, onClick }) =>
                 {title}
             </h3>
         </div>
-        <div className="w-full sm:w-1/2 h-1/2 sm:h-full relative order-1 sm:order-2">
+        <div className="w-full sm:w-1/2  h-1/2 sm:h-full relative order-1 sm:order-2">
             <img
                 src={img}
                 alt={title}

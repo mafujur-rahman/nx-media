@@ -1,57 +1,91 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 
-export default function HoverSweepButton({ children, className = "", icon }) {
+export default function HoverSweepButton({ children, className = "", icon, onClick }) {
   const btnRef = useRef(null);
   const sweepRef = useRef(null);
   const textRef = useRef(null);
 
+  // Initialize GSAP and ensure proper cleanup
+  useEffect(() => {
+    return () => {
+      // Clean up any GSAP animations when component unmounts
+      if (sweepRef.current) {
+        gsap.killTweensOf(sweepRef.current);
+      }
+      if (textRef.current) {
+        gsap.killTweensOf(textRef.current);
+      }
+    };
+  }, []);
+
   const handleEnter = () => {
-    // Kill any existing tweens and prevent conflicts
+    if (!sweepRef.current || !textRef.current) return;
+
+    // Kill any existing tweens to prevent conflicts
     gsap.killTweensOf([sweepRef.current, textRef.current]);
 
-    // Ensure sweep is visible at start
-    gsap.set(sweepRef.current, { width: sweepRef.current.offsetWidth || 0 });
+    // Get the current width to ensure smooth animation from current state
+    const currentWidth = sweepRef.current.offsetWidth || 0;
+    
+    // Ensure sweep is in correct starting position
+    gsap.set(sweepRef.current, { 
+      width: currentWidth,
+      display: "block"
+    });
+    
     gsap.set(textRef.current, { color: "white" });
 
-    // Sweep animation (slower)
+    // Sweep animation - from current width to 100%
     gsap.to(sweepRef.current, {
       width: "100%",
-      duration: 0.7,
-      ease: "power3.out",
-      overwrite: "auto",
+      duration: 0.6,
+      ease: "power2.out",
+      overwrite: true,
     });
 
-    // Text color animation (faster)
+    // Text color animation
     gsap.to(textRef.current, {
-      color: "black",
-      duration: 0.4,
-      ease: "power3.out",
-      overwrite: "auto",
+      color: "#000000",
+      duration: 0.3,
+      ease: "power2.out",
+      overwrite: true,
+      delay: 0.1, // Slight delay for better visual effect
     });
   };
 
   const handleLeave = () => {
-    // Kill existing tweens to avoid stuck state
+    if (!sweepRef.current || !textRef.current) return;
+
+    // Kill existing tweens
     gsap.killTweensOf([sweepRef.current, textRef.current]);
 
-    // Sweep retract
+    // Get current width for smooth retraction
+    const currentWidth = sweepRef.current.offsetWidth;
+
+    // Sweep retract animation
     gsap.to(sweepRef.current, {
       width: 0,
       duration: 0.5,
-      ease: "power3.inOut",
-      overwrite: "auto",
+      ease: "power2.inOut",
+      overwrite: true,
     });
 
-    // Text color back to original
+    // Text color back to white
     gsap.to(textRef.current, {
-      color: "white",
-      duration: 0.3,
-      ease: "power3.inOut",
-      overwrite: "auto",
+      color: "#ffffff",
+      duration: 0.25,
+      ease: "power2.inOut",
+      overwrite: true,
     });
+  };
+
+  const handleClick = (e) => {
+    if (onClick) {
+      onClick(e);
+    }
   };
 
   return (
@@ -59,22 +93,26 @@ export default function HoverSweepButton({ children, className = "", icon }) {
       ref={btnRef}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className={`relative overflow-hidden flex items-center gap-2 px-2 md:px-8 py-4 rounded-full font-bold ${className}`}
+      onClick={handleClick}
+      className={`relative overflow-hidden flex items-center justify-center gap-2 px-2 md:px-8 py-4 rounded-full font-bold ${className}`}
     >
       {/* Sweep background */}
       <span
         ref={sweepRef}
         className="absolute left-0 top-0 h-full w-0 bg-white rounded-full z-0"
+        style={{ display: 'block' }}
       />
 
       {/* Button content */}
       <span
         ref={textRef}
-        className="relative z-10 flex items-center gap-2 transition-colors duration-300"
+        className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300"
       >
         {children}
         {icon && (
-          <span className="transition-colors duration-300">{icon}</span>
+          <span className="inline-flex items-center transition-colors duration-300">
+            {icon}
+          </span>
         )}
       </span>
     </button>

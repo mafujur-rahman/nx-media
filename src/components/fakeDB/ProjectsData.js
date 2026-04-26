@@ -1,4 +1,3 @@
-// lib/projectsData.js
 
 export const projectsData = {
     // ========== LOGO DESIGN (2) ==========
