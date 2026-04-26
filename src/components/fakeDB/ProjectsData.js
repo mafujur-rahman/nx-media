@@ -517,10 +517,10 @@ export const projectsData = {
         },
         bannerImage: "/images/projects/ui-ux/Cultivate/1.png",
         images: {
-            topImage: "/images/projects/ui-ux/Cultivate/1.png",
-            missionImage1: "/images/projects/ui-ux/Cultivate/2.png",
-            missionImage2: "/images/projects/ui-ux/Cultivate/3.png",
-            bottomImage: "/images/projects/ui-ux/Cultivate/1.png"
+            topImage: "/images/projects/ui-ux/Cutivate/1.png",
+            missionImage1: "/images/projects/ui-ux/Cutivate/2.png",
+            missionImage2: "/images/projects/ui-ux/Cutivate/3.png",
+            bottomImage: "/images/projects/ui-ux/Cutivate/1.png"
         },
         videoUrl: "/service.mp4",
         testimonial: {

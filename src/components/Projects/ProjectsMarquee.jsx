@@ -79,21 +79,21 @@ export default function ProjectsMarquee() {
                     {/* Duplicate projects for seamless loop */}
                     {[...projects, ...projects].map((project, i) => (
                         <div
-                            key={`${project.slug}-${i}`}
+                            key={`${project?.slug}-${i}`}
                             className="min-w-[300px] sm:min-w-[400px] lg:min-w-[500px] rounded-[30px] overflow-hidden group relative"
-                            onClick={() => handleProjectClick(project.slug)}
+                            onClick={() => handleProjectClick(project?.slug)}
                             role="button"
                             tabIndex={0}
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
-                                    handleProjectClick(project.slug);
+                                    handleProjectClick(project?.slug);
                                 }
                             }}
                         >
                             <div className="relative w-full h-[400px]">
                                 <Image
-                                    src={project.images?.topImage || project.bannerImage || "/service.jpg"}
-                                    alt={project.title}
+                                    src={project?.images?.topImage}
+                                    alt={project?.title}
                                     width={600}
                                     height={400}
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -102,10 +102,10 @@ export default function ProjectsMarquee() {
                                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                     <div className="text-center">
                                         <h3 className="text-white text-xl font-bold mb-2 px-4">
-                                            {project.title}
+                                            {project?.title}
                                         </h3>
                                         <p className="text-white/80 text-sm">
-                                            {project.category}
+                                            {project?.category}
                                         </p>
                                     </div>
                                 </div>
