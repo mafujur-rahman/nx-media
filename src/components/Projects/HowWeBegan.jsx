@@ -32,7 +32,7 @@ export default function HowWeBegan({ project }) {
             {project?.howWeBegan?.process?.map((step, index) => (
                 <div
                     key={index}
-                    className="px-6 py-3  xl:px-12 xl:py-5 rounded-full bg-white/5 text-white text-lg font-medium tracking-wide backdrop-blur-md text-center w-full lg:w-auto"
+                    className="px-6 py-3  xl:px-8 xl:py-5 rounded-full bg-white/5 text-white text-lg font-medium tracking-wide backdrop-blur-md text-center w-full lg:w-auto"
                 >
                     {step}
                 </div>

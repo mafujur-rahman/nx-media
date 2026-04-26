@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, X } from "lucide-react";
 import HoverSweepButton from "../utils/HoverSweepButton";
 import gsap from 'gsap';
 
@@ -10,6 +10,15 @@ const Pricing = () => {
     const [activeTab, setActiveTab] = useState("branding");
     const rotatingBorderRef = useRef(null);
     const containerRef = useRef(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        company: "",
+        message: ""
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
 
     const brandingPlans = [
         {
@@ -107,6 +116,31 @@ const Pricing = () => {
     ];
 
     const plans = activeTab === "branding" ? brandingPlans : webPlans;
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        // Simulate API call - replace with your actual endpoint
+        setTimeout(() => {
+            console.log("Form submitted:", formData);
+            setIsSubmitting(false);
+            setSubmitStatus("success");
+            
+            // Reset form after successful submission
+            setTimeout(() => {
+                setIsModalOpen(false);
+                setFormData({ name: "", email: "", company: "", message: "" });
+                setSubmitStatus(null);
+            }, 2000);
+        }, 1500);
+    };
 
     // Initialize the rotating border animation for Monthly Retainer section
     useEffect(() => {
@@ -236,233 +270,379 @@ const Pricing = () => {
         });
     }, [activeTab]);
 
+    // Prevent body scroll when modal is open
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isModalOpen]);
+
+    const openModal = () => {
+        console.log("Opening modal");
+        setIsModalOpen(true);
+    };
+
     return (
-        <section id="pricing" className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 min-h-screen flex justify-center items-center">
-            <div className="w-full max-w-7xl">
+        <>
+            <section id="pricing" className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0 min-h-screen flex justify-center items-center">
+                <div className="w-full max-w-7xl">
 
-                {/* Header */}
-                <div className="flex flex-col justify-center items-center w-full mb-12">
-                    <p className="px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-white text-xs md:text-sm font-medium w-fit text-center mb-2">
-                        Choose the perfect plan for your business
-                    </p>
-                    <h2 className="title_text text-white mt-4 mb-2">
-                        Pricing
-                    </h2>
+                    {/* Header */}
+                    <div className="flex flex-col justify-center items-center w-full mb-12">
+                        <p className="px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-white text-xs md:text-sm font-medium w-fit text-center mb-2">
+                            Choose the perfect plan for your business
+                        </p>
+                        <h2 className="title_text text-white mt-4 mb-2">
+                            Pricing
+                        </h2>
 
-                    {/* Tabs */}
-                    <div className="flex flex-col md:flex-row justify-center gap-4 mt-2 w-full max-w-md">
-                        {["branding", "web"].map((tab) => (
-                            <button
-                                key={tab}
-                                onClick={() => setActiveTab(tab)}
-                                className={`relative py-2 rounded-full font-semibold flex-1 overflow-hidden transition-none`}
-                            >
-                                {/* Active tab red background */}
-                                <span
-                                    className={`absolute inset-0 bg-red-600 transition-all duration-500 ease-in-out ${activeTab === tab ? "translate-y-0" : "translate-y-full"}`}
-                                    style={{ zIndex: 0 }}
-                                />
-
-                                {/* Tab text */}
-                                <span
-                                    className={`relative z-10 ${activeTab === tab ? "text-white" : "text-black"}`}
+                        {/* Tabs */}
+                        <div className="flex flex-col md:flex-row justify-center gap-4 mt-2 w-full max-w-md">
+                            {["branding", "web"].map((tab) => (
+                                <button
+                                    key={tab}
+                                    onClick={() => setActiveTab(tab)}
+                                    className={`relative py-2 rounded-full font-semibold flex-1 overflow-hidden transition-none`}
                                 >
-                                    {tab === "branding" ? "Branding" : "Web Development"}
-                                </span>
+                                    {/* Active tab red background */}
+                                    <span
+                                        className={`absolute inset-0 bg-red-600 transition-all duration-500 ease-in-out ${activeTab === tab ? "translate-y-0" : "translate-y-full"}`}
+                                        style={{ zIndex: 0 }}
+                                    />
 
-                                {/* Inactive tab white background */}
-                                {activeTab !== tab && (
-                                    <span className="absolute inset-0 bg-white rounded-full z-0"></span>
-                                )}
-                            </button>
+                                    {/* Tab text */}
+                                    <span
+                                        className={`relative z-10 ${activeTab === tab ? "text-white" : "text-black"}`}
+                                    >
+                                        {tab === "branding" ? "Branding" : "Web Development"}
+                                    </span>
+
+                                    {/* Inactive tab white background */}
+                                    {activeTab !== tab && (
+                                        <span className="absolute inset-0 bg-white rounded-full z-0"></span>
+                                    )}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Pricing Grid */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                        {plans.map((plan, index) => (
+                            <div
+                                key={index}
+                                ref={(el) => (cardsRef.current[index] = el)}
+                                className="rounded-[30px] p-5 lg:p-8 flex flex-col border border-dashed border-red-500/90 bg-gradient-to-br from-black via-red-900/20 to-black shadow-lg"
+                            >
+                                <h3 className="text-md font-bold tracking-widest mb-4 uppercase text-red-500">
+                                    {plan.title}
+                                </h3>
+
+                                {/* Description with fixed minimum height but flexible */}
+                                <div className="mb-8">
+                                    <p className="text-sm text-white leading-snug">
+                                        {plan.desc}
+                                    </p>
+                                </div>
+
+                                <div className="mb-8">
+                                    <div className="flex items-baseline">
+                                        <span className="text-4xl font-bold text-white">${plan.price}</span>
+                                        <span className="text-sm text-red-500 ml-2 italic">per project</span>
+                                    </div>
+                                </div>
+
+                                {/* Button wrapper with class for targeting */}
+                                <div className="button-wrapper w-full mb-10">
+                                    <HoverSweepButton
+                                        className="w-full py-4 px-6 flex justify-between items-center rounded-full font-bold bg-red-600 shadow-md cursor-pointer text-white"
+                                        icon={<ArrowRight size={18} />}
+                                    >
+                                        <span className="text-sm md:text-[12px] lg:text-sm font-semibold">{plan.buttonText}</span>
+                                    </HoverSweepButton>
+                                </div>
+
+                                {/* Features list - this will take remaining space */}
+                                <ul className="space-y-3 flex-1">
+                                    {plan.features.map((feature, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-sm text-white font-medium">
+                                            <Check size={16} className="text-red-500 mt-0.5 shrink-0" />
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         ))}
                     </div>
-                </div>
 
-                {/* Pricing Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-                    {plans.map((plan, index) => (
-                        <div
-                            key={index}
-                            ref={(el) => (cardsRef.current[index] = el)}
-                            className="rounded-[30px] p-5 lg:p-8 flex flex-col border border-dashed border-red-500/90 bg-gradient-to-br from-black via-red-900/20 to-black shadow-lg"
-                        >
-                            <h3 className="text-md font-bold tracking-widest mb-4 uppercase text-red-500">
-                                {plan.title}
-                            </h3>
+                    {/* ================= MONTHLY RETAINER SECTION ================= */}
+                    <div className="mt-14 lg:mt-24 relative rounded-[30px]">
+                        {/* Rotating Gradient Border - Red Theme for Monthly Retainer */}
+                        <div ref={containerRef} className="relative rounded-[30px] p-[2px]">
+                            <svg
+                                className="absolute inset-0 w-full h-full pointer-events-none"
+                                style={{
+                                    overflow: 'visible',
+                                    position: 'absolute',
+                                    top: '-2px',
+                                    left: '-2px',
+                                    width: 'calc(100% + 4px)',
+                                    height: 'calc(100% + 4px)'
+                                }}
+                            >
+                                <defs>
+                                    <linearGradient id="rotatingGradientRedRetainer" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor="#ff0000" stopOpacity="1" />
+                                        <stop offset="25%" stopColor="#ff4444" stopOpacity="1" />
+                                        <stop offset="50%" stopColor="#cc0000" stopOpacity="1" />
+                                        <stop offset="75%" stopColor="#ff3333" stopOpacity="1" />
+                                        <stop offset="100%" stopColor="#ff0000" stopOpacity="1" />
+                                    </linearGradient>
+                                    {/* Glow/blur layer */}
+                                    <filter id="glowRedRetainer" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feGaussianBlur stdDeviation="4" result="blur" />
+                                        <feMerge>
+                                            <feMergeNode in="blur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <path
+                                    ref={rotatingBorderRef}
+                                    fill="none"
+                                    stroke="url(#rotatingGradientRedRetainer)"
+                                    strokeWidth="3"
+                                    vectorEffect="non-scaling-stroke"
+                                    style={{ filter: 'url(#glowRedRetainer)' }}
+                                />
+                            </svg>
 
-                            {/* Description with fixed minimum height but flexible */}
-                            <div className="mb-8">
-                                <p className="text-sm text-white leading-snug">
-                                    {plan.desc}
-                                </p>
-                            </div>
+                            {/* Inner Container */}
+                            <div className="relative rounded-[28px] px-2.5 md:px-12 py-12 bg-gradient-to-br from-zinc-900 via-black to-zinc-900 border border-white/10">
+                                {/* Glow */}
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-[120px] -z-10" />
 
-                            <div className="mb-8">
-                                <div className="flex items-baseline">
-                                    <span className="text-4xl font-bold text-white">${plan.price}</span>
-                                    <span className="text-sm text-red-500 ml-2 italic">per project</span>
-                                </div>
-                            </div>
-
-                            {/* Button wrapper with class for targeting */}
-                            <div className="button-wrapper w-full mb-10">
-                                <HoverSweepButton
-                                    className="w-full py-4 px-6 flex justify-between items-center rounded-full font-bold bg-red-600 shadow-md cursor-pointer text-white"
-                                    icon={<ArrowRight size={18} />}
-                                >
-                                    <span className="text-sm md:text-[12px] lg:text-sm font-semibold">{plan.buttonText}</span>
-                                </HoverSweepButton>
-                            </div>
-
-                            {/* Features list - this will take remaining space */}
-                            <ul className="space-y-3 flex-1">
-                                {plan.features.map((feature, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-sm text-white font-medium">
-                                        <Check size={16} className="text-red-500 mt-0.5 shrink-0" />
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
-
-                {/* ================= MONTHLY RETAINER SECTION ================= */}
-                <div className="mt-14 lg:mt-24 relative rounded-[30px]">
-                    {/* Rotating Gradient Border - Red Theme for Monthly Retainer */}
-                    <div ref={containerRef} className="relative rounded-[30px] p-[2px]">
-                        <svg
-                            className="absolute inset-0 w-full h-full pointer-events-none"
-                            style={{
-                                overflow: 'visible',
-                                position: 'absolute',
-                                top: '-2px',
-                                left: '-2px',
-                                width: 'calc(100% + 4px)',
-                                height: 'calc(100% + 4px)'
-                            }}
-                        >
-                            <defs>
-                                <linearGradient id="rotatingGradientRedRetainer" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stopColor="#ff0000" stopOpacity="1" />
-                                    <stop offset="25%" stopColor="#ff4444" stopOpacity="1" />
-                                    <stop offset="50%" stopColor="#cc0000" stopOpacity="1" />
-                                    <stop offset="75%" stopColor="#ff3333" stopOpacity="1" />
-                                    <stop offset="100%" stopColor="#ff0000" stopOpacity="1" />
-                                </linearGradient>
-                                {/* Glow/blur layer */}
-                                <filter id="glowRedRetainer" x="-50%" y="-50%" width="200%" height="200%">
-                                    <feGaussianBlur stdDeviation="4" result="blur" />
-                                    <feMerge>
-                                        <feMergeNode in="blur" />
-                                        <feMergeNode in="SourceGraphic" />
-                                    </feMerge>
-                                </filter>
-                            </defs>
-                            <path
-                                ref={rotatingBorderRef}
-                                fill="none"
-                                stroke="url(#rotatingGradientRedRetainer)"
-                                strokeWidth="3"
-                                vectorEffect="non-scaling-stroke"
-                                style={{ filter: 'url(#glowRedRetainer)' }}
-                            />
-                        </svg>
-
-                        {/* Inner Container */}
-                        <div className="relative rounded-[28px] px-2.5 md:px-12 py-12 bg-gradient-to-br from-zinc-900 via-black to-zinc-900 border border-white/10">
-                            {/* Glow */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 blur-[120px] -z-10" />
-
-                            {/* Header */}
-                            <div className="text-center mb-14">
-                                <h3 className="text-3xl md:text-5xl font-bold text-white font-bricolage leading-tight">
-                                    Monthly Partnership <br />
-                                    <span className="text-red-600">For Long-Term Growth</span>
-                                </h3>
-                                <p className="text-zinc-400 mt-4 max-w-2xl mx-auto text-base">
-                                    A dedicated design & development team working with you every month —
-                                    predictable pricing, priority support, and consistent execution.
-                                </p>
-                            </div>
-
-                            {/* Content */}
-                            <div className="grid lg:grid-cols-2 gap-5 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
-
-                                {/* LEFT — Pricing Card */}
-                                <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-2.5 sm:p-8 lg:p-10 flex flex-col justify-between">
-
-                                    <div>
-                                        <h4 className="text-white text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
-                                            Growth Retainer Plan
-                                        </h4>
-
-                                        <div className="flex items-end gap-2 sm:gap-3 mb-4 sm:mb-6">
-                                            <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                                                $599
-                                            </span>
-                                            <span className="text-zinc-400 mb-1 sm:mb-2 text-xs sm:text-sm">
-                                                / month
-                                            </span>
-                                        </div>
-
-                                        <div className="h-px w-full bg-white/10 my-4 sm:my-6" />
-
-                                        <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
-                                            Ideal for startups and scaling brands that require ongoing
-                                            UI/UX design, website updates, and development improvements.
-                                        </p>
-                                    </div>
-
-                                    <div className="mt-8 sm:mt-10">
-                                        <HoverSweepButton
-                                            onClick={() => window.open("https://wa.me/8801710636221", "_blank")}
-                                            className="w-full py-3 sm:py-4 px-5 sm:px-6 flex justify-between items-center cursor-pointer rounded-full font-semibold bg-red-600 shadow-lg hover:shadow-red-600/30 transition-all duration-300 text-white"
-                                            icon={<ArrowRight size={18} className="hidden md:block" />}
-                                        >
-                                            <span className="text-sm font-bold tracking-wide w-full text-center md:text-left">
-                                                Book Monthly Partnership
-                                            </span>
-                                        </HoverSweepButton>
-
-                                        <p className="text-center text-xs text-zinc-500 mt-3 sm:mt-4">
-                                            Cancel anytime • No long-term contract
-                                        </p>
-                                    </div>
+                                {/* Header */}
+                                <div className="text-center mb-14">
+                                    <h3 className="text-3xl md:text-5xl font-bold text-white font-bricolage leading-tight">
+                                        Monthly Partnership <br />
+                                        <span className="text-red-600">For Long-Term Growth</span>
+                                    </h3>
+                                    <p className="text-zinc-400 mt-4 max-w-2xl mx-auto text-base">
+                                        A dedicated design & development team working with you every month —
+                                        predictable pricing, priority support, and consistent execution.
+                                    </p>
                                 </div>
 
-                                {/* RIGHT — Features */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                                    {[
-                                        "Unlimited design requests",
-                                        "Priority development support",
-                                        "Dedicated project manager",
-                                        "Weekly progress updates",
-                                        "48–72 hour turnaround",
-                                        "Strategy & consultation included",
-                                        "Direct WhatsApp communication",
-                                        "Performance & UX optimization"
-                                    ].map((feature, idx) => (
-                                        <div
-                                            key={idx}
-                                            className="flex items-center gap-3 p-4 rounded-2xl border border-white/5 hover:border-red-500/40 transition"
-                                        >
-                                            <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
-                                                ✓
+                                {/* Content */}
+                                <div className="grid lg:grid-cols-2 gap-5 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
+
+                                    {/* LEFT — Pricing Card */}
+                                    <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-2.5 sm:p-8 lg:p-10 flex flex-col justify-between">
+
+                                        <div>
+                                            <h4 className="text-white text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">
+                                                Growth Retainer Plan
+                                            </h4>
+
+                                            <div className="flex items-end gap-2 sm:gap-3 mb-4 sm:mb-6">
+                                                <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+                                                    $599
+                                                </span>
+                                                <span className="text-zinc-400 mb-1 sm:mb-2 text-xs sm:text-sm">
+                                                    / month
+                                                </span>
                                             </div>
-                                            <p className="text-zinc-300 text-sm leading-relaxed">
-                                                {feature}
+
+                                            <div className="h-px w-full bg-white/10 my-4 sm:my-6" />
+
+                                            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                                                Ideal for startups and scaling brands that require ongoing
+                                                UI/UX design, website updates, and development improvements.
                                             </p>
                                         </div>
-                                    ))}
+
+                                        <div className="mt-8 sm:mt-10">
+                                            {/* Wrap HoverSweepButton in a div with onClick */}
+                                            <div onClick={openModal}>
+                                                <HoverSweepButton
+                                                    className="w-full py-3 sm:py-4 px-5 sm:px-6 flex justify-between items-center cursor-pointer rounded-full font-semibold bg-red-600 shadow-lg hover:shadow-red-600/30 transition-all duration-300 text-white"
+                                                    icon={<ArrowRight size={18} className="hidden md:block" />}
+                                                >
+                                                    <span className="text-sm font-bold tracking-wide w-full text-center md:text-left">
+                                                        Book Monthly Partnership
+                                                    </span>
+                                                </HoverSweepButton>
+                                            </div>
+
+                                            <p className="text-center text-xs text-zinc-500 mt-3 sm:mt-4">
+                                                Cancel anytime • No long-term contract
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* RIGHT — Features */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                                        {[
+                                            "Unlimited design requests",
+                                            "Priority development support",
+                                            "Dedicated project manager",
+                                            "Weekly progress updates",
+                                            "48–72 hour turnaround",
+                                            "Strategy & consultation included",
+                                            "Direct WhatsApp communication",
+                                            "Performance & UX optimization"
+                                        ].map((feature, idx) => (
+                                            <div
+                                                key={idx}
+                                                className="flex items-center gap-3 p-4 rounded-2xl border border-white/5 hover:border-red-500/40 transition"
+                                            >
+                                                <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
+                                                    ✓
+                                                </div>
+                                                <p className="text-zinc-300 text-sm leading-relaxed">
+                                                    {feature}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            {/* Contact Modal */}
+            {isModalOpen && (
+                <div 
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) {
+                            setIsModalOpen(false);
+                        }
+                    }}
+                >
+                    <div className="relative w-full max-w-lg bg-gradient-to-br from-zinc-900 via-black to-zinc-900 rounded-2xl border border-red-500/30 shadow-2xl animate-in zoom-in-95 duration-300">
+                        {/* Close button */}
+                        <button
+                            onClick={() => setIsModalOpen(false)}
+                            className="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors"
+                        >
+                            <X size={24} />
+                        </button>
+
+                        {/* Modal Header */}
+                        <div className="p-6 border-b border-white/10">
+                            <h3 className="text-2xl font-bold text-white">Book Monthly Partnership</h3>
+                            <p className="text-zinc-400 mt-1 text-sm">
+                                Fill out the form below and we'll get back to you within 24 hours.
+                            </p>
+                        </div>
+
+                        {/* Modal Body - Form */}
+                        <form onSubmit={handleSubmit} className="p-6 space-y-5">
+                            <div>
+                                <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                    Full Name *
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleInputChange}
+                                    required
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-red-500 transition-colors"
+                                    placeholder="John Doe"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                    Email Address *
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    required
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-red-500 transition-colors"
+                                    placeholder="john@example.com"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                    Company Name
+                                </label>
+                                <input
+                                    type="text"
+                                    name="company"
+                                    value={formData.company}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-red-500 transition-colors"
+                                    placeholder="Your Company"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                    Message / Requirements *
+                                </label>
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
+                                    required
+                                    rows="4"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-red-500 transition-colors resize-none"
+                                    placeholder="Tell us about your project and what you're looking for..."
+                                />
+                            </div>
+
+                            {/* Submit Status */}
+                            {submitStatus === "success" && (
+                                <div className="bg-green-500/20 border border-green-500 rounded-lg p-3 text-green-400 text-sm text-center">
+                                    ✓ Thank you! We'll contact you shortly.
+                                </div>
+                            )}
+
+                            {submitStatus === "error" && (
+                                <div className="bg-red-500/20 border border-red-500 rounded-lg p-3 text-red-400 text-sm text-center">
+                                    ✗ Something went wrong. Please try again.
+                                </div>
+                            )}
+
+                            {/* Submit Button */}
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            >
+                                {isSubmitting ? (
+                                    <>
+                                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                        Submitting...
+                                    </>
+                                ) : (
+                                    "Send Request"
+                                )}
+                            </button>
+
+                            <p className="text-xs text-center text-zinc-500 mt-4">
+                                By submitting, you agree to our privacy policy. We'll never share your information.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            )}
+        </>
     );
 };
 

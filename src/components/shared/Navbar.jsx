@@ -401,10 +401,10 @@ const Navbar = () => {
                 <label className="block text-white/80 text-sm font-medium mb-2">Budget Range</label>
                 <select className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-red-500 transition-colors">
                   <option value="" className="bg-gray-800">Select budget range</option>
-                  <option value="<5k" className="bg-gray-800">Less than $5,000</option>
-                  <option value="5k-15k" className="bg-gray-800">$5,000 - $15,000</option>
-                  <option value="15k-30k" className="bg-gray-800">$15,000 - $30,000</option>
-                  <option value=">30k" className="bg-gray-800">$30,000+</option>
+                  <option value="<100" className="bg-gray-800">Less than $100</option>
+                  <option value="<500" className="bg-gray-800">Less than $500</option>
+                  <option value="500-800" className="bg-gray-800">$500 - $800</option>
+                  <option value=">1k" className="bg-gray-800">$1,000+</option>
                 </select>
               </div>
 
