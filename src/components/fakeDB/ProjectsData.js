@@ -348,15 +348,15 @@ export const projectsData = {
             }
         ]
     },
-    "brandco": {
+        "brandco": {
         id: "brandco",
         title: "Brandco",
         category: "Packaging Design",
         brand: "thenxmedia",
         year: "2024",
-        description: "A pantry-friendly packaging system for an organic food line. Clean, calm, and unmistakably premium.",
-        tags: ["PACKAGING", "CPG", "BAG DESIGN"],
-        overview: "Organic (the brand) sells grains, legumes, and spices. Their old packaging looked like every other bulk bin. We created a system using warm neutrals, clear hierarchies, and a modular layout that works across 30+ SKUs.",
+        description: "Industrial packaging for a B2B chemical supplier. Clean, safety-compliant, and actually recognizable on a crowded warehouse shelf.",
+        tags: ["PACKAGING", "B2B", "INDUSTRIAL DESIGN", "CHEMICAL"],
+        overview: "Brandco sells bulk industrial chemicals. Their old packaging was generic white drums with tiny labels—easy to grab the wrong thing. We designed a color-coded, icon-driven system that reduces errors and speeds up warehouse picking.",
         duration: {
             discovery: "2 Weeks",
             design: "6 Weeks",
@@ -368,15 +368,15 @@ export const projectsData = {
             milestone3: "Print Ready"
         },
         clientQuote: {
-            text: "Our sell-through rate doubled on the first production run. People are buying because of the bag now.",
-            author: "Founder, Organic"
+            text: "Warehouse mis-picks dropped by 70% in the first month. That's real money saved.",
+            author: "Operations Director, Brandco"
         },
         howWeBegan: {
-            title: "Stop Shouting. Start Living.",
-            description: "Most organic packaging screams 'organic' with leaves and burlap. We went the other way: quiet, considered, almost Japanese. The product name is the hero. The rest is breathing room.",
-            process: ["Audit", "Material Research", "Structural Mockups", "Color Testing", "Print Prep"]
+            title: "Boring Packaging Is Dangerous",
+            description: "Most industrial suppliers don't think about design. We spent a day in their warehouse. The problem was obvious: everything looked the same. So we built a bold color system (one per chemical family), giant hazard icons, and QR codes for instant SDS access.",
+            process: ["Warehouse Audit", "Safety Review", "Color Coding", "Structural Mockups", "Print Prep"]
         },
-        bannerImage: "/images/projects/packaging/organic/1.png",
+        bannerImage: "/images/projects/packaging/Brandco/1.png",
         images: {
             topImage: "/images/projects/packaging/brandco/image-3.png",
             missionImage1: "/images/projects/packaging/brandco/image-1.png",
@@ -385,48 +385,48 @@ export const projectsData = {
         },
         videoUrl: "/service.mp4",
         testimonial: {
-            text: "We've been approached by two major retailers since the redesign. They said the packaging did the talking.",
-            author: "Organic",
+            text: "Our pickers used to double-check every drum. Now they grab and go. It's faster and safer.",
+            author: "Brandco",
             rating: 5,
-            role: "CEO"
+            role: "Warehouse Manager"
         },
         challenges: [
-            "Standing out on a shelf full of 'earthy' designs",
-            "Keeping costs reasonable for small-batch runs",
-            "Making a single system work for lentils, spices, and grains"
+            "Making safety information unmissable without cluttering",
+            "Designing for harsh environments (chemicals, moisture, rough handling)",
+            "Creating a system that works across drums, pails, and bags"
         ],
         solutions: [
-            "Used a bold white background and simple typography",
-            "Chose standard bag sizes with one-color printing where possible",
-            "Created a color-coded system by category (green for grains, terracotta for spices)"
+            "Used high-contrast color blocks and oversized icons",
+            "Specified chemical-resistant inks and UV-stable coatings",
+            "Developed a modular label grid that adapts to any container shape"
         ],
         results: [
-            "Shelf sales +112% in first 90 days",
-            "Featured in two industry trend reports",
-            "Retailers requested merchandising support within weeks"
+            "Picking errors reduced by 70% within 60 days",
+            "Warehouse training time cut from 2 hours to 20 minutes",
+            "Zero safety incidents related to misidentification in 6 months"
         ],
         faq: [
             {
-                question: "Are the materials sustainable?",
-                answer: "Yes—we specified compostable films and recycled paper where available."
+                question: "Are the materials chemical-resistant?",
+                answer: "Yes—we specified polypropylene labels with solvent-resistant adhesives and overlamination."
             },
             {
-                question: "Do you work with our printer?",
-                answer: "We can, or we can recommend printers we trust. Either way, you get print-ready files and press checks."
+                question: "Do you work with our existing printer?",
+                answer: "We can, or we can recommend industrial printers who specialize in chemical packaging. You get print-ready files either way."
             }
         ]
     },
 
-    // ========== UI/UX (2) ==========
+        // ========== UI/UX (2) ==========
     "cool-kids": {
         id: "cool-kids",
         title: "Cool Kids",
         category: "UI/UX",
         brand: "thenxmedia",
         year: "2024",
-        description: "A pet care app that helps owners track vaccines, walks, and vet visits. Designed for busy people who love their dogs but forget everything.",
-        tags: ["UI/UX", "MOBILE APP", "PET TECH"],
-        overview: "Pethund's founders had a working prototype but zero visual polish. We redesigned the entire interface—clean cards, intuitive navigation, and an onboarding flow that takes under 60 seconds.",
+        description: "A social wellness app for Gen Z. Think journaling meets community—without the cringe.",
+        tags: ["UI/UX", "MOBILE APP", "GEN Z", "MENTAL WELLNESS"],
+        overview: "Cool Kids isn't another meditation app. It's a space where young people track moods, share anonymous wins, and build real habits. We designed a playful, judgment-free interface that actually feels cool to use.",
         duration: {
             discovery: "3 Weeks",
             design: "6 Weeks",
@@ -438,15 +438,15 @@ export const projectsData = {
             milestone3: "Developer Handoff"
         },
         clientQuote: {
-            text: "Our retention rate tripled after the redesign. People actually enjoy using the app now.",
-            author: "Founder, Pethund"
+            text: "Teens actually use it without being forced. That's the highest compliment we could get.",
+            author: "Founder, Cool Kids"
         },
         howWeBegan: {
-            title: "Pet Parents Are Tired. Help Them.",
-            description: "We interviewed 20 pet owners first. The theme? Guilt and chaos. So we designed around relief—big reminders, simple buttons, zero confusion. The result feels like a calm assistant, not another chore.",
+            title: "No Cringe. No Coaches. Just Real.",
+            description: "We interviewed 30 Gen Z users first. The verdict? They hate fake positivity and chatty notifications. So we built around brevity, anonymity, and tiny daily prompts. The result feels like a group chat with your best self.",
             process: ["User Interviews", "Flow Mapping", "Wireframing", "UI Design", "Usability Testing"]
         },
-        bannerImage: "/images/projects/ui-ux/Pethund/1.png",
+        bannerImage: "/images/projects/ui-ux/Cool Kids/1.png",
         images: {
             topImage: "/images/projects/ui-ux/Cool Kids/4.png",
             missionImage1: "/images/projects/ui-ux/Cool Kids/2.png",
@@ -455,34 +455,34 @@ export const projectsData = {
         },
         videoUrl: "/service.mp4",
         testimonial: {
-            text: "We raised our seed round partly on the strength of the new design. Investors could finally see the vision.",
-            author: "Pethund",
+            text: "Beta testers said 'finally, an app that gets us.' We knew we had something.",
+            author: "Cool Kids",
             rating: 5,
-            role: "CEO"
+            role: "Co-Founder"
         },
         challenges: [
-            "Making a data-heavy app feel light",
-            "Designing for users across age 20 to 65",
-            "Balancing features without overwhelming"
+            "Designing for a generation that hates being designed for",
+            "Making wellness feel social, not clinical",
+            "Balancing anonymity with community safety"
         ],
         solutions: [
-            "Used progressive disclosure—advanced features hidden until needed",
-            "Tested with both young professionals and retirees",
-            "Built a dashboard with only three primary actions"
+            "Used bold colors, memphis-style shapes, and zero stock photos",
+            "Added optional anonymous posting and reaction-only comments",
+            "Built lightweight moderation tools that don't kill the vibe"
         ],
         results: [
-            "Daily active users up 156% post-redesign",
-            "App store rating from 3.2 to 4.8",
-            "Support tickets related to navigation dropped 70%"
+            "Average session time: 7 minutes (high for the category)",
+            "70% of users return within 24 hours",
+            "Featured in 'Apps We Love' on the App Store"
         ],
         faq: [
             {
                 question: "Did you build the app or just design it?",
-                answer: "UI/UX only in this case. But we work with trusted developers if you need build support."
+                answer: "UI/UX only here. But we can recommend developers who specialize in React Native if you need build support."
             },
             {
                 question: "Do you provide a design system?",
-                answer: "Yes—Figma file with components, variables, and developer specs."
+                answer: "Yes—Figma file with components, variables, and developer specs for both iOS and Android."
             }
         ]
     },
@@ -493,9 +493,9 @@ export const projectsData = {
         category: "UI/UX",
         brand: "thenxmedia",
         year: "2024",
-        description: "A healthcare dashboard for home care providers. Clean, serious, and built for long shifts and tired eyes.",
-        tags: ["UI/UX", "DASHBOARD", "HEALTHCARE"],
-        overview: "Amcare's caregivers were using a clunky internal tool that caused errors and frustration. We redesigned the core dashboard to reduce clicks, highlight urgent tasks, and work on cheap tablets.",
+        description: "A farm management dashboard for small-scale growers. Think less Excel, more clarity.",
+        tags: ["UI/UX", "DASHBOARD", "AGRICULTURE", "FARM TECH"],
+        overview: "Cultivate's users were tracking crop rotations, irrigation, and harvests across spreadsheets and sticky notes. We designed a simple, weather-resistant dashboard that works on a beat-up iPad in a field.",
         duration: {
             discovery: "3 Weeks",
             design: "5 Weeks",
@@ -504,54 +504,54 @@ export const projectsData = {
         success: {
             milestone1: "Task Analysis",
             milestone2: "Prototype",
-            milestone3: "Usability Score +47%"
+            milestone3: "Usability Score +52%"
         },
         clientQuote: {
-            text: "Caregivers actually volunteered to test the new design. That's never happened before.",
-            author: "Director of Ops, Amcare"
+            text: "Our farmers actually ask to use the app now. Before, they avoided the old system like a chore.",
+            author: "Director of Ops, Cultivate"
         },
         howWeBegan: {
-            title: "Don't Kill Your Users with Clicks",
-            description: "We shadowed caregivers for two days. Every extra click was a frustration. So we cut the fat: one home screen, color-coded priorities, big touch targets. The result saved an average of 45 minutes per shift.",
-            process: ["Shadowing", "Journey Mapping", "Low-Fidelity Tests", "High-Fidelity UI", "Dev Handoff"]
+            title: "Farmers Don't Have Time for Bad Software",
+            description: "We spent two days riding along on farm visits. The old dashboard required 12 clicks to log a harvest. We cut it to 3. Big buttons, offline support, and a dashboard that shows only what matters today.",
+            process: ["Field Shadowing", "Journey Mapping", "Low-Fidelity Tests", "High-Fidelity UI", "Dev Handoff"]
         },
-        bannerImage: "/images/projects/ui-ux/amcare/3.png",
+        bannerImage: "/images/projects/ui-ux/Cultivate/1.png",
         images: {
-            topImage: "/images/projects/ui-ux/Cutivate/1.png",
-            missionImage1: "/images/projects/ui-ux/Cutivate/2.png",
-            missionImage2: "/images/projects/ui-ux/Cutivate/3.png",
-            bottomImage: "/images/projects/ui-ux/Cutivate/1.png"
+            topImage: "/images/projects/ui-ux/Cultivate/1.png",
+            missionImage1: "/images/projects/ui-ux/Cultivate/2.png",
+            missionImage2: "/images/projects/ui-ux/Cultivate/3.png",
+            bottomImage: "/images/projects/ui-ux/Cultivate/1.png"
         },
         videoUrl: "/service.mp4",
         testimonial: {
-            text: "Mistakes dropped by over 50%. That's not just a design win—that's patient safety.",
-            author: "Amcare",
+            text: "One farmer told us he saved 8 hours a week. That's not a feature—that's his life back.",
+            author: "Cultivate",
             rating: 5,
-            role: "Head of Clinical Services"
+            role: "Head of Product"
         },
         challenges: [
-            "Working within strict healthcare compliance rules",
-            "Designing for users with low technical confidence",
-            "Making urgent tasks visually obvious without panic"
+            "Designing for users with low digital confidence but high domain expertise",
+            "Working in direct sunlight and dusty conditions",
+            "Offline-first functionality with spotty rural internet"
         ],
         solutions: [
-            "Used yellow for attention, red only for critical alerts",
-            "Kept every action within two taps of the home screen",
-            "Tested font sizes and contrast for low-light environments"
+            "Used high-contrast colors and massive touch targets",
+            "Tested screens outdoors on matte iPads",
+            "Built local storage with automatic sync when signal returns"
         ],
         results: [
-            "Average shift documentation time: 45 min saved",
-            "User error rate reduced by 54%",
-            "Staff satisfaction scores improved 2.1 points"
+            "Data entry time reduced by 62%",
+            "Adoption rate: 94% of farmers after two weeks",
+            "Support tickets dropped 80% compared to old system"
         ],
         faq: [
             {
-                question: "Is this HIPAA compliant?",
-                answer: "The design follows HIPAA guidelines, but compliance also depends on your backend. We work with your dev team to ensure alignment."
+                question: "Does it work offline?",
+                answer: "Yes—the dashboard stores entries locally and syncs automatically when you have a connection."
             },
             {
-                question: "Can this work on mobile?",
-                answer: "Yes—the dashboard is fully responsive and tested on 7-inch tablets and phones."
+                question: "Can this work on phones too?",
+                answer: "The dashboard is responsive, but we optimized primarily for 7–10 inch tablets, which farmers preferred during testing."
             }
         ]
     },
