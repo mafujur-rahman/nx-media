@@ -44,9 +44,9 @@ export default function Home() {
       <Optimization />
       <Service />
       <Pricing />
-      
-      <IndustriesWeWork />
       <Projects />
+      <IndustriesWeWork />
+      
       <WhyChooseUs />
       {/* <LeaderSection /> */}
       <Testimonials />

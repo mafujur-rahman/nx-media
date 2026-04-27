@@ -9,6 +9,7 @@ const Service = () => {
     const contentRefs = useRef([])
     const iconRefs = useRef([])
     const imageContainerRefs = useRef([])
+    const textWrapperRefs = useRef([])
 
     const services = [
         {
@@ -146,12 +147,23 @@ const Service = () => {
 
     // Function to sync image height with content height
     const syncImageHeight = (index) => {
-        const textContainer = contentRefs.current[index]?.querySelector('.text-content-wrapper')
+        const textWrapper = textWrapperRefs.current[index]
         const imageContainer = imageContainerRefs.current[index]
         
-        if (textContainer && imageContainer && openSection === index) {
-            const textHeight = textContainer.offsetHeight
+        if (textWrapper && imageContainer && openSection === index) {
+            // Get the actual height of the text content
+            const textHeight = textWrapper.offsetHeight
+            
+            // Set image container to exact same height
             imageContainer.style.height = `${textHeight}px`
+        }
+    }
+
+    // Reset image height for mobile
+    const resetImageHeight = (index) => {
+        const imageContainer = imageContainerRefs.current[index]
+        if (imageContainer) {
+            imageContainer.style.height = 'auto'
         }
     }
 
@@ -160,33 +172,63 @@ const Service = () => {
         contentRefs.current.forEach((el, index) => {
             if (!el) return
             if (openSection === index) {
+                // First expand the content
                 gsap.to(el, { 
                     height: "auto", 
                     opacity: 1, 
                     duration: 0.6, 
                     ease: "power3.out",
                     onComplete: () => {
+                        // After expansion is complete, sync image height
                         setTimeout(() => {
-                            syncImageHeight(index)
-                        }, 50)
+                            if (window.innerWidth >= 1024) {
+                                syncImageHeight(index)
+                            }
+                        }, 100)
                     }
                 })
             } else {
+                // Reset image height before closing
+                if (window.innerWidth < 1024) {
+                    resetImageHeight(index)
+                }
                 gsap.to(el, { height: 0, opacity: 0, duration: 0.45, ease: "power3.inOut" })
             }
         })
     }, [openSection])
 
-    // Watch for window resize to re-sync heights
+    // Watch for window resize
     useEffect(() => {
         const handleResize = () => {
             if (openSection !== null) {
-                syncImageHeight(openSection)
+                if (window.innerWidth >= 1024) {
+                    syncImageHeight(openSection)
+                } else {
+                    resetImageHeight(openSection)
+                }
+            }
+        }
+        
+        // Use ResizeObserver to detect text content changes
+        let resizeObserver
+        if (openSection !== null && window.innerWidth >= 1024) {
+            const textWrapper = textWrapperRefs.current[openSection]
+            if (textWrapper) {
+                resizeObserver = new ResizeObserver(() => {
+                    syncImageHeight(openSection)
+                })
+                resizeObserver.observe(textWrapper)
             }
         }
         
         window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
+        
+        return () => {
+            window.removeEventListener('resize', handleResize)
+            if (resizeObserver) {
+                resizeObserver.disconnect()
+            }
+        }
     }, [openSection])
 
     const handleToggle = (index) => {
@@ -222,7 +264,7 @@ const Service = () => {
     }
 
     return (
-        <div id="services" className=" bg-black text-white px-6 md:px-10 lg:px-16 xl:px-0 pt-8 lg:pt-16 ">
+        <div id="services" className="bg-black text-white px-6 md:px-10 lg:px-16 xl:px-0 pt-8 lg:pt-16">
             <div className="max-w-7xl mx-auto">
                 {services.map((service, index) => (
                     <div key={service.id} className="border-b border-zinc-800">
@@ -232,11 +274,11 @@ const Service = () => {
                             className="w-full flex justify-between items-center py-8 lg:py-10 text-left"
                         >
                             <div>
-                                <p className="text-md  text-gray-400 mb-2 uppercase">
+                                <p className="text-md text-gray-400 mb-2 uppercase">
                                     {service.subtitle}
                                 </p>
                                 <h2 className="title_text">
-                                     {service.title}
+                                    {service.title}
                                 </h2>
                             </div>
 
@@ -257,8 +299,11 @@ const Service = () => {
                         >
                             <div className="bg-white text-black rounded-[30px] px-4 py-6 md:px-8 md:py-12 mb-12">
                                 <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
-                                    {/* TEXT */}
-                                    <div className="text-content-wrapper flex-1">
+                                    {/* TEXT - wrap this in a div for height reference */}
+                                    <div 
+                                        ref={(el) => (textWrapperRefs.current[index] = el)}
+                                        className="flex-1"
+                                    >
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                                             {service.content.map((col, idx) => (
                                                 <div key={idx} className="flex flex-col h-full">
@@ -269,7 +314,7 @@ const Service = () => {
                                                         {col.items.map((item, i) => (
                                                             <li
                                                                 key={i}
-                                                                className="text-lg md:text-xl font-extrabold leading-tight uppercase"
+                                                                className="text-base md:text-lg font-extrabold leading-tight uppercase"
                                                             >
                                                                 {item}
                                                             </li>
@@ -285,7 +330,10 @@ const Service = () => {
                                         <div 
                                             ref={(el) => (imageContainerRefs.current[index] = el)}
                                             className="relative overflow-hidden rounded-3xl w-full"
-                                            style={{ height: 'auto', transition: 'height 0.3s ease' }}
+                                            style={{ 
+                                                height: 'auto',
+                                                transition: 'height 0.3s ease-in-out'
+                                            }}
                                         >
                                             <Image
                                                 src={service.image}
@@ -294,7 +342,11 @@ const Service = () => {
                                                 height={700}
                                                 className="w-full h-full object-cover rounded-3xl"
                                                 priority
-                                                sizes="(max-width: 1024px) 100vw, 40vw"
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                                                style={{
+                                                    objectPosition: 'center',
+                                                    height: '100%'
+                                                }}
                                             />
                                         </div>
                                     </div>

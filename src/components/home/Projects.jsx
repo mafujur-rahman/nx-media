@@ -33,7 +33,7 @@ const steps = [
             { title: "Organic", slug: "organic" },
             { title: "Brandco", slug: "brandco" },
             { title: "Mountain Top", slug: "mountain-top" },
-            
+
         ],
     },
     {
@@ -71,6 +71,7 @@ const Projects = () => {
     const [scrollIndex, setScrollIndex] = useState({});
     const [windowWidth, setWindowWidth] = useState(0);
     const [cardsPerView, setCardsPerView] = useState(2);
+    const [isInitialLoad, setIsInitialLoad] = useState(true);
 
     const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
     const [isHoveringCard, setIsHoveringCard] = useState(false);
@@ -79,6 +80,30 @@ const Projects = () => {
     const activeStep = steps.find((step) => step.id === activeTab);
     const activeCards = activeStep?.cards || [];
     const currentIndex = scrollIndex[activeTab] || 0;
+
+    // Save state to sessionStorage
+    const saveState = (tab, index) => {
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('projects_activeTab', tab);
+            sessionStorage.setItem('projects_scrollIndex', JSON.stringify(index));
+        }
+    };
+
+    // Load state from sessionStorage
+    useEffect(() => {
+        if (typeof window !== 'undefined' && isInitialLoad) {
+            const savedTab = sessionStorage.getItem('projects_activeTab');
+            const savedScrollIndex = sessionStorage.getItem('projects_scrollIndex');
+            
+            if (savedTab && steps.some(step => step.id === savedTab)) {
+                setActiveTab(savedTab);
+                if (savedScrollIndex) {
+                    setScrollIndex(JSON.parse(savedScrollIndex));
+                }
+            }
+            setIsInitialLoad(false);
+        }
+    }, [isInitialLoad]);
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth);
@@ -163,15 +188,21 @@ const Projects = () => {
 
     const slideToTab = (tabId) => {
         setActiveTab(tabId);
-        if (!scrollIndex[tabId]) setScrollIndex((prev) => ({ ...prev, [tabId]: 0 }));
+        if (!scrollIndex[tabId]) {
+            setScrollIndex((prev) => ({ ...prev, [tabId]: 0 }));
+        }
+        saveState(tabId, scrollIndex);
         setTimeout(() => scrollTabIntoView(tabId), 100);
     };
 
     const slideCards = (direction) => {
         const newIndex = direction === "left" ? currentIndex - 1 : currentIndex + 1;
-        setScrollIndex((prev) => ({ ...prev, [activeTab]: newIndex }));
+        const updatedScrollIndex = { ...scrollIndex, [activeTab]: newIndex };
+        setScrollIndex(updatedScrollIndex);
+        saveState(activeTab, updatedScrollIndex);
     };
 
+    // This effect handles the smooth GSAP animation for card sliding
     useEffect(() => {
         const container = cardsRef.current;
         if (!container || !container.children.length) return;
@@ -234,6 +265,8 @@ const Projects = () => {
     }, []);
 
     const handleCardClick = (slug) => {
+        // Save current state before navigating
+        saveState(activeTab, scrollIndex);
         router.push(`/project/${slug}`);
     };
 
@@ -255,6 +288,11 @@ const Projects = () => {
 
             <div className="max-w-7xl mx-auto">
                 <div className="text-left mb-8 lg:mb-10 xl:mb-16">
+                    <div className="flex justify-start mb-6">
+                        <span className="px-6 py-2 rounded-full border border-dashed border-red-500/90 bg-black/50 text-xs md:text-sm font-medium inline-block">
+                            Our Projects
+                        </span>
+                    </div>
                     <h2 className="title_text text-white max-w-6xl">
                         Before you hire us, see what hiring us actually looks like.
                     </h2>
@@ -340,7 +378,7 @@ const Projects = () => {
 const Card = ({ id, title, img, light, onMouseEnter, onMouseLeave, onClick }) => (
     <div
         className={`${light ? "bg-white text-black" : "bg-[#222222] text-white border border-white/5"
-            } rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] flex-shrink-0 flex flex-col sm:flex-row w-[280px] sm:w-[450px] md:w-[550px] lg:w-[620px] h-[300px] sm:h-[350px] md:h-[380px] lg:h-[400px] overflow-hidden cursor-none transition-transform duration-300 `}
+            } rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] flex-shrink-0 flex flex-col sm:flex-row w-[280px] sm:w-[450px] md:w-[550px] lg:w-[620px] h-[340px] sm:h-[350px] md:h-[380px] lg:h-[400px] overflow-hidden cursor-none transition-transform duration-300`}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onClick={onClick}
@@ -360,11 +398,11 @@ const Card = ({ id, title, img, light, onMouseEnter, onMouseLeave, onClick }) =>
                 {title}
             </h3>
         </div>
-        <div className="w-full sm:w-1/2  h-1/2 sm:h-full relative order-1 sm:order-2">
+        <div className="w-full sm:w-1/2 h-[60%] sm:h-full relative order-1 sm:order-2">
             <img
                 src={img}
                 alt={title}
-                className={`absolute inset-0 w-full h-full object-cover p-2 rounded-[20px] sm:rounded-[25px] lg:rounded-[30px] ${light ? "" : "opacity-80"}`}
+                className="absolute inset-0 w-full h-full object-cover p-2 rounded-[20px] sm:rounded-[25px] lg:rounded-[30px]"
                 loading="lazy"
             />
         </div>
