@@ -35,17 +35,17 @@ export const metadata = {
   ],
   authors: [{ name: "The NX Media" }],
   creator: "The NX Media",
-  metadataBase: new URL("https://yourdomain.com"), 
+  metadataBase: new URL("https://thenxmedia.com/"), 
 
   openGraph: {
     title: "The NX Media",
     description:
       "Innovative digital solutions for modern businesses. Build, scale, and grow with The NX Media.",
-    url: "https://yourdomain.com",
+    url: "https://thenxmedia.com/",
     siteName: "The NX Media",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/nx-home.png",
         width: 1200,
         height: 630,
         alt: "The NX Media",

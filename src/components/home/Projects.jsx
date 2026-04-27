@@ -58,7 +58,7 @@ const steps = [
         cards: [
             { title: "WeBrand", slug: "weBrand" },
             { title: "Amity", slug: "amity" },
-            { title: "Hoxizone Courts", slug: "hoxizon-courts" },
+            { title: "Horizone Courts", slug: "horizon-courts" },
         ],
     },
 ];
