@@ -2,12 +2,20 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Phone } from "lucide-react";
 import HoverSweepButton from "../utils/HoverSweepButton";
 import { HiArrowRight } from "react-icons/hi";
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
     const [activeBudget, setActiveBudget] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        whatsapp: "",
+        projectDetails: ""
+    });
+    const [toast, setToast] = useState({ show: false, message: "", type: 'success' });
 
     const budgets = [
         "Less than $500",
@@ -17,22 +25,107 @@ export default function Contact() {
         "Other"
     ];
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const showToast = (message, type) => {
+        setToast({ show: true, message, type });
+        setTimeout(() => {
+            setToast({ show: false, message: "", type: 'success' });
+        }, 3000);
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+
+        // Validate required fields
+        if (!formData.fullName || !formData.email || !formData.projectDetails) {
+            showToast("Please fill in all required fields", 'error');
+            setIsLoading(false);
+            return;
+        }
+
+        // Clean and sanitize the data
+        const cleanString = (str) => {
+            if (!str) return '';
+            return String(str).trim().replace(/[<>]/g, ''); // Remove HTML tags
+        };
+
+        const templateParams = {
+            from_name: cleanString(formData.fullName),
+            from_email: cleanString(formData.email).toLowerCase(),
+            whatsapp_number: cleanString(formData.whatsapp) || 'Not provided',
+            project_budget: cleanString(activeBudget) || 'Not specified',
+            project_details: cleanString(formData.projectDetails),
+        };
+
+        try {
+            const response = await emailjs.send(
+                'service_yquye5x',
+                'template_m66bysf',
+                templateParams,
+                'OoZP5Z8FR4WQ9bq2Q' // Replace with your EmailJS public key
+            );
+
+            // Reset form on success
+            setFormData({
+                fullName: "",
+                email: "",
+                whatsapp: "",
+                projectDetails: ""
+            });
+            setActiveBudget(null);
+            showToast("Message sent successfully! We'll get back to you within 24 hours.", 'success');
+        } catch (error) {
+            console.error('EmailJS Error Details:', error);
+            showToast(`Failed to send message: ${error.text || "Please try again."}`, 'error');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <section id="contact" className="bg-black pt-28 lg:pt-40 px-6 md:px-10 lg:px-16 xl:px-0">
+            {/* Toast Notification */}
+            {toast.show && (
+                <div className="fixed top-20 right-4 z-50 animate-in slide-in-from-top-2 fade-in duration-300">
+                    <div className={`rounded-lg shadow-lg p-4 min-w-[300px] ${toast.type === 'success' ? 'bg-green-500' : 'bg-red-500'
+                        } text-white`}>
+                        <div className="flex items-center gap-2">
+                            {toast.type === 'success' ? (
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            ) : (
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            )}
+                            <p className="text-sm font-medium">{toast.message}</p>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <div className="max-w-7xl mx-auto rounded-[30px] overflow-hidden bg-black border border-white/10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 p-4 sm:p-8 xl:p-16">
 
                     {/* LEFT CONTENT */}
-                    <div className="flex flex-col justify-between items-start">  {/* Added items-start here */}
-
-                        <div className="w-full">  {/* Added w-full here */}
+                    <div className="flex flex-col justify-between items-start">
+                        <div className="w-full">
                             <span className="inline-block mb-4 px-4 py-1 sm:px-6 sm:py-2 rounded-full border border-dashed border-red-500/80 bg-black/50 text-xs sm:text-sm font-medium text-white">
                                 First conversation is on us
                             </span>
 
                             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-bricolage text-white leading-tight">
-                                Let’s talk about what
-                                you’re building
+                                Let's talk about what
+                                you're building
                             </h2>
 
                             <p className="mt-4 sm:mt-6 text-white/70 text-base sm:text-lg max-w-full sm:max-w-md">
@@ -93,19 +186,21 @@ export default function Contact() {
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                     {/* RIGHT FORM */}
                     <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-8 lg:p-8">
-                        <form className="space-y-4 sm:space-y-6">
-
+                        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                             {/* FULL NAME */}
                             <div>
-                                <label className="block text-white text-sm sm:text-base mb-1 sm:mb-2">Full Name</label>
+                                <label className="block text-white text-sm sm:text-base mb-1 sm:mb-2">Full Name *</label>
                                 <input
                                     type="text"
+                                    name="fullName"
+                                    value={formData.fullName}
+                                    onChange={handleInputChange}
                                     placeholder="John Doe"
+                                    required
                                     className="w-full bg-black border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 text-sm sm:text-base"
                                 />
                             </div>
@@ -113,10 +208,14 @@ export default function Contact() {
                             {/* EMAIL + WHATSAPP */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                                 <div>
-                                    <label className="block text-white text-sm sm:text-base mb-1 sm:mb-2">Your Email</label>
+                                    <label className="block text-white text-sm sm:text-base mb-1 sm:mb-2">Your Email *</label>
                                     <input
                                         type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
                                         placeholder="yourmail@gmail.com"
+                                        required
                                         className="w-full bg-black border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 text-sm sm:text-base"
                                     />
                                 </div>
@@ -125,6 +224,9 @@ export default function Contact() {
                                     <label className="block text-white text-sm sm:text-base mb-1 sm:mb-2">Whatsapp Number</label>
                                     <input
                                         type="text"
+                                        name="whatsapp"
+                                        value={formData.whatsapp}
+                                        onChange={handleInputChange}
                                         placeholder="1123 1234567"
                                         className="w-full bg-black border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 text-sm sm:text-base"
                                     />
@@ -137,7 +239,6 @@ export default function Contact() {
                                 <div className="flex flex-wrap gap-2 sm:gap-3">
                                     {budgets.map((budget, i) => {
                                         const isActive = activeBudget === budget;
-
                                         return (
                                             <button
                                                 key={i}
@@ -161,25 +262,29 @@ export default function Contact() {
                             {/* DETAILS */}
                             <div>
                                 <label className="block text-white text-sm sm:text-base mb-1 sm:mb-2">
-                                    Project Details
+                                    Project Details *
                                 </label>
                                 <textarea
+                                    name="projectDetails"
+                                    value={formData.projectDetails}
+                                    onChange={handleInputChange}
                                     rows={4}
                                     placeholder="I want to redesign my website..."
+                                    required
                                     className="w-full bg-black border border-white/20 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-red-500 text-sm sm:text-base resize-none"
                                 />
                             </div>
 
                             <HoverSweepButton
                                 type="submit"
-                                className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 text-white rounded-full font-medium bg-red-600 w-auto text-sm sm:text-base"
-                                icon={<HiArrowRight size={20} />}
+                                disabled={isLoading}
+                                className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 cursor-pointer text-white rounded-full font-medium bg-red-600 w-auto text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                                icon={isLoading ? null : <HiArrowRight size={20} />}
                             >
-                                Let’s Connect
+                                {isLoading ? "Sending..." : "Let's Connect"}
                             </HoverSweepButton>
                         </form>
                     </div>
-
                 </div>
             </div>
         </section>
