@@ -120,7 +120,7 @@ export default function IndustriesWeWork() {
                     {item.description}
                   </p>
                 </div>
-                <div className="relative w-full h-[200px] rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[200px] md:h-[400px] rounded-2xl overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.title}

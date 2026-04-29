@@ -20,18 +20,33 @@ const brandLogos = {
   "Blackaboij": "/images/review/blackaboij.jpeg"
 };
 
-// Custom image positioning for each brand to control zoom/crop
+// Custom image positioning and padding for each brand (px, pt, pb)
 const brandImageStyles = {
-  "schonert": { objectPosition: "center", objectFit: "contain" },
-  "advertee": { objectPosition: "center", objectFit: "cover" },
-  "Searle Interiors": { objectPosition: "center", objectFit: "cover" },
-  "La Ebanista": { objectPosition: "center", objectFit: "contain" },
-  "Bear Health": { objectPosition: "center", objectFit: "cover" },
-  "Anytask": { objectPosition: "center", objectFit: "contain" },
-  "elektryk.pro": { objectPosition: "center", objectFit: "cover" },
-  "Nutralign": { objectPosition: "center", objectFit: "cover" },
-  "Aquaterrabass": { objectPosition: "center", objectFit: "cover" },
-  "Blackaboij": { objectPosition: "center", objectFit: "cover" },
+  "schonert": { objectPosition: "center", objectFit: "contain", px: "20px", pt: "20px", pb: "20px" },
+  "advertee": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Searle Interiors": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "15px", pb: "15px" },
+  "La Ebanista": { objectPosition: "center", objectFit: "contain", px: "30px", pt: "25px", pb: "25px" },
+  "Bear Health": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Anytask": { objectPosition: "center", objectFit: "contain", px: "25px", pt: "40px", pb: "40px" },
+  "elektryk.pro": { objectPosition: "center", objectFit: "cover", px: "10px", pt: "15px", pb: "15px" },
+  "Nutralign": { objectPosition: "center", objectFit: "cover", px: "20px", pt: "25px", pb: "25px" },
+  "Aquaterrabass": { objectPosition: "center", objectFit: "cover", px: "5px", pt: "10px", pb: "10px" },
+  "Blackaboij": { objectPosition: "center", objectFit: "cover", px: "15px", pt: "20px", pb: "20px" },
+};
+
+// Quote image positioning and padding for each testimonial (px, pt, pb)
+const quoteImageStyles = {
+  "Josh Smith": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Petr Kucera": { objectPosition: "top", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Suzi Searle": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Giulliano Bayonne": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Zenzele Silla": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Jim": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Anytask Stef": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Olsenskce": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Andrew Bear": { objectPosition: "top", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Emma Gori": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
+  "Anytask Jonathan": { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" },
 };
 
 const testimonials = [
@@ -57,14 +72,14 @@ const testimonials = [
     brand: "Searle Interiors",
   },
   {
-    quote: `Excellent work on the AQUATERRABAS logo, the concepts were clean and well thought out. I’ll definitely be coming back for more design work. Highly recommended, creative and easy to work with.`,
+    quote: `Excellent work on the AQUATERRABAS logo, the concepts were clean and well thought out. I'll definitely be coming back for more design work. Highly recommended, creative and easy to work with.`,
     name: "Giulliano Bayonne",
     role: "Founder & CEO",
     image: "/images/review/giulliano.jpeg",
     brand: "Aquaterrabass",
   },
   {
-    quote: `Loved the direction of the Blackaboij logo, it really captured the brand feel. I’ll be reaching out again for future projects. Highly recommended, sharp work and a smooth process.`,
+    quote: `Loved the direction of the Blackaboij logo, it really captured the brand feel. I'll be reaching out again for future projects. Highly recommended, sharp work and a smooth process.`,
     name: "Giulliano Bayonne",
     role: "Founder & CEO",
     image: "/images/review/giulliano.jpeg",
@@ -130,7 +145,7 @@ const testimonials = [
     quote: "Good work. Happy with the work produced in the end. The only reason why there is one less star is that I sent an example of a logo I liked, and the seller sent it back to me, but changed the colour. Other than that, I am happy.",
     name: "Emma Gori",
     role: "Founder",
-    image: "/images/review/female-icon.png",
+    image: "/images/review/female.jpeg",
     brand: "Lead the way",
   },
 ];
@@ -187,7 +202,8 @@ const Testimonial = () => {
 
   const t = testimonials[index];
   const hasBrandLogo = brandLogos[t.brand] !== null;
-  const imageStyle = brandImageStyles[t.brand] || { objectPosition: "center", objectFit: "cover" };
+  const imageStyle = brandImageStyles[t.brand] || { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" };
+  const quoteImageStyle = quoteImageStyles[t.name] || { objectPosition: "center", objectFit: "cover", px: "0px", pt: "0px", pb: "0px" };
 
   const truncatedQuote = truncateText(t.quote, 150);
 
@@ -246,16 +262,24 @@ const Testimonial = () => {
 
           {/* RIGHT SIDE */}
           <div className="grid grid-cols-2 gap-4">
-            {/* Top Left: Profile Image */}
-            <div className="h-[240px] md:h-[280px] lg:h-[320px] rounded-[30px] overflow-hidden bg-white">
+            {/* Top Left: Profile Image with px, pt, pb controls */}
+            <div className="h-[240px] md:h-[280px] lg:h-[320px] rounded-[30px] overflow-hidden bg-white flex items-center justify-center">
               <img
                 src={t.image}
                 alt={t.name}
-                className="w-full h-full object-cover "
+                className="w-full h-full"
+                style={{
+                  objectFit: quoteImageStyle.objectFit,
+                  objectPosition: quoteImageStyle.objectPosition,
+                  paddingLeft: quoteImageStyle.px,
+                  paddingRight: quoteImageStyle.px,
+                  paddingTop: quoteImageStyle.pt,
+                  paddingBottom: quoteImageStyle.pb,
+                }}
               />
             </div>
 
-            {/* Top Right: Brand (Logo or Text) */}
+            {/* Top Right: Brand (Logo or Text) with px, pt, pb controls */}
             <div className="h-[240px] md:h-[280px] lg:h-[320px] bg-white rounded-[30px] flex items-center justify-center overflow-hidden">
               {hasBrandLogo ? (
                 <img
@@ -265,6 +289,10 @@ const Testimonial = () => {
                   style={{
                     objectFit: imageStyle.objectFit,
                     objectPosition: imageStyle.objectPosition,
+                    paddingLeft: imageStyle.px,
+                    paddingRight: imageStyle.px,
+                    paddingTop: imageStyle.pt,
+                    paddingBottom: imageStyle.pb,
                   }}
                 />
               ) : (
