@@ -321,7 +321,7 @@ const Projects = () => {
                         </div>
                     </div>
 
-                    <div className="flex gap-3 sm:gap-4 justify-start lg:justify-end lg:mt-0">
+                    <div className="flex gap-3 sm:gap-4 justify-end lg:mt-0">
                         <button
                             className={`p-2 sm:p-3 lg:p-4 rounded-full transition-colors ${canSlideLeft
                                 ? "text-white hover:bg-white/10"
