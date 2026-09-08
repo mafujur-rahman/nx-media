@@ -97,7 +97,7 @@ export default function Banner() {
                 </p>
             </div>
             {/* ================= CLIENT SLIDER (BOTTOM) ================= */}
-            <div className="absolute bottom-0 xl:bottom-5 2xl:bottom-25 left-0 w-full z-20 -mt-8 md:mt-0">
+            <div className="absolute bottom-0  2xl:bottom-28 left-0 w-full z-20 ">
                 <ClientSlider />
             </div>
 
