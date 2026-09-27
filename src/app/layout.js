@@ -16,7 +16,7 @@ export const geistSans = Geist({
 
 export const metadata = {
   title: {
-    default: "The NX Media",
+    default: "The NX Media | Top Design & Development Marketing Agency in Bangladesh",
     template: "%s | The NX Media",
   },
   description:
