@@ -285,10 +285,10 @@ const Navbar = () => {
 
             {/* Pricing Link */}
             <a
-              onClick={() => scrollToSection("pricing")}
+              onClick={() => scrollToSection("contact")}
               className="text-white font-medium hover:text-red-500 cursor-pointer transition-colors"
             >
-              Pricing
+              Contact
             </a>
 
             {/* About Link */}
@@ -469,16 +469,16 @@ const Navbar = () => {
 
           {/* Pricing */}
           <div
-            onClick={() => scrollToSection("pricing")}
+            onClick={() => scrollToSection("contact")}
             className="flex flex-col items-center text-white cursor-pointer"
           >
-            {activeSection === "pricing" ? (
+            {activeSection === "contact" ? (
               <HiCurrencyDollar className="text-xl mb-0.5 text-red-500" />
             ) : (
               <HiOutlineCurrencyDollar className="text-xl mb-0.5" />
             )}
-            <span className={`text-[10px] font-medium ${activeSection === "pricing" ? "text-red-500" : "text-white"}`}>
-              Pricing
+            <span className={`text-[10px] font-medium ${activeSection === "contact" ? "text-red-500" : "text-white"}`}>
+              Contact
             </span>
           </div>
 

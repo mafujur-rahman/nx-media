@@ -105,23 +105,23 @@ const Service = () => {
         {
             id: 2,
             number: "03",
-            title: "WEB DEVELOPMENT",
-            subtitle: "BUILD SCALABLE, HIGH-PERFORMANCE WEBSITES & APPS",
+            title: "SOFTWARE DEVELOPMENT",
+            subtitle: "BUILD SCALABLE, HIGH-PERFORMANCE SOFTWARE & APPS",
             content: [
                 {
-                    label: "WEBSITE DEVELOPMENT",
+                    label: "SOFTWARE DEVELOPMENT",
                     items: [
-                        "FULL STACK WEB APPS",
+                        "FULL STACK SOFTWARE APPS",
                         "APIS & INTEGRATIONS",
                         "DATABASE",
-                        "BUSINESS WEBSITES",
+                        "BUSINESS SOFTWARE",
                         "E-COMMERCE DEVELOPMENT",
-                        "CUSTOM WEBSITES",
+                        "CUSTOM SOFTWARE",
                         "LANDING PAGES"
                     ]
                 },
                 {
-                    label: "WEBSITE PLATFORMS",
+                    label: "SOFTWARE PLATFORMS",
                     items: [
                         "WORDPRESS",
                         "WIX",
@@ -130,9 +130,9 @@ const Service = () => {
                     ]
                 },
                 {
-                    label: "WEBSITE MAINTENANCE",
+                    label: "SOFTWARE MAINTENANCE",
                     items: [
-                        "WEBSITE CUSTOMIZATION",
+                        "SOFTWARE CUSTOMIZATION",
                         "BUG FIXES & UPDATES",
                         "SEO & ANALYTICS",
                         "BACKUP & MIGRATION",
