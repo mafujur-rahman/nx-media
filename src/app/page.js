@@ -43,10 +43,9 @@ export default function Home() {
       <Banner />
       <Optimization />
       <Service />
-      <Pricing />
+      {/* <Pricing /> */}
       <Projects />
       <IndustriesWeWork />
-      
       <WhyChooseUs />
       {/* <LeaderSection /> */}
       <Testimonials />
