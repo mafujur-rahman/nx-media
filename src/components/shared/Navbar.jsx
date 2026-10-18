@@ -302,6 +302,8 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* floating Modal start from here */}
+
       {/* Floating Modal - Using Portal */}
       {mounted && isHovered && createPortal(
         <div
