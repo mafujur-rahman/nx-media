@@ -59,6 +59,7 @@ const steps = [
             { title: "Blackaboij", slug: "blackaboij" },
             { title: "WeBrand", slug: "weBrand" },
             { title: "Amity", slug: "amity" },
+            { title: "Gaowa Ghee", slug: "gawoa-ghee" },
             { title: "Horizon Courts", slug: "horizon-courts" },
         ],
     },

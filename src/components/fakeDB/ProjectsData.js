@@ -882,6 +882,86 @@ export const projectsData = {
             }
         ]
     },
+    "gawoa-ghee": {
+        id: "gawoa-ghee",
+        title: "Gaowa Ghee",
+        category: "Web Development",
+        brand: "thenxmedia",
+        year: "2026",
+        description: "A warm, trust-first online store for pure Pabna granular ghee. Built to turn first-time visitors into confident buyers, in Bengali, on any phone.",
+        tags: ["WEB DEVELOPMENT", "WORDPRESS", "E-COMMERCE", "FOOD BRAND"],
+        overview: "Gaowa Shop sells 100% pure granular ghee made the traditional Pabna way, but online buyers can't taste or smell a product, so trust is everything. We built a Bengali-first store around that: a story-led homepage, clear 250g, 500g and 1kg products with sale pricing, a transparent look at how the ghee is made, and easy ordering by cart, call, or WhatsApp.",
+        duration: {
+            discovery: "1 Day",
+            design: "2 Weeks",
+            development: "4 Weeks",
+            support: "1 Weeks"
+        },
+        success: {
+            milestone1: "Design Approved",
+            milestone2: "Store + Ordering Built",
+            milestone3: "Launch + Zero Downtime"
+        },
+        clientQuote: {
+            text: "Our customers finally see the care that goes into every jar. The store feels trustworthy, and ordering is so simple that people place orders in minutes.",
+            author: "Founder, Gaowa Shop"
+        },
+        howWeBegan: {
+            title: "Pure Ghee Needs a Store Customers Can Trust",
+            description: "Gaowa Shop had a great product and a simple promise: no adulteration, no chemicals, just traditional granular ghee. What it lacked was a place online that proved it. We designed a Bengali-first storefront that tells the Pabna story, shows the making process step by step, answers common questions upfront, and keeps ordering one tap away.",
+            process: ["Brand & Product Audit", "Content Structure (Bengali)", "Visual Design", "Development", "WooCommerce Store Setup", "SEO Optimization"]
+        },
+        bannerImage: "/images/projects/Website/gawoa-ghee/3.png",
+        images: {
+            topImage: "/images/projects/Website/gawoa-ghee/web-4.png",
+            missionImage1: "/images/projects/Website/gawoa-ghee/web-1.png",
+            missionImage2: "/images/projects/Website/gawoa-ghee/web-2.png",
+            bottomImage: "/images/projects/Website/gawoa-ghee/web-3.png"
+        },
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "thenxmedia understood exactly what we wanted to say about our ghee. The website is clean, easy to manage, and our customers tell us how simple it is to order from their phones.",
+            author: "Gaowa Shop",
+            rating: 5,
+            role: "Founder"
+        },
+        challenges: [
+            "Building trust for a food product that customers can't see, taste, or smell online",
+            "Designing a fully Bengali storefront that still feels modern and easy to scan",
+            "Making ordering simple for customers who prefer calling or WhatsApp over checkout forms",
+            "Showing sizes, sale prices, and delivery details clearly without cluttering the page"
+        ],
+        solutions: [
+            "Led with the Pabna heritage story and a 4-step making process: milk collection, cream and butter, slow boiling, and careful bottling",
+            "Wrote and structured all content in Bengali, with clear sections for quality, health benefits, and what makes the ghee different",
+            "Added a prominent call and WhatsApp bar alongside the standard cart, so customers can order however they prefer",
+            "Showed 250g, 500g, and 1kg products with sale pricing and customer ratings, plus an FAQ covering purity, origin, sizes, and delivery times"
+        ],
+        results: [
+            "A trust-first storefront that explains the product, the process, and the promise in the customer's own language",
+            "Three clear product sizes with visible sale pricing and ratings, making the choice easy",
+            "Multiple ways to order (cart, phone, WhatsApp), which suits how local customers actually buy",
+            "Fully responsive store that works smoothly on phones, where most customers browse"
+        ],
+        faq: [
+            {
+                question: "Can we manage products and prices ourselves?",
+                answer: "Yes. The store runs on WooCommerce, so you can add products, change prices, and set sales from a simple dashboard, with no developer needed."
+            },
+            {
+                question: "Can customers order by phone or WhatsApp?",
+                answer: "Yes. We placed call and WhatsApp options prominently across the site, alongside the normal cart, so customers can order the way they're most comfortable."
+            },
+            {
+                question: "Is the site available in Bengali?",
+                answer: "Yes. The whole store is written Bengali-first, from the product pages to the FAQ, and it can be extended with an English version later."
+            },
+            {
+                question: "Does it work on mobile?",
+                answer: "Fully responsive. The store is designed mobile-first, so customers can browse, read about the ghee, and order from any device."
+            }
+        ]
+    },
     "weBrand": {
         id: "weBrand",
         title: "WeBrand",
