@@ -283,6 +283,14 @@ const Navbar = () => {
               </button>
             </div>
 
+             {/* About Link */}
+            <a
+              onClick={() => scrollToSection("about")}
+              className="text-white font-medium hover:text-red-500 cursor-pointer transition-colors"
+            >
+              About
+            </a>
+
             {/* Pricing Link */}
             <a
               onClick={() => scrollToSection("contact")}
@@ -291,13 +299,7 @@ const Navbar = () => {
               Contact
             </a>
 
-            {/* About Link */}
-            <a
-              onClick={() => scrollToSection("about")}
-              className="text-white font-medium hover:text-red-500 cursor-pointer transition-colors"
-            >
-              About
-            </a>
+           
           </nav>
         </div>
       </div>
@@ -469,6 +471,21 @@ const Navbar = () => {
             </div>
           </div>
 
+          {/* About - With appropriate user icon */}
+          <div
+            onClick={() => scrollToSection("about")}
+            className="flex flex-col items-center text-white cursor-pointer"
+          >
+            {activeSection === "about" ? (
+              <HiUserCircle className="text-xl mb-0.5 text-red-500" />
+            ) : (
+              <HiOutlineUserCircle className="text-xl mb-0.5" />
+            )}
+            <span className={`text-[10px] font-medium ${activeSection === "about" ? "text-red-500" : "text-white"}`}>
+              About
+            </span>
+          </div>
+
           {/* Pricing */}
           <div
             onClick={() => scrollToSection("contact")}
@@ -484,20 +501,7 @@ const Navbar = () => {
             </span>
           </div>
 
-          {/* About - With appropriate user icon */}
-          <div
-            onClick={() => scrollToSection("about")}
-            className="flex flex-col items-center text-white cursor-pointer"
-          >
-            {activeSection === "about" ? (
-              <HiUserCircle className="text-xl mb-0.5 text-red-500" />
-            ) : (
-              <HiOutlineUserCircle className="text-xl mb-0.5" />
-            )}
-            <span className={`text-[10px] font-medium ${activeSection === "about" ? "text-red-500" : "text-white"}`}>
-              About
-            </span>
-          </div>
+          
         </div>
       </div>
     </>
