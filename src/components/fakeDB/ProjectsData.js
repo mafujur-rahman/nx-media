@@ -802,6 +802,86 @@ export const projectsData = {
     },
 
     // ========== WEB DEVELOPMENT (2) ==========
+    "blackaboij": {
+        id: "blackaboij",
+        title: "Blackaboij",
+        category: "Web Development",
+        brand: "thenxmedia",
+        year: "2026",
+        description: "A bold, fast online store for a clothing brand. Built to make browsing, product details, and checkout feel effortless on any device.",
+        tags: ["WEB DEVELOPMENT", "NEXT.JS", "E-COMMERCE", "CLOTHING BRAND"],
+        overview: "Blackaboij is a clothing brand that needed an online home as strong as its products. We built a custom storefront from scratch: a clean product catalog, detailed product pages with fabric and GSM info, a smooth mobile-first experience, and a built-in chatbot that answers customer questions instantly.",
+        duration: {
+            discovery: "1 Day",
+            design: "2 Weeks",
+            development: "4 Weeks",
+            support: "1 Weeks"
+        },
+        success: {
+            milestone1: "Design Approved",
+            milestone2: "Store + Chatbot Built",
+            milestone3: "Launch + Zero Downtime"
+        },
+        clientQuote: {
+            text: "The new store finally looks and feels like our brand. Customers find what they need faster, and the chatbot saves us from answering the same questions all day.",
+            author: "Founder, Blackaboij"
+        },
+        howWeBegan: {
+            title: "A Clothing Brand Deserves a Store That Feels Like Its Style",
+            description: "Blackaboij needed more than a generic template. Customers wanted to see the products clearly, understand the fabric and fit, and get quick answers without waiting for a reply on social media. We built a fully custom Next.js storefront with a bold visual identity, fast-loading product imagery, and an on-site chatbot for common questions.",
+            process: ["Brand & Product Audit", "Information Architecture", "Visual Design", "Development", "Chatbot Setup", "SEO Optimization"]
+        },
+        bannerImage: "/images/projects/Website/blackaboij/3.png",
+        images: {
+            topImage: "/images/projects/Website/blackaboij/4.png",
+            missionImage1: "/images/projects/Website/blackaboij/1.png",
+            missionImage2: "/images/projects/Website/blackaboij/2.png",
+            bottomImage: "/images/projects/Website/blackaboij/3.png"
+        },
+        videoUrl: "/service.mp4",
+        testimonial: {
+            text: "thenxmedia understood our brand from day one. The website is fast, clean, and easy for us to manage, and our customers keep telling us how smooth it is to shop on their phones.",
+            author: "Blackaboij",
+            rating: 5,
+            role: "Founder"
+        },
+        challenges: [
+            "Making the store feel as bold and premium as the brand itself",
+            "Showing clothing details (fabric type, GSM, fit) clearly without cluttering the product page",
+            "Answering repeated customer questions quickly without a full support team",
+            "Keeping product images sharp while the pages still load fast on mobile data"
+        ],
+        solutions: [
+            "Designed a minimal, image-first layout where the clothing is the hero",
+            "Added structured product detail sections so fabric, GSM, and sizing are easy to scan",
+            "Built a keyword-based chatbot that answers common questions about products, orders, and delivery, and is easy to update as new products launch",
+            "Used Next.js image optimization, lazy loading, and WebP conversion, deployed on Vercel for speed"
+        ],
+        results: [
+            "Fast, polished storefront with optimized product imagery across all devices",
+            "Instant answers to common product and order questions through the chatbot",
+            "Fully responsive store that works smoothly on phones, where most customers shop",
+            "Easy to add new products and update chatbot answers as the collection grows"
+        ],
+        faq: [
+            {
+                question: "Can new products be added easily?",
+                answer: "Yes. New products and their details, including fabric type and GSM, can be added without touching the layout. The chatbot data can be updated to match."
+            },
+            {
+                question: "What about hosting and ongoing maintenance?",
+                answer: "We recommend Vercel for speed, but you can host anywhere. We offer optional retainers for updates and new feature adds."
+            },
+            {
+                question: "Does it work on mobile?",
+                answer: "Fully responsive. The store and product pages are designed mobile-first, so customers can browse and shop from any device."
+            },
+            {
+                question: "How does the chatbot work?",
+                answer: "It matches customer keywords to prepared answers about products, sizes, fabrics, and delivery. It's fast, predictable, and easy for us to extend as your catalog grows."
+            }
+        ]
+    },
     "weBrand": {
         id: "weBrand",
         title: "WeBrand",

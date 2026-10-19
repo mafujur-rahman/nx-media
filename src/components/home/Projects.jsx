@@ -56,6 +56,7 @@ const steps = [
         id: "06",
         label: "Website Development",
         cards: [
+            { title: "Blackaboij", slug: "blackaboij" },
             { title: "WeBrand", slug: "weBrand" },
             { title: "Amity", slug: "amity" },
             { title: "Horizon Courts", slug: "horizon-courts" },
